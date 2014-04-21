@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsAuditoria" targetNamespace="http://tempuri.org/dsAuditoria.xsd" xmlns:mstns="http://tempuri.org/dsAuditoria.xsd" xmlns="http://tempuri.org/dsAuditoria.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="salesmanagerConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="salesmanagerConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ActivosFijos.Modulo.MySettings.GlobalReference.Default.salesmanagerConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsAuditoria" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dsAuditoria" msprop:Generator_UserDSName="dsAuditoria">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vp_Auditoria" msprop:Generator_UserTableName="vp_Auditoria" msprop:Generator_RowEvArgName="vp_AuditoriaRowChangeEvent" msprop:Generator_TableVarName="tablevp_Auditoria" msprop:Generator_TablePropName="vp_Auditoria" msprop:Generator_RowDeletingName="vp_AuditoriaRowDeleting" msprop:Generator_RowChangingName="vp_AuditoriaRowChanging" msprop:Generator_RowDeletedName="vp_AuditoriaRowDeleted" msprop:Generator_TableClassName="vp_AuditoriaDataTable" msprop:Generator_RowChangedName="vp_AuditoriaRowChanged" msprop:Generator_RowEvHandlerName="vp_AuditoriaRowChangeEventHandler" msprop:Generator_RowClassName="vp_AuditoriaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Usuari_Codigo" msprop:Generator_ColumnVarNameInTable="columnUsuari_Codigo" msprop:Generator_ColumnPropNameInRow="Usuari_Codigo" msprop:Generator_ColumnPropNameInTable="Usuari_CodigoColumn" msprop:Generator_UserColumnName="Usuari_Codigo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="18" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Usuari_Descripcion" msprop:Generator_ColumnVarNameInTable="columnUsuari_Descripcion" msprop:Generator_ColumnPropNameInRow="Usuari_Descripcion" msprop:Generator_ColumnPropNameInTable="Usuari_DescripcionColumn" msprop:Generator_UserColumnName="Usuari_Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Opcion" msprop:Generator_ColumnVarNameInTable="columnOpcion" msprop:Generator_ColumnPropNameInRow="Opcion" msprop:Generator_ColumnPropNameInTable="OpcionColumn" msprop:Generator_UserColumnName="Opcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Accion" msprop:Generator_ColumnVarNameInTable="columnAccion" msprop:Generator_ColumnPropNameInRow="Accion" msprop:Generator_ColumnPropNameInTable="AccionColumn" msprop:Generator_UserColumnName="Accion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Audito_Descripcion" msprop:Generator_ColumnVarNameInTable="columnAudito_Descripcion" msprop:Generator_ColumnPropNameInRow="Audito_Descripcion" msprop:Generator_ColumnPropNameInTable="Audito_DescripcionColumn" msprop:Generator_UserColumnName="Audito_Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Audito_FechaHora" msprop:Generator_ColumnVarNameInTable="columnAudito_FechaHora" msprop:Generator_ColumnPropNameInRow="Audito_FechaHora" msprop:Generator_ColumnPropNameInTable="Audito_FechaHoraColumn" msprop:Generator_UserColumnName="Audito_FechaHora" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsFichaActivoSRI" targetNamespace="http://tempuri.org/dsFichaActivoSRI.xsd" xmlns:mstns="http://tempuri.org/dsFichaActivoSRI.xsd" xmlns="http://tempuri.org/dsFichaActivoSRI.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ActivosFijosConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ActivosFijosConnectionString2 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ActivosFijos.Modulo.My.MySettings.GlobalReference.Default.ActivosFijosConnectionString2" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="AF_SRI2ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AF_SRI2ConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ActivosFijos.Modulo.My.MySettings.GlobalReference.Default.AF_SRI2ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_FichaCambioCustodioTableAdapter" GeneratorDataComponentClassName="vw_FichaCambioCustodioTableAdapter" Name="vw_FichaCambioCustodio" UserDataComponentName="vw_FichaCambioCustodioTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AF_SRI2ConnectionString (MySettings)" DbObjectName="AF_SRI2.dbo.vw_FichaCambioCustodio" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Codigo, CodigoBarras, CodigoTipo, Descripcion, Marca, Modelo, CustodioActual, CustodioAnterior, Bueno, Regular, Malo, SujetoControl, ActivoFijo, FechaCambio, Ciudad FROM dbo.vw_FichaCambioCustodio</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Codigo" DataSetColumn="Codigo" />
+              <Mapping SourceColumn="CodigoBarras" DataSetColumn="CodigoBarras" />
+              <Mapping SourceColumn="CodigoTipo" DataSetColumn="CodigoTipo" />
+              <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
+              <Mapping SourceColumn="Marca" DataSetColumn="Marca" />
+              <Mapping SourceColumn="Modelo" DataSetColumn="Modelo" />
+              <Mapping SourceColumn="CustodioActual" DataSetColumn="CustodioActual" />
+              <Mapping SourceColumn="CustodioAnterior" DataSetColumn="CustodioAnterior" />
+              <Mapping SourceColumn="Bueno" DataSetColumn="Bueno" />
+              <Mapping SourceColumn="Regular" DataSetColumn="Regular" />
+              <Mapping SourceColumn="Malo" DataSetColumn="Malo" />
+              <Mapping SourceColumn="SujetoControl" DataSetColumn="SujetoControl" />
+              <Mapping SourceColumn="ActivoFijo" DataSetColumn="ActivoFijo" />
+              <Mapping SourceColumn="FechaCambio" DataSetColumn="FechaCambio" />
+              <Mapping SourceColumn="Ciudad" DataSetColumn="Ciudad" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsFichaActivoSRI" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsFichaActivoSRI" msprop:Generator_UserDSName="dsFichaActivoSRI">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vw_FichaCambioCustodio" msprop:Generator_TableClassName="vw_FichaCambioCustodioDataTable" msprop:Generator_TableVarName="tablevw_FichaCambioCustodio" msprop:Generator_TablePropName="vw_FichaCambioCustodio" msprop:Generator_RowDeletingName="vw_FichaCambioCustodioRowDeleting" msprop:Generator_UserTableName="vw_FichaCambioCustodio" msprop:Generator_RowChangingName="vw_FichaCambioCustodioRowChanging" msprop:Generator_RowEvHandlerName="vw_FichaCambioCustodioRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_FichaCambioCustodioRowDeleted" msprop:Generator_RowEvArgName="vw_FichaCambioCustodioRowChangeEvent" msprop:Generator_RowChangedName="vw_FichaCambioCustodioRowChanged" msprop:Generator_RowClassName="vw_FichaCambioCustodioRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Codigo" msprop:Generator_ColumnVarNameInTable="columnCodigo" msprop:Generator_ColumnPropNameInRow="Codigo" msprop:Generator_ColumnPropNameInTable="CodigoColumn" msprop:Generator_UserColumnName="Codigo" type="xs:int" />
+              <xs:element name="CodigoBarras" msprop:Generator_ColumnVarNameInTable="columnCodigoBarras" msprop:Generator_ColumnPropNameInRow="CodigoBarras" msprop:Generator_ColumnPropNameInTable="CodigoBarrasColumn" msprop:Generator_UserColumnName="CodigoBarras">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodigoTipo" msprop:Generator_ColumnVarNameInTable="columnCodigoTipo" msprop:Generator_ColumnPropNameInRow="CodigoTipo" msprop:Generator_ColumnPropNameInTable="CodigoTipoColumn" msprop:Generator_UserColumnName="CodigoTipo" type="xs:int" minOccurs="0" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Marca" msprop:Generator_ColumnVarNameInTable="columnMarca" msprop:Generator_ColumnPropNameInRow="Marca" msprop:Generator_ColumnPropNameInTable="MarcaColumn" msprop:Generator_UserColumnName="Marca">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Modelo" msprop:Generator_ColumnVarNameInTable="columnModelo" msprop:Generator_ColumnPropNameInRow="Modelo" msprop:Generator_ColumnPropNameInTable="ModeloColumn" msprop:Generator_UserColumnName="Modelo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustodioActual" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCustodioActual" msprop:Generator_ColumnPropNameInRow="CustodioActual" msprop:Generator_ColumnPropNameInTable="CustodioActualColumn" msprop:Generator_UserColumnName="CustodioActual" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustodioAnterior" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCustodioAnterior" msprop:Generator_ColumnPropNameInRow="CustodioAnterior" msprop:Generator_ColumnPropNameInTable="CustodioAnteriorColumn" msprop:Generator_UserColumnName="CustodioAnterior" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Bueno" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBueno" msprop:Generator_ColumnPropNameInRow="Bueno" msprop:Generator_ColumnPropNameInTable="BuenoColumn" msprop:Generator_UserColumnName="Bueno" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Regular" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRegular" msprop:Generator_ColumnPropNameInRow="Regular" msprop:Generator_ColumnPropNameInTable="RegularColumn" msprop:Generator_UserColumnName="Regular" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Malo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMalo" msprop:Generator_ColumnPropNameInRow="Malo" msprop:Generator_ColumnPropNameInTable="MaloColumn" msprop:Generator_UserColumnName="Malo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SujetoControl" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSujetoControl" msprop:Generator_ColumnPropNameInRow="SujetoControl" msprop:Generator_ColumnPropNameInTable="SujetoControlColumn" msprop:Generator_UserColumnName="SujetoControl" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ActivoFijo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnActivoFijo" msprop:Generator_ColumnPropNameInRow="ActivoFijo" msprop:Generator_ColumnPropNameInTable="ActivoFijoColumn" msprop:Generator_UserColumnName="ActivoFijo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaCambio" msprop:Generator_ColumnVarNameInTable="columnFechaCambio" msprop:Generator_ColumnPropNameInRow="FechaCambio" msprop:Generator_ColumnPropNameInTable="FechaCambioColumn" msprop:Generator_UserColumnName="FechaCambio" type="xs:dateTime" />
+              <xs:element name="Ciudad" msprop:Generator_ColumnVarNameInTable="columnCiudad" msprop:Generator_ColumnPropNameInRow="Ciudad" msprop:Generator_ColumnPropNameInTable="CiudadColumn" msprop:Generator_UserColumnName="Ciudad">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vw_FichaCambioCustodio" />
+      <xs:field xpath="mstns:Codigo" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

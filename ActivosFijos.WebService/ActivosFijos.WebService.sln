@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActivosFijos.WebService", "ActivosFijos.WebService.csproj", "{D3CD2CAF-230E-46D9-A2C1-68A1A9F45894}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ActivosFijos.Reglas", "..\ActivosFijos.Reglas\ActivosFijos.Reglas.vbproj", "{36279C53-6E4D-4AB0-9687-64075A391C0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3CD2CAF-230E-46D9-A2C1-68A1A9F45894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3CD2CAF-230E-46D9-A2C1-68A1A9F45894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3CD2CAF-230E-46D9-A2C1-68A1A9F45894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3CD2CAF-230E-46D9-A2C1-68A1A9F45894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36279C53-6E4D-4AB0-9687-64075A391C0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36279C53-6E4D-4AB0-9687-64075A391C0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36279C53-6E4D-4AB0-9687-64075A391C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36279C53-6E4D-4AB0-9687-64075A391C0D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

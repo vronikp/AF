@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{36279C53-6E4D-4AB0-9687-64075A391C0D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ActivosFijos.Reglas</RootNamespace>
+    <AssemblyName>ActivosFijos.Reglas</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ActivosFijos.Reglas.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ActivosFijos.Reglas.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Infoware.Datos">
+      <HintPath>..\ICA\Infoware.Datos.dll</HintPath>
+    </Reference>
+    <Reference Include="Infoware.Reglas">
+      <HintPath>..\ICA\Infoware.Reglas.dll</HintPath>
+    </Reference>
+    <Reference Include="Infoware.Reglas.General">
+      <HintPath>..\ICA\Infoware.Reglas.General.dll</HintPath>
+    </Reference>
+    <Reference Include="Infoware.Reportes">
+      <HintPath>..\ICA\Infoware.Reportes.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PlantillaInventario.vb" />
+    <Compile Include="PlantillaCaracteristica.vb" />
+    <Compile Include="Database\Activo.vb" />
+    <Compile Include="Database\ActivoComponente.vb" />
+    <Compile Include="Database\ActivoCustodio.vb" />
+    <Compile Include="Database\ActivoUbicacion.vb" />
+    <Compile Include="Database\ActivoValor.vb" />
+    <Compile Include="Database\ActivoCaracteristica.vb" />
+    <Compile Include="Database\TransaccionActivo.vb" />
+    <Compile Include="Database\Depreciacion.vb" />
+    <Compile Include="Database\DepreciacionDet.vb" />
+    <Compile Include="Database\Empleado.vb" />
+    <Compile Include="Database\Entidad.vb" />
+    <Compile Include="Database\EntidadDatos.vb" />
+    <Compile Include="Database\EntidadDireccion.vb" />
+    <Compile Include="Database\EntidadIdentificacion.vb" />
+    <Compile Include="Database\EntidadJuridica.vb" />
+    <Compile Include="Database\EntidadLugar.vb" />
+    <Compile Include="Database\EntidadNatural.vb" />
+    <Compile Include="Database\FacturaActivo.vb" />
+    <Compile Include="Database\Inventario.vb" />
+    <Compile Include="Database\InventarioDet.vb" />
+    <Compile Include="Database\Perito.vb" />
+    <Compile Include="Database\Poliza.vb" />
+    <Compile Include="Database\PolizaDet.vb" />
+    <Compile Include="Database\Proveedor.vb" />
+    <Compile Include="Enumerados.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PlantillaActivo.vb" />
+    <Compile Include="PlantillaValorizacion.vb" />
+    <Compile Include="Reglas\Activo.vb" />
+    <Compile Include="Reglas\ActivoComponente.vb" />
+    <Compile Include="Reglas\ActivoCustodio.vb" />
+    <Compile Include="Reglas\ActivoUbicacion.vb" />
+    <Compile Include="Reglas\ActivoValor.vb" />
+    <Compile Include="Reglas\ActivoCaracteristica.vb" />
+    <Compile Include="Reglas\TransaccionActivo.vb" />
+    <Compile Include="Reglas\Depreciacion.vb" />
+    <Compile Include="Reglas\DepreciacionDet.vb" />
+    <Compile Include="Reglas\Empleado.vb" />
+    <Compile Include="Reglas\Entidad.vb" />
+    <Compile Include="Reglas\EntidadDatos.vb" />
+    <Compile Include="Reglas\EntidadDireccion.vb" />
+    <Compile Include="Reglas\EntidadIdentificacion.vb" />
+    <Compile Include="Reglas\EntidadJuridica.vb" />
+    <Compile Include="Reglas\EntidadLugar.vb" />
+    <Compile Include="Reglas\EntidadNatural.vb" />
+    <Compile Include="Reglas\FacturaActivo.vb" />
+    <Compile Include="Reglas\Inventario.vb" />
+    <Compile Include="Reglas\InventarioDet.vb" />
+    <Compile Include="Reglas\Perito.vb" />
+    <Compile Include="Reglas\Poliza.vb" />
+    <Compile Include="Reglas\PolizaDet.vb" />
+    <Compile Include="Reglas\Proveedor.vb" />
+    <Compile Include="Reglas\WWTSParametro.vb" />
+    <Compile Include="Reglas\WWTSParametroDet.vb" />
+    <Compile Include="Reglas\WWTSUsuario.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

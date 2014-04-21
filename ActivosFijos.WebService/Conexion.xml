@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfOperadorDatos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OperadorDatos xsi:type="SQLOperadorDatos" Servidor="(local)" Usuario="sa" GuardarContrasena="true" Clave="123" Base="activosfijos" SeguridadIntegrada="true" />
+</ArrayOfOperadorDatos>

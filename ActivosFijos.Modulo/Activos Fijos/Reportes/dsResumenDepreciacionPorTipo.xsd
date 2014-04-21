@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsResumenDepreciacionPorTipo" targetNamespace="http://tempuri.org/dsResumenDepreciacionPorTipo.xsd" xmlns:mstns="http://tempuri.org/dsResumenDepreciacionPorTipo.xsd" xmlns="http://tempuri.org/dsResumenDepreciacionPorTipo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ActivosFijosConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ActivosFijosConnectionString2 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ActivosFijos.Modulo.My.MySettings.GlobalReference.Default.ActivosFijosConnectionString2" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsResumenDepreciacionPorTipo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsResumenDepreciacionPorTipo" msprop:Generator_UserDSName="dsResumenDepreciacionPorTipo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vw_Resumen_depreciacion_por_tipo" msprop:Generator_TableClassName="vw_Resumen_depreciacion_por_tipoDataTable" msprop:Generator_TableVarName="tablevw_Resumen_depreciacion_por_tipo" msprop:Generator_TablePropName="vw_Resumen_depreciacion_por_tipo" msprop:Generator_RowDeletingName="vw_Resumen_depreciacion_por_tipoRowDeleting" msprop:Generator_UserTableName="vw_Resumen_depreciacion_por_tipo" msprop:Generator_RowChangingName="vw_Resumen_depreciacion_por_tipoRowChanging" msprop:Generator_RowEvHandlerName="vw_Resumen_depreciacion_por_tipoRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_Resumen_depreciacion_por_tipoRowDeleted" msprop:Generator_RowEvArgName="vw_Resumen_depreciacion_por_tipoRowChangeEvent" msprop:Generator_RowChangedName="vw_Resumen_depreciacion_por_tipoRowChanged" msprop:Generator_RowClassName="vw_Resumen_depreciacion_por_tipoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Pardet_Descripcion" msprop:Generator_ColumnVarNameInTable="columnPardet_Descripcion" msprop:Generator_ColumnPropNameInRow="Pardet_Descripcion" msprop:Generator_ColumnPropNameInTable="Pardet_DescripcionColumn" msprop:Generator_UserColumnName="Pardet_Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Costo_Original" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCosto_Original" msprop:Generator_ColumnPropNameInRow="Costo_Original" msprop:Generator_ColumnPropNameInTable="Costo_OriginalColumn" msprop:Generator_UserColumnName="Costo_Original" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Dep_Acu_Ant" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDep_Acu_Ant" msprop:Generator_ColumnPropNameInRow="Dep_Acu_Ant" msprop:Generator_ColumnPropNameInTable="Dep_Acu_AntColumn" msprop:Generator_UserColumnName="Dep_Acu_Ant" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Dep_mes" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDep_mes" msprop:Generator_ColumnPropNameInRow="Dep_mes" msprop:Generator_ColumnPropNameInTable="Dep_mesColumn" msprop:Generator_UserColumnName="Dep_mes" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Dep_Acu_Anio" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDep_Acu_Anio" msprop:Generator_ColumnPropNameInRow="Dep_Acu_Anio" msprop:Generator_ColumnPropNameInTable="Dep_Acu_AnioColumn" msprop:Generator_UserColumnName="Dep_Acu_Anio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Dep_Acu_Act" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDep_Acu_Act" msprop:Generator_ColumnPropNameInRow="Dep_Acu_Act" msprop:Generator_ColumnPropNameInTable="Dep_Acu_ActColumn" msprop:Generator_UserColumnName="Dep_Acu_Act" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
