@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class crpActaRecepcionFormato2
+Public Class crpActaRecepcionFormato3
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class crpActaRecepcionFormato2
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "crpActaRecepcionFormato2.rpt"
+            Return "crpActaRecepcionFormato3.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class crpActaRecepcionFormato2
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "ActivosFijos.Modulo.crpActaRecepcionFormato2.rpt"
+            Return "ActivosFijos.Modulo.crpActaRecepcionFormato3.rpt"
         End Get
         Set
             'Do nothing
@@ -142,7 +142,7 @@ Public Class crpActaRecepcionFormato2
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedcrpActaRecepcionFormato2
+Public Class CachedcrpActaRecepcionFormato3
     Inherits Component
     Implements ICachedReport
     
@@ -184,7 +184,7 @@ Public Class CachedcrpActaRecepcionFormato2
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As crpActaRecepcionFormato2 = New crpActaRecepcionFormato2()
+        Dim rpt As crpActaRecepcionFormato3 = New crpActaRecepcionFormato3()
         rpt.Site = Me.Site
         Return rpt
     End Function

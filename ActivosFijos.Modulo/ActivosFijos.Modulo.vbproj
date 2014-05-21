@@ -218,6 +218,13 @@
     <Compile Include="Activos Fijos\Reportes\clsReporteResumenDepreciacion.vb" />
     <Compile Include="Activos Fijos\Reportes\clsResumenDepreciacionPorTipo.vb" />
     <Compile Include="Activos Fijos\Reportes\clsReporteSRIActaRecepcion.vb" />
+    <Compile Include="Activos Fijos\Reportes\clsReporteActaRecepcionF3.vb" />
+    <Compile Include="Activos Fijos\Reportes\crpActaRecepcionFormato3.vb">
+      <DependentUpon>crpActaRecepcionFormato3.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Activos Fijos\Reportes\crpActaRecepcionFormato2.vb">
       <SubType>Component</SubType>
       <AutoGen>True</AutoGen>
@@ -234,6 +241,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsActaConstatacionF2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Activos Fijos\Reportes\dsActaConstatacionF3.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsActaConstatacionF3.xsd</DependentUpon>
     </Compile>
     <Compile Include="Activos Fijos\Reportes\dsSriActaRecepcion.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -742,6 +754,10 @@
     <EmbeddedResource Include="Activos Fijos\FrmMantenimientoFacturaActivo.resx">
       <DependentUpon>FrmMantenimientoFacturaActivo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Activos Fijos\Reportes\crpActaRecepcionFormato3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpActaRecepcionFormato3.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\Reportes\crpActaRecepcionFormato2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crpActaRecepcionFormato2.vb</LastGenOutput>
@@ -940,6 +956,17 @@
     </None>
     <None Include="Activos Fijos\Reportes\dsActaConstatacionF2.xss">
       <DependentUpon>dsActaConstatacionF2.xsd</DependentUpon>
+    </None>
+    <None Include="Activos Fijos\Reportes\dsActaConstatacionF3.xsc">
+      <DependentUpon>dsActaConstatacionF3.xsd</DependentUpon>
+    </None>
+    <None Include="Activos Fijos\Reportes\dsActaConstatacionF3.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsActaConstatacionF3.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Activos Fijos\Reportes\dsActaConstatacionF3.xss">
+      <DependentUpon>dsActaConstatacionF3.xsd</DependentUpon>
     </None>
     <None Include="Activos Fijos\Reportes\dsFichaActivoSRI.xsc">
       <DependentUpon>dsFichaActivoSRI.xsd</DependentUpon>
