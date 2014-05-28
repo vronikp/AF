@@ -47,7 +47,8 @@ Public Class FrmMantenimientoPoliza
     Me.txtdescripcion.Text = mPoliza.Poliza_Descripcion
     Me.dtfecinicio.Value = mPoliza.Poliza_FechaInicio
     Me.dtfecfin.Value = mPoliza.Poliza_FechaFin
-    Me.txtvalor.Value = mPoliza.Poliza_ValorAsegurado
+        Me.txtvalor.Value = mPoliza.Poliza_ValorAsegurado
+        Me.cbotipopoliza.ParametroDet = mPoliza.PardetTipoPoliza
 
     Me.bsdets.DataSource = mPoliza.PolizaDets
     Me.dgdets.AutoDiscover()
@@ -89,7 +90,8 @@ Public Class FrmMantenimientoPoliza
     mPoliza.Poliza_Descripcion = Me.txtdescripcion.Text
     mPoliza.Poliza_FechaInicio = Me.dtfecinicio.Value
     mPoliza.Poliza_FechaFin = Me.dtfecfin.Value
-    mPoliza.Poliza_ValorAsegurado = Me.txtvalor.Value
+        mPoliza.Poliza_ValorAsegurado = Me.txtvalor.Value
+        mPoliza.PardetTipoPoliza = Me.cbotipopoliza.ParametroDet
   End Sub
 
   Private Function Guardar_datos() As Boolean
@@ -154,7 +156,10 @@ Public Class FrmMantenimientoPoliza
 
     Me.CtlBuscaProveedor1.SoloActivos = True
     Me.CtlBuscaProveedor1.OperadorDatos = Sistema.OperadorDatos
-    Me.CtlBuscaProveedor1.Llenar_Datos()
+        Me.CtlBuscaProveedor1.Llenar_Datos()
+        Me.cbotipopoliza.OperadorDatos = Sistema.OperadorDatos
+        Me.cbotipopoliza.Parametro = Enumerados.EnumParametros.TipoPoliza
+        Me.cbotipopoliza.Llenar_Datos()
   End Sub
 #End Region
 

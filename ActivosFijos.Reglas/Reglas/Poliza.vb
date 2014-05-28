@@ -17,7 +17,9 @@ Imports Infoware.Datos
 #Region "Poliza"
 Public Class Poliza
 
-  Const _Procedimiento As String = "proc_Poliza"
+    Const _Procedimiento As String = "proc_Poliza"
+
+    Private mPardetTipoPoliza As WWTSParametroDet = Nothing
 
   Private mProveedor As Proveedor = Nothing
 
@@ -27,14 +29,16 @@ Public Class Poliza
     EsNuevo = _EsNuevo
   End Sub
 
-  Public Sub New(ByVal _OperadorDatos As OperadorDatos, ByVal _Poliza_Codigo As Integer)
-    Me.New(_OperadorDatos, False)
-    Poliza_Codigo = _Poliza_Codigo
-    If Me.Recargar Then
-    Else
-      Throw New System.Exception("No se puede cargar objeto Poliza")
-    End If
-  End Sub
+    Public Sub New(ByVal _OperadorDatos As OperadorDatos, ByVal _Poliza_Codigo As Integer, ByVal _Parame_TipoPoliza As Integer, ByVal _Pardet_TipoPoliza As Integer)
+        Me.New(_OperadorDatos, False)
+        Poliza_Codigo = _Poliza_Codigo
+        Parame_TipoPoliza = _Parame_TipoPoliza
+        Pardet_TipoPoliza = _Pardet_TipoPoliza
+        If Me.Recargar Then
+        Else
+            Throw New System.Exception("No se puede cargar objeto Poliza")
+        End If
+    End Sub
 
   'Proveedor
   Public Overridable Property Proveedor() As Proveedor
@@ -48,18 +52,44 @@ Public Class Poliza
       Me.mProveedor = value
       Entida_Proveedor = value.Entida_Codigo
     End Set
-  End Property
+    End Property
 
-  <Infoware.Reportes.CampoReporteAtributo("Proveedor", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 250, True)>
-  Public ReadOnly Property ProveedorString As String
-    Get
-      If Proveedor Is Nothing Then
-        Return String.Empty
-      Else
-        Return Proveedor.NombreCompleto
-      End If
-    End Get
-  End Property
+    'Parametrodet
+    Public Overridable Overloads Property PardetTipoPoliza() As WWTSParametroDet
+        Get
+            If mPardetTipoPoliza Is Nothing AndAlso Pardet_TipoPoliza > 0 Then
+                mPardetTipoPoliza = New WWTSParametroDet(OperadorDatos, Parame_TipoPoliza, Pardet_TipoPoliza)
+            End If
+            Return Me.mPardetTipoPoliza
+        End Get
+        Set(value As WWTSParametroDet)
+            Me.mPardetTipoPoliza = value
+            Parame_TipoPoliza = value.Parame_Codigo
+            Pardet_TipoPoliza = value.Pardet_Secuencia
+        End Set
+    End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("Tipo de Poliza", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 250, True)>
+    Public ReadOnly Property TipoPolizaString As String
+        Get
+            If PardetTipoPoliza Is Nothing Then
+                Return String.Empty
+            Else
+                Return PardetTipoPoliza.Descripcion
+            End If
+        End Get
+    End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("Proveedor", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 250, True)>
+Public ReadOnly Property ProveedorString As String
+        Get
+            If Proveedor Is Nothing Then
+                Return String.Empty
+            Else
+                Return Proveedor.NombreCompleto
+            End If
+        End Get
+    End Property
 
   Public ReadOnly Property Descripcion As String
     Get
@@ -126,7 +156,9 @@ Public Class Poliza
     Entida_Proveedor = CType(Fila("Entida_Proveedor"), Integer)
     Poliza_FechaInicio = CType(Fila("Poliza_FechaInicio"), String)
     Poliza_FechaFin = CType(Fila("Poliza_FechaFin"), String)
-    Poliza_ValorAsegurado = CType(Fila("Poliza_ValorAsegurado"), Decimal)
+        Poliza_ValorAsegurado = CType(Fila("Poliza_ValorAsegurado"), Decimal)
+        Parame_TipoPoliza = CType(Fila("Parame_TipoPoliza"), Integer)
+        Pardet_TipoPoliza = CType(Fila("Pardet_TipoPoliza"), Integer)
     mProveedor = Nothing
     mPolizaDets = Nothing
     mPolizaDetsEli = Nothing
@@ -170,7 +202,9 @@ Public Class Poliza
     OperadorDatos.AgregarParametro("@Entida_Proveedor", Entida_Proveedor)
     OperadorDatos.AgregarParametro("@Poliza_FechaInicio", Poliza_FechaInicio)
     OperadorDatos.AgregarParametro("@Poliza_FechaFin", Poliza_FechaFin)
-    OperadorDatos.AgregarParametro("@Poliza_ValorAsegurado", Poliza_ValorAsegurado)
+        OperadorDatos.AgregarParametro("@Poliza_ValorAsegurado", Poliza_ValorAsegurado)
+        OperadorDatos.AgregarParametro("@Parame_TipoPoliza", Parame_TipoPoliza)
+        OperadorDatos.AgregarParametro("@Pardet_TipoPoliza", Pardet_TipoPoliza)
     OperadorDatos.Procedimiento = _Procedimiento
     bReturn = OperadorDatos.Ejecutar(Result)
     OperadorDatos.LimpiarParametros()

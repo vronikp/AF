@@ -233,4 +233,8 @@ Public Class FrmMantenimientoInventario
     f.ShowDialog()
     buscar()
   End Sub
+
+    Private Sub cboEstadoInventario_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cboEstadoInventario.SelectedIndexChanged
+
+    End Sub
 End Class

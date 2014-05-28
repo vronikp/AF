@@ -22,6 +22,10 @@ Partial Public Class Poliza
     Inherits _Database
     
     Private mPoliza_Codigo As Integer = 0
+
+    Private mParame_TipoPoliza As Integer = 0
+
+    Private mPardet_TipoPoliza As Integer = 0
     
     Private mPoliza_Descripcion As String = ""
     
@@ -47,7 +51,29 @@ Partial Public Class Poliza
             EsModificado = true
         End Set
     End Property
-    
+
+    <XmlAttribute()> _
+    Public Overridable Property Parame_TipoPoliza() As Integer
+        Get
+            Return Me.mParame_TipoPoliza
+        End Get
+        Set(value As Integer)
+            Me.mParame_TipoPoliza = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Pardet_TipoPoliza() As Integer
+        Get
+            Return Me.mPardet_TipoPoliza
+        End Get
+        Set(value As Integer)
+            Me.mPardet_TipoPoliza = value
+            EsModificado = True
+        End Set
+    End Property
+
     <XmlAttribute()>  _
     Public Overridable Property Poliza_Descripcion() As String
         Get

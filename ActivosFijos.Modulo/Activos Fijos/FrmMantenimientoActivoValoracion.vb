@@ -182,4 +182,7 @@ Public Class FrmMantenimientoActivoValoracion
     Me.txtvaloradepreciar.Value = Me.txtcostoactivo.Value - Me.txtvalorsalvamento.Value
   End Sub
 
+    Private Sub FrmMantenimientoActivoValoracion_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

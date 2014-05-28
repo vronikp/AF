@@ -184,7 +184,8 @@ Public Class Enumerados
     AprobacionNuevoCustodio = 10095
     PeriodoInventario = 10100
     EstadoInventario = 10105
-    EstadoInventarioActivo = 10110
+        EstadoInventarioActivo = 10110
+        TipoPoliza = 10120
   End Enum
 #End Region
   
