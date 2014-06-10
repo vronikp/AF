@@ -717,29 +717,34 @@ Public Class Activo
       Activo_FechaUso = Nothing
     Else
       Activo_FechaUso = CDate(Fila("Activo_FechaUso"))
-    End If
-    Parame_CentroCosto = CType(Fila("Parame_CentroCosto"), Integer)
-    Pardet_CentroCosto = CType(Fila("Pardet_CentroCosto"), Integer)
-    Factura_Codigo = CType(Fila("Factura_Codigo"), Integer)
-    If TypeOf Fila("Activo_FechaBaja") Is DBNull OrElse TypeOf Fila("Pardet_TipoBajaActivo") Is DBNull Then
-      Activo_FechaBaja = Nothing
-      Parame_TipoBajaActivo = 0
-      Pardet_TipoBajaActivo = 0
-    Else
-      Activo_FechaBaja = CType(Fila("Activo_FechaBaja"), String)
-      Parame_TipoBajaActivo = CType(Fila("Parame_TipoBajaActivo"), Integer)
-      Pardet_TipoBajaActivo = CType(Fila("Pardet_TipoBajaActivo"), Integer)
-    End If
-    mPardetClaseActivo = Nothing
-    mPardetMarca = Nothing
-    mPardetEstadoDepreciacion = Nothing
-    mPardetCentroCosto = Nothing
-    mPardetTipoBajaActivo = Nothing
-    mPardetEstadoActivo = Nothing
-    mFacturaactivo = Nothing
-    mCaracteristicas = Nothing
-    mComponentes = Nothing
-    mComponentesEli = Nothing
+        End If
+        If TypeOf Fila("Activo_FechaGarantia") Is DBNull Then
+            Activo_FechaGarantia = Nothing
+        Else
+            Activo_FechaGarantia = CDate(Fila("Activo_FechaGarantia"))
+        End If
+        Parame_CentroCosto = CType(Fila("Parame_CentroCosto"), Integer)
+        Pardet_CentroCosto = CType(Fila("Pardet_CentroCosto"), Integer)
+        Factura_Codigo = CType(Fila("Factura_Codigo"), Integer)
+        If TypeOf Fila("Activo_FechaBaja") Is DBNull OrElse TypeOf Fila("Pardet_TipoBajaActivo") Is DBNull Then
+            Activo_FechaBaja = Nothing
+            Parame_TipoBajaActivo = 0
+            Pardet_TipoBajaActivo = 0
+        Else
+            Activo_FechaBaja = CType(Fila("Activo_FechaBaja"), String)
+            Parame_TipoBajaActivo = CType(Fila("Parame_TipoBajaActivo"), Integer)
+            Pardet_TipoBajaActivo = CType(Fila("Pardet_TipoBajaActivo"), Integer)
+        End If
+        mPardetClaseActivo = Nothing
+        mPardetMarca = Nothing
+        mPardetEstadoDepreciacion = Nothing
+        mPardetCentroCosto = Nothing
+        mPardetTipoBajaActivo = Nothing
+        mPardetEstadoActivo = Nothing
+        mFacturaactivo = Nothing
+        mCaracteristicas = Nothing
+        mComponentes = Nothing
+        mComponentesEli = Nothing
   End Sub
 
   Public Overridable Function Recargar() As Boolean
@@ -816,7 +821,10 @@ Public Class Activo
     OperadorDatos.AgregarParametro("@Activo_FechaCompra", Activo_FechaCompra)
     If Not Activo_FechaUso = Nothing Then
       OperadorDatos.AgregarParametro("@Activo_FechaUso", Activo_FechaUso)
-    End If
+        End If
+        If Not Activo_FechaGarantia = Nothing Then
+            OperadorDatos.AgregarParametro("@Activo_FechaGarantia", Activo_FechaGarantia)
+        End If
     OperadorDatos.AgregarParametro("@Parame_CentroCosto", Parame_CentroCosto)
     OperadorDatos.AgregarParametro("@Pardet_CentroCosto", Pardet_CentroCosto)
     OperadorDatos.AgregarParametro("@Factura_Codigo", Factura_Codigo)

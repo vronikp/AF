@@ -83,7 +83,9 @@ Public Class CtlActivo
     Me.dtfecingreso.Value = mActivo.Activo_FechaIngreso
     Me.dtfeccompra.Value = If(mActivo.Activo_FechaCompra = Nothing, Now.Date, mActivo.Activo_FechaCompra)
     Me.dtfecuso.Checked = Not mActivo.Activo_FechaUso = Nothing
-    Me.dtfecuso.Value = If(mActivo.Activo_FechaUso = Nothing, Now.Date, mActivo.Activo_FechaUso)
+        Me.dtfecuso.Value = If(mActivo.Activo_FechaUso = Nothing, Now.Date, mActivo.Activo_FechaUso)
+        Me.dtfecgarantia.Checked = Not mActivo.Activo_FechaGarantia = Nothing
+        Me.dtfecgarantia.Value = If(mActivo.Activo_FechaGarantia = Nothing, Now.Date, mActivo.Activo_FechaGarantia)
     Me.grpbaja.Visible = Not mActivo.Activo_FechaBaja = Nothing
     If Not mActivo.Activo_FechaBaja = Nothing Then
       Me.dtfecbaja.Value = mActivo.Activo_FechaBaja
@@ -213,7 +215,8 @@ Public Class CtlActivo
     mActivo.Activo_ResponsableMantenimiento = Me.txtresponsablemant.Text
     mActivo.Activo_FechaIngreso = Me.dtfecingreso.Value
     mActivo.Activo_FechaCompra = Me.dtfeccompra.Value
-    mActivo.Activo_FechaUso = IIf(Me.dtfecuso.Checked, Me.dtfecuso.Value, Nothing)
+        mActivo.Activo_FechaUso = IIf(Me.dtfecuso.Checked, Me.dtfecuso.Value, Nothing)
+        mActivo.Activo_FechaGarantia = IIf(Me.dtfecgarantia.Checked, Me.dtfecgarantia.Value, Nothing)
     If Not mActivo.Activo_FechaBaja = Nothing Then
       mActivo.Activo_FechaBaja = Me.dtfecbaja.Value
       mActivo.PardetTipoBajaActivo = Me.cbotipobaja.ParametroDet

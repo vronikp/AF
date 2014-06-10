@@ -59,7 +59,9 @@ Partial Public Class Activo
 
   Private mActivo_FechaCompra As Date = Now.Date
 
-  Private mActivo_FechaUso As Date = Nothing
+    Private mActivo_FechaUso As Date = Nothing
+
+    Private mActivo_FechaGarantia As Date = Nothing
 
   Private mParame_CentroCosto As Integer = 0
 
@@ -296,6 +298,17 @@ Partial Public Class Activo
       EsModificado = True
     End Set
   End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Activo_FechaGarantia() As Date
+        Get
+            Return Me.mActivo_FechaGarantia
+        End Get
+        Set(value As Date)
+            Me.mActivo_FechaGarantia = value
+            EsModificado = True
+        End Set
+    End Property
 
   <XmlAttribute()> _
   Public Overridable Property Parame_CentroCosto() As Integer
