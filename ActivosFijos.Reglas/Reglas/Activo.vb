@@ -521,23 +521,9 @@ Public Class Activo
     End Property
 
     <Infoware.Reportes.CampoReporteAtributo("Fecha compra", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Fecha, 100, True)> _
-    Public ReadOnly Property FechaUso() As String
-        Get
-            Return Activo_FechaCompra
-        End Get
-    End Property
-
-    <Infoware.Reportes.CampoReporteAtributo("Fecha uso", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Fecha, 100, True)> _
-    Public ReadOnly Property FechaGarantia() As String
-        Get
-            Return Activo_FechaUso
-        End Get
-    End Property
-
-    <Infoware.Reportes.CampoReporteAtributo("Fecha fin de garantia", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Fecha, 100, True)> _
     Public ReadOnly Property FechaCompra() As String
         Get
-            Return Activo_FechaGarantia
+            Return Activo_FechaCompra
         End Get
     End Property
 

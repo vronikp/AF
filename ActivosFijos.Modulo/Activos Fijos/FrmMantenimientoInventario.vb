@@ -108,8 +108,7 @@ Public Class FrmMantenimientoInventario
 
   Private Function Guardar_datos() As Boolean
     Mapear_Datos()
-        Dim _esnuevo As Boolean = mInventario.EsNuevo
-        MsgBox("Guardando")
+    Dim _esnuevo As Boolean = mInventario.EsNuevo
     If mInventario.Guardar() Then
       Auditoria.Registrar_Auditoria(Restriccion, IIf(_esnuevo, Enumerados.enumTipoAccion.Adicion, Enumerados.enumTipoAccion.Modificacion), mInventario.Descripcion)
 

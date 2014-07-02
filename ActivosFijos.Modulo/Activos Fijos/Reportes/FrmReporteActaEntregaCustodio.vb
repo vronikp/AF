@@ -74,15 +74,14 @@ Public Class FrmReporteActaEntregaCustodio
         Me.CtlBuscaCustodio.OperadorDatos = Sistema.OperadorDatos
         Me.CtlBuscaCustodio.Llenar_Datos()
 
-        ''Dim formatoItems = New List(Of TipoFormato)
-        ''formatoItems.Add(New TipoFormato("1", "Formato 1"))
-        'formatoItems.Add(New TipoFormato("2", "Formato 2"))
-        'formatoItems.Add(New TipoFormato("3", "Formato 3-a"))
-        'formatoItems.Add(New TipoFormato("4", "Formato 3-b"))
+        Dim formatoItems = New List(Of TipoFormato)
+        formatoItems.Add(New TipoFormato("1", "Formato 1"))
+        formatoItems.Add(New TipoFormato("2", "Formato 2"))
+        formatoItems.Add(New TipoFormato("3", "Formato 3"))
 
-        'Me.cboFormato.DataSource = formatoItems
-        'Me.cboFormato.DisplayMember = "Name"
-        'Me.cboFormato.ValueMember = "ID"
+        Me.cboFormato.DataSource = formatoItems
+        Me.cboFormato.DisplayMember = "Name"
+        Me.cboFormato.ValueMember = "ID"
     End Sub
 #End Region
 
@@ -102,29 +101,29 @@ Public Class FrmReporteActaEntregaCustodio
             Exit Sub
         End If
         Try
-            If cboFormato.SelectedValue.Equals(0) Then
+            If cboFormato.SelectedValue.Equals(1) Then
                 Dim info As New crpSriActaRecepcion
                 info.DataDefinition.FormulaFields("titulo").Text = String.Format("'{0}'", Me.cboPeriodoInventario.ParametroDet.Descripcion.ToUpper)
                 'info.DataDefinition.FormulaFields("Ciudad").Text = String.Format("'{0}'", Me.cbociudad.ParametroDet.Descripcion)
-                'info.DataDefinition.FormulaFields("PeriodoInventario").Text = String.Format("'{0}'", mPeriodoInventarioString)
+                ''info.DataDefinition.FormulaFields("PeriodoInventario").Text = String.Format("'{0}'", mPeriodoInventarioString)
                 'info.DataDefinition.FormulaFields("Empresa").Text = String.Format("'{0}'", New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EmpresaActivo, 1).Descripcion)
 
                 info.SetDataSource(clsReporteSRIActaRecepcion.RetornarReporteActaRecepcionDS(Custodio, Me.cboPeriodoInventario.ParametroDet, Me.cboInventario.ParametroDet, Me.chkSoloInventariados.Checked))
                 info.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4
                 'Me.CrystalReportViewer1.Zoom(1)
                 Me.ReporteDatos = info
-            ElseIf cboFormato.SelectedValue.Equals(1) Then
+            ElseIf cboFormato.SelectedValue.Equals(2) Then
                 Dim info As New crpActaRecepcionFormato2
                 info.DataDefinition.FormulaFields("titulo").Text = String.Format("'{0}'", "FORMATO 2")
                 'info.DataDefinition.FormulaFields("Ciudad").Text = String.Format("'{0}'", Me.cbociudad.ParametroDet.Descripcion)
-                'info.DataDefinition.FormulaFields("PeriodoInventario").Text = String.Format("'{0}'", mPeriodoInventarioString)
+                ''info.DataDefinition.FormulaFields("PeriodoInventario").Text = String.Format("'{0}'", mPeriodoInventarioString)
                 'info.DataDefinition.FormulaFields("Empresa").Text = String.Format("'{0}'", New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EmpresaActivo, 1).Descripcion)
 
                 info.SetDataSource(clsReporteActaRecepcionF2.RetornarReporteActaRecepcionDS(Custodio, Me.cboPeriodoInventario.ParametroDet, Me.cboInventario.ParametroDet, Me.chkSoloInventariados.Checked))
                 info.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4
                 'Me.CrystalReportViewer1.Zoom(1)
                 Me.ReporteDatos = info
-            ElseIf cboFormato.SelectedValue.Equals(2) Then
+            ElseIf cboFormato.SelectedValue.Equals(3) Then
                 Dim info As New crpActaRecepcionFormato3
                 info.DataDefinition.FormulaFields("titulo").Text = String.Format("'{0}'", "FORMATO 3")
                 'info.DataDefinition.FormulaFields("Ciudad").Text = String.Format("'{0}'", Me.cbociudad.ParametroDet.Descripcion)
@@ -135,17 +134,6 @@ Public Class FrmReporteActaEntregaCustodio
                 info.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4
                 'Me.CrystalReportViewer1.Zoom(1)
                 Me.ReporteDatos = info
-                'ElseIf cboFormato.SelectedValue.Equals(3) Then
-                '   Dim info As New crpActaRecepcionFormato3_2
-                'info.DataDefinition.FormulaFields("titulo").Text = String.Format("'{0}'", "FORMATO 4")
-                'info.DataDefinition.FormulaFields("Ciudad").Text = String.Format("'{0}'", Me.cbociudad.ParametroDet.Descripcion)
-                ''info.DataDefinition.FormulaFields("PeriodoInventario").Text = String.Format("'{0}'", mPeriodoInventarioString)
-                'info.DataDefinition.FormulaFields("Empresa").Text = String.Format("'{0}'", New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EmpresaActivo, 1).Descripcion)
-
-                '  info.SetDataSource(clsReporteActaRecepcionF3.RetornarReporteActaRecepcionDS(Custodio, Me.cboPeriodoInventario.ParametroDet, Me.cboInventario.ParametroDet, Me.chkSoloInventariados.Checked))
-                ' info.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4
-                'Me.CrystalReportViewer1.Zoom(1)
-                'Me.ReporteDatos = info
             End If
         Catch Ex As Exception
             MsgBox(Ex.Message, MsgBoxStyle.Critical, "Error")
@@ -178,8 +166,6 @@ Public Class FrmReporteActaEntregaCustodio
 
     Private Sub cboPeriodoInventario_CambioItem(sender As Object, e As System.EventArgs) Handles cboPeriodoInventario.CambioItem
         Me.cboInventario.Llenar_Datos(InventarioList.ObtenerUbicaciones(Sistema.OperadorDatos, Me.cboPeriodoInventario.ParametroDet))
-        'Dim msg = Me.cboPeriodoInventario.SelectedValue.ToString
-        'MsgBox(msg)
     End Sub
 
     Private Sub rdoActaEntrega_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rdoActaEntrega.CheckedChanged, rdoConstatacion.CheckedChanged
@@ -198,7 +184,6 @@ Public Class FrmReporteActaEntregaCustodio
     Private Sub FrmReporteActaEntregaCustodio_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
     End Sub
-
 End Class
 
 Public Class TipoFormato

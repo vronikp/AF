@@ -472,8 +472,4 @@ Public Class CtlActivo
   Private Sub CtlBuscaProveedor1_Load(sender As System.Object, e As System.EventArgs) Handles CtlBuscaProveedor1.Load
 
   End Sub
-
-    Private Sub Label29_Click(sender As System.Object, e As System.EventArgs) Handles Label29.Click
-
-    End Sub
 End Class

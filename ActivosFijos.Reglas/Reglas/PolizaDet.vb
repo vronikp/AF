@@ -67,27 +67,16 @@ Public Class PolizaDet
     End Set
   End Property
 
-    <Infoware.Reportes.CampoReporteAtributo("Codigo Barras", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 100, True)>
-    Public ReadOnly Property ActivoCodigo As String
-        Get
-            If Activo Is Nothing Then
-                Return String.Empty
-            Else
-                Return Activo.Activo_CodigoBarra
-            End If
-        End Get
-    End Property
-
-    <Infoware.Reportes.CampoReporteAtributo("Activo", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 350, True)>
-    Public ReadOnly Property ActivoString As String
-        Get
-            If Activo Is Nothing Then
-                Return String.Empty
-            Else
-                Return Activo.Descripcion
-            End If
-        End Get
-    End Property
+  <Infoware.Reportes.CampoReporteAtributo("Activo", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 350, True)>
+  Public ReadOnly Property ActivoString As String
+    Get
+      If Activo Is Nothing Then
+        Return String.Empty
+      Else
+        Return Activo.Descripcion
+      End If
+    End Get
+  End Property
 
   '<Infoware.Reportes.CampoReporteAtributo("Proveedor", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 250, True)>
   'Public ReadOnly Property ProveedorString As String

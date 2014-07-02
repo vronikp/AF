@@ -212,14 +212,12 @@ Public Class Inventario
     OperadorDatos.AgregarParametro("@Invent_Fecha", Invent_Fecha)
     OperadorDatos.AgregarParametro("@Parame_EstadoInventario", Parame_EstadoInventario)
     OperadorDatos.AgregarParametro("@Pardet_EstadoInventario", Pardet_EstadoInventario)
-        OperadorDatos.Procedimiento = _Procedimiento
-
-
+    OperadorDatos.Procedimiento = _Procedimiento
     bReturn = OperadorDatos.Ejecutar(Result)
     OperadorDatos.LimpiarParametros()
     If bReturn Then
       For Each _invdet As InventarioDet In InventarioDets
-                _invdet.Inventario = Me
+        _invdet.Inventario = Me
         If Not _invdet.Guardar Then
           bReturn = False
           Exit For
