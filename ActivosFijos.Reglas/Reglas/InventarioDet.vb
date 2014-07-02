@@ -265,8 +265,10 @@ Public Class InventarioDet
     End If
     If Not Usuari_FechaHoraRegistro = Nothing Then
       OperadorDatos.AgregarParametro("@Usuari_FechaHoraRegistro", Usuari_FechaHoraRegistro)
-    End If
-    OperadorDatos.Procedimiento = _Procedimiento
+        End If
+        'Dim msg = "estI" & Parame_EstadoInventario & "-" & Pardet_EstadoInventario & " usu" & Usuari_CodigoPDA
+
+        OperadorDatos.Procedimiento = _Procedimiento
     bReturn = OperadorDatos.Ejecutar(Result)
     OperadorDatos.LimpiarParametros()
     If bReturn Then

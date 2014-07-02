@@ -199,11 +199,11 @@ Public Class CtlBuscaActivos
       _filtro = AgregarFiltro(_filtro, "Estado de inventario: " + Me.cboestadoinv.ParametroDet.Descripcion)
     End If
     If Me.chkfecha.Checked Then
-      If Me.cbotipofecha.SelectedIndex < 4 Then
-        _filtro = AgregarFiltro(_filtro, "Rango de fechas de " + Me.cbotipofecha.SelectedText + ": " + Me.dtfecdesde.Value.ToShortDateString + " y " + Me.dtfechasta.Value.ToShortDateString)
-      Else
-        _filtro = AgregarFiltro(_filtro, Me.cbotipofecha.SelectedText)
-      End If
+            If (Me.cbotipofecha.SelectedIndex < 5) Then
+                _filtro = AgregarFiltro(_filtro, "Rango de fechas de " + Me.cbotipofecha.SelectedText + ": " + Me.dtfecdesde.Value.ToShortDateString + " y " + Me.dtfechasta.Value.ToShortDateString)
+            Else
+                _filtro = AgregarFiltro(_filtro, Me.cbotipofecha.SelectedText)
+            End If
     End If
     If Me.chksoloactivos.Checked Then
       _filtro = AgregarFiltro(_filtro, "Sólo activos")
@@ -259,6 +259,6 @@ Public Class CtlBuscaActivos
   End Sub
 
   Private Sub cbotipofecha_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbotipofecha.SelectedIndexChanged
-    Me.pnlrangofechas.Visible = Me.cbotipofecha.SelectedIndex < 4
+        Me.pnlrangofechas.Visible = Me.cbotipofecha.SelectedIndex < 5
   End Sub
 End Class
