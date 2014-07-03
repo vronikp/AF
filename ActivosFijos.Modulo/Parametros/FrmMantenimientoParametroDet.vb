@@ -8,7 +8,10 @@ Imports ActivosFijos.Reglas
 Public Class FrmMantenimientoParametroDet
 #Region "IOpcion"
   Private Sub FrmMantenimientoParametroDet_Inicializar(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Inicializar
-  End Sub
+        Me.PuedeGuardar = Restriccion.Restri_Modificacion
+        Me.PuedeGuardarcerrar = Restriccion.Restri_Modificacion
+        Me.PuedeGuardarnuevo = Restriccion.Restri_Ingreso
+    End Sub
 #End Region
 
 #Region "Parametros"
@@ -43,6 +46,7 @@ Public Class FrmMantenimientoParametroDet
       Exit Sub
     End If
 
+        
     mParametroDet = ParametroDetLists.Current
     MyBase.Tabla = mParametroDet.Parametro.Parame_Descripcion
 
@@ -146,7 +150,8 @@ Public Class FrmMantenimientoParametroDet
 
 #Region "Guardar y Eliminar"
   Private Sub FrmMantenimientoParametroDet_Guardar(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles Me.Guardar
-    e.Cancel = Not Guardar_datos()
+
+        e.Cancel = Not Guardar_datos()
   End Sub
 
   Private Sub Mapear_datos()
@@ -226,23 +231,23 @@ Public Class FrmMantenimientoParametroDet
 #End Region
 
 #Region "New"
-  Public Sub New(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, Optional ByVal _OpcionNuevo As Enumerados.EnumOpciones = Enumerados.EnumOpciones.ListadoProveedores)
-    MyBase.New(_Sistema, _Restriccion, _OpcionNuevo)
-    ' This call is required by the Windows Form Designer.
-    InitializeComponent()
+    Public Sub New(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, Optional ByVal _OpcionNuevo As Enumerados.EnumOpciones = Enumerados.EnumOpciones.Parametros)
+        MyBase.New(_Sistema, _Restriccion, _OpcionNuevo)
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
 
-    ' Add any initialization after the InitializeComponent() call.
+        ' Add any initialization after the InitializeComponent() call.
 
-  End Sub
+    End Sub
 
-  Public Sub New(ByVal _Sistema As Sistema, ByVal _OpcionActual As Enumerados.EnumOpciones, Optional ByVal _OpcionNuevo As Enumerados.EnumOpciones = Enumerados.EnumOpciones.ListadoProveedores)
-    MyBase.New(_Sistema, _OpcionActual, _OpcionNuevo)
-    ' This call is required by the Windows Form Designer.
-    InitializeComponent()
+    Public Sub New(ByVal _Sistema As Sistema, ByVal _OpcionActual As Enumerados.EnumOpciones, Optional ByVal _OpcionNuevo As Enumerados.EnumOpciones = Enumerados.EnumOpciones.Parametros)
+        MyBase.New(_Sistema, _OpcionActual, _OpcionNuevo)
+        ' This call is required by the Windows Form Designer.
+        InitializeComponent()
 
-    ' Add any initialization after the InitializeComponent() call.
-
-  End Sub
+        ' Add any initialization after the InitializeComponent() call.
+        FrmMantenimientoParametroDet_Inicializar(Me, Nothing)
+    End Sub
 #End Region
 
   Private Sub FrmMantenimientoMovimientoInventario_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed

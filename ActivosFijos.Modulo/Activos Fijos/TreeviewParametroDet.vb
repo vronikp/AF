@@ -238,7 +238,7 @@ Public Class TreeviewParametroDet
       _pardet = New WWTSParametroDet(Sistema.OperadorDatos, mPadres(_indicepadre - 1).Parame_Codigo, True)
       _pardet.PardetPadre = CType(Me.SelectedNode.Tag, WWTSParametroDet)
     End If
-    Dim f As New FrmMantenimientoParametroDet(Sistema, Enumerados.EnumOpciones.Caracteristicas)
+        Dim f As New FrmMantenimientoParametroDet(Sistema, Enumerados.EnumOpciones.Parametros)
     f.ParametroDet = _pardet
     f.ShowDialog()
     If Not _pardet.EsNuevo Then
@@ -250,7 +250,7 @@ Public Class TreeviewParametroDet
     If Me.SelectedNode.Tag Is Nothing Then
       Exit Sub
     End If
-    Dim f As New FrmMantenimientoParametroDet(Sistema, Enumerados.EnumOpciones.Caracteristicas)
+        Dim f As New FrmMantenimientoParametroDet(Sistema, Enumerados.EnumOpciones.Parametros)
     f.ParametroDet = CType(Me.SelectedNode.Tag, WWTSParametroDet)
     f.ShowDialog()
     llenar_datos()
