@@ -39,8 +39,7 @@ Public Class Enumerados
     Auditoria = 912
 
     Modulos = 9005
-        Opciones = 9010
-        Pametros = 9015
+    Opciones = 9010
   End Enum
 #End Region
 

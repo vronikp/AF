@@ -216,7 +216,7 @@ Public Class FrmMantenimientoTransaccionActivo
   Private Sub FrmMantenimientoTransaccionActivo_Inicializar(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Inicializar
     MyBase.Tabla = "Transacción Activo"
 
-        Me.PuedeGuardar = Restriccion.Restri_Modificacion
+    Me.PuedeGuardar = True
     Me.PuedeImprimir = True
 
     mUsuario = New WWTSUsuario(Sistema.OperadorDatos, Sistema.Usuario.Usuari_Codigo)
