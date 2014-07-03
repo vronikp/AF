@@ -75,9 +75,10 @@ Public Class FrmReporteActaEntregaCustodio
         Me.CtlBuscaCustodio.Llenar_Datos()
 
         Dim formatoItems = New List(Of TipoFormato)
-        formatoItems.Add(New TipoFormato("1", "Formato 1"))
-        formatoItems.Add(New TipoFormato("2", "Formato 2"))
-        formatoItems.Add(New TipoFormato("3", "Formato 3"))
+        formatoItems.Add(New TipoFormato("1", "Vertical con Caracteristicas"))
+        formatoItems.Add(New TipoFormato("2", "Vertical General"))
+        formatoItems.Add(New TipoFormato("3", "Horizontal Cod.Aux."))
+        formatoItems.Add(New TipoFormato("4", "Horizontal Cod.Aux. 2"))
 
         Me.cboFormato.DataSource = formatoItems
         Me.cboFormato.DisplayMember = "Name"
@@ -125,6 +126,17 @@ Public Class FrmReporteActaEntregaCustodio
                 Me.ReporteDatos = info
             ElseIf cboFormato.SelectedValue.Equals(3) Then
                 Dim info As New crpActaRecepcionFormato3
+                info.DataDefinition.FormulaFields("titulo").Text = String.Format("'{0}'", "FORMATO 3")
+                'info.DataDefinition.FormulaFields("Ciudad").Text = String.Format("'{0}'", Me.cbociudad.ParametroDet.Descripcion)
+                ''info.DataDefinition.FormulaFields("PeriodoInventario").Text = String.Format("'{0}'", mPeriodoInventarioString)
+                'info.DataDefinition.FormulaFields("Empresa").Text = String.Format("'{0}'", New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EmpresaActivo, 1).Descripcion)
+
+                info.SetDataSource(clsReporteActaRecepcionF3.RetornarReporteActaRecepcionDS(Custodio, Me.cboPeriodoInventario.ParametroDet, Me.cboInventario.ParametroDet, Me.chkSoloInventariados.Checked))
+                info.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4
+                'Me.CrystalReportViewer1.Zoom(1)
+                Me.ReporteDatos = info
+            ElseIf cboFormato.SelectedValue.Equals(4) Then
+                Dim info As New crpActaRecepcionFormato4
                 info.DataDefinition.FormulaFields("titulo").Text = String.Format("'{0}'", "FORMATO 3")
                 'info.DataDefinition.FormulaFields("Ciudad").Text = String.Format("'{0}'", Me.cbociudad.ParametroDet.Descripcion)
                 ''info.DataDefinition.FormulaFields("PeriodoInventario").Text = String.Format("'{0}'", mPeriodoInventarioString)
