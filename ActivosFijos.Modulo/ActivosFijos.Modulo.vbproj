@@ -219,6 +219,12 @@
     <Compile Include="Activos Fijos\Reportes\clsResumenDepreciacionPorTipo.vb" />
     <Compile Include="Activos Fijos\Reportes\clsReporteSRIActaRecepcion.vb" />
     <Compile Include="Activos Fijos\Reportes\clsReporteActaRecepcionF3.vb" />
+    <Compile Include="Activos Fijos\Reportes\crpActaRecepcionFormato4.vb">
+      <DependentUpon>crpActaRecepcionFormato4.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Activos Fijos\Reportes\crpActaRecepcionFormato3.vb">
       <DependentUpon>crpActaRecepcionFormato3.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -753,6 +759,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\FrmMantenimientoFacturaActivo.resx">
       <DependentUpon>FrmMantenimientoFacturaActivo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activos Fijos\Reportes\crpActaRecepcionFormato4.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpActaRecepcionFormato4.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\Reportes\crpActaRecepcionFormato3.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
