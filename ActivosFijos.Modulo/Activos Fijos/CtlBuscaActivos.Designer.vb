@@ -286,7 +286,7 @@ Partial Class CtlBuscaActivos
         Me.cbotipofecha.Dock = System.Windows.Forms.DockStyle.Top
         Me.cbotipofecha.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbotipofecha.FormattingEnabled = True
-        Me.cbotipofecha.Items.AddRange(New Object() {"Compra entre", "Inicio depreciacion entre", "Uso entre", "Baja entre", "Sin fecha de uso", "Con fecha de baja", "Fin de garantia", "Sin garantia", "Fin de polizas"})
+        Me.cbotipofecha.Items.AddRange(New Object() {"Compra entre", "Inicio depreciacion entre", "Uso entre", "Baja entre", "Fin de garantia entre", "Sin fecha de uso", "Con fecha de baja", "Sin garantia", "Con garantia"})
         Me.cbotipofecha.Location = New System.Drawing.Point(15, 0)
         Me.cbotipofecha.Name = "cbotipofecha"
         Me.cbotipofecha.Size = New System.Drawing.Size(230, 21)

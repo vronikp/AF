@@ -44,13 +44,15 @@ Partial Class CtlActivo
         Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.dtfecgarantia = New System.Windows.Forms.DateTimePicker()
+        Me.Label29 = New System.Windows.Forms.Label()
         Me.CtlGrupoTipoClase = New ActivosFijos.Modulo.CtlParametroDetAnidado()
         Me.pnlcopiaractivo = New System.Windows.Forms.Panel()
         Me.btncopiaractivo = New System.Windows.Forms.Button()
         Me.dgcaracteristicas = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-        Me.DataGridViewTextBoxColumn65 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.bscaracteristicas = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn73 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bscaracteristicas = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn81 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.grpbaja = New System.Windows.Forms.GroupBox()
         Me.dtfecbaja = New System.Windows.Forms.DateTimePicker()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -92,14 +94,14 @@ Partial Class CtlActivo
         Me.cbocentrocosto = New ActivosFijos.Modulo.ComboBoxParametroDet()
         Me.grpcustodio = New System.Windows.Forms.GroupBox()
         Me.dgcustodios = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-        Me.DataGridViewTextBoxColumn66 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.bscustodios = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn74 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bscustodios = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn82 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.grpubicacion = New System.Windows.Forms.GroupBox()
         Me.dgubicaciones = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-        Me.DataGridViewTextBoxColumn67 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.bsubicaciones = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn75 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bsubicaciones = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn83 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnlubicacionnuevo = New System.Windows.Forms.Panel()
         Me.CtlBuscaCustodio = New ActivosFijos.Modulo.CtlBuscaEmpleado()
         Me.Label22 = New System.Windows.Forms.Label()
@@ -108,13 +110,13 @@ Partial Class CtlActivo
         Me.grpvaloracion = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.dgDepreciaciones = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-        Me.DataGridViewTextBoxColumn68 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.bsdepreciaciones = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn76 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bsdepreciaciones = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn84 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvaloracion = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-        Me.DataGridViewTextBoxColumn69 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.bsvaloraciones = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn77 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bsvaloraciones = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn85 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ToolStrip3 = New System.Windows.Forms.ToolStrip()
         Me.btnnuevovaloracion = New System.Windows.Forms.ToolStripButton()
         Me.pnlvaloracion = New System.Windows.Forms.Panel()
@@ -131,9 +133,9 @@ Partial Class CtlActivo
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.dgComponentes = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-        Me.DataGridViewTextBoxColumn70 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.bscomponentes = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn78 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bscomponentes = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn86 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.btnnuevocomp = New System.Windows.Forms.ToolStripButton()
         Me.btnmodicomp = New System.Windows.Forms.ToolStripButton()
@@ -141,19 +143,27 @@ Partial Class CtlActivo
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.dgpoliza = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-        Me.DataGridViewTextBoxColumn71 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.bspolizas = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn79 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bspolizas = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn87 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dginventarios = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-        Me.DataGridViewTextBoxColumn72 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.bsinventarios = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataGridViewTextBoxColumn80 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.bsinventarios = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn88 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtcodbarracruce = New Infoware.Controles.Base.TextBoxStd()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.DataGridViewTextBoxColumn65 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn66 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn67 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn68 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn69 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn70 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn71 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn72 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn57 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn58 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn59 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -233,8 +243,6 @@ Partial Class CtlActivo
         Me.CtlBuscaFactura1 = New ActivosFijos.Modulo.CtlBuscaFactura()
         Me.CtlBuscaProveedor1 = New ActivosFijos.Modulo.CtlBuscaProveedor()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.dtfecgarantia = New System.Windows.Forms.DateTimePicker()
-        Me.Label29 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.pnlcopiaractivo.SuspendLayout()
@@ -338,6 +346,24 @@ Partial Class CtlActivo
         Me.TabPage1.Text = "Datos principales"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'dtfecgarantia
+        '
+        Me.dtfecgarantia.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtfecgarantia.Location = New System.Drawing.Point(492, 107)
+        Me.dtfecgarantia.Name = "dtfecgarantia"
+        Me.dtfecgarantia.ShowCheckBox = True
+        Me.dtfecgarantia.Size = New System.Drawing.Size(137, 20)
+        Me.dtfecgarantia.TabIndex = 39
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(346, 111)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(112, 13)
+        Me.Label29.TabIndex = 38
+        Me.Label29.Text = "Fecha fin de garantía:"
+        '
         'CtlGrupoTipoClase
         '
         Me.CtlGrupoTipoClase.Location = New System.Drawing.Point(154, 102)
@@ -382,7 +408,7 @@ Partial Class CtlActivo
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgcaracteristicas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgcaracteristicas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgcaracteristicas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn73})
+        Me.dgcaracteristicas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn81})
         Me.dgcaracteristicas.DataSource = Me.bscaracteristicas
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
@@ -398,15 +424,15 @@ Partial Class CtlActivo
         Me.dgcaracteristicas.Size = New System.Drawing.Size(349, 199)
         Me.dgcaracteristicas.TabIndex = 37
         '
-        'DataGridViewTextBoxColumn65
-        '
-        Me.DataGridViewTextBoxColumn65.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn65.Name = "DataGridViewTextBoxColumn65"
-        '
         'DataGridViewTextBoxColumn73
         '
         Me.DataGridViewTextBoxColumn73.HeaderText = "No existen registros a presentar"
         Me.DataGridViewTextBoxColumn73.Name = "DataGridViewTextBoxColumn73"
+        '
+        'DataGridViewTextBoxColumn81
+        '
+        Me.DataGridViewTextBoxColumn81.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn81.Name = "DataGridViewTextBoxColumn81"
         '
         'grpbaja
         '
@@ -871,7 +897,7 @@ Partial Class CtlActivo
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgcustodios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgcustodios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgcustodios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn74})
+        Me.dgcustodios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn82})
         Me.dgcustodios.DataSource = Me.bscustodios
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
@@ -888,17 +914,17 @@ Partial Class CtlActivo
         Me.dgcustodios.Size = New System.Drawing.Size(698, 121)
         Me.dgcustodios.TabIndex = 0
         '
-        'DataGridViewTextBoxColumn66
-        '
-        Me.DataGridViewTextBoxColumn66.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn66.Name = "DataGridViewTextBoxColumn66"
-        Me.DataGridViewTextBoxColumn66.ReadOnly = True
-        '
         'DataGridViewTextBoxColumn74
         '
         Me.DataGridViewTextBoxColumn74.HeaderText = "No existen registros a presentar"
         Me.DataGridViewTextBoxColumn74.Name = "DataGridViewTextBoxColumn74"
         Me.DataGridViewTextBoxColumn74.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn82
+        '
+        Me.DataGridViewTextBoxColumn82.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn82.Name = "DataGridViewTextBoxColumn82"
+        Me.DataGridViewTextBoxColumn82.ReadOnly = True
         '
         'grpubicacion
         '
@@ -926,7 +952,7 @@ Partial Class CtlActivo
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgubicaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgubicaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgubicaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn75})
+        Me.dgubicaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn83})
         Me.dgubicaciones.DataSource = Me.bsubicaciones
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
@@ -943,17 +969,17 @@ Partial Class CtlActivo
         Me.dgubicaciones.Size = New System.Drawing.Size(698, 121)
         Me.dgubicaciones.TabIndex = 0
         '
-        'DataGridViewTextBoxColumn67
-        '
-        Me.DataGridViewTextBoxColumn67.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn67.Name = "DataGridViewTextBoxColumn67"
-        Me.DataGridViewTextBoxColumn67.ReadOnly = True
-        '
         'DataGridViewTextBoxColumn75
         '
         Me.DataGridViewTextBoxColumn75.HeaderText = "No existen registros a presentar"
         Me.DataGridViewTextBoxColumn75.Name = "DataGridViewTextBoxColumn75"
         Me.DataGridViewTextBoxColumn75.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn83
+        '
+        Me.DataGridViewTextBoxColumn83.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn83.Name = "DataGridViewTextBoxColumn83"
+        Me.DataGridViewTextBoxColumn83.ReadOnly = True
         '
         'pnlubicacionnuevo
         '
@@ -1054,7 +1080,7 @@ Partial Class CtlActivo
         DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgDepreciaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgDepreciaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgDepreciaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn76})
+        Me.dgDepreciaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn84})
         Me.dgDepreciaciones.DataSource = Me.bsdepreciaciones
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
@@ -1079,17 +1105,17 @@ Partial Class CtlActivo
         Me.dgDepreciaciones.Size = New System.Drawing.Size(692, 132)
         Me.dgDepreciaciones.TabIndex = 1
         '
-        'DataGridViewTextBoxColumn68
-        '
-        Me.DataGridViewTextBoxColumn68.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn68.Name = "DataGridViewTextBoxColumn68"
-        Me.DataGridViewTextBoxColumn68.ReadOnly = True
-        '
         'DataGridViewTextBoxColumn76
         '
         Me.DataGridViewTextBoxColumn76.HeaderText = "No existen registros a presentar"
         Me.DataGridViewTextBoxColumn76.Name = "DataGridViewTextBoxColumn76"
         Me.DataGridViewTextBoxColumn76.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn84
+        '
+        Me.DataGridViewTextBoxColumn84.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn84.Name = "DataGridViewTextBoxColumn84"
+        Me.DataGridViewTextBoxColumn84.ReadOnly = True
         '
         'dgvaloracion
         '
@@ -1106,7 +1132,7 @@ Partial Class CtlActivo
         DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvaloracion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvaloracion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvaloracion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn77})
+        Me.dgvaloracion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn85})
         Me.dgvaloracion.DataSource = Me.bsvaloraciones
         DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
@@ -1123,20 +1149,20 @@ Partial Class CtlActivo
         Me.dgvaloracion.Size = New System.Drawing.Size(692, 132)
         Me.dgvaloracion.TabIndex = 0
         '
-        'DataGridViewTextBoxColumn69
-        '
-        Me.DataGridViewTextBoxColumn69.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn69.Name = "DataGridViewTextBoxColumn69"
-        Me.DataGridViewTextBoxColumn69.ReadOnly = True
-        '
-        'bsvaloraciones
-        '
-        '
         'DataGridViewTextBoxColumn77
         '
         Me.DataGridViewTextBoxColumn77.HeaderText = "No existen registros a presentar"
         Me.DataGridViewTextBoxColumn77.Name = "DataGridViewTextBoxColumn77"
         Me.DataGridViewTextBoxColumn77.ReadOnly = True
+        '
+        'bsvaloraciones
+        '
+        '
+        'DataGridViewTextBoxColumn85
+        '
+        Me.DataGridViewTextBoxColumn85.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn85.Name = "DataGridViewTextBoxColumn85"
+        Me.DataGridViewTextBoxColumn85.ReadOnly = True
         '
         'ToolStrip3
         '
@@ -1342,7 +1368,7 @@ Partial Class CtlActivo
         DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgComponentes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle12
         Me.dgComponentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgComponentes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn78})
+        Me.dgComponentes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn86})
         Me.dgComponentes.DataSource = Me.bscomponentes
         DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window
@@ -1359,17 +1385,17 @@ Partial Class CtlActivo
         Me.dgComponentes.Size = New System.Drawing.Size(698, 417)
         Me.dgComponentes.TabIndex = 0
         '
-        'DataGridViewTextBoxColumn70
-        '
-        Me.DataGridViewTextBoxColumn70.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn70.Name = "DataGridViewTextBoxColumn70"
-        Me.DataGridViewTextBoxColumn70.ReadOnly = True
-        '
         'DataGridViewTextBoxColumn78
         '
         Me.DataGridViewTextBoxColumn78.HeaderText = "No existen registros a presentar"
         Me.DataGridViewTextBoxColumn78.Name = "DataGridViewTextBoxColumn78"
         Me.DataGridViewTextBoxColumn78.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn86
+        '
+        Me.DataGridViewTextBoxColumn86.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn86.Name = "DataGridViewTextBoxColumn86"
+        Me.DataGridViewTextBoxColumn86.ReadOnly = True
         '
         'ToolStrip2
         '
@@ -1444,7 +1470,7 @@ Partial Class CtlActivo
         DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgpoliza.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
         Me.dgpoliza.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgpoliza.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn79})
+        Me.dgpoliza.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn87})
         Me.dgpoliza.DataSource = Me.bspolizas
         DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window
@@ -1461,17 +1487,17 @@ Partial Class CtlActivo
         Me.dgpoliza.Size = New System.Drawing.Size(698, 442)
         Me.dgpoliza.TabIndex = 0
         '
-        'DataGridViewTextBoxColumn71
-        '
-        Me.DataGridViewTextBoxColumn71.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn71.Name = "DataGridViewTextBoxColumn71"
-        Me.DataGridViewTextBoxColumn71.ReadOnly = True
-        '
         'DataGridViewTextBoxColumn79
         '
         Me.DataGridViewTextBoxColumn79.HeaderText = "No existen registros a presentar"
         Me.DataGridViewTextBoxColumn79.Name = "DataGridViewTextBoxColumn79"
         Me.DataGridViewTextBoxColumn79.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn87
+        '
+        Me.DataGridViewTextBoxColumn87.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn87.Name = "DataGridViewTextBoxColumn87"
+        Me.DataGridViewTextBoxColumn87.ReadOnly = True
         '
         'TabPage2
         '
@@ -1510,7 +1536,7 @@ Partial Class CtlActivo
         DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dginventarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle16
         Me.dginventarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dginventarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn80})
+        Me.dginventarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn88})
         Me.dginventarios.DataSource = Me.bsinventarios
         DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window
@@ -1535,17 +1561,17 @@ Partial Class CtlActivo
         Me.dginventarios.Size = New System.Drawing.Size(698, 442)
         Me.dginventarios.TabIndex = 0
         '
-        'DataGridViewTextBoxColumn72
-        '
-        Me.DataGridViewTextBoxColumn72.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn72.Name = "DataGridViewTextBoxColumn72"
-        Me.DataGridViewTextBoxColumn72.ReadOnly = True
-        '
         'DataGridViewTextBoxColumn80
         '
         Me.DataGridViewTextBoxColumn80.HeaderText = "No existen registros a presentar"
         Me.DataGridViewTextBoxColumn80.Name = "DataGridViewTextBoxColumn80"
         Me.DataGridViewTextBoxColumn80.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn88
+        '
+        Me.DataGridViewTextBoxColumn88.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn88.Name = "DataGridViewTextBoxColumn88"
+        Me.DataGridViewTextBoxColumn88.ReadOnly = True
         '
         'TabPage3
         '
@@ -1592,6 +1618,53 @@ Partial Class CtlActivo
         Me.Label4.Size = New System.Drawing.Size(90, 13)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Código de barras:"
+        '
+        'DataGridViewTextBoxColumn65
+        '
+        Me.DataGridViewTextBoxColumn65.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn65.Name = "DataGridViewTextBoxColumn65"
+        '
+        'DataGridViewTextBoxColumn66
+        '
+        Me.DataGridViewTextBoxColumn66.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn66.Name = "DataGridViewTextBoxColumn66"
+        Me.DataGridViewTextBoxColumn66.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn67
+        '
+        Me.DataGridViewTextBoxColumn67.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn67.Name = "DataGridViewTextBoxColumn67"
+        Me.DataGridViewTextBoxColumn67.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn68
+        '
+        Me.DataGridViewTextBoxColumn68.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn68.Name = "DataGridViewTextBoxColumn68"
+        Me.DataGridViewTextBoxColumn68.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn69
+        '
+        Me.DataGridViewTextBoxColumn69.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn69.Name = "DataGridViewTextBoxColumn69"
+        Me.DataGridViewTextBoxColumn69.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn70
+        '
+        Me.DataGridViewTextBoxColumn70.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn70.Name = "DataGridViewTextBoxColumn70"
+        Me.DataGridViewTextBoxColumn70.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn71
+        '
+        Me.DataGridViewTextBoxColumn71.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn71.Name = "DataGridViewTextBoxColumn71"
+        Me.DataGridViewTextBoxColumn71.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn72
+        '
+        Me.DataGridViewTextBoxColumn72.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn72.Name = "DataGridViewTextBoxColumn72"
+        Me.DataGridViewTextBoxColumn72.ReadOnly = True
         '
         'DataGridViewTextBoxColumn57
         '
@@ -2087,24 +2160,6 @@ Partial Class CtlActivo
         Me.Label13.TabIndex = 2
         Me.Label13.Text = "Fecha de factura:"
         '
-        'dtfecgarantia
-        '
-        Me.dtfecgarantia.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtfecgarantia.Location = New System.Drawing.Point(492, 107)
-        Me.dtfecgarantia.Name = "dtfecgarantia"
-        Me.dtfecgarantia.ShowCheckBox = True
-        Me.dtfecgarantia.Size = New System.Drawing.Size(137, 20)
-        Me.dtfecgarantia.TabIndex = 39
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(346, 111)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(98, 13)
-        Me.Label29.TabIndex = 38
-        Me.Label29.Text = "Fecha de garantía:"
-        '
         'CtlActivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2359,5 +2414,13 @@ Partial Class CtlActivo
     Friend WithEvents DataGridViewTextBoxColumn78 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn79 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn80 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn81 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn82 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn83 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn84 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn85 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn86 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn87 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn88 As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

@@ -513,6 +513,17 @@ Public Class Activo
     End Get
   End Property
 
+    <Infoware.Reportes.CampoReporteAtributo("Depreciable", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 120, True)> _
+    Public ReadOnly Property DepreciableString() As String
+        Get
+            If PardetMarca Is Nothing Then
+                Return String.Empty
+            Else
+                Return PardetEstadoDepreciacion.Descripcion
+            End If
+        End Get
+    End Property
+
     <Infoware.Reportes.CampoReporteAtributo("Fecha inicio dep.", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Fecha, 100, True)> _
     Public ReadOnly Property FechaInicioDep() As String
         Get

@@ -80,6 +80,17 @@ Public Class Poliza
         End Get
     End Property
 
+    <Infoware.Reportes.CampoReporteAtributo("Descripcion", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 250, True)>
+    Public ReadOnly Property PolizaDescripcionString As String
+        Get
+            If mPoliza_Descripcion Is Nothing Then
+                Return String.Empty
+            Else
+                Return mPoliza_Descripcion
+            End If
+        End Get
+    End Property
+
     <Infoware.Reportes.CampoReporteAtributo("Proveedor", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 250, True)>
 Public ReadOnly Property ProveedorString As String
         Get
