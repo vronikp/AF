@@ -69,6 +69,29 @@ Public Class FrmListaActivos
     End Set
   End Property
 
+    Public Property MostrarDesinventariar As Boolean
+        Get
+            Return Me.lblDesinventariar.Visible
+        End Get
+        Set(value As Boolean)
+            Me.lblDesinventariar.Visible = value
+            If value Then
+                Me.Text = "Desinventariar"
+                Me.DataGridView1.ForeColor = Color.DarkRed
+            End If
+        End Set
+    End Property
+
+    Private mInventario As Inventario
+    Public Property Inventario As Inventario
+        Get
+            Return mInventario
+        End Get
+        Set(value As Inventario)
+            mInventario = value
+        End Set
+    End Property
+
 #Region "Eventos"
   Private Sub FrmListaActivos_Abrir(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Abrir
     Abrir_Mantenimiento()
@@ -216,4 +239,16 @@ Public Class FrmListaActivos
 
     Llenar_datos()
   End Sub
+
+
+    Private Sub lblDesinventariar_Click(sender As System.Object, e As System.EventArgs) Handles lblDesinventariar.Click
+        If ActivosSeleccionados Is Nothing OrElse ActivosSeleccionados.Count = 0 Then
+            Exit Sub
+        End If
+        Dim f As New FrmMantenimientoDesinventariar(Sistema, Restriccion)
+        f.Activos = ActivosSeleccionados
+        f.Inventario = mInventario
+        f.ShowDialog()
+        Llenar_datos()
+    End Sub
 End Class

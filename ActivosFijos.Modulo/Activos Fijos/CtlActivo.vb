@@ -35,9 +35,16 @@ Public Class CtlActivo
       Exit Sub
     End If
     CargarCombos()
-    Me.pnlcopiaractivo.Enabled = Not mActivo.EsNuevo
+        Me.pnlcopiaractivo.Enabled = Not mActivo.EsNuevo
+        'Es version basica
+        Dim PardetEmpresaActivo = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EmpresaActivo, 1)
+        If PardetEmpresaActivo.Pardet_DatoStr1 = "F8MM7B" And PardetEmpresaActivo.Pardet_DatoStr2 = "N9ME4A" And
+            PardetEmpresaActivo.Pardet_DatoStr3 = "F6MG3S" And PardetEmpresaActivo.Pardet_DatoInt1 = 151102 And
+            PardetEmpresaActivo.Pardet_DatoBit1 = True Then
+            Me.TabControl1.TabPages.Remove(Me.TabPage2)
+        End If
 
-    If Not mActivo.EsNuevo AndAlso mActivo.Facturaactivo IsNot Nothing Then
+        If Not mActivo.EsNuevo AndAlso mActivo.Facturaactivo IsNot Nothing Then
       Me.CtlBuscaProveedor1.Proveedor = mActivo.Facturaactivo.Proveedor
       Me.CtlBuscaFactura1.FacturaActivo = mActivo.Facturaactivo
       Me.dtfecfactura.Value = mActivo.Facturaactivo.Factura_Fecha
@@ -199,7 +206,7 @@ Public Class CtlActivo
     mActivo.Activo_Codigo = Me.txtcodigo.Value
     mActivo.Activo_CodigoBarra = Me.txtcodigobarra.Text
     mActivo.Activo_CodigoBarraCruce = Me.txtcodbarracruce.Text
-    Me.txtcodigoauxiliar.Text = mActivo.Activo_CodigoAux
+        mActivo.Activo_CodigoAux = Me.txtcodigoauxiliar.Text
     mActivo.Activo_Serie = Me.txtserie.Text
     If Me.CtlGrupoTipoClase.ParametroDet Is Nothing OrElse Not Me.CtlGrupoTipoClase.ParametroDet.Parame_Codigo = Enumerados.EnumParametros.ClaseActivo Then
       Me.TabControl1.SelectedTab = Me.TpUbicacion

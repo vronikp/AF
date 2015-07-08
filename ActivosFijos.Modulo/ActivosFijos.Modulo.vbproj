@@ -114,6 +114,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activos Fijos\FrmMantenimientoDesinventariar.Designer.vb">
+      <DependentUpon>FrmMantenimientoDesinventariar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Activos Fijos\FrmMantenimientoDesinventariar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Activos Fijos\CtlInventario.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -691,6 +697,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Activos Fijos\FrmMantenimientoDesinventariar.resx">
+      <DependentUpon>FrmMantenimientoDesinventariar.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\FrmListaBajasActivo.resx">
       <DependentUpon>FrmListaBajasActivo.vb</DependentUpon>
     </EmbeddedResource>

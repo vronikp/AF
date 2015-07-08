@@ -162,6 +162,7 @@ Public Class Inventario
     Invent_Fecha = CDate(Fila("Invent_Fecha"))
     Parame_EstadoInventario = CInt(Fila("Parame_EstadoInventario"))
     Pardet_EstadoInventario = CInt(Fila("Pardet_EstadoInventario"))
+        Invent_SolicitarConfirmacion = CType(Fila("Invent_SolicitaConfirmacion"), Boolean)
 
     mPardetUbicacion = Nothing
     mPardetPeriodoInventario = Nothing
@@ -211,7 +212,8 @@ Public Class Inventario
     OperadorDatos.AgregarParametro("@Invent_Descripcion", Invent_Descripcion)
     OperadorDatos.AgregarParametro("@Invent_Fecha", Invent_Fecha)
     OperadorDatos.AgregarParametro("@Parame_EstadoInventario", Parame_EstadoInventario)
-    OperadorDatos.AgregarParametro("@Pardet_EstadoInventario", Pardet_EstadoInventario)
+        OperadorDatos.AgregarParametro("@Pardet_EstadoInventario", Pardet_EstadoInventario)
+        OperadorDatos.AgregarParametro("@Invent_SolicitaConfirmacion", Invent_SolicitarConfirmacion)
     OperadorDatos.Procedimiento = _Procedimiento
     bReturn = OperadorDatos.Ejecutar(Result)
     OperadorDatos.LimpiarParametros()

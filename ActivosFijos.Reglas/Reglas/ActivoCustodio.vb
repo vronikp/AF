@@ -96,6 +96,17 @@ Public Class ActivoCustodio
     End Get
   End Property
 
+    <Infoware.Reportes.CampoReporteAtributo("Cod. Barras", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 40, True)> _
+    Public ReadOnly Property ActivoCodigoBarras() As String
+        Get
+            If Activo Is Nothing Then
+                Return String.Empty
+            Else
+                Return Activo.Activo_CodigoBarra
+            End If
+        End Get
+    End Property
+
   <Infoware.Reportes.CampoReporteAtributo("Activo", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 250, True)> _
   Public ReadOnly Property ActivoString() As String
     Get

@@ -94,7 +94,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\Dropbox\GitHub\ActivosFijos\ActivosFijos.Reglas\ActivosFijos.Reglas.vbproj">
+    <ProjectReference Include="..\ActivosFijos.Reglas\ActivosFijos.Reglas.vbproj">
       <Project>{36279C53-6E4D-4AB0-9687-64075A391C0D}</Project>
       <Name>ActivosFijos.Reglas</Name>
     </ProjectReference>

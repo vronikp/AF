@@ -123,65 +123,73 @@ Public Class FrmInventariarActivo
     Me.pnlactivo.Visible = False
   End Sub
 
-  Private Sub btninventariar_Click(sender As System.Object, e As System.EventArgs) Handles btninventariar.Click
-    Dim invdet As InventarioDet = Nothing
+    Private Sub btninventariar_Click(sender As System.Object, e As System.EventArgs) Handles btninventariar.Click
+        Dim invdet As InventarioDet = Nothing
 
-    If Activo Is Nothing Then
-      Exit Sub
-    End If
+        If Activo Is Nothing Then
+            Exit Sub
+        End If
 
-    If Activo.EsNuevo Then
-      Try
-        Me.CtlActivo1.Mapear_datos()
-        If Me.CtlActivo1.Guardar Then
-          invdet = New InventarioDet(Sistema.OperadorDatos, True)
-          invdet.Inventario = mInventario
-          invdet.Activocustodio = Me.CtlActivo1.Activo.ActivoCustodioActual
-          invdet.Activoubicacion = Me.CtlActivo1.Activo.ActivoUbicacionActual
-          invdet.InvDet_Activo = True
-          invdet.PardetEstadoInventario = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EstadoInventarioActivo, Enumerados.enumEstadoInventarioActivo.EncontradoNuevo)
-          Me.CtlActivo1.Activo.Recargar()
-          Me.CtlActivo1.llenar_datos()
+        'If Sistema.Usuario Is Not Nothing Then
+        'MessageBox.Show(Sistema.UsuarioString)
+        'End If
+
+
+        If Activo.EsNuevo Then
+            Try
+                Me.CtlActivo1.Mapear_datos()
+                If Me.CtlActivo1.Guardar Then
+                    invdet = New InventarioDet(Sistema.OperadorDatos, True)
+                    invdet.Inventario = mInventario
+                    invdet.Activocustodio = Me.CtlActivo1.Activo.ActivoCustodioActual
+                    invdet.Activoubicacion = Me.CtlActivo1.Activo.ActivoUbicacionActual
+                    invdet.InvDet_Activo = True
+                    invdet.PardetEstadoInventario = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EstadoInventarioActivo, Enumerados.enumEstadoInventarioActivo.EncontradoNuevo)
+                    Me.CtlActivo1.Activo.Recargar()
+                    Me.CtlActivo1.llenar_datos()
+                Else
+                    MsgBox(Sistema.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
+                    Exit Sub
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message, MsgBoxStyle.Critical, "Error")
+                Exit Sub
+            End Try
         Else
-          MsgBox(Sistema.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
-          Exit Sub
+            Try
+                Me.CtlActivo1.Guardar()
+                invdet = New InventarioDet(Sistema.OperadorDatos, mInventario.Parame_Ubicacion, mInventario.Pardet_Ubicacion, mInventario.Parame_PeriodoInventario, mInventario.Pardet_PeriodoInventario, Activo.Activo_Codigo)
+                If Not invdet.Pardet_EstadoInventario = Enumerados.enumEstadoInventarioActivo.NoInventariado Then
+                    MsgBox("El activo ya fue inventariado", MsgBoxStyle.Critical, "Error")
+                    Exit Sub
+                End If
+                'invdet.Usuari_CodigoPDA = Sistema.UsuarioString
+                invdet.PardetEstadoInventario = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EstadoInventarioActivo, Enumerados.enumEstadoInventarioActivo.Inventariado)
+            Catch ex As Exception
+                invdet = New InventarioDet(Sistema.OperadorDatos, True)
+                invdet.Inventario = mInventario
+                invdet.Activocustodio = Activo.ActivoCustodioActual
+                invdet.Activoubicacion = Activo.ActivoUbicacionActual
+                invdet.InvDet_Activo = True
+                invdet.PardetEstadoInventario = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EstadoInventarioActivo, Enumerados.enumEstadoInventarioActivo.EncontradoExistente)
+            End Try
         End If
-      Catch ex As Exception
-        MsgBox(ex.Message, MsgBoxStyle.Critical, "Error")
-        Exit Sub
-      End Try
-    Else
-      Try
-        Me.CtlActivo1.Guardar()
-        invdet = New InventarioDet(Sistema.OperadorDatos, mInventario.Parame_Ubicacion, mInventario.Pardet_Ubicacion, mInventario.Parame_PeriodoInventario, mInventario.Pardet_PeriodoInventario, Activo.Activo_Codigo)
-        If Not invdet.Pardet_EstadoInventario = Enumerados.enumEstadoInventarioActivo.NoInventariado Then
-          MsgBox("El activo ya fue inventariado", MsgBoxStyle.Critical, "Error")
-          Exit Sub
+
+        If invdet Is Nothing Then
+            Exit Sub
         End If
-        invdet.PardetEstadoInventario = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EstadoInventarioActivo, Enumerados.enumEstadoInventarioActivo.Inventariado)
-      Catch ex As Exception
-        invdet = New InventarioDet(Sistema.OperadorDatos, True)
-        invdet.Inventario = mInventario
-        invdet.Activocustodio = Activo.ActivoCustodioActual
-        invdet.Activoubicacion = Activo.ActivoUbicacionActual
-        invdet.InvDet_Activo = True
-        invdet.PardetEstadoInventario = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EstadoInventarioActivo, Enumerados.enumEstadoInventarioActivo.EncontradoExistente)
-      End Try
-    End If
 
-    If invdet Is Nothing Then
-      Exit Sub
-    End If
+        invdet.Usuari_CodigoPDA = Sistema.UsuarioString
 
-    If invdet.Guardar(Me.CtlBuscaCustodio.Empleado.Entida_Codigo, Me.CtlUbicacionActivo1.ParametroDet.Parame_Codigo, Me.CtlUbicacionActivo1.ParametroDet.Pardet_Secuencia) Then
-      'Me.Close()
-      MsgBox("Inventario correctamente registrado", MsgBoxStyle.Information, "Información")
-      Me.pnlactivo.Visible = False
-    Else
-      MsgBox(invdet.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
-      Exit Sub
-    End If
-  End Sub
+        If invdet.Guardar(Me.CtlBuscaCustodio.Empleado.Entida_Codigo, Me.CtlUbicacionActivo1.ParametroDet.Parame_Codigo, Me.CtlUbicacionActivo1.ParametroDet.Pardet_Secuencia) Then
+            'Me.Close()
+            MsgBox("Inventario correctamente registrado", MsgBoxStyle.Information, "Información")
+            Me.pnlactivo.Visible = False
+        Else
+            MsgBox(invdet.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
+            Exit Sub
+        End If
+    End Sub
 
   Private Sub btnnuevo_Click(sender As System.Object, e As System.EventArgs) Handles btnnuevo.Click
     If Me.CtlUbicacionActivo1.ParametroDet Is Nothing OrElse Not Me.CtlUbicacionActivo1.ParametroDet.Parame_Codigo = Enumerados.EnumParametros.UbicacionActivo Then
