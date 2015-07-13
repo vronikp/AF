@@ -996,66 +996,69 @@ Public Class ActivoList
   '4 Sin fecha de uso
   '5 Sin fecha de baja
 
-  Public Shared Function ObtenerLista(ByVal _OperadorDatos As OperadorDatos, ByVal _CodigoBarras As String, ByVal _CodigoAux As String, ByVal _Serie As String, ByVal _Descripcion As String, ByVal _Clase As WWTSParametroDet, ByVal _Marca As WWTSParametroDet, ByVal _Modelo As String, ByVal _Proveedor As Proveedor, ByVal _Factura As FacturaActivo, ByVal _Custodio As Empleado, ByVal _Ubicacion As WWTSParametroDet, ByVal _Estadoinv As WWTSParametroDet, ByVal _SoloActivos As Boolean, ByVal _RangoFecha As Integer, ByVal _Desde As Date, ByVal _Hasta As Date, ByVal _TipoBaja As WWTSParametroDet) As ActivoList
-    Dim oResult As New ActivoList
-    Dim bReturn As Boolean
-    Dim ds As DataTable = Nothing
-    With _OperadorDatos
-      .AgregarParametro("@Accion", "F")
-      .AgregarParametro("@Activo_CodigoBarra", _CodigoBarras)
-      .AgregarParametro("@Activo_CodigoAux", _CodigoAux)
-      .AgregarParametro("@Activo_Serie", _Serie)
-      .AgregarParametro("@Activo_Descripcion", _Descripcion)
-      If _Clase IsNot Nothing Then
-        .AgregarParametro("@Parame_ClaseActivo", _Clase.Parame_Codigo)
-        .AgregarParametro("@Pardet_ClaseActivo", _Clase.Pardet_Secuencia)
-      End If
-      If _Marca IsNot Nothing Then
-        .AgregarParametro("@Pardet_Marca", _Marca.Pardet_Secuencia)
-      End If
-      .AgregarParametro("@Activo_Modelo", _Modelo)
-      If _Proveedor IsNot Nothing Then
-        .AgregarParametro("@Entida_Proveedor", _Proveedor.Entida_Codigo)
-        If _Factura IsNot Nothing Then
-          .AgregarParametro("@Factura_Codigo", _Factura.Factura_Codigo)
+    Public Shared Function ObtenerLista(ByVal _OperadorDatos As OperadorDatos, ByVal _CodigoBarras As String, ByVal _CodigoAux As String, ByVal _Serie As String, ByVal _Descripcion As String, ByVal _Clase As WWTSParametroDet, ByVal _Marca As WWTSParametroDet, ByVal _Modelo As String, ByVal _Proveedor As Proveedor, ByVal _Factura As FacturaActivo, ByVal _Custodio As Empleado, ByVal _Ubicacion As WWTSParametroDet, ByVal _Estadoinv As WWTSParametroDet, ByVal _SoloActivos As Boolean, ByVal _RangoFecha As Integer, ByVal _Desde As Date, ByVal _Hasta As Date, ByVal _TipoBaja As WWTSParametroDet, Optional ByVal _filtro As String = "") As ActivoList
+        Dim oResult As New ActivoList
+        Dim bReturn As Boolean
+        Dim ds As DataTable = Nothing
+        With _OperadorDatos
+            .AgregarParametro("@Accion", "F")
+            .AgregarParametro("@Activo_CodigoBarra", _CodigoBarras)
+            .AgregarParametro("@Activo_CodigoAux", _CodigoAux)
+            .AgregarParametro("@Activo_Serie", _Serie)
+            .AgregarParametro("@Activo_Descripcion", _Descripcion)
+            If _Clase IsNot Nothing Then
+                .AgregarParametro("@Parame_ClaseActivo", _Clase.Parame_Codigo)
+                .AgregarParametro("@Pardet_ClaseActivo", _Clase.Pardet_Secuencia)
+            End If
+            If _Marca IsNot Nothing Then
+                .AgregarParametro("@Pardet_Marca", _Marca.Pardet_Secuencia)
+            End If
+            .AgregarParametro("@Activo_Modelo", _Modelo)
+            If _Proveedor IsNot Nothing Then
+                .AgregarParametro("@Entida_Proveedor", _Proveedor.Entida_Codigo)
+                If _Factura IsNot Nothing Then
+                    .AgregarParametro("@Factura_Codigo", _Factura.Factura_Codigo)
+                End If
+            End If
+            If _Custodio IsNot Nothing Then
+                .AgregarParametro("@Entida_Custodio", _Custodio.Entida_Codigo)
+            End If
+            If _Ubicacion IsNot Nothing Then
+                .AgregarParametro("@Parame_Ubicacion", _Ubicacion.Parame_Codigo)
+                .AgregarParametro("@Pardet_Ubicacion", _Ubicacion.Pardet_Secuencia)
+            End If
+            If _Estadoinv IsNot Nothing Then
+                .AgregarParametro("@Parame_EstadoInventario", _Estadoinv.Parame_Codigo)
+                .AgregarParametro("@Pardet_EstadoInventario", _Estadoinv.Pardet_Secuencia)
+            End If
+            If _SoloActivos Then
+                .AgregarParametro("@SoloActivos", _SoloActivos)
+            End If
+            .AgregarParametro("@RangoFecha", _RangoFecha)
+            If _RangoFecha >= 0 Then
+                .AgregarParametro("@FechaDesde", _Desde.Date)
+                .AgregarParametro("@FechaHasta", _Hasta.Date)
+            End If
+            If _TipoBaja IsNot Nothing Then
+                .AgregarParametro("@Parame_TipoBajaActivo", _TipoBaja.Parame_Codigo)
+                .AgregarParametro("@Pardet_TipoBajaActivo", _TipoBaja.Pardet_Secuencia)
+            End If
+            If _filtro IsNot Nothing Then
+                .AgregarParametro("@filtro", _filtro)
+            End If
+            .Procedimiento = "proc_Activo"
+            bReturn = .Ejecutar(ds)
+            .LimpiarParametros()
+        End With
+        If bReturn AndAlso Not ds Is Nothing AndAlso ds.Rows.Count > 0 Then
+            For Each _dr As DataRow In ds.Rows
+                Dim _fila As New Activo(_OperadorDatos, False)
+                _fila.MapearDataRowaObjeto(_dr)
+                oResult.Add(_fila)
+            Next
         End If
-      End If
-      If _Custodio IsNot Nothing Then
-        .AgregarParametro("@Entida_Custodio", _Custodio.Entida_Codigo)
-      End If
-      If _Ubicacion IsNot Nothing Then
-        .AgregarParametro("@Parame_Ubicacion", _Ubicacion.Parame_Codigo)
-        .AgregarParametro("@Pardet_Ubicacion", _Ubicacion.Pardet_Secuencia)
-      End If
-      If _Estadoinv IsNot Nothing Then
-        .AgregarParametro("@Parame_EstadoInventario", _Estadoinv.Parame_Codigo)
-        .AgregarParametro("@Pardet_EstadoInventario", _Estadoinv.Pardet_Secuencia)
-      End If
-      If _SoloActivos Then
-        .AgregarParametro("@SoloActivos", _SoloActivos)
-      End If
-      .AgregarParametro("@RangoFecha", _RangoFecha)
-      If _RangoFecha >= 0 Then
-        .AgregarParametro("@FechaDesde", _Desde.Date)
-        .AgregarParametro("@FechaHasta", _Hasta.Date)
-      End If
-      If _TipoBaja IsNot Nothing Then
-        .AgregarParametro("@Parame_TipoBajaActivo", _TipoBaja.Parame_Codigo)
-        .AgregarParametro("@Pardet_TipoBajaActivo", _TipoBaja.Pardet_Secuencia)
-      End If
-      .Procedimiento = "proc_Activo"
-      bReturn = .Ejecutar(ds)
-      .LimpiarParametros()
-    End With
-    If bReturn AndAlso Not ds Is Nothing AndAlso ds.Rows.Count > 0 Then
-      For Each _dr As DataRow In ds.Rows
-        Dim _fila As New Activo(_OperadorDatos, False)
-        _fila.MapearDataRowaObjeto(_dr)
-        oResult.Add(_fila)
-      Next
-    End If
-    Return oResult
-  End Function
+        Return oResult
+    End Function
   'Public Shared Function ObtenerLista(_TransaccionActivo As TransaccionActivo, Optional ByVal _filtro As String = "") As ActivoList
   '  Dim oResult As New ActivoList
   '  Dim bReturn As Boolean

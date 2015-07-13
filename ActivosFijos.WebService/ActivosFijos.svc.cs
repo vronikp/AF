@@ -60,7 +60,7 @@ namespace ActivosFijosServices
                 if (string.IsNullOrWhiteSpace(mCodigoBarra))
                 {
                     activo = ActivoList.ObtenerLista(this.mOperadorDatosList[0], "", "", mSerie,
-                        "", null, null, "", null, null, null, null, null, true, -1, DateTime.Now, DateTime.Now, null)[0];
+                        "", null, null, "", null, null, null, null, null, true, -1, DateTime.Now, DateTime.Now, null,null )[0];
                 }
                 else
                 {
@@ -400,6 +400,63 @@ namespace ActivosFijosServices
                     Descripcion = det.DescripcionLarga };
                 index++;
             }
+            return result;
+        }
+
+        public Activo[] ListaActivos(int mCustodio, int mParame_Ubicacion, int mPardet_Ubicacion, Inventario mInventario, bool soloInventariados)
+        {
+            ActivoList listaActivos;
+            if (soloInventariados)
+            {
+                listaActivos = ActivoList.ObtenerLista(this.mOperadorDatosList[0], null, null, null, null, null, null, null, null, null,
+                new ActivosFijos.Reglas.Empleado(this.mOperadorDatosList[0], mCustodio),
+                new WWTSParametroDet(this.mOperadorDatosList[0], mParame_Ubicacion, mPardet_Ubicacion),
+                new WWTSParametroDet(this.mOperadorDatosList[0], (int)Enumerados.EnumParametros.EstadoInventarioActivo, (int)Enumerados.enumEstadoInventarioActivo.NoInventariado), 
+                true, -1, DateTime.MinValue, DateTime.MinValue, null, "inventario");
+            }
+            else
+            {
+                listaActivos = ActivoList.ObtenerLista(this.mOperadorDatosList[0], null, null, null, null, null, null, null, null, null,
+                new ActivosFijos.Reglas.Empleado(this.mOperadorDatosList[0], mCustodio),
+                new WWTSParametroDet(this.mOperadorDatosList[0], mParame_Ubicacion, mPardet_Ubicacion),
+                null, true, -1, DateTime.MinValue, DateTime.MinValue, null, "inventario");
+            }
+            
+            //InventarioList list = InventarioList.ObtenerListaActivos(this.mOperadorDatosList[0], null, null);
+            Activo[] result = new Activo[listaActivos.Count];
+            //Inventario[] result = new Inventario[list.Count];
+            int index = 0;
+            foreach (ActivosFijos.Reglas.Activo activo in listaActivos)
+            {
+                InventarioDet invdet = new InventarioDet(this.mOperadorDatosList[0], mInventario.Parame_Ubicacion, mInventario.Pardet_Ubicacion,
+                        mInventario.Parame_PeriodoInventario, mInventario.Pardet_PeriodoInventario, activo.Activo_Codigo);
+
+                result[index] = new Activo
+                {
+                    Activo_Codigo = activo.Activo_Codigo,
+                    Activo_CodigoBarra = activo.Activo_CodigoBarra,
+                    Parame_ClaseActivo = activo.Parame_ClaseActivo,
+                    Pardet_ClaseActivo = activo.Pardet_ClaseActivo,
+                    Activo_Descripcion = activo.ClaseString + ' ' + activo.Activo_Descripcion,
+                    Parame_Marca = activo.Parame_Marca,
+                    Pardet_Marca = activo.Pardet_Marca,
+                    Activo_ResponsableMantenimiento = activo.MarcaString,
+                    Activo_Modelo = activo.Activo_Modelo,
+                    Activo_Serie = activo.Activo_Serie,
+                    Activo_Observacion = invdet.PardetEstadoInventario.Pardet_Descripcion
+
+                    /*Parame_PeriodoInventario = inventario.Parame_PeriodoInventario,
+                    Pardet_PeriodoInventario = inventario.Pardet_PeriodoInventario,
+                    Parame_Ubicacion = inventario.Parame_Ubicacion,
+                    Pardet_Ubicacion = inventario.Pardet_Ubicacion,
+                    Descripcion = inventario.Descripcion,
+                    Invent_Fecha = inventario.Invent_Fecha,
+                    Parame_EstadoInventario = inventario.Parame_EstadoInventario,
+                    Pardet_EstadoInventario = inventario.Pardet_EstadoInventario*/
+                };
+                index++;
+            }
+
             return result;
         }
 

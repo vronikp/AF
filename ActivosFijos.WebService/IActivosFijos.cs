@@ -18,6 +18,8 @@ namespace ActivosFijosServices
         [OperationContract]
         string GuardarInventarioDet(string mUsuario, Inventario mInventario, Activo mActivo, int mCustodio, int mParame_Ubicacion, int mPardet_Ubicacion);
         [OperationContract]
+        Activo[] ListaActivos(int mCustodio, int mParame_Ubicacion, int mPardet_Ubicacion, Inventario mInventario, bool soloInventariados);
+        [OperationContract]
         bool IniciarSesion(string mUsuario, string mContrasena);
         [OperationContract]
         Inventario[] InventariosActivos();
