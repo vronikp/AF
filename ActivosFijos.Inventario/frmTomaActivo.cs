@@ -62,6 +62,7 @@ namespace ActivosFijos
 
         private void LimpiarCampos()
         {
+            txtCodigo.Text = "";
             cboTipo.SelectedIndex = -1;
             cboClase.SelectedIndex = -1;
             txtDescripcion.Text = "";
@@ -159,63 +160,87 @@ namespace ActivosFijos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
+            if (cboClase.SelectedIndex == -1)
             {
-                mActivo.Activo_CodigoBarra = txtActivo.Text;
-                mActivo.Activo_CodigoAux = txtCodAux.Text;
-                mActivo.Activo_Serie = txtSerie.Text;
-                mActivo.Parame_ClaseActivo = CLASE;
-                mActivo.Pardet_ClaseActivo = (int)cboClase.SelectedValue;
-                mActivo.Activo_Descripcion = txtDescripcion.Text;
-                mActivo.Parame_Marca = MARCA;
-                mActivo.Pardet_Marca = (int) cboMarca.SelectedValue;
-                mActivo.Activo_Modelo = txtModelo.Text;
-                mActivo.Activo_Observacion = txtObservacion.Text;
-                mActivo.Parame_EstadoDepreciacion = ESTADODEPRECIACION;
-                mActivo.Pardet_EstadoDepreciacion = (int)cboDepreciacion.SelectedValue;
-                mActivo.Parame_EstadoActivo = ESTADOACTIVO;
-                mActivo.Pardet_EstadoActivo = (int)cboEstadoActivo.SelectedValue;
-                mActivo.Activo_ResponsableMantenimiento = txtResponsable.Text;
-
-                mActivo.Caracteristicas = new Caracteristica[pnladic.Controls.Count];
-                int i = 0;
-                foreach (ActivosFijos.Controles.CtlAdicional ctl in pnladic.Controls)
-                {
-                    mActivo.Caracteristicas[i] = ctl.get_Catacteristica();
-                    i++;
-                }
-
-                mActivo.Pardet_Ubicacion = pUbicacion.Pardet_Secuencia;
-                mActivo.Entida_Custodio = eCustodio.Emplea_Custodio;
-
-                string result = cliente.GuardarInventarioDet(mUsuario, mInventario, mActivo,
-                   eCustodio.Emplea_Custodio, pUbicacion.Parame_Codigo, pUbicacion.Pardet_Secuencia);
-                if (!string.IsNullOrEmpty(result))
-                {
-                    MessageBox.Show("Error al registrar el inventario " + result, "Error");
-                }
-                else
-                {
-                    MessageBox.Show("Registro guardado", "Mensaje");
-                    pnlBusqueda.Enabled = true;
-                    btnGuardar.Enabled = false;
-                    txtActivo.Focus();
-
-
-                    pnlListaActivos.Visible = true;
-                    pnlBusqueda.Visible = true;
-                    tabControl1.Visible = false;
-                    btnBack.Enabled = false;
-                    btnNext.Enabled = false;
-
-                    //actualizar lista activos
-                    verificarChecks();
-
-                }
+                MessageBox.Show("Seleccione la clase.","Mensaje");
             }
-            catch
+            else if (cboMarca.SelectedIndex == -1)
             {
-                MessageBox.Show("Error guardando inventario, puede deberse a problemas de conexión o de concurrencia, inténtelo de nuevo");
+                MessageBox.Show("Seleccione la marca.", "Mensaje");
+            }
+            else if ( cboDepreciacion.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione el estado de depreciación.", "Mensaje");
+            }
+            else if (cboEstadoActivo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione el estado del activo.", "Mensaje");
+            }
+            else
+            {
+
+                try
+                {
+                    mActivo.Activo_CodigoBarra = txtActivo.Text;
+                    mActivo.Activo_CodigoAux = txtCodAux.Text;
+                    mActivo.Activo_Serie = txtSerie.Text;
+                    mActivo.Parame_ClaseActivo = CLASE;
+                    mActivo.Pardet_ClaseActivo = (int)cboClase.SelectedValue;
+                    mActivo.Activo_Descripcion = txtDescripcion.Text;
+                    mActivo.Parame_Marca = MARCA;
+                    mActivo.Pardet_Marca = (int)cboMarca.SelectedValue;
+                    mActivo.Activo_Modelo = txtModelo.Text;
+                    mActivo.Activo_Observacion = txtObservacion.Text;
+                    mActivo.Parame_EstadoDepreciacion = ESTADODEPRECIACION;
+                    mActivo.Pardet_EstadoDepreciacion = (int)cboDepreciacion.SelectedValue;
+                    mActivo.Parame_EstadoActivo = ESTADOACTIVO;
+                    mActivo.Pardet_EstadoActivo = (int)cboEstadoActivo.SelectedValue;
+                    mActivo.Activo_ResponsableMantenimiento = txtResponsable.Text;
+
+                    mActivo.Caracteristicas = new Caracteristica[pnladic.Controls.Count];
+                    int i = 0;
+                    foreach (ActivosFijos.Controles.CtlAdicional ctl in pnladic.Controls)
+                    {
+                        mActivo.Caracteristicas[i] = ctl.get_Catacteristica();
+                        i++;
+                    }
+
+                    mActivo.Pardet_Ubicacion = pUbicacion.Pardet_Secuencia;
+                    mActivo.Entida_Custodio = eCustodio.Emplea_Custodio;
+
+                    string result = cliente.GuardarInventarioDet(mUsuario, mInventario, mActivo,
+                       eCustodio.Emplea_Custodio, pUbicacion.Parame_Codigo, pUbicacion.Pardet_Secuencia);
+                    if (!string.IsNullOrEmpty(result))
+                    {
+                        MessageBox.Show("Error al registrar el inventario " + result, "Error");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Registro guardado", "Mensaje");
+                        pnlBusqueda.Enabled = true;
+                        btnGuardar.Enabled = false;
+                        txtActivo.Focus();
+
+                        txtActivo.Text = "";
+                        txtSerie1.Text = "";
+                        txtCodigo.Text = "";
+
+                        btnLimpiar.Enabled = false;
+                        pnlListaActivos.Visible = true;
+                        pnlBusqueda.Visible = true;
+                        tabControl1.Visible = false;
+                        btnBack.Enabled = false;
+                        btnNext.Enabled = false;
+
+                        //actualizar lista activos
+                        verificarChecks();
+
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Error guardando inventario, puede deberse a problemas de conexión o de concurrencia, inténtelo de nuevo");
+                }
             }
             
         }
@@ -256,7 +281,7 @@ namespace ActivosFijos
                     return;
                 }
 
-                txtmarca.Text = "";
+                //txtmarca.Text = "";
 
                 pnlDatos.Enabled = false;
                 pnladic.Enabled = false;
@@ -265,8 +290,12 @@ namespace ActivosFijos
                 tabControl1.Enabled = true;
                 if (mActivo.esNuevo)
                 {
-                    MessageBox.Show("Activo nuevo", "Mensaje");
-                    LimpiarCampos();
+                    MessageBox.Show("Activo no existe", "Mensaje");
+                    //LimpiarCampos();
+                    //para inventario interprof:
+                    /*MessageBox.Show("Activo nuevo", "Mensaje");
+                    btnLimpiar.Enabled = true;
+                    txtCodigo.Text = txtActivo.Text;
                     CargarCaracteristicasporTipo();
                     pnlDatos.Enabled = true;
                     pnladic.Enabled = true;
@@ -274,7 +303,7 @@ namespace ActivosFijos
                     pnlListaActivos.Visible = false;
                     pnlBusqueda.Visible = false;
                     tabControl1.Visible = true;
-                    btnBack.Enabled = true;
+                    btnBack.Enabled = true;*/
                     //btnNext.Enabled = true;
                 }
                 else
@@ -292,6 +321,8 @@ namespace ActivosFijos
                         {
                             pnlBusqueda.Enabled = false;
                             btnGuardar.Enabled = true;
+                            //inventario interprof
+                            tabControl1.Enabled = true;
 
                             pnlListaActivos.Visible = false;
                             pnlBusqueda.Visible = false;
@@ -454,24 +485,32 @@ namespace ActivosFijos
 
         private void verificarChecks()
         {
-            if (this.chbSoloUbicacion.Checked && this.chkSoloInventariados.Checked)
+            try
             {
-                mActivos = cliente.ListaActivos(eCustodio.Emplea_Custodio, pUbicacion.Parame_Codigo, pUbicacion.Pardet_Secuencia, mInventario, true);
+
+                if (this.chbSoloUbicacion.Checked && this.chkSoloInventariados.Checked)
+                {
+                    mActivos = cliente.ListaActivos(eCustodio.Emplea_Custodio, pUbicacion.Parame_Codigo, pUbicacion.Pardet_Secuencia, mInventario, true);
+                }
+                else if (this.chbSoloUbicacion.Checked)
+                {
+                    mActivos = cliente.ListaActivos(eCustodio.Emplea_Custodio, pUbicacion.Parame_Codigo, pUbicacion.Pardet_Secuencia, mInventario, false);
+                }
+                else if (this.chkSoloInventariados.Checked)
+                {
+                    mActivos = cliente.ListaActivos(eCustodio.Emplea_Custodio, mInventario.Parame_Ubicacion, mInventario.Pardet_Ubicacion, mInventario, true);
+                }
+                else
+                {
+                    mActivos = cliente.ListaActivos(eCustodio.Emplea_Custodio, mInventario.Parame_Ubicacion, mInventario.Pardet_Ubicacion, mInventario, false);
+                }
+                dgActivos.DataSource = mActivos;
+                llenarDatos();
             }
-            else if (this.chbSoloUbicacion.Checked)
-            {
-                mActivos = cliente.ListaActivos(eCustodio.Emplea_Custodio, pUbicacion.Parame_Codigo, pUbicacion.Pardet_Secuencia, mInventario, false);
+            catch (Exception ex) 
+            { 
+                //MessageBox.Show("Error: "+ ex.ToString()); 
             }
-            else if (this.chkSoloInventariados.Checked)
-            {
-                mActivos = cliente.ListaActivos(eCustodio.Emplea_Custodio, mInventario.Parame_Ubicacion, mInventario.Pardet_Ubicacion, mInventario, true);
-            }
-            else
-            {
-                mActivos = cliente.ListaActivos(eCustodio.Emplea_Custodio, mInventario.Parame_Ubicacion, mInventario.Pardet_Ubicacion, mInventario, false);
-            }
-            dgActivos.DataSource = mActivos;
-            llenarDatos();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -495,6 +534,20 @@ namespace ActivosFijos
         private void chkSoloInventariados_CheckStateChanged(object sender, EventArgs e)
         {
             verificarChecks();
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtActivo.Text = "";
+            txtSerie1.Text = "";
+            LimpiarCampos();
+            //btnBack.Enabled = false;
+            //pnlListaActivos.Visible = true;
+            //pnlBusqueda.Visible = true;
+            //pnlBusqueda.Enabled = true;
+            //btnGuardar.Enabled = false;
+            //tabControl1.Visible = false;
+            //btnNext.Enabled = false;
         }
 
 

@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActivosFijos.Inventario", "
 EndProject
 Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "SetupInventario", "SetupInventario\SetupInventario.vddproj", "{29549D4A-DD50-42E8-8CC0-88E79E3506A5}"
 EndProject
+Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "SetupCCInventario", "ActivosFijosInventario\ActivosFijosInventario.vddproj", "{68253208-B820-44D6-BE54-C1FC5C14EA65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{29549D4A-DD50-42E8-8CC0-88E79E3506A5}.Debug|Any CPU.Build.0 = Debug
 		{29549D4A-DD50-42E8-8CC0-88E79E3506A5}.Release|Any CPU.ActiveCfg = Release
 		{29549D4A-DD50-42E8-8CC0-88E79E3506A5}.Release|Any CPU.Build.0 = Release
+		{68253208-B820-44D6-BE54-C1FC5C14EA65}.Debug|Any CPU.ActiveCfg = Debug
+		{68253208-B820-44D6-BE54-C1FC5C14EA65}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -36,16 +36,10 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.pnlDatos = new System.Windows.Forms.Panel();
             this.cboEstadoActivo = new System.Windows.Forms.ComboBox();
-            this.txtSerie = new ActivosFijos.Controles.TextBoxStd();
-            this.txtModelo = new ActivosFijos.Controles.TextBoxStd();
             this.cboMarca = new System.Windows.Forms.ComboBox();
-            this.txtmarca = new ActivosFijos.Controles.TextBoxStd();
-            this.txtDescripcion = new ActivosFijos.Controles.TextBoxStd();
             this.cboClase = new System.Windows.Forms.ComboBox();
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.cboGrupo = new System.Windows.Forms.ComboBox();
-            this.txtCodAux = new ActivosFijos.Controles.TextBoxStd();
-            this.txtCodigo = new ActivosFijos.Controles.TextBoxStd();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblEstadoActivo = new System.Windows.Forms.Label();
             this.lblSerie = new System.Windows.Forms.Label();
@@ -63,8 +57,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlOtros = new System.Windows.Forms.Panel();
-            this.txtResponsable = new ActivosFijos.Controles.TextBoxStd();
-            this.txtObservacion = new ActivosFijos.Controles.TextBoxStd();
             this.cboDepreciacion = new System.Windows.Forms.ComboBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblResponsable = new System.Windows.Forms.Label();
@@ -73,11 +65,10 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.pnlBusqueda = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtSerie1 = new ActivosFijos.Controles.TextBoxStd();
-            this.txtActivo = new ActivosFijos.Controles.TextBoxStd();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnatras = new System.Windows.Forms.Button();
@@ -85,6 +76,16 @@
             this.dgActivos = new System.Windows.Forms.DataGrid();
             this.chkSoloInventariados = new System.Windows.Forms.CheckBox();
             this.chbSoloUbicacion = new System.Windows.Forms.CheckBox();
+            this.txtSerie = new ActivosFijos.Controles.TextBoxStd();
+            this.txtModelo = new ActivosFijos.Controles.TextBoxStd();
+            this.txtmarca = new ActivosFijos.Controles.TextBoxStd();
+            this.txtDescripcion = new ActivosFijos.Controles.TextBoxStd();
+            this.txtCodAux = new ActivosFijos.Controles.TextBoxStd();
+            this.txtCodigo = new ActivosFijos.Controles.TextBoxStd();
+            this.txtResponsable = new ActivosFijos.Controles.TextBoxStd();
+            this.txtObservacion = new ActivosFijos.Controles.TextBoxStd();
+            this.txtSerie1 = new ActivosFijos.Controles.TextBoxStd();
+            this.txtActivo = new ActivosFijos.Controles.TextBoxStd();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -186,24 +187,6 @@
             this.cboEstadoActivo.Size = new System.Drawing.Size(567, 20);
             this.cboEstadoActivo.TabIndex = 19;
             // 
-            // txtSerie
-            // 
-            this.txtSerie.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtSerie.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtSerie.Location = new System.Drawing.Point(0, 175);
-            this.txtSerie.Name = "txtSerie";
-            this.txtSerie.Size = new System.Drawing.Size(567, 19);
-            this.txtSerie.TabIndex = 18;
-            // 
-            // txtModelo
-            // 
-            this.txtModelo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtModelo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtModelo.Location = new System.Drawing.Point(0, 156);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(567, 19);
-            this.txtModelo.TabIndex = 17;
-            // 
             // cboMarca
             // 
             this.cboMarca.Dock = System.Windows.Forms.DockStyle.Top;
@@ -212,25 +195,6 @@
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(567, 20);
             this.cboMarca.TabIndex = 16;
-            // 
-            // txtmarca
-            // 
-            this.txtmarca.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtmarca.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtmarca.Location = new System.Drawing.Point(0, 117);
-            this.txtmarca.Name = "txtmarca";
-            this.txtmarca.Size = new System.Drawing.Size(567, 19);
-            this.txtmarca.TabIndex = 15;
-            this.txtmarca.TextChanged += new System.EventHandler(this.txtmarca_PressEnter);
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtDescripcion.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtDescripcion.Location = new System.Drawing.Point(0, 98);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(567, 19);
-            this.txtDescripcion.TabIndex = 14;
             // 
             // cboClase
             // 
@@ -260,26 +224,6 @@
             this.cboGrupo.Size = new System.Drawing.Size(567, 20);
             this.cboGrupo.TabIndex = 11;
             this.cboGrupo.SelectedIndexChanged += new System.EventHandler(this.cboGrupo_SelectedIndexChanged);
-            // 
-            // txtCodAux
-            // 
-            this.txtCodAux.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtCodAux.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtCodAux.Location = new System.Drawing.Point(0, 19);
-            this.txtCodAux.Name = "txtCodAux";
-            this.txtCodAux.ReadOnly = true;
-            this.txtCodAux.Size = new System.Drawing.Size(567, 19);
-            this.txtCodAux.TabIndex = 10;
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtCodigo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtCodigo.Location = new System.Drawing.Point(0, 0);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(567, 19);
-            this.txtCodigo.TabIndex = 9;
             // 
             // panel5
             // 
@@ -404,7 +348,7 @@
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Location = new System.Drawing.Point(0, 0);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(638, 323);
+            this.tabPage2.Size = new System.Drawing.Size(630, 320);
             this.tabPage2.Text = "Otros";
             // 
             // pnladic
@@ -413,7 +357,7 @@
             this.pnladic.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnladic.Location = new System.Drawing.Point(0, 80);
             this.pnladic.Name = "pnladic";
-            this.pnladic.Size = new System.Drawing.Size(638, 243);
+            this.pnladic.Size = new System.Drawing.Size(630, 240);
             // 
             // label7
             // 
@@ -421,7 +365,7 @@
             this.label7.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
             this.label7.Location = new System.Drawing.Point(0, 60);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(638, 20);
+            this.label7.Size = new System.Drawing.Size(630, 20);
             this.label7.Text = "Caracteristicas:";
             // 
             // panel1
@@ -431,7 +375,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(638, 60);
+            this.panel1.Size = new System.Drawing.Size(630, 60);
             // 
             // pnlOtros
             // 
@@ -441,25 +385,7 @@
             this.pnlOtros.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlOtros.Location = new System.Drawing.Point(71, 0);
             this.pnlOtros.Name = "pnlOtros";
-            this.pnlOtros.Size = new System.Drawing.Size(567, 60);
-            // 
-            // txtResponsable
-            // 
-            this.txtResponsable.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtResponsable.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtResponsable.Location = new System.Drawing.Point(0, 39);
-            this.txtResponsable.Name = "txtResponsable";
-            this.txtResponsable.Size = new System.Drawing.Size(567, 19);
-            this.txtResponsable.TabIndex = 22;
-            // 
-            // txtObservacion
-            // 
-            this.txtObservacion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtObservacion.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtObservacion.Location = new System.Drawing.Point(0, 20);
-            this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(567, 19);
-            this.txtObservacion.TabIndex = 21;
+            this.pnlOtros.Size = new System.Drawing.Size(559, 60);
             // 
             // cboDepreciacion
             // 
@@ -467,7 +393,7 @@
             this.cboDepreciacion.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
             this.cboDepreciacion.Location = new System.Drawing.Point(0, 0);
             this.cboDepreciacion.Name = "cboDepreciacion";
-            this.cboDepreciacion.Size = new System.Drawing.Size(567, 20);
+            this.cboDepreciacion.Size = new System.Drawing.Size(559, 20);
             this.cboDepreciacion.TabIndex = 20;
             // 
             // panel8
@@ -512,7 +438,7 @@
             this.btnGuardar.Enabled = false;
             this.btnGuardar.Location = new System.Drawing.Point(7, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(71, 18);
+            this.btnGuardar.Size = new System.Drawing.Size(53, 18);
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Invent.";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -535,26 +461,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(567, 41);
             // 
-            // txtSerie1
-            // 
-            this.txtSerie1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtSerie1.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtSerie1.Location = new System.Drawing.Point(0, 19);
-            this.txtSerie1.Name = "txtSerie1";
-            this.txtSerie1.Size = new System.Drawing.Size(567, 19);
-            this.txtSerie1.TabIndex = 1;
-            this.txtSerie1.PressEnter += new System.EventHandler(this.txtSerie1_PressEnter);
-            // 
-            // txtActivo
-            // 
-            this.txtActivo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtActivo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtActivo.Location = new System.Drawing.Point(0, 0);
-            this.txtActivo.Name = "txtActivo";
-            this.txtActivo.Size = new System.Drawing.Size(567, 19);
-            this.txtActivo.TabIndex = 0;
-            this.txtActivo.PressEnter += new System.EventHandler(this.txtActivo_PressEnter);
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label1);
@@ -575,6 +481,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnLimpiar);
             this.panel2.Controls.Add(this.btnNext);
             this.panel2.Controls.Add(this.btnBack);
             this.panel2.Controls.Add(this.btnGuardar);
@@ -584,12 +491,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(638, 23);
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Enabled = false;
+            this.btnLimpiar.Location = new System.Drawing.Point(119, 2);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(53, 18);
+            this.btnLimpiar.TabIndex = 19;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // btnNext
             // 
             this.btnNext.Enabled = false;
-            this.btnNext.Location = new System.Drawing.Point(119, 2);
+            this.btnNext.Location = new System.Drawing.Point(92, 2);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(33, 18);
+            this.btnNext.Size = new System.Drawing.Size(20, 18);
             this.btnNext.TabIndex = 18;
             this.btnNext.Text = ">";
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -597,18 +514,18 @@
             // btnBack
             // 
             this.btnBack.Enabled = false;
-            this.btnBack.Location = new System.Drawing.Point(82, 2);
+            this.btnBack.Location = new System.Drawing.Point(66, 2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(33, 18);
+            this.btnBack.Size = new System.Drawing.Size(20, 18);
             this.btnBack.TabIndex = 17;
             this.btnBack.Text = "<";
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnatras
             // 
-            this.btnatras.Location = new System.Drawing.Point(156, 2);
+            this.btnatras.Location = new System.Drawing.Point(178, 2);
             this.btnatras.Name = "btnatras";
-            this.btnatras.Size = new System.Drawing.Size(71, 18);
+            this.btnatras.Size = new System.Drawing.Size(53, 18);
             this.btnatras.TabIndex = 16;
             this.btnatras.Text = "Salir";
             this.btnatras.Click += new System.EventHandler(this.btnatras_Click);
@@ -655,6 +572,100 @@
             this.chbSoloUbicacion.TabIndex = 8;
             this.chbSoloUbicacion.Text = "Sólo activos de la ubicación seleccionada";
             this.chbSoloUbicacion.CheckStateChanged += new System.EventHandler(this.chbSoloUbicacion_CheckStateChanged);
+            // 
+            // txtSerie
+            // 
+            this.txtSerie.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtSerie.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtSerie.Location = new System.Drawing.Point(0, 175);
+            this.txtSerie.Name = "txtSerie";
+            this.txtSerie.Size = new System.Drawing.Size(567, 19);
+            this.txtSerie.TabIndex = 18;
+            // 
+            // txtModelo
+            // 
+            this.txtModelo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtModelo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtModelo.Location = new System.Drawing.Point(0, 156);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(567, 19);
+            this.txtModelo.TabIndex = 17;
+            // 
+            // txtmarca
+            // 
+            this.txtmarca.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtmarca.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtmarca.Location = new System.Drawing.Point(0, 117);
+            this.txtmarca.Name = "txtmarca";
+            this.txtmarca.Size = new System.Drawing.Size(567, 19);
+            this.txtmarca.TabIndex = 15;
+            this.txtmarca.TextChanged += new System.EventHandler(this.txtmarca_PressEnter);
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtDescripcion.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtDescripcion.Location = new System.Drawing.Point(0, 98);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(567, 19);
+            this.txtDescripcion.TabIndex = 14;
+            // 
+            // txtCodAux
+            // 
+            this.txtCodAux.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtCodAux.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtCodAux.Location = new System.Drawing.Point(0, 19);
+            this.txtCodAux.Name = "txtCodAux";
+            this.txtCodAux.Size = new System.Drawing.Size(567, 19);
+            this.txtCodAux.TabIndex = 10;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtCodigo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtCodigo.Location = new System.Drawing.Point(0, 0);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
+            this.txtCodigo.Size = new System.Drawing.Size(567, 19);
+            this.txtCodigo.TabIndex = 9;
+            // 
+            // txtResponsable
+            // 
+            this.txtResponsable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtResponsable.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtResponsable.Location = new System.Drawing.Point(0, 39);
+            this.txtResponsable.Name = "txtResponsable";
+            this.txtResponsable.Size = new System.Drawing.Size(559, 19);
+            this.txtResponsable.TabIndex = 22;
+            // 
+            // txtObservacion
+            // 
+            this.txtObservacion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtObservacion.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtObservacion.Location = new System.Drawing.Point(0, 20);
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(559, 19);
+            this.txtObservacion.TabIndex = 21;
+            // 
+            // txtSerie1
+            // 
+            this.txtSerie1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtSerie1.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtSerie1.Location = new System.Drawing.Point(0, 19);
+            this.txtSerie1.Name = "txtSerie1";
+            this.txtSerie1.Size = new System.Drawing.Size(567, 19);
+            this.txtSerie1.TabIndex = 1;
+            this.txtSerie1.PressEnter += new System.EventHandler(this.txtSerie1_PressEnter);
+            // 
+            // txtActivo
+            // 
+            this.txtActivo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtActivo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtActivo.Location = new System.Drawing.Point(0, 0);
+            this.txtActivo.Name = "txtActivo";
+            this.txtActivo.Size = new System.Drawing.Size(567, 19);
+            this.txtActivo.TabIndex = 0;
+            this.txtActivo.PressEnter += new System.EventHandler(this.txtActivo_PressEnter);
             // 
             // frmTomaActivo
             // 
@@ -752,5 +763,6 @@
         private ActivosFijos.Controles.TextBoxStd txtObservacion;
         private System.Windows.Forms.Label lblResponsable;
         private System.Windows.Forms.Label lblObservacion;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
