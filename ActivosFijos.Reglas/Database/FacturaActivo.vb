@@ -19,88 +19,115 @@ Imports System.Xml.Serialization
 
 #Region "FacturaActivo"
 Partial Public Class FacturaActivo
-  Inherits _Database
+    Inherits _Database
 
-  Private mFactura_Codigo As Integer = 0
+    Private mFactura_Codigo As Integer = 0
 
-  Private mEntida_Proveedor As Integer = 0
+    Private mEntida_Proveedor As Integer = 0
 
-  Private mFactura_Numero As String = ""
+    Private mFactura_Numero As String = ""
 
-  Private mFactura_Fecha As Date = Now.Date
+    Private mFactura_Fecha As Date = Now.Date
 
-  Private mFactura_ValorTotal As Decimal = 0
+    Private mFactura_ValorTotal As Decimal = 0
 
-  Private mFactura_Referencia As String = ""
+    Private mFactura_Referencia As String = ""
 
-  Public Sub New()
-    MyBase.New()
-  End Sub
+    Private mParame_AdjuntoArchivos As Integer = 0
 
-  <XmlAttribute()> _
-  Public Overridable Property Factura_Codigo() As Integer
-    Get
-      Return Me.mFactura_Codigo
-    End Get
-    Set(value As Integer)
-      Me.mFactura_Codigo = Value
-      EsModificado = True
-    End Set
-  End Property
+    Private mPardet_AdjuntoArchivos As Integer = 0
 
-  <XmlAttribute()> _
-  Public Overridable Property Entida_Proveedor() As Integer
-    Get
-      Return Me.mEntida_Proveedor
-    End Get
-    Set(value As Integer)
-      Me.mEntida_Proveedor = Value
-      EsModificado = True
-    End Set
-  End Property
+    Public Sub New()
+        MyBase.New()
+    End Sub
 
-  <XmlAttribute()> _
-  Public Overridable Property Factura_Numero() As String
-    Get
-      Return Me.mFactura_Numero
-    End Get
-    Set(value As String)
-      Me.mFactura_Numero = Value
-      EsModificado = True
-    End Set
-  End Property
+    <XmlAttribute()> _
+    Public Overridable Property Factura_Codigo() As Integer
+        Get
+            Return Me.mFactura_Codigo
+        End Get
+        Set(value As Integer)
+            Me.mFactura_Codigo = value
+            EsModificado = True
+        End Set
+    End Property
 
-  <XmlAttribute()> _
-  Public Overridable Property Factura_Referencia() As String
-    Get
-      Return Me.mFactura_Referencia
-    End Get
-    Set(value As String)
-      Me.mFactura_Referencia = value
-      EsModificado = True
-    End Set
-  End Property
+    <XmlAttribute()> _
+    Public Overridable Property Entida_Proveedor() As Integer
+        Get
+            Return Me.mEntida_Proveedor
+        End Get
+        Set(value As Integer)
+            Me.mEntida_Proveedor = value
+            EsModificado = True
+        End Set
+    End Property
 
-  <XmlAttribute()> _
-  Public Overridable Property Factura_Fecha() As Date
-    Get
-      Return Me.mFactura_Fecha
-    End Get
-    Set(value As Date)
-      Me.mFactura_Fecha = value
-      EsModificado = True
-    End Set
-  End Property
+    <XmlAttribute()> _
+    Public Overridable Property Factura_Numero() As String
+        Get
+            Return Me.mFactura_Numero
+        End Get
+        Set(value As String)
+            Me.mFactura_Numero = value
+            EsModificado = True
+        End Set
+    End Property
 
-  <XmlAttribute()> _
-  Public Overridable Property Factura_ValorTotal() As Decimal
-    Get
-      Return Me.mFactura_ValorTotal
-    End Get
-    Set(value As Decimal)
-      Me.mFactura_ValorTotal = value
-      EsModificado = True
-    End Set
-  End Property
+    <XmlAttribute()> _
+    Public Overridable Property Factura_Referencia() As String
+        Get
+            Return Me.mFactura_Referencia
+        End Get
+        Set(value As String)
+            Me.mFactura_Referencia = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Factura_Fecha() As Date
+        Get
+            Return Me.mFactura_Fecha
+        End Get
+        Set(value As Date)
+            Me.mFactura_Fecha = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Factura_ValorTotal() As Decimal
+        Get
+            Return Me.mFactura_ValorTotal
+        End Get
+        Set(value As Decimal)
+            Me.mFactura_ValorTotal = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Parame_AdjuntoArchivos() As Integer
+        Get
+            Return Me.mParame_AdjuntoArchivos
+        End Get
+        Set(ByVal value As Integer)
+            Me.mParame_AdjuntoArchivos = value
+            EsModificado = True
+        End Set
+    End Property
+
+    <XmlAttribute()> _
+    Public Overridable Property Pardet_AdjuntoArchivos() As Integer
+        Get
+            Return Me.mPardet_AdjuntoArchivos
+        End Get
+        Set(ByVal value As Integer)
+            Me.mPardet_AdjuntoArchivos = value
+            EsModificado = True
+        End Set
+    End Property
+
 End Class
 #End Region

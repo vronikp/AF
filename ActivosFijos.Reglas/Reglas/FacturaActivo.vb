@@ -17,145 +17,188 @@ Imports Infoware.Datos
 #Region "FacturaActivo"
 Public Class FacturaActivo
 
-  Const _Procedimiento As String = "proc_FacturaActivo"
+    Const _Procedimiento As String = "proc_FacturaActivo"
 
-  Private mProveedor As Proveedor = Nothing
+    Private mProveedor As Proveedor = Nothing
 
-  Public Sub New(ByVal _OperadorDatos As OperadorDatos, ByVal _EsNuevo As Boolean)
-    MyBase.New()
-    OperadorDatos = _OperadorDatos
-    EsNuevo = _EsNuevo
-  End Sub
+    Private mPardetAdjuntoArchivos As WWTSParametroDet = Nothing
 
-  Public Sub New(ByVal _OperadorDatos As OperadorDatos, ByVal _Factura_Codigo As Integer)
-    Me.New(_OperadorDatos, False)
-    Factura_Codigo = _Factura_Codigo
-    If Me.Recargar Then
-    Else
-      Throw New System.Exception("No se puede cargar objeto FacturaActivo")
-    End If
-  End Sub
+    Public Sub New(ByVal _OperadorDatos As OperadorDatos, ByVal _EsNuevo As Boolean)
+        MyBase.New()
+        OperadorDatos = _OperadorDatos
+        EsNuevo = _EsNuevo
+    End Sub
 
-  'Proveedor
-  Public Overridable Property Proveedor() As Proveedor
-    Get
-      If mProveedor Is Nothing AndAlso Entida_Proveedor > 0 Then
+    Public Sub New(ByVal _OperadorDatos As OperadorDatos, ByVal _Factura_Codigo As Integer)
+        Me.New(_OperadorDatos, False)
+        Factura_Codigo = _Factura_Codigo
+        If Me.Recargar Then
+        Else
+            Throw New System.Exception("No se puede cargar objeto FacturaActivo")
+        End If
+    End Sub
+
+    'Proveedor
+    Public Overridable Property Proveedor() As Proveedor
+        Get
+            If mProveedor Is Nothing AndAlso Entida_Proveedor > 0 Then
+                Try
+                    mProveedor = New Proveedor(OperadorDatos, Entida_Proveedor)
+                Catch ex As Exception
+                    mProveedor = Nothing
+                End Try
+            End If
+            Return Me.mProveedor
+        End Get
+        Set(value As Proveedor)
+            Me.mProveedor = value
+            Entida_Proveedor = value.Entida_Codigo
+        End Set
+    End Property
+
+    'PardetAdjuntarArchivos
+    Public Overridable Property PardetAdjuntoArchivos() As WWTSParametroDet
+        Get
+            If Me.mPardetAdjuntoArchivos Is Nothing AndAlso Pardet_AdjuntoArchivos > 0 Then
+                Me.mPardetAdjuntoArchivos = New WWTSParametroDet(OperadorDatos, Me.Parame_AdjuntoArchivos, Me.Pardet_AdjuntoArchivos)
+            End If
+            Return Me.mPardetAdjuntoArchivos
+        End Get
+        Set(ByVal value As WWTSParametroDet)
+            Me.mPardetAdjuntoArchivos = value
+            If value Is Nothing Then
+                Parame_AdjuntoArchivos = 0
+                Pardet_AdjuntoArchivos = 0
+            Else
+                Parame_AdjuntoArchivos = value.Parame_Codigo
+                Pardet_AdjuntoArchivos = value.Pardet_Secuencia
+            End If
+        End Set
+    End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("Proveedor", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 250, True)>
+    Public ReadOnly Property ProveedorString As String
+        Get
+            If Proveedor Is Nothing Then
+                Return String.Empty
+            Else
+                Return Proveedor.NombreCompleto
+            End If
+        End Get
+    End Property
+
+    Public ReadOnly Property Descripcion As String
+        Get
+            Return String.Format("{0} {1}", ProveedorString, Factura_Numero)
+        End Get
+    End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("Factura", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 200, False)>
+    Public ReadOnly Property FacturaNumero As String
+        Get
+            Return Factura_Numero
+        End Get
+    End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("Referencia", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 200, True)>
+    Public ReadOnly Property FacturaRef As String
+        Get
+            Return String.Format("{0} {1}", Factura_Numero, IIf(String.IsNullOrWhiteSpace(Factura_Referencia), "", "Ref:" + Factura_Referencia))
+        End Get
+    End Property
+
+    Public Overridable Sub MapearDataRowaObjeto(ByVal Fila As DataRow)
+        Factura_Codigo = CType(Fila("Factura_Codigo"), Integer)
+        Entida_Proveedor = CType(Fila("Entida_Proveedor"), Integer)
+        Factura_Numero = CType(Fila("Factura_Numero"), String)
+        Factura_Referencia = CType(Fila("Factura_Referencia"), String)
+        Factura_Fecha = CDate(Fila("Factura_Fecha"))
+        Factura_ValorTotal = CDec(Fila("Factura_ValorTotal"))
         Try
-          mProveedor = New Proveedor(OperadorDatos, Entida_Proveedor)
+            Parame_AdjuntoArchivos = CType(Fila("Parame_AdjuntoArchivos"), Integer)
+            Pardet_AdjuntoArchivos = CType(Fila("Pardet_AdjuntoArchivos"), Integer)
         Catch ex As Exception
-          mProveedor = Nothing
+            Parame_AdjuntoArchivos = 0
+            Pardet_AdjuntoArchivos = 0
         End Try
-      End If
-      Return Me.mProveedor
-    End Get
-    Set(value As Proveedor)
-      Me.mProveedor = value
-      Entida_Proveedor = value.Entida_Codigo
-    End Set
-  End Property
+        mProveedor = Nothing
+        mPardetAdjuntoArchivos = Nothing
+    End Sub
 
-  <Infoware.Reportes.CampoReporteAtributo("Proveedor", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 250, True)>
-  Public ReadOnly Property ProveedorString As String
-    Get
-      If Proveedor Is Nothing Then
-        Return String.Empty
-      Else
-        Return Proveedor.NombreCompleto
-      End If
-    End Get
-  End Property
+    Public Overridable Function Recargar() As Boolean
+        Dim Result As System.Data.DataTable = New System.Data.DataTable
+        Dim bReturn As Boolean = True
+        OperadorDatos.AgregarParametro("@accion", "C")
+        OperadorDatos.AgregarParametro("@Factura_Codigo", Factura_Codigo)
+        OperadorDatos.Procedimiento = _Procedimiento
+        bReturn = OperadorDatos.Ejecutar(Result)
+        OperadorDatos.LimpiarParametros()
+        Try
+            Me.MapearDataRowaObjeto(Result.Rows(0))
+            EsNuevo = False
+            EsModificado = False
+        Catch ex As System.Exception
+            bReturn = False
+        End Try
+        Return bReturn
+    End Function
 
-  Public ReadOnly Property Descripcion As String
-    Get
-      Return String.Format("{0} {1}", ProveedorString, Factura_Numero)
-    End Get
-  End Property
+    Public Overridable Function Guardar() As Boolean
+        Dim Result As Integer = 0
+        Dim bReturn As Boolean = True
+        Dim sAccion As String = "M"
+        If EsNuevo Then
+            sAccion = "I"
+        End If
+        If PardetAdjuntoArchivos IsNot Nothing AndAlso PardetAdjuntoArchivos.PardetHijos IsNot Nothing Then
+            If (PardetAdjuntoArchivos.EsNuevo AndAlso PardetAdjuntoArchivos.PardetHijos.Count > 0) Or (Not PardetAdjuntoArchivos.EsNuevo AndAlso PardetAdjuntoArchivos.PardetHijos.Count + PardetAdjuntoArchivos.PardetHijosEli.Count > 0) Then
+                bReturn = PardetAdjuntoArchivos.Guardar
+                If bReturn Then
+                    Parame_AdjuntoArchivos = PardetAdjuntoArchivos.Parame_Codigo
+                    Pardet_AdjuntoArchivos = PardetAdjuntoArchivos.Pardet_Secuencia
+                End If
+            End If
+        End If
+        OperadorDatos.AgregarParametro("@accion", sAccion)
+        OperadorDatos.AgregarParametro("@Factura_Codigo", Factura_Codigo)
+        OperadorDatos.AgregarParametro("@Entida_Proveedor", Entida_Proveedor)
+        OperadorDatos.AgregarParametro("@Factura_Numero", Factura_Numero)
+        OperadorDatos.AgregarParametro("@Factura_Referencia", Factura_Referencia)
+        OperadorDatos.AgregarParametro("@Factura_Fecha", Factura_Fecha)
+        OperadorDatos.AgregarParametro("@Factura_ValorTotal", Factura_ValorTotal)
+        If Pardet_AdjuntoArchivos > 0 Then
+            OperadorDatos.AgregarParametro("@Parame_AdjuntoArchivos", Parame_AdjuntoArchivos)
+            OperadorDatos.AgregarParametro("@Pardet_AdjuntoArchivos", Pardet_AdjuntoArchivos)
+        End If
+        OperadorDatos.Procedimiento = _Procedimiento
+        bReturn = OperadorDatos.Ejecutar(Result)
+        OperadorDatos.LimpiarParametros()
+        If bReturn Then
+            If EsNuevo Then
+                Factura_Codigo = Result
+            End If
+            If OperadorDatos.EstaenTransaccion Then
+            Else
+                Me.AceptarCambios()
+            End If
+        End If
+        Return bReturn
+    End Function
 
-  <Infoware.Reportes.CampoReporteAtributo("Factura", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 200, False)>
-  Public ReadOnly Property FacturaNumero As String
-    Get
-      Return Factura_Numero
-    End Get
-  End Property
+    Public Overridable Sub AceptarCambios()
+        EsNuevo = False
+        EsModificado = False
+    End Sub
 
-  <Infoware.Reportes.CampoReporteAtributo("Referencia", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 200, True)>
-  Public ReadOnly Property FacturaRef As String
-    Get
-      Return String.Format("{0} {1}", Factura_Numero, IIf(String.IsNullOrWhiteSpace(Factura_Referencia), "", "Ref:" + Factura_Referencia))
-    End Get
-  End Property
-
-  Public Overridable Sub MapearDataRowaObjeto(ByVal Fila As DataRow)
-    Factura_Codigo = CType(Fila("Factura_Codigo"), Integer)
-    Entida_Proveedor = CType(Fila("Entida_Proveedor"), Integer)
-    Factura_Numero = CType(Fila("Factura_Numero"), String)
-    Factura_Referencia = CType(Fila("Factura_Referencia"), String)
-    Factura_Fecha = CDate(Fila("Factura_Fecha"))
-    Factura_ValorTotal = CDec(Fila("Factura_ValorTotal"))
-    mProveedor = Nothing
-  End Sub
-
-  Public Overridable Function Recargar() As Boolean
-    Dim Result As System.Data.DataTable = New System.Data.DataTable
-    Dim bReturn As Boolean = True
-    OperadorDatos.AgregarParametro("@accion", "C")
-    OperadorDatos.AgregarParametro("@Factura_Codigo", Factura_Codigo)
-    OperadorDatos.Procedimiento = _Procedimiento
-    bReturn = OperadorDatos.Ejecutar(Result)
-    OperadorDatos.LimpiarParametros()
-    Try
-      Me.MapearDataRowaObjeto(Result.Rows(0))
-      EsNuevo = False
-      EsModificado = False
-    Catch ex As System.Exception
-      bReturn = False
-    End Try
-    Return bReturn
-  End Function
-
-  Public Overridable Function Guardar() As Boolean
-    Dim Result As Integer = 0
-    Dim bReturn As Boolean = True
-    Dim sAccion As String = "M"
-    If EsNuevo Then
-      sAccion = "I"
-    End If
-    OperadorDatos.AgregarParametro("@accion", sAccion)
-    OperadorDatos.AgregarParametro("@Factura_Codigo", Factura_Codigo)
-    OperadorDatos.AgregarParametro("@Entida_Proveedor", Entida_Proveedor)
-    OperadorDatos.AgregarParametro("@Factura_Numero", Factura_Numero)
-    OperadorDatos.AgregarParametro("@Factura_Referencia", Factura_Referencia)
-    OperadorDatos.AgregarParametro("@Factura_Fecha", Factura_Fecha)
-    OperadorDatos.AgregarParametro("@Factura_ValorTotal", Factura_ValorTotal)
-    OperadorDatos.Procedimiento = _Procedimiento
-    bReturn = OperadorDatos.Ejecutar(Result)
-    OperadorDatos.LimpiarParametros()
-    If bReturn Then
-      If EsNuevo Then
-        Factura_Codigo = Result
-      End If
-      If OperadorDatos.EstaenTransaccion Then
-      Else
-        Me.AceptarCambios()
-      End If
-    End If
-    Return bReturn
-  End Function
-
-  Public Overridable Sub AceptarCambios()
-    EsNuevo = False
-    EsModificado = False
-  End Sub
-
-  Public Overridable Function Eliminar() As Boolean
-    Dim bReturn As Boolean = True
-    OperadorDatos.AgregarParametro("@accion", "E")
-    OperadorDatos.AgregarParametro("@Factura_Codigo", Factura_Codigo)
-    OperadorDatos.Procedimiento = _Procedimiento
-    bReturn = OperadorDatos.Ejecutar
-    OperadorDatos.LimpiarParametros()
-    Return bReturn
-  End Function
+    Public Overridable Function Eliminar() As Boolean
+        Dim bReturn As Boolean = True
+        OperadorDatos.AgregarParametro("@accion", "E")
+        OperadorDatos.AgregarParametro("@Factura_Codigo", Factura_Codigo)
+        OperadorDatos.Procedimiento = _Procedimiento
+        bReturn = OperadorDatos.Ejecutar
+        OperadorDatos.LimpiarParametros()
+        Return bReturn
+    End Function
 End Class
 #End Region
 
