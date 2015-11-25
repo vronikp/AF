@@ -31,20 +31,24 @@
             this.lblUbicacion = new System.Windows.Forms.Label();
             this.lblCustodio = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tbActivo = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pnlDatos = new System.Windows.Forms.Panel();
-            this.cboEstadoActivo = new System.Windows.Forms.ComboBox();
+            this.txtSerie = new ActivosFijos.Controles.TextBoxStd();
+            this.txtModelo = new ActivosFijos.Controles.TextBoxStd();
+            this.pnlMarca = new System.Windows.Forms.Panel();
             this.cboMarca = new System.Windows.Forms.ComboBox();
+            this.txtmarca = new ActivosFijos.Controles.TextBoxStd();
+            this.txtDescripcion = new ActivosFijos.Controles.TextBoxStd();
             this.cboClase = new System.Windows.Forms.ComboBox();
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.cboGrupo = new System.Windows.Forms.ComboBox();
+            this.txtCodAux = new ActivosFijos.Controles.TextBoxStd();
+            this.txtCodigo = new ActivosFijos.Controles.TextBoxStd();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.lblEstadoActivo = new System.Windows.Forms.Label();
             this.lblSerie = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblClase = new System.Windows.Forms.Label();
@@ -52,19 +56,26 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.pnladic = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlOtros = new System.Windows.Forms.Panel();
+            this.txtResponsable = new ActivosFijos.Controles.TextBoxStd();
             this.cboDepreciacion = new System.Windows.Forms.ComboBox();
+            this.txtObservacion = new ActivosFijos.Controles.TextBoxStd();
+            this.cboEstadoActivo = new System.Windows.Forms.ComboBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblResponsable = new System.Windows.Forms.Label();
-            this.lblObservacion = new System.Windows.Forms.Label();
             this.lblDepreciacion = new System.Windows.Forms.Label();
+            this.lblObservacion = new System.Windows.Forms.Label();
+            this.lblEstadoActivo = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.pnlBusqueda = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtSerie1 = new ActivosFijos.Controles.TextBoxStd();
+            this.txtActivo = new ActivosFijos.Controles.TextBoxStd();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -76,21 +87,13 @@
             this.dgActivos = new System.Windows.Forms.DataGrid();
             this.chkSoloInventariados = new System.Windows.Forms.CheckBox();
             this.chbSoloUbicacion = new System.Windows.Forms.CheckBox();
-            this.txtSerie = new ActivosFijos.Controles.TextBoxStd();
-            this.txtModelo = new ActivosFijos.Controles.TextBoxStd();
-            this.txtmarca = new ActivosFijos.Controles.TextBoxStd();
-            this.txtDescripcion = new ActivosFijos.Controles.TextBoxStd();
-            this.txtCodAux = new ActivosFijos.Controles.TextBoxStd();
-            this.txtCodigo = new ActivosFijos.Controles.TextBoxStd();
-            this.txtResponsable = new ActivosFijos.Controles.TextBoxStd();
-            this.txtObservacion = new ActivosFijos.Controles.TextBoxStd();
-            this.txtSerie1 = new ActivosFijos.Controles.TextBoxStd();
-            this.txtActivo = new ActivosFijos.Controles.TextBoxStd();
-            this.tabControl1.SuspendLayout();
+            this.tbActivo.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.pnlDatos.SuspendLayout();
+            this.pnlMarca.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlOtros.SuspendLayout();
@@ -129,18 +132,18 @@
             this.label3.Size = new System.Drawing.Size(71, 20);
             this.label3.Text = "Cod. Barra:";
             // 
-            // tabControl1
+            // tbActivo
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Enabled = false;
-            this.tabControl1.Location = new System.Drawing.Point(0, 86);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(638, 346);
-            this.tabControl1.TabIndex = 2;
-            this.tabControl1.Visible = false;
+            this.tbActivo.Controls.Add(this.tabPage1);
+            this.tbActivo.Controls.Add(this.tabPage3);
+            this.tbActivo.Controls.Add(this.tabPage2);
+            this.tbActivo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbActivo.Location = new System.Drawing.Point(0, 86);
+            this.tbActivo.Name = "tbActivo";
+            this.tbActivo.SelectedIndex = 0;
+            this.tbActivo.Size = new System.Drawing.Size(638, 346);
+            this.tbActivo.TabIndex = 2;
+            this.tbActivo.Visible = false;
             // 
             // tabPage1
             // 
@@ -162,11 +165,9 @@
             // 
             // pnlDatos
             // 
-            this.pnlDatos.Controls.Add(this.cboEstadoActivo);
             this.pnlDatos.Controls.Add(this.txtSerie);
             this.pnlDatos.Controls.Add(this.txtModelo);
-            this.pnlDatos.Controls.Add(this.cboMarca);
-            this.pnlDatos.Controls.Add(this.txtmarca);
+            this.pnlDatos.Controls.Add(this.pnlMarca);
             this.pnlDatos.Controls.Add(this.txtDescripcion);
             this.pnlDatos.Controls.Add(this.cboClase);
             this.pnlDatos.Controls.Add(this.cboTipo);
@@ -178,23 +179,59 @@
             this.pnlDatos.Name = "pnlDatos";
             this.pnlDatos.Size = new System.Drawing.Size(567, 323);
             // 
-            // cboEstadoActivo
+            // txtSerie
             // 
-            this.cboEstadoActivo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cboEstadoActivo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.cboEstadoActivo.Location = new System.Drawing.Point(0, 194);
-            this.cboEstadoActivo.Name = "cboEstadoActivo";
-            this.cboEstadoActivo.Size = new System.Drawing.Size(567, 20);
-            this.cboEstadoActivo.TabIndex = 19;
+            this.txtSerie.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtSerie.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtSerie.Location = new System.Drawing.Point(0, 158);
+            this.txtSerie.Name = "txtSerie";
+            this.txtSerie.Size = new System.Drawing.Size(567, 19);
+            this.txtSerie.TabIndex = 24;
+            // 
+            // txtModelo
+            // 
+            this.txtModelo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtModelo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtModelo.Location = new System.Drawing.Point(0, 139);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(567, 19);
+            this.txtModelo.TabIndex = 19;
+            // 
+            // pnlMarca
+            // 
+            this.pnlMarca.Controls.Add(this.cboMarca);
+            this.pnlMarca.Controls.Add(this.txtmarca);
+            this.pnlMarca.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlMarca.Location = new System.Drawing.Point(0, 117);
+            this.pnlMarca.Name = "pnlMarca";
+            this.pnlMarca.Size = new System.Drawing.Size(567, 22);
             // 
             // cboMarca
             // 
             this.cboMarca.Dock = System.Windows.Forms.DockStyle.Top;
             this.cboMarca.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.cboMarca.Location = new System.Drawing.Point(0, 136);
+            this.cboMarca.Location = new System.Drawing.Point(74, 0);
             this.cboMarca.Name = "cboMarca";
-            this.cboMarca.Size = new System.Drawing.Size(567, 20);
-            this.cboMarca.TabIndex = 16;
+            this.cboMarca.Size = new System.Drawing.Size(493, 20);
+            this.cboMarca.TabIndex = 17;
+            // 
+            // txtmarca
+            // 
+            this.txtmarca.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtmarca.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtmarca.Location = new System.Drawing.Point(0, 0);
+            this.txtmarca.Name = "txtmarca";
+            this.txtmarca.Size = new System.Drawing.Size(74, 19);
+            this.txtmarca.TabIndex = 16;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtDescripcion.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtDescripcion.Location = new System.Drawing.Point(0, 98);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(567, 19);
+            this.txtDescripcion.TabIndex = 14;
             // 
             // cboClase
             // 
@@ -225,12 +262,29 @@
             this.cboGrupo.TabIndex = 11;
             this.cboGrupo.SelectedIndexChanged += new System.EventHandler(this.cboGrupo_SelectedIndexChanged);
             // 
+            // txtCodAux
+            // 
+            this.txtCodAux.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtCodAux.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtCodAux.Location = new System.Drawing.Point(0, 19);
+            this.txtCodAux.Name = "txtCodAux";
+            this.txtCodAux.Size = new System.Drawing.Size(567, 19);
+            this.txtCodAux.TabIndex = 10;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtCodigo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtCodigo.Location = new System.Drawing.Point(0, 0);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
+            this.txtCodigo.Size = new System.Drawing.Size(567, 19);
+            this.txtCodigo.TabIndex = 9;
+            // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.lblEstadoActivo);
             this.panel5.Controls.Add(this.lblSerie);
             this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.lblMarca);
             this.panel5.Controls.Add(this.lblDescripcion);
             this.panel5.Controls.Add(this.lblClase);
@@ -243,20 +297,11 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(71, 323);
             // 
-            // lblEstadoActivo
-            // 
-            this.lblEstadoActivo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblEstadoActivo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.lblEstadoActivo.Location = new System.Drawing.Point(0, 200);
-            this.lblEstadoActivo.Name = "lblEstadoActivo";
-            this.lblEstadoActivo.Size = new System.Drawing.Size(71, 20);
-            this.lblEstadoActivo.Text = "Estado:";
-            // 
             // lblSerie
             // 
             this.lblSerie.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblSerie.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.lblSerie.Location = new System.Drawing.Point(0, 180);
+            this.lblSerie.Location = new System.Drawing.Point(0, 160);
             this.lblSerie.Name = "lblSerie";
             this.lblSerie.Size = new System.Drawing.Size(71, 20);
             this.lblSerie.Text = "Serie:";
@@ -265,18 +310,10 @@
             // 
             this.label8.Dock = System.Windows.Forms.DockStyle.Top;
             this.label8.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.label8.Location = new System.Drawing.Point(0, 160);
+            this.label8.Location = new System.Drawing.Point(0, 140);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(71, 20);
             this.label8.Text = "Modelo:";
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.label2.Location = new System.Drawing.Point(0, 140);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 20);
             // 
             // lblMarca
             // 
@@ -341,32 +378,39 @@
             this.label5.Size = new System.Drawing.Size(71, 20);
             this.label5.Text = "Codigo:";
             // 
-            // tabPage2
+            // tabPage3
             // 
-            this.tabPage2.Controls.Add(this.pnladic);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.panel1);
-            this.tabPage2.Location = new System.Drawing.Point(0, 0);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(630, 320);
-            this.tabPage2.Text = "Otros";
+            this.tabPage3.Controls.Add(this.pnladic);
+            this.tabPage3.Controls.Add(this.label7);
+            this.tabPage3.Location = new System.Drawing.Point(0, 0);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(630, 320);
+            this.tabPage3.Text = "Adic.";
             // 
             // pnladic
             // 
             this.pnladic.AutoScroll = true;
             this.pnladic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnladic.Location = new System.Drawing.Point(0, 80);
+            this.pnladic.Location = new System.Drawing.Point(0, 20);
             this.pnladic.Name = "pnladic";
-            this.pnladic.Size = new System.Drawing.Size(630, 240);
+            this.pnladic.Size = new System.Drawing.Size(630, 300);
             // 
             // label7
             // 
             this.label7.Dock = System.Windows.Forms.DockStyle.Top;
             this.label7.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.label7.Location = new System.Drawing.Point(0, 60);
+            this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(630, 20);
             this.label7.Text = "Caracteristicas:";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.panel1);
+            this.tabPage2.Location = new System.Drawing.Point(0, 0);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(638, 323);
+            this.tabPage2.Text = "Otros";
             // 
             // panel1
             // 
@@ -375,45 +419,83 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(630, 60);
+            this.panel1.Size = new System.Drawing.Size(638, 323);
             // 
             // pnlOtros
             // 
             this.pnlOtros.Controls.Add(this.txtResponsable);
-            this.pnlOtros.Controls.Add(this.txtObservacion);
             this.pnlOtros.Controls.Add(this.cboDepreciacion);
+            this.pnlOtros.Controls.Add(this.txtObservacion);
+            this.pnlOtros.Controls.Add(this.cboEstadoActivo);
             this.pnlOtros.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlOtros.Location = new System.Drawing.Point(71, 0);
             this.pnlOtros.Name = "pnlOtros";
-            this.pnlOtros.Size = new System.Drawing.Size(559, 60);
+            this.pnlOtros.Size = new System.Drawing.Size(567, 323);
+            // 
+            // txtResponsable
+            // 
+            this.txtResponsable.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtResponsable.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtResponsable.Location = new System.Drawing.Point(0, 59);
+            this.txtResponsable.Name = "txtResponsable";
+            this.txtResponsable.Size = new System.Drawing.Size(567, 19);
+            this.txtResponsable.TabIndex = 28;
             // 
             // cboDepreciacion
             // 
             this.cboDepreciacion.Dock = System.Windows.Forms.DockStyle.Top;
             this.cboDepreciacion.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.cboDepreciacion.Location = new System.Drawing.Point(0, 0);
+            this.cboDepreciacion.Location = new System.Drawing.Point(0, 39);
             this.cboDepreciacion.Name = "cboDepreciacion";
-            this.cboDepreciacion.Size = new System.Drawing.Size(559, 20);
-            this.cboDepreciacion.TabIndex = 20;
+            this.cboDepreciacion.Size = new System.Drawing.Size(567, 20);
+            this.cboDepreciacion.TabIndex = 27;
+            // 
+            // txtObservacion
+            // 
+            this.txtObservacion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtObservacion.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtObservacion.Location = new System.Drawing.Point(0, 20);
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(567, 19);
+            this.txtObservacion.TabIndex = 26;
+            // 
+            // cboEstadoActivo
+            // 
+            this.cboEstadoActivo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cboEstadoActivo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.cboEstadoActivo.Location = new System.Drawing.Point(0, 0);
+            this.cboEstadoActivo.Name = "cboEstadoActivo";
+            this.cboEstadoActivo.Size = new System.Drawing.Size(567, 20);
+            this.cboEstadoActivo.TabIndex = 24;
             // 
             // panel8
             // 
             this.panel8.Controls.Add(this.lblResponsable);
-            this.panel8.Controls.Add(this.lblObservacion);
             this.panel8.Controls.Add(this.lblDepreciacion);
+            this.panel8.Controls.Add(this.lblObservacion);
+            this.panel8.Controls.Add(this.lblEstadoActivo);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(71, 60);
+            this.panel8.Size = new System.Drawing.Size(71, 323);
             // 
             // lblResponsable
             // 
             this.lblResponsable.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblResponsable.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.lblResponsable.Location = new System.Drawing.Point(0, 40);
+            this.lblResponsable.Location = new System.Drawing.Point(0, 60);
             this.lblResponsable.Name = "lblResponsable";
             this.lblResponsable.Size = new System.Drawing.Size(71, 20);
             this.lblResponsable.Text = "Responsable:";
+            // 
+            // lblDepreciacion
+            // 
+            this.lblDepreciacion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDepreciacion.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.lblDepreciacion.Location = new System.Drawing.Point(0, 40);
+            this.lblDepreciacion.Name = "lblDepreciacion";
+            this.lblDepreciacion.Size = new System.Drawing.Size(71, 20);
+            this.lblDepreciacion.Text = "Deprec:";
             // 
             // lblObservacion
             // 
@@ -424,21 +506,21 @@
             this.lblObservacion.Size = new System.Drawing.Size(71, 20);
             this.lblObservacion.Text = "Observación:";
             // 
-            // lblDepreciacion
+            // lblEstadoActivo
             // 
-            this.lblDepreciacion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDepreciacion.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.lblDepreciacion.Location = new System.Drawing.Point(0, 0);
-            this.lblDepreciacion.Name = "lblDepreciacion";
-            this.lblDepreciacion.Size = new System.Drawing.Size(71, 20);
-            this.lblDepreciacion.Text = "Deprec:";
+            this.lblEstadoActivo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblEstadoActivo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.lblEstadoActivo.Location = new System.Drawing.Point(0, 0);
+            this.lblEstadoActivo.Name = "lblEstadoActivo";
+            this.lblEstadoActivo.Size = new System.Drawing.Size(71, 20);
+            this.lblEstadoActivo.Text = "Estado:";
             // 
             // btnGuardar
             // 
             this.btnGuardar.Enabled = false;
-            this.btnGuardar.Location = new System.Drawing.Point(7, 2);
+            this.btnGuardar.Location = new System.Drawing.Point(5, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(53, 18);
+            this.btnGuardar.Size = new System.Drawing.Size(55, 18);
             this.btnGuardar.TabIndex = 14;
             this.btnGuardar.Text = "Invent.";
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -460,6 +542,26 @@
             this.panel4.Location = new System.Drawing.Point(71, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(567, 41);
+            // 
+            // txtSerie1
+            // 
+            this.txtSerie1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtSerie1.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtSerie1.Location = new System.Drawing.Point(0, 19);
+            this.txtSerie1.Name = "txtSerie1";
+            this.txtSerie1.Size = new System.Drawing.Size(567, 19);
+            this.txtSerie1.TabIndex = 1;
+            this.txtSerie1.PressEnter += new System.EventHandler(this.txtSerie1_PressEnter);
+            // 
+            // txtActivo
+            // 
+            this.txtActivo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtActivo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
+            this.txtActivo.Location = new System.Drawing.Point(0, 0);
+            this.txtActivo.Name = "txtActivo";
+            this.txtActivo.Size = new System.Drawing.Size(567, 19);
+            this.txtActivo.TabIndex = 0;
+            this.txtActivo.PressEnter += new System.EventHandler(this.txtActivo_PressEnter);
             // 
             // panel3
             // 
@@ -494,17 +596,17 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Enabled = false;
-            this.btnLimpiar.Location = new System.Drawing.Point(119, 2);
+            this.btnLimpiar.Location = new System.Drawing.Point(112, 2);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(53, 18);
+            this.btnLimpiar.Size = new System.Drawing.Size(64, 18);
             this.btnLimpiar.TabIndex = 19;
-            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.Text = "Cancelar";
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnNext
             // 
             this.btnNext.Enabled = false;
-            this.btnNext.Location = new System.Drawing.Point(92, 2);
+            this.btnNext.Location = new System.Drawing.Point(88, 2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(20, 18);
             this.btnNext.TabIndex = 18;
@@ -514,7 +616,7 @@
             // btnBack
             // 
             this.btnBack.Enabled = false;
-            this.btnBack.Location = new System.Drawing.Point(66, 2);
+            this.btnBack.Location = new System.Drawing.Point(64, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(20, 18);
             this.btnBack.TabIndex = 17;
@@ -523,9 +625,9 @@
             // 
             // btnatras
             // 
-            this.btnatras.Location = new System.Drawing.Point(178, 2);
+            this.btnatras.Location = new System.Drawing.Point(180, 2);
             this.btnatras.Name = "btnatras";
-            this.btnatras.Size = new System.Drawing.Size(53, 18);
+            this.btnatras.Size = new System.Drawing.Size(63, 18);
             this.btnatras.TabIndex = 16;
             this.btnatras.Text = "Salir";
             this.btnatras.Click += new System.EventHandler(this.btnatras_Click);
@@ -573,107 +675,13 @@
             this.chbSoloUbicacion.Text = "Sólo activos de la ubicación seleccionada";
             this.chbSoloUbicacion.CheckStateChanged += new System.EventHandler(this.chbSoloUbicacion_CheckStateChanged);
             // 
-            // txtSerie
-            // 
-            this.txtSerie.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtSerie.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtSerie.Location = new System.Drawing.Point(0, 175);
-            this.txtSerie.Name = "txtSerie";
-            this.txtSerie.Size = new System.Drawing.Size(567, 19);
-            this.txtSerie.TabIndex = 18;
-            // 
-            // txtModelo
-            // 
-            this.txtModelo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtModelo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtModelo.Location = new System.Drawing.Point(0, 156);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(567, 19);
-            this.txtModelo.TabIndex = 17;
-            // 
-            // txtmarca
-            // 
-            this.txtmarca.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtmarca.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtmarca.Location = new System.Drawing.Point(0, 117);
-            this.txtmarca.Name = "txtmarca";
-            this.txtmarca.Size = new System.Drawing.Size(567, 19);
-            this.txtmarca.TabIndex = 15;
-            this.txtmarca.TextChanged += new System.EventHandler(this.txtmarca_PressEnter);
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtDescripcion.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtDescripcion.Location = new System.Drawing.Point(0, 98);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(567, 19);
-            this.txtDescripcion.TabIndex = 14;
-            // 
-            // txtCodAux
-            // 
-            this.txtCodAux.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtCodAux.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtCodAux.Location = new System.Drawing.Point(0, 19);
-            this.txtCodAux.Name = "txtCodAux";
-            this.txtCodAux.Size = new System.Drawing.Size(567, 19);
-            this.txtCodAux.TabIndex = 10;
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtCodigo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtCodigo.Location = new System.Drawing.Point(0, 0);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(567, 19);
-            this.txtCodigo.TabIndex = 9;
-            // 
-            // txtResponsable
-            // 
-            this.txtResponsable.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtResponsable.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtResponsable.Location = new System.Drawing.Point(0, 39);
-            this.txtResponsable.Name = "txtResponsable";
-            this.txtResponsable.Size = new System.Drawing.Size(559, 19);
-            this.txtResponsable.TabIndex = 22;
-            // 
-            // txtObservacion
-            // 
-            this.txtObservacion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtObservacion.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtObservacion.Location = new System.Drawing.Point(0, 20);
-            this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(559, 19);
-            this.txtObservacion.TabIndex = 21;
-            // 
-            // txtSerie1
-            // 
-            this.txtSerie1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtSerie1.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtSerie1.Location = new System.Drawing.Point(0, 19);
-            this.txtSerie1.Name = "txtSerie1";
-            this.txtSerie1.Size = new System.Drawing.Size(567, 19);
-            this.txtSerie1.TabIndex = 1;
-            this.txtSerie1.PressEnter += new System.EventHandler(this.txtSerie1_PressEnter);
-            // 
-            // txtActivo
-            // 
-            this.txtActivo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtActivo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
-            this.txtActivo.Location = new System.Drawing.Point(0, 0);
-            this.txtActivo.Name = "txtActivo";
-            this.txtActivo.Size = new System.Drawing.Size(567, 19);
-            this.txtActivo.TabIndex = 0;
-            this.txtActivo.PressEnter += new System.EventHandler(this.txtActivo_PressEnter);
-            // 
             // frmTomaActivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(638, 455);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tbActivo);
             this.Controls.Add(this.pnlListaActivos);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlBusqueda);
@@ -686,11 +694,13 @@
             this.Text = "Toma Activo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmTomaActivo_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.tbActivo.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.pnlDatos.ResumeLayout(false);
+            this.pnlMarca.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.pnlOtros.ResumeLayout(false);
@@ -710,7 +720,7 @@
         private ActivosFijos.Controles.TextBoxStd txtActivo;
         private System.Windows.Forms.Label lblCustodio;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tbActivo;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel pnlBusqueda;
@@ -732,37 +742,38 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.CheckBox chkSoloInventariados;
         private System.Windows.Forms.DataGrid dgActivos;
-        private System.Windows.Forms.ComboBox cboMarca;
-        private ActivosFijos.Controles.TextBoxStd txtmarca;
         private ActivosFijos.Controles.TextBoxStd txtDescripcion;
         private System.Windows.Forms.ComboBox cboClase;
         private System.Windows.Forms.ComboBox cboTipo;
         private System.Windows.Forms.ComboBox cboGrupo;
         private ActivosFijos.Controles.TextBoxStd txtCodAux;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblClase;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cboEstadoActivo;
-        private ActivosFijos.Controles.TextBoxStd txtSerie;
-        private ActivosFijos.Controles.TextBoxStd txtModelo;
-        private System.Windows.Forms.Label lblEstadoActivo;
-        private System.Windows.Forms.Label lblSerie;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel pnlOtros;
-        private System.Windows.Forms.ComboBox cboDepreciacion;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label lblDepreciacion;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel pnladic;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel pnlMarca;
+        private System.Windows.Forms.ComboBox cboMarca;
+        private ActivosFijos.Controles.TextBoxStd txtmarca;
+        private System.Windows.Forms.Panel pnlOtros;
+        private System.Windows.Forms.ComboBox cboEstadoActivo;
+        private System.Windows.Forms.Label lblEstadoActivo;
+        private ActivosFijos.Controles.TextBoxStd txtSerie;
+        private ActivosFijos.Controles.TextBoxStd txtModelo;
+        private System.Windows.Forms.Label lblSerie;
         private ActivosFijos.Controles.TextBoxStd txtResponsable;
+        private System.Windows.Forms.ComboBox cboDepreciacion;
         private ActivosFijos.Controles.TextBoxStd txtObservacion;
-        private System.Windows.Forms.Label lblResponsable;
+        private System.Windows.Forms.Label lblDepreciacion;
         private System.Windows.Forms.Label lblObservacion;
-        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Label lblResponsable;
     }
 }

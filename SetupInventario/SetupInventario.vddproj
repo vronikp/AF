@@ -584,6 +584,15 @@
                 {
                 }
             }
+            "{F6DFDB62-1DD1-498B-89B7-27BAC542EE5A}:_C731828E65CB483DA3C8B82F2F2769DC"
+            {
+            "Name" = "8:#1913"
+            "Condition" = "8:"
+            "Property" = "8:%CE4%"
+                "Folders"
+                {
+                }
+            }
             "{F6DFDB62-1DD1-498B-89B7-27BAC542EE5A}:_F581A6D5AB974F12805BB5421B900990"
             {
             "Name" = "8:#1919"
@@ -597,7 +606,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Inventario"
+        "ProductName" = "8:ActivosFijos"
         "Manufacturer" = "8:Interprof"
         "OSVersionMin" = "8:4.0"
         "OSVersionMax" = "8:6.99"
@@ -609,7 +618,7 @@
         {
             "{605BE39E-5046-48BD-AEC0-63C3A46626D5}:_05708282F7DB48BF9ED2E624C871D35D"
             {
-            "SourcePath" = "8:..\\ActivosFijos.SmartClient\\obj\\Debug\\ActivosFijos.SmarClient.exe"
+            "SourcePath" = "8:..\\ActivosFijos.Inventario\\obj\\Debug\\ActivosFijos.SmarClient.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_305A1AAE775B49D09CA7A7830103E347"
@@ -671,12 +680,22 @@
         {
             "{971D45E9-E38C-49AC-B36E-4C5BEA533350}:_50FF3494F2B24561A7F8B3D86069EAB9"
             {
-            "Name" = "8:Inventario"
+            "Name" = "8:IFA Mobile 2"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "Target" = "8:_05708282F7DB48BF9ED2E624C871D35D"
             "Folder" = "8:_F581A6D5AB974F12805BB5421B900990"
+            "WorkingFolder" = "8:_305A1AAE775B49D09CA7A7830103E347"
+            }
+            "{971D45E9-E38C-49AC-B36E-4C5BEA533350}:_CB178C6F5D9C4E2887B681105988EE4A"
+            {
+            "Name" = "8:IFA Mobile 2"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "Target" = "8:_05708282F7DB48BF9ED2E624C871D35D"
+            "Folder" = "8:_C731828E65CB483DA3C8B82F2F2769DC"
             "WorkingFolder" = "8:_305A1AAE775B49D09CA7A7830103E347"
             }
         }

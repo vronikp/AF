@@ -203,9 +203,16 @@ Public Class ActivoValor
   <Infoware.Reportes.CampoReporteAtributo("Costo", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 75, True)> _
   Public ReadOnly Property Costo() As String
     Get
-      Return (ActVal_Costo - ActVal_DeprecAcumAnt).ToString("0.00")
+            Return (ActVal_Costo).ToString("0.00")
     End Get
-  End Property
+    End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("Dep. Acumulada Valoracion Ant", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 75, True)> _
+    Public ReadOnly Property DepAcumAnt() As String
+        Get
+            Return (ActVal_DeprecAcumAnt).ToString("0.00")
+        End Get
+    End Property
 
   <Infoware.Reportes.CampoReporteAtributo("Salvamento", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 75, True)> _
   Public ReadOnly Property Salvamento() As String
@@ -238,9 +245,16 @@ Public Class ActivoValor
   <Infoware.Reportes.CampoReporteAtributo("Remanente", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 75, True)> _
   Public ReadOnly Property Remanente() As String
     Get
-      Return (ActVal_Costo - ActVal_DeprecAcumAnt - ActVal_Salvamento - Depreciado).ToString("0.00")
+            Return (ActVal_Costo - ActVal_DeprecAcumAnt - Depreciado).ToString("0.00")
     End Get
   End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("Periodos Dep. Valoracion Ant", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 75, True)> _
+    Public ReadOnly Property PeriodosDepreciablesAcumAnt() As String
+        Get
+            Return (ActVal_NumDeprecAcumAnt).ToString
+        End Get
+    End Property
 
   <Infoware.Reportes.CampoReporteAtributo("Periodos Depreciables", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 75, True)> _
   Public ReadOnly Property PeriodosDepreciables() As String

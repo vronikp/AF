@@ -13,6 +13,7 @@ namespace ActivosFijos
     public partial class frmTomaActivo : Form
     {
         private Conexion mConexion = new Conexion();
+        private Configuracion mConfiguracion = new Configuracion();
         private ActivosFijosServiceClient cliente;
         private string mUsuario;
         private Inventario mInventario;
@@ -37,6 +38,8 @@ namespace ActivosFijos
         private int MARCA = 10030;
         private int ESTADODEPRECIACION = 10035;
         private int ESTADOACTIVO = 10040;
+
+        private bool esLimpiar = false;
 
         public frmTomaActivo(string _Usuario, Inventario _Inventario, Parametro ubicacion, Empleado custodio)
         {
@@ -83,6 +86,8 @@ namespace ActivosFijos
         private void frmTomaActivo_Load(object sender, EventArgs e)
         {
             cliente = mConexion.Cliente();
+
+            chkSoloInventariados.Enabled = mConfiguracion.puedeVerNoInv;
 
             pEstadoDepreciacion = cliente.ParametroList(ESTADODEPRECIACION, 0, 0, "");
             pEstadoActivo = cliente.ParametroList(ESTADOACTIVO, 0, 0, "");
@@ -216,7 +221,15 @@ namespace ActivosFijos
                     }
                     else
                     {
-                        MessageBox.Show("Registro guardado", "Mensaje");
+                        DialogResult dialogResult = MessageBox.Show("Registro guardado. Desea limpiar los campos?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            cboClase.SelectedIndex = -1;
+                            cboTipo.SelectedIndex = -1;
+                            cboGrupo.SelectedIndex = -1;
+                            LimpiarCampos();
+                        }
                         pnlBusqueda.Enabled = true;
                         btnGuardar.Enabled = false;
                         txtActivo.Focus();
@@ -228,7 +241,7 @@ namespace ActivosFijos
                         btnLimpiar.Enabled = false;
                         pnlListaActivos.Visible = true;
                         pnlBusqueda.Visible = true;
-                        tabControl1.Visible = false;
+                        tbActivo.Visible = false;
                         btnBack.Enabled = false;
                         btnNext.Enabled = false;
 
@@ -265,7 +278,7 @@ namespace ActivosFijos
             pnladic.Controls.Clear();
             if (string.IsNullOrEmpty(txtActivo.Text) && string.IsNullOrEmpty(txtSerie1.Text))
             {
-                tabControl1.Enabled = false;
+                tbActivo.Enabled = false;
                 txtActivo.Focus();
             }
             else
@@ -276,60 +289,108 @@ namespace ActivosFijos
                 }
                 catch
                 {
-                    tabControl1.Enabled = false;
+                    tbActivo.Enabled = false;
                     MessageBox.Show("Error cargando activo, puede deberse a problemas de conexión o de concurrencia, inténtelo de nuevo");
+                    btnBack.Enabled = false;
+                    pnlListaActivos.Visible = true;
+                    pnlBusqueda.Visible = true;
+                    pnlBusqueda.Enabled = true;
+                    btnGuardar.Enabled = false;
+                    tbActivo.Visible = false;
+                    btnNext.Enabled = false;
+                    txtActivo.Focus();
+                    
                     return;
                 }
 
                 //txtmarca.Text = "";
-
                 pnlDatos.Enabled = false;
-                pnladic.Enabled = false;
-                pnlOtros.Enabled = false;
+                /*txtCodAux.Enabled = false;
+                cboGrupo.Enabled = false;
+                cboTipo.Enabled = false;
+                cboClase.Enabled = false;
+                txtDescripcion.Enabled = false;
+                txtmarca.Enabled = false;
+                cboMarca.Enabled = false;
+                txtModelo.Enabled = false;
+                txtSerie.Enabled = false;*/
+                //pnladic.Enabled = false;
+                //pnlOtros.Enabled = false;
+                txtObservacion.Enabled = false;
+                txtResponsable.Enabled = false;
+                cboDepreciacion.Enabled = false;
 
-                tabControl1.Enabled = true;
+                if (mConfiguracion.puedeModificar)
+                {
+                    /*txtCodAux.Enabled = true;
+                    cboGrupo.Enabled = true;
+                    cboTipo.Enabled = true;
+                    cboClase.Enabled = true;
+                    txtDescripcion.Enabled = true;
+                    txtmarca.Enabled = true;
+                    cboMarca.Enabled = true;
+                    txtModelo.Enabled = true;
+                    txtSerie.Enabled = true;*/
+                    pnlDatos.Enabled = true;
+                    //pnladic.Enabled = true;
+                    txtResponsable.Enabled = true;
+                    cboDepreciacion.Enabled = true;
+                    txtObservacion.Enabled = true;
+                    //pnlOtros.Enabled = true;
+                }
+                
+
+                tbActivo.Enabled = true;
                 if (mActivo.esNuevo)
                 {
-                    MessageBox.Show("Activo no existe", "Mensaje");
                     //LimpiarCampos();
-                    //para inventario interprof:
-                    /*MessageBox.Show("Activo nuevo", "Mensaje");
-                    btnLimpiar.Enabled = true;
-                    txtCodigo.Text = txtActivo.Text;
-                    CargarCaracteristicasporTipo();
-                    pnlDatos.Enabled = true;
-                    pnladic.Enabled = true;
-                    pnlOtros.Enabled = true;
-                    pnlListaActivos.Visible = false;
-                    pnlBusqueda.Visible = false;
-                    tabControl1.Visible = true;
-                    btnBack.Enabled = true;*/
+                    if (mConfiguracion.puedeIngresarNuevo)
+                    {
+                        MessageBox.Show("Activo nuevo", "Mensaje");
+                        btnLimpiar.Enabled = true;
+                        btnGuardar.Enabled = true;
+                        txtCodigo.Text = txtActivo.Text;
+                        CargarCaracteristicasporTipo();
+                        pnlDatos.Enabled = true;
+                        pnladic.Enabled = true;
+                        pnlOtros.Enabled = true;
+                        pnlListaActivos.Visible = false;
+                        pnlBusqueda.Visible = false;
+                        tbActivo.Visible = true;
+                        btnBack.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Activo no existe", "Mensaje"); 
+                    }
                     //btnNext.Enabled = true;
                 }
                 else
                 {
                     //MessageBox.Show("Fecha baja " + mActivo.Activo_FechaBaja.ToString());
+                    btnLimpiar.Enabled = true;
+
                     if (mActivo.Activo_FechaBaja.ToString("yyyy-MM-dd") == "0001-01-01")
                     {
                         bool inventariado = cliente.ActivoInventariado(mActivo.Activo_Codigo, mInventario.Parame_PeriodoInventario, mInventario.Pardet_PeriodoInventario);
                         if (inventariado)
                         {
                             MessageBox.Show("El activo ya fue inventariado en este periodo", "Mensaje");
-                            tabControl1.Enabled = false;
+                            tbActivo.Enabled = false;
                         }
                         else
                         {
                             pnlBusqueda.Enabled = false;
                             btnGuardar.Enabled = true;
-                            //inventario interprof
-                            tabControl1.Enabled = true;
-
+                            
                             pnlListaActivos.Visible = false;
                             pnlBusqueda.Visible = false;
-                            tabControl1.Visible = true;
+                            tbActivo.Visible = true;
                             btnBack.Enabled = true;
-                            //btnNext.Enabled = true;
-
+                            
+                            //inventario interprof
+                            //tabControl1.Enabled = true;
+                            
                             txtCodigo.Text = mActivo.Activo_CodigoBarra;
                             cboGrupo.SelectedValue = mActivo.Pardet_Grupo;
                             cboTipo.SelectedValue = mActivo.Pardet_Tipo;
@@ -362,7 +423,7 @@ namespace ActivosFijos
                     else
                     {
                         MessageBox.Show("El activo ha sido dado de baja", "Mensaje");
-                        tabControl1.Enabled = false;
+                        tbActivo.Enabled = false;
                     }
                 }
             }
@@ -518,7 +579,7 @@ namespace ActivosFijos
             btnBack.Enabled = false;
             pnlListaActivos.Visible = true;
             pnlBusqueda.Visible = true;
-            tabControl1.Visible = false;
+            tbActivo.Visible = false;
             btnNext.Enabled = true;
         }
 
@@ -527,7 +588,7 @@ namespace ActivosFijos
             btnBack.Enabled = true;
             pnlListaActivos.Visible = false;
             pnlBusqueda.Visible = false;
-            tabControl1.Visible = true;
+            tbActivo.Visible = true;
             btnNext.Enabled = false;
         }
 
@@ -541,14 +602,15 @@ namespace ActivosFijos
             txtActivo.Text = "";
             txtSerie1.Text = "";
             LimpiarCampos();
-            //btnBack.Enabled = false;
-            //pnlListaActivos.Visible = true;
-            //pnlBusqueda.Visible = true;
-            //pnlBusqueda.Enabled = true;
-            //btnGuardar.Enabled = false;
-            //tabControl1.Visible = false;
-            //btnNext.Enabled = false;
+            btnBack.Enabled = false;
+            pnlListaActivos.Visible = true;
+            pnlBusqueda.Visible = true;
+            pnlBusqueda.Enabled = true;
+            btnGuardar.Enabled = false;
+            tbActivo.Visible = false;
+            btnNext.Enabled = false;
         }
+
 
 
     }

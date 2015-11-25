@@ -61,6 +61,7 @@
     <Compile Include="ActivosFijosService.cs" />
     <Compile Include="CFClientBase.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="Configuracion.cs" />
     <Compile Include="Controles\CtlAdicional.cs">
       <SubType>UserControl</SubType>
     </Compile>

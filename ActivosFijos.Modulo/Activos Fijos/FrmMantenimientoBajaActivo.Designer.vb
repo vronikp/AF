@@ -56,8 +56,8 @@ Partial Class FrmMantenimientoBajaActivo
     Me.dgdets.AgruparRepetidos = False
     Me.dgdets.AllowUserToAddRows = False
     Me.dgdets.AllowUserToDeleteRows = False
-    Me.dgdets.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.dgdets.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+              Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
     Me.dgdets.AutoGenerateColumns = False
     DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -69,7 +69,8 @@ Partial Class FrmMantenimientoBajaActivo
     DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
     Me.dgdets.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
     Me.dgdets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-    Me.dgdets.DataSource = Me.bsdets
+        'Me.dgdets.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn6})
+        Me.dgdets.DataSource = Me.bsdets
     DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
     DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
     DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -88,11 +89,12 @@ Partial Class FrmMantenimientoBajaActivo
     DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
     DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
     DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-    Me.dgdets.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        'Me.dgdets.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
     Me.dgdets.RowHeadersVisible = False
     Me.dgdets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
     Me.dgdets.Size = New System.Drawing.Size(568, 398)
-    Me.dgdets.TabIndex = 2
+        Me.dgdets.TabIndex = 2
+        
     '
     'DataGridViewTextBoxColumn6
     '

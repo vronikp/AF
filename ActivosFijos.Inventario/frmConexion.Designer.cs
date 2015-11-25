@@ -36,6 +36,8 @@
             this.txtServidor = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtConfiguracion = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,7 +81,7 @@
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 41);
+            this.panel2.Location = new System.Drawing.Point(0, 82);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(240, 13);
             // 
@@ -88,9 +90,26 @@
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 54);
+            this.panel1.Location = new System.Drawing.Point(0, 95);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(240, 25);
+            // 
+            // txtConfiguracion
+            // 
+            this.txtConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtConfiguracion.Location = new System.Drawing.Point(0, 61);
+            this.txtConfiguracion.Name = "txtConfiguracion";
+            this.txtConfiguracion.PasswordChar = '*';
+            this.txtConfiguracion.Size = new System.Drawing.Size(240, 21);
+            this.txtConfiguracion.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Location = new System.Drawing.Point(0, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(240, 20);
+            this.label1.Text = "Configuracion:";
             // 
             // frmConexion
             // 
@@ -100,6 +119,8 @@
             this.ClientSize = new System.Drawing.Size(240, 294);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.txtConfiguracion);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtServidor);
             this.Controls.Add(this.lblServidor);
             this.Location = new System.Drawing.Point(0, 0);
@@ -122,5 +143,7 @@
         private System.Windows.Forms.TextBox txtServidor;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtConfiguracion;
+        private System.Windows.Forms.Label label1;
     }
 }

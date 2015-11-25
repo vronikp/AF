@@ -36,6 +36,19 @@ namespace ActivosFijos
             xRoot.Add(servidor);
 
             doc.Save(file);
+
+            string fileConfig = Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(0, Assembly.GetExecutingAssembly().GetName().CodeBase.LastIndexOf('\\') + 1) + "configuracion.xml";
+            XDocument docConfig = new XDocument();
+
+            XElement xRootConfig = new XElement("Root");
+            docConfig.Add(xRootConfig);
+
+            XElement config = new XElement("Configuracion");
+            config.SetValue(txtConfiguracion.Text);
+            xRootConfig.Add(config);
+
+            docConfig.Save(fileConfig);
+
             this.Close();
         }
     }
