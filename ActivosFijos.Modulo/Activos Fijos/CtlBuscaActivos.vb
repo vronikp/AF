@@ -261,4 +261,13 @@ Public Class CtlBuscaActivos
   Private Sub cbotipofecha_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbotipofecha.SelectedIndexChanged
     Me.pnlrangofechas.Visible = Me.cbotipofecha.SelectedIndex < 4
   End Sub
+
+    Private Sub ActaDeIngresoDeActivosFijosToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ActaDeIngresoDeActivosFijosToolStripMenuItem.Click
+
+        Dim f As New FrmReporteIngresoActivos(Sistema, Enumerados.EnumOpciones.ListadoActivos)
+        'f.Filtro = _filtro
+        'f.ListaActivosOrden = EnumListaActivosOrden.Ubicacion
+        f.dsReporteActivos = clsReporteActivo.RetornarListaActivosIngresoDS(mOperadorDatos, Me.txtcodigobarra.Text, Me.txtcodigoaux.Text, Me.txtserie.Text, Me.txtdescripcion.Text, IIf(Me.chkgrupo.Checked, Me.CtlGrupoTipoClase.ParametroDet, Nothing), IIf(Me.chkmarca.Checked, Me.cboMarca.ParametroDet, Nothing), Me.txtmodelo.Text, IIf(Me.chkproveedor.Checked, Me.CtlBuscaProveedor1.Proveedor, Nothing), IIf(Me.chkfactura.Checked, Me.CtlBuscaFactura1.FacturaActivo, Nothing), IIf(Me.chkcustodio.Checked, Me.CtlBuscaEmpleado1.Empleado, Nothing), IIf(Me.chkubicacion.Checked, Me.CtlUbicacionActivo1.ParametroDet, Nothing), IIf(Me.chkestadoinv.Checked, Me.cboestadoinv.ParametroDet, Nothing), Me.chksoloactivos.Checked, IIf(Me.chkfecha.Checked, Me.cbotipofecha.SelectedIndex, -1), IIf(Me.chkfecha.Checked, Me.dtfecdesde.Value, Nothing), IIf(Me.chkfecha.Checked, Me.dtfechasta.Value, Nothing))
+        f.ShowDialog()
+    End Sub
 End Class

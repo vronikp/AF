@@ -225,6 +225,29 @@
     <Compile Include="Activos Fijos\Reportes\clsResumenDepreciacionPorTipo.vb" />
     <Compile Include="Activos Fijos\Reportes\clsReporteSRIActaRecepcion.vb" />
     <Compile Include="Activos Fijos\Reportes\clsReporteActaRecepcionF3.vb" />
+    <Compile Include="Activos Fijos\Reportes\crpListaActivosIngreso.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crpListaActivosIngreso.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Activos Fijos\Reportes\dsReporteActivos.vb">
+      <DependentUpon>dsReporteActivos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Activos Fijos\Reportes\dsReporteActivosIngreso.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReporteActivosIngreso.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Activos Fijos\Reportes\dsReporteActivosIngreso.vb">
+      <DependentUpon>dsReporteActivosIngreso.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Activos Fijos\Reportes\FrmReporteIngresoActivos.Designer.vb">
+      <DependentUpon>FrmReporteIngresoActivos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Activos Fijos\Reportes\FrmReporteIngresoActivos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Activos Fijos\Reportes\crpActaRecepcionFormato3.vb">
       <DependentUpon>crpActaRecepcionFormato3.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -766,6 +789,13 @@
     <EmbeddedResource Include="Activos Fijos\FrmMantenimientoFacturaActivo.resx">
       <DependentUpon>FrmMantenimientoFacturaActivo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Activos Fijos\Reportes\crpListaActivosIngreso.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpListaActivosIngreso.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activos Fijos\Reportes\FrmReporteIngresoActivos.resx">
+      <DependentUpon>FrmReporteIngresoActivos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\Reportes\crpActaRecepcionFormato3.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crpActaRecepcionFormato3.vb</LastGenOutput>
@@ -1020,6 +1050,17 @@
     </None>
     <None Include="Activos Fijos\Reportes\dsReporteActivos.xss">
       <DependentUpon>dsReporteActivos.xsd</DependentUpon>
+    </None>
+    <None Include="Activos Fijos\Reportes\dsReporteActivosIngreso.xsc">
+      <DependentUpon>dsReporteActivosIngreso.xsd</DependentUpon>
+    </None>
+    <None Include="Activos Fijos\Reportes\dsReporteActivosIngreso.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReporteActivosIngreso.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Activos Fijos\Reportes\dsReporteActivosIngreso.xss">
+      <DependentUpon>dsReporteActivosIngreso.xsd</DependentUpon>
     </None>
     <None Include="Activos Fijos\Reportes\dsReporteActivosValorizacionDet.xsc">
       <DependentUpon>dsReporteActivosValorizacionDet.xsd</DependentUpon>

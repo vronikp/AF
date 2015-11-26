@@ -77,6 +77,8 @@ Partial Class CtlBuscaActivos
         Me.txtcodigoaux = New Infoware.Controles.Base.TextBoxStd()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtcodigobarra = New Infoware.Controles.Base.TextBoxStd()
+        Me.ActaDeIngresoDeActivosFijosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.HeaderStrip2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.pnlcierre.SuspendLayout()
@@ -186,7 +188,7 @@ Partial Class CtlBuscaActivos
         '
         'btnimprimiractivos
         '
-        Me.btnimprimiractivos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MnuDeprec, Me.ToolStripMenuItem1, Me.PorGrupoTipoClaseToolStripMenuItem, Me.PorCustodioToolStripMenuItem, Me.PorUbicacionToolStripMenuItem, Me.ToolStripMenuItem2, Me.ImprimirCódigoDeBarrasActivosSeleccionadosToolStripMenuItem})
+        Me.btnimprimiractivos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MnuDeprec, Me.ToolStripMenuItem1, Me.PorGrupoTipoClaseToolStripMenuItem, Me.PorCustodioToolStripMenuItem, Me.PorUbicacionToolStripMenuItem, Me.ToolStripMenuItem2, Me.ImprimirCódigoDeBarrasActivosSeleccionadosToolStripMenuItem, Me.ToolStripSeparator1, Me.ActaDeIngresoDeActivosFijosToolStripMenuItem})
         Me.btnimprimiractivos.Image = CType(resources.GetObject("btnimprimiractivos.Image"), System.Drawing.Image)
         Me.btnimprimiractivos.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnimprimiractivos.Name = "btnimprimiractivos"
@@ -663,6 +665,17 @@ Partial Class CtlBuscaActivos
         Me.txtcodigobarra.Size = New System.Drawing.Size(245, 20)
         Me.txtcodigobarra.TabIndex = 1
         '
+        'ActaDeIngresoDeActivosFijosToolStripMenuItem
+        '
+        Me.ActaDeIngresoDeActivosFijosToolStripMenuItem.Name = "ActaDeIngresoDeActivosFijosToolStripMenuItem"
+        Me.ActaDeIngresoDeActivosFijosToolStripMenuItem.Size = New System.Drawing.Size(328, 22)
+        Me.ActaDeIngresoDeActivosFijosToolStripMenuItem.Text = "Acta de Ingreso de Activos Fijos"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(325, 6)
+        '
         'CtlBuscaActivos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -744,6 +757,8 @@ Partial Class CtlBuscaActivos
   Friend WithEvents pnlrangofechas As System.Windows.Forms.Panel
   Friend WithEvents dtfechasta As System.Windows.Forms.DateTimePicker
   Friend WithEvents dtfecdesde As System.Windows.Forms.DateTimePicker
-  Friend WithEvents cbotipofecha As System.Windows.Forms.ComboBox
+    Friend WithEvents cbotipofecha As System.Windows.Forms.ComboBox
+    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ActaDeIngresoDeActivosFijosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

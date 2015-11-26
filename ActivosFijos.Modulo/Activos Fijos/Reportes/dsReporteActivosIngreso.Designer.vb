@@ -20,12 +20,12 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("dsReporteActivos"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("dsReporteActivosIngreso"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class dsReporteActivos
+Partial Public Class dsReporteActivosIngreso
     Inherits Global.System.Data.DataSet
     
-    Private tablevw_ReporteActivo As vw_ReporteActivoDataTable
+    Private tablevw_ReporteActivoIngreso As vw_ReporteActivoIngresoDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +56,8 @@ Partial Public Class dsReporteActivos
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("vw_ReporteActivo")) Is Nothing) Then
-                MyBase.Tables.Add(New vw_ReporteActivoDataTable(ds.Tables("vw_ReporteActivo")))
+            If (Not (ds.Tables("vw_ReporteActivoIngreso")) Is Nothing) Then
+                MyBase.Tables.Add(New vw_ReporteActivoIngresoDataTable(ds.Tables("vw_ReporteActivoIngreso")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +80,9 @@ Partial Public Class dsReporteActivos
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property vw_ReporteActivo() As vw_ReporteActivoDataTable
+    Public ReadOnly Property vw_ReporteActivoIngreso() As vw_ReporteActivoIngresoDataTable
         Get
-            Return Me.tablevw_ReporteActivo
+            Return Me.tablevw_ReporteActivoIngreso
         End Get
     End Property
     
@@ -128,7 +128,7 @@ Partial Public Class dsReporteActivos
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As dsReporteActivos = CType(MyBase.Clone,dsReporteActivos)
+        Dim cln As dsReporteActivosIngreso = CType(MyBase.Clone,dsReporteActivosIngreso)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -153,8 +153,8 @@ Partial Public Class dsReporteActivos
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("vw_ReporteActivo")) Is Nothing) Then
-                MyBase.Tables.Add(New vw_ReporteActivoDataTable(ds.Tables("vw_ReporteActivo")))
+            If (Not (ds.Tables("vw_ReporteActivoIngreso")) Is Nothing) Then
+                MyBase.Tables.Add(New vw_ReporteActivoIngresoDataTable(ds.Tables("vw_ReporteActivoIngreso")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +188,10 @@ Partial Public Class dsReporteActivos
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tablevw_ReporteActivo = CType(MyBase.Tables("vw_ReporteActivo"),vw_ReporteActivoDataTable)
+        Me.tablevw_ReporteActivoIngreso = CType(MyBase.Tables("vw_ReporteActivoIngreso"),vw_ReporteActivoIngresoDataTable)
         If (initTable = true) Then
-            If (Not (Me.tablevw_ReporteActivo) Is Nothing) Then
-                Me.tablevw_ReporteActivo.InitVars
+            If (Not (Me.tablevw_ReporteActivoIngreso) Is Nothing) Then
+                Me.tablevw_ReporteActivoIngreso.InitVars
             End If
         End If
     End Sub
@@ -199,18 +199,18 @@ Partial Public Class dsReporteActivos
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "dsReporteActivos"
+        Me.DataSetName = "dsReporteActivosIngreso"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/dsReporteActivos.xsd"
+        Me.Namespace = "http://tempuri.org/dsReporteActivosIngreso.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tablevw_ReporteActivo = New vw_ReporteActivoDataTable()
-        MyBase.Tables.Add(Me.tablevw_ReporteActivo)
+        Me.tablevw_ReporteActivoIngreso = New vw_ReporteActivoIngresoDataTable()
+        MyBase.Tables.Add(Me.tablevw_ReporteActivoIngreso)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializevw_ReporteActivo() As Boolean
+    Private Function ShouldSerializevw_ReporteActivoIngreso() As Boolean
         Return false
     End Function
     
@@ -225,7 +225,7 @@ Partial Public Class dsReporteActivos
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As dsReporteActivos = New dsReporteActivos()
+        Dim ds As dsReporteActivosIngreso = New dsReporteActivosIngreso()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -273,15 +273,29 @@ Partial Public Class dsReporteActivos
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub vw_ReporteActivoRowChangeEventHandler(ByVal sender As Object, ByVal e As vw_ReporteActivoRowChangeEvent)
+    Public Delegate Sub vw_ReporteActivoIngresoRowChangeEventHandler(ByVal sender As Object, ByVal e As vw_ReporteActivoIngresoRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class vw_ReporteActivoDataTable
-        Inherits Global.System.Data.TypedTableBase(Of vw_ReporteActivoRow)
+    Partial Public Class vw_ReporteActivoIngresoDataTable
+        Inherits Global.System.Data.TypedTableBase(Of vw_ReporteActivoIngresoRow)
+        
+        Private columnProveedor As Global.System.Data.DataColumn
+        
+        Private columnProveedorCodigo As Global.System.Data.DataColumn
+        
+        Private columnFactura_Numero As Global.System.Data.DataColumn
+        
+        Private columnFactura_Fecha As Global.System.Data.DataColumn
+        
+        Private columnCustodio As Global.System.Data.DataColumn
+        
+        Private columnCustodioCodigo As Global.System.Data.DataColumn
+        
+        Private columnUbicacionInicial As Global.System.Data.DataColumn
         
         Private columnActivo_Codigo As Global.System.Data.DataColumn
         
@@ -317,6 +331,8 @@ Partial Public Class dsReporteActivos
         
         Private columnActivo_FechaUso As Global.System.Data.DataColumn
         
+        Private columnActivo_FechaGarantia As Global.System.Data.DataColumn
+        
         Private columnCentro_Costo As Global.System.Data.DataColumn
         
         Private columnFactura_Codigo As Global.System.Data.DataColumn
@@ -327,21 +343,33 @@ Partial Public Class dsReporteActivos
         
         Private columnCaracteristicas As Global.System.Data.DataColumn
         
-        Private columnUbicacionActual As Global.System.Data.DataColumn
-        
-        Private columnCustodioActual As Global.System.Data.DataColumn
-        
         Private columnPardet_Marca As Global.System.Data.DataColumn
         
         Private columnParame_ClaseActivo As Global.System.Data.DataColumn
         
         Private columnPardet_ClaseActivo As Global.System.Data.DataColumn
         
+        Private columncodGrupo As Global.System.Data.DataColumn
+        
+        Private columncodTipo As Global.System.Data.DataColumn
+        
+        Private columncodClase As Global.System.Data.DataColumn
+        
+        Private columnActivo_CodigoBarraCruce As Global.System.Data.DataColumn
+        
+        Private columnParame_Ubicacion As Global.System.Data.DataColumn
+        
+        Private columnPardet_Ubicacion As Global.System.Data.DataColumn
+        
+        Private columnCostoOriginal As Global.System.Data.DataColumn
+        
+        Private columnCustodioCI As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "vw_ReporteActivo"
+            Me.TableName = "vw_ReporteActivoIngreso"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -371,6 +399,62 @@ Partial Public Class dsReporteActivos
             MyBase.New(info, context)
             Me.InitVars
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ProveedorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnProveedor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ProveedorCodigoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnProveedorCodigo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Factura_NumeroColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFactura_Numero
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Factura_FechaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFactura_Fecha
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CustodioColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCustodio
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CustodioCodigoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCustodioCodigo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property UbicacionInicialColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnUbicacionInicial
+            End Get
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -510,6 +594,14 @@ Partial Public Class dsReporteActivos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Activo_FechaGarantiaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnActivo_FechaGarantia
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property Centro_CostoColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnCentro_Costo
@@ -550,22 +642,6 @@ Partial Public Class dsReporteActivos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property UbicacionActualColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnUbicacionActual
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property CustodioActualColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCustodioActual
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property Pardet_MarcaColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnPardet_Marca
@@ -589,6 +665,70 @@ Partial Public Class dsReporteActivos
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property codGrupoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncodGrupo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property codTipoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncodTipo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property codClaseColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncodClase
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Activo_CodigoBarraCruceColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnActivo_CodigoBarraCruce
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Parame_UbicacionColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnParame_Ubicacion
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Pardet_UbicacionColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPardet_Ubicacion
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CostoOriginalColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCostoOriginal
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CustodioCIColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCustodioCI
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -599,33 +739,40 @@ Partial Public Class dsReporteActivos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As vw_ReporteActivoRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As vw_ReporteActivoIngresoRow
             Get
-                Return CType(Me.Rows(index),vw_ReporteActivoRow)
+                Return CType(Me.Rows(index),vw_ReporteActivoIngresoRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event vw_ReporteActivoRowChanging As vw_ReporteActivoRowChangeEventHandler
+        Public Event vw_ReporteActivoIngresoRowChanging As vw_ReporteActivoIngresoRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event vw_ReporteActivoRowChanged As vw_ReporteActivoRowChangeEventHandler
+        Public Event vw_ReporteActivoIngresoRowChanged As vw_ReporteActivoIngresoRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event vw_ReporteActivoRowDeleting As vw_ReporteActivoRowChangeEventHandler
+        Public Event vw_ReporteActivoIngresoRowDeleting As vw_ReporteActivoIngresoRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event vw_ReporteActivoRowDeleted As vw_ReporteActivoRowChangeEventHandler
+        Public Event vw_ReporteActivoIngresoRowDeleted As vw_ReporteActivoIngresoRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub Addvw_ReporteActivoRow(ByVal row As vw_ReporteActivoRow)
+        Public Overloads Sub Addvw_ReporteActivoIngresoRow(ByVal row As vw_ReporteActivoIngresoRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function Addvw_ReporteActivoRow( _
+        Public Overloads Function Addvw_ReporteActivoIngresoRow( _
+                    ByVal Proveedor As String,  _
+                    ByVal ProveedorCodigo As Integer,  _
+                    ByVal Factura_Numero As String,  _
+                    ByVal Factura_Fecha As Date,  _
+                    ByVal Custodio As String,  _
+                    ByVal CustodioCodigo As Integer,  _
+                    ByVal UbicacionInicial As String,  _
                     ByVal Activo_Codigo As Integer,  _
                     ByVal Activo_Serie As String,  _
                     ByVal Grupo As String,  _
@@ -643,33 +790,40 @@ Partial Public Class dsReporteActivos
                     ByVal Activo_FechaIngreso As Date,  _
                     ByVal Activo_FechaCompra As Date,  _
                     ByVal Activo_FechaUso As Date,  _
+                    ByVal Activo_FechaGarantia As Date,  _
                     ByVal Centro_Costo As String,  _
                     ByVal Factura_Codigo As Integer,  _
                     ByVal Activo_FechaBaja As Date,  _
                     ByVal TipoBajaActivo As String,  _
                     ByVal Caracteristicas As String,  _
-                    ByVal UbicacionActual As String,  _
-                    ByVal CustodioActual As String,  _
                     ByVal Pardet_Marca As Integer,  _
                     ByVal Parame_ClaseActivo As Integer,  _
-                    ByVal Pardet_ClaseActivo As Integer) As vw_ReporteActivoRow
-            Dim rowvw_ReporteActivoRow As vw_ReporteActivoRow = CType(Me.NewRow,vw_ReporteActivoRow)
-            Dim columnValuesArray() As Object = New Object() {Activo_Codigo, Activo_Serie, Grupo, Tipo, Clase, Activo_CodigoBarra, Activo_CodigoAux, Activo_Descripcion, Marca, Activo_Modelo, Activo_Observacion, Estado_Depreciacion, Estado_Activo, Activo_ResponsableMantenimiento, Activo_FechaIngreso, Activo_FechaCompra, Activo_FechaUso, Centro_Costo, Factura_Codigo, Activo_FechaBaja, TipoBajaActivo, Caracteristicas, UbicacionActual, CustodioActual, Pardet_Marca, Parame_ClaseActivo, Pardet_ClaseActivo}
-            rowvw_ReporteActivoRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowvw_ReporteActivoRow)
-            Return rowvw_ReporteActivoRow
+                    ByVal Pardet_ClaseActivo As Integer,  _
+                    ByVal codGrupo As Integer,  _
+                    ByVal codTipo As Integer,  _
+                    ByVal codClase As Integer,  _
+                    ByVal Activo_CodigoBarraCruce As String,  _
+                    ByVal Parame_Ubicacion As Integer,  _
+                    ByVal Pardet_Ubicacion As Integer,  _
+                    ByVal CostoOriginal As Decimal,  _
+                    ByVal CustodioCI As String) As vw_ReporteActivoIngresoRow
+            Dim rowvw_ReporteActivoIngresoRow As vw_ReporteActivoIngresoRow = CType(Me.NewRow,vw_ReporteActivoIngresoRow)
+            Dim columnValuesArray() As Object = New Object() {Proveedor, ProveedorCodigo, Factura_Numero, Factura_Fecha, Custodio, CustodioCodigo, UbicacionInicial, Activo_Codigo, Activo_Serie, Grupo, Tipo, Clase, Activo_CodigoBarra, Activo_CodigoAux, Activo_Descripcion, Marca, Activo_Modelo, Activo_Observacion, Estado_Depreciacion, Estado_Activo, Activo_ResponsableMantenimiento, Activo_FechaIngreso, Activo_FechaCompra, Activo_FechaUso, Activo_FechaGarantia, Centro_Costo, Factura_Codigo, Activo_FechaBaja, TipoBajaActivo, Caracteristicas, Pardet_Marca, Parame_ClaseActivo, Pardet_ClaseActivo, codGrupo, codTipo, codClase, Activo_CodigoBarraCruce, Parame_Ubicacion, Pardet_Ubicacion, CostoOriginal, CustodioCI}
+            rowvw_ReporteActivoIngresoRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowvw_ReporteActivoIngresoRow)
+            Return rowvw_ReporteActivoIngresoRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByActivo_Codigo(ByVal Activo_Codigo As Integer) As vw_ReporteActivoRow
-            Return CType(Me.Rows.Find(New Object() {Activo_Codigo}),vw_ReporteActivoRow)
+        Public Function FindByActivo_Codigo(ByVal Activo_Codigo As Integer) As vw_ReporteActivoIngresoRow
+            Return CType(Me.Rows.Find(New Object() {Activo_Codigo}),vw_ReporteActivoIngresoRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As vw_ReporteActivoDataTable = CType(MyBase.Clone,vw_ReporteActivoDataTable)
+            Dim cln As vw_ReporteActivoIngresoDataTable = CType(MyBase.Clone,vw_ReporteActivoIngresoDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -677,12 +831,19 @@ Partial Public Class dsReporteActivos
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New vw_ReporteActivoDataTable()
+            Return New vw_ReporteActivoIngresoDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
+            Me.columnProveedor = MyBase.Columns("Proveedor")
+            Me.columnProveedorCodigo = MyBase.Columns("ProveedorCodigo")
+            Me.columnFactura_Numero = MyBase.Columns("Factura_Numero")
+            Me.columnFactura_Fecha = MyBase.Columns("Factura_Fecha")
+            Me.columnCustodio = MyBase.Columns("Custodio")
+            Me.columnCustodioCodigo = MyBase.Columns("CustodioCodigo")
+            Me.columnUbicacionInicial = MyBase.Columns("UbicacionInicial")
             Me.columnActivo_Codigo = MyBase.Columns("Activo_Codigo")
             Me.columnActivo_Serie = MyBase.Columns("Activo_Serie")
             Me.columnGrupo = MyBase.Columns("Grupo")
@@ -700,21 +861,42 @@ Partial Public Class dsReporteActivos
             Me.columnActivo_FechaIngreso = MyBase.Columns("Activo_FechaIngreso")
             Me.columnActivo_FechaCompra = MyBase.Columns("Activo_FechaCompra")
             Me.columnActivo_FechaUso = MyBase.Columns("Activo_FechaUso")
+            Me.columnActivo_FechaGarantia = MyBase.Columns("Activo_FechaGarantia")
             Me.columnCentro_Costo = MyBase.Columns("Centro_Costo")
             Me.columnFactura_Codigo = MyBase.Columns("Factura_Codigo")
             Me.columnActivo_FechaBaja = MyBase.Columns("Activo_FechaBaja")
             Me.columnTipoBajaActivo = MyBase.Columns("TipoBajaActivo")
             Me.columnCaracteristicas = MyBase.Columns("Caracteristicas")
-            Me.columnUbicacionActual = MyBase.Columns("UbicacionActual")
-            Me.columnCustodioActual = MyBase.Columns("CustodioActual")
             Me.columnPardet_Marca = MyBase.Columns("Pardet_Marca")
             Me.columnParame_ClaseActivo = MyBase.Columns("Parame_ClaseActivo")
             Me.columnPardet_ClaseActivo = MyBase.Columns("Pardet_ClaseActivo")
+            Me.columncodGrupo = MyBase.Columns("codGrupo")
+            Me.columncodTipo = MyBase.Columns("codTipo")
+            Me.columncodClase = MyBase.Columns("codClase")
+            Me.columnActivo_CodigoBarraCruce = MyBase.Columns("Activo_CodigoBarraCruce")
+            Me.columnParame_Ubicacion = MyBase.Columns("Parame_Ubicacion")
+            Me.columnPardet_Ubicacion = MyBase.Columns("Pardet_Ubicacion")
+            Me.columnCostoOriginal = MyBase.Columns("CostoOriginal")
+            Me.columnCustodioCI = MyBase.Columns("CustodioCI")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
+            Me.columnProveedor = New Global.System.Data.DataColumn("Proveedor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnProveedor)
+            Me.columnProveedorCodigo = New Global.System.Data.DataColumn("ProveedorCodigo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnProveedorCodigo)
+            Me.columnFactura_Numero = New Global.System.Data.DataColumn("Factura_Numero", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFactura_Numero)
+            Me.columnFactura_Fecha = New Global.System.Data.DataColumn("Factura_Fecha", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFactura_Fecha)
+            Me.columnCustodio = New Global.System.Data.DataColumn("Custodio", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCustodio)
+            Me.columnCustodioCodigo = New Global.System.Data.DataColumn("CustodioCodigo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCustodioCodigo)
+            Me.columnUbicacionInicial = New Global.System.Data.DataColumn("UbicacionInicial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUbicacionInicial)
             Me.columnActivo_Codigo = New Global.System.Data.DataColumn("Activo_Codigo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnActivo_Codigo)
             Me.columnActivo_Serie = New Global.System.Data.DataColumn("Activo_Serie", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -749,6 +931,8 @@ Partial Public Class dsReporteActivos
             MyBase.Columns.Add(Me.columnActivo_FechaCompra)
             Me.columnActivo_FechaUso = New Global.System.Data.DataColumn("Activo_FechaUso", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnActivo_FechaUso)
+            Me.columnActivo_FechaGarantia = New Global.System.Data.DataColumn("Activo_FechaGarantia", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnActivo_FechaGarantia)
             Me.columnCentro_Costo = New Global.System.Data.DataColumn("Centro_Costo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCentro_Costo)
             Me.columnFactura_Codigo = New Global.System.Data.DataColumn("Factura_Codigo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
@@ -759,17 +943,38 @@ Partial Public Class dsReporteActivos
             MyBase.Columns.Add(Me.columnTipoBajaActivo)
             Me.columnCaracteristicas = New Global.System.Data.DataColumn("Caracteristicas", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCaracteristicas)
-            Me.columnUbicacionActual = New Global.System.Data.DataColumn("UbicacionActual", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnUbicacionActual)
-            Me.columnCustodioActual = New Global.System.Data.DataColumn("CustodioActual", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCustodioActual)
             Me.columnPardet_Marca = New Global.System.Data.DataColumn("Pardet_Marca", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPardet_Marca)
             Me.columnParame_ClaseActivo = New Global.System.Data.DataColumn("Parame_ClaseActivo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnParame_ClaseActivo)
             Me.columnPardet_ClaseActivo = New Global.System.Data.DataColumn("Pardet_ClaseActivo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPardet_ClaseActivo)
+            Me.columncodGrupo = New Global.System.Data.DataColumn("codGrupo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncodGrupo)
+            Me.columncodTipo = New Global.System.Data.DataColumn("codTipo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncodTipo)
+            Me.columncodClase = New Global.System.Data.DataColumn("codClase", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncodClase)
+            Me.columnActivo_CodigoBarraCruce = New Global.System.Data.DataColumn("Activo_CodigoBarraCruce", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnActivo_CodigoBarraCruce)
+            Me.columnParame_Ubicacion = New Global.System.Data.DataColumn("Parame_Ubicacion", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnParame_Ubicacion)
+            Me.columnPardet_Ubicacion = New Global.System.Data.DataColumn("Pardet_Ubicacion", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPardet_Ubicacion)
+            Me.columnCostoOriginal = New Global.System.Data.DataColumn("CostoOriginal", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCostoOriginal)
+            Me.columnCustodioCI = New Global.System.Data.DataColumn("CustodioCI", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCustodioCI)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnActivo_Codigo}, true))
+            Me.columnProveedor.MaxLength = 201
+            Me.columnProveedorCodigo.AllowDBNull = false
+            Me.columnFactura_Numero.AllowDBNull = false
+            Me.columnFactura_Numero.MaxLength = 150
+            Me.columnFactura_Fecha.AllowDBNull = false
+            Me.columnCustodio.MaxLength = 201
+            Me.columnCustodioCodigo.AllowDBNull = false
+            Me.columnUbicacionInicial.ReadOnly = true
+            Me.columnUbicacionInicial.MaxLength = 300
             Me.columnActivo_Codigo.AllowDBNull = false
             Me.columnActivo_Codigo.Unique = true
             Me.columnActivo_Serie.AllowDBNull = false
@@ -800,46 +1005,48 @@ Partial Public Class dsReporteActivos
             Me.columnActivo_ResponsableMantenimiento.MaxLength = 150
             Me.columnActivo_FechaIngreso.AllowDBNull = false
             Me.columnActivo_FechaCompra.AllowDBNull = false
-            Me.columnActivo_FechaUso.AllowDBNull = false
             Me.columnCentro_Costo.AllowDBNull = false
             Me.columnCentro_Costo.MaxLength = 150
             Me.columnFactura_Codigo.AllowDBNull = false
             Me.columnTipoBajaActivo.MaxLength = 150
             Me.columnCaracteristicas.ReadOnly = true
             Me.columnCaracteristicas.MaxLength = 2147483647
-            Me.columnUbicacionActual.ReadOnly = true
-            Me.columnUbicacionActual.MaxLength = 2147483647
-            Me.columnCustodioActual.ReadOnly = true
-            Me.columnCustodioActual.MaxLength = 2147483647
             Me.columnPardet_Marca.AllowDBNull = false
             Me.columnParame_ClaseActivo.AllowDBNull = false
             Me.columnPardet_ClaseActivo.AllowDBNull = false
+            Me.columncodGrupo.AllowDBNull = false
+            Me.columncodTipo.AllowDBNull = false
+            Me.columncodClase.AllowDBNull = false
+            Me.columnActivo_CodigoBarraCruce.MaxLength = 50
+            Me.columnParame_Ubicacion.AllowDBNull = false
+            Me.columnPardet_Ubicacion.AllowDBNull = false
+            Me.columnCustodioCI.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Newvw_ReporteActivoRow() As vw_ReporteActivoRow
-            Return CType(Me.NewRow,vw_ReporteActivoRow)
+        Public Function Newvw_ReporteActivoIngresoRow() As vw_ReporteActivoIngresoRow
+            Return CType(Me.NewRow,vw_ReporteActivoIngresoRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New vw_ReporteActivoRow(builder)
+            Return New vw_ReporteActivoIngresoRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(vw_ReporteActivoRow)
+            Return GetType(vw_ReporteActivoIngresoRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.vw_ReporteActivoRowChangedEvent) Is Nothing) Then
-                RaiseEvent vw_ReporteActivoRowChanged(Me, New vw_ReporteActivoRowChangeEvent(CType(e.Row,vw_ReporteActivoRow), e.Action))
+            If (Not (Me.vw_ReporteActivoIngresoRowChangedEvent) Is Nothing) Then
+                RaiseEvent vw_ReporteActivoIngresoRowChanged(Me, New vw_ReporteActivoIngresoRowChangeEvent(CType(e.Row,vw_ReporteActivoIngresoRow), e.Action))
             End If
         End Sub
         
@@ -847,8 +1054,8 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.vw_ReporteActivoRowChangingEvent) Is Nothing) Then
-                RaiseEvent vw_ReporteActivoRowChanging(Me, New vw_ReporteActivoRowChangeEvent(CType(e.Row,vw_ReporteActivoRow), e.Action))
+            If (Not (Me.vw_ReporteActivoIngresoRowChangingEvent) Is Nothing) Then
+                RaiseEvent vw_ReporteActivoIngresoRowChanging(Me, New vw_ReporteActivoIngresoRowChangeEvent(CType(e.Row,vw_ReporteActivoIngresoRow), e.Action))
             End If
         End Sub
         
@@ -856,8 +1063,8 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.vw_ReporteActivoRowDeletedEvent) Is Nothing) Then
-                RaiseEvent vw_ReporteActivoRowDeleted(Me, New vw_ReporteActivoRowChangeEvent(CType(e.Row,vw_ReporteActivoRow), e.Action))
+            If (Not (Me.vw_ReporteActivoIngresoRowDeletedEvent) Is Nothing) Then
+                RaiseEvent vw_ReporteActivoIngresoRowDeleted(Me, New vw_ReporteActivoIngresoRowChangeEvent(CType(e.Row,vw_ReporteActivoIngresoRow), e.Action))
             End If
         End Sub
         
@@ -865,14 +1072,14 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.vw_ReporteActivoRowDeletingEvent) Is Nothing) Then
-                RaiseEvent vw_ReporteActivoRowDeleting(Me, New vw_ReporteActivoRowChangeEvent(CType(e.Row,vw_ReporteActivoRow), e.Action))
+            If (Not (Me.vw_ReporteActivoIngresoRowDeletingEvent) Is Nothing) Then
+                RaiseEvent vw_ReporteActivoIngresoRowDeleting(Me, New vw_ReporteActivoIngresoRowChangeEvent(CType(e.Row,vw_ReporteActivoIngresoRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Removevw_ReporteActivoRow(ByVal row As vw_ReporteActivoRow)
+        Public Sub Removevw_ReporteActivoIngresoRow(ByVal row As vw_ReporteActivoIngresoRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -881,7 +1088,7 @@ Partial Public Class dsReporteActivos
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As dsReporteActivos = New dsReporteActivos()
+            Dim ds As dsReporteActivosIngreso = New dsReporteActivosIngreso()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -899,7 +1106,7 @@ Partial Public Class dsReporteActivos
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "vw_ReporteActivoDataTable"
+            attribute2.FixedValue = "vw_ReporteActivoIngresoDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -946,26 +1153,116 @@ Partial Public Class dsReporteActivos
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class vw_ReporteActivoRow
+    Partial Public Class vw_ReporteActivoIngresoRow
         Inherits Global.System.Data.DataRow
         
-        Private tablevw_ReporteActivo As vw_ReporteActivoDataTable
+        Private tablevw_ReporteActivoIngreso As vw_ReporteActivoIngresoDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tablevw_ReporteActivo = CType(Me.Table,vw_ReporteActivoDataTable)
+            Me.tablevw_ReporteActivoIngreso = CType(Me.Table,vw_ReporteActivoIngresoDataTable)
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Proveedor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_ReporteActivoIngreso.ProveedorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Proveedor' in table 'vw_ReporteActivoIngreso' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_ReporteActivoIngreso.ProveedorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property ProveedorCodigo() As Integer
+            Get
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.ProveedorCodigoColumn),Integer)
+            End Get
+            Set
+                Me(Me.tablevw_ReporteActivoIngreso.ProveedorCodigoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Factura_Numero() As String
+            Get
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Factura_NumeroColumn),String)
+            End Get
+            Set
+                Me(Me.tablevw_ReporteActivoIngreso.Factura_NumeroColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Factura_Fecha() As Date
+            Get
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Factura_FechaColumn),Date)
+            End Get
+            Set
+                Me(Me.tablevw_ReporteActivoIngreso.Factura_FechaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Custodio() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_ReporteActivoIngreso.CustodioColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Custodio' in table 'vw_ReporteActivoIngreso' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_ReporteActivoIngreso.CustodioColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CustodioCodigo() As Integer
+            Get
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.CustodioCodigoColumn),Integer)
+            End Get
+            Set
+                Me(Me.tablevw_ReporteActivoIngreso.CustodioCodigoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property UbicacionInicial() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_ReporteActivoIngreso.UbicacionInicialColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'UbicacionInicial' in table 'vw_ReporteActivoIngreso' is DBN"& _ 
+                            "ull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_ReporteActivoIngreso.UbicacionInicialColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Activo_Codigo() As Integer
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.Activo_CodigoColumn),Integer)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Activo_CodigoColumn),Integer)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Activo_CodigoColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Activo_CodigoColumn) = value
             End Set
         End Property
         
@@ -973,10 +1270,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Activo_Serie() As String
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.Activo_SerieColumn),String)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Activo_SerieColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Activo_SerieColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Activo_SerieColumn) = value
             End Set
         End Property
         
@@ -984,10 +1281,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Grupo() As String
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.GrupoColumn),String)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.GrupoColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.GrupoColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.GrupoColumn) = value
             End Set
         End Property
         
@@ -995,10 +1292,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Tipo() As String
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.TipoColumn),String)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.TipoColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.TipoColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.TipoColumn) = value
             End Set
         End Property
         
@@ -1006,10 +1303,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Clase() As String
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.ClaseColumn),String)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.ClaseColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.ClaseColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.ClaseColumn) = value
             End Set
         End Property
         
@@ -1017,10 +1314,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Activo_CodigoBarra() As String
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.Activo_CodigoBarraColumn),String)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Activo_CodigoBarraColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Activo_CodigoBarraColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Activo_CodigoBarraColumn) = value
             End Set
         End Property
         
@@ -1028,10 +1325,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Activo_CodigoAux() As String
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.Activo_CodigoAuxColumn),String)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Activo_CodigoAuxColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Activo_CodigoAuxColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Activo_CodigoAuxColumn) = value
             End Set
         End Property
         
@@ -1039,10 +1336,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Activo_Descripcion() As String
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.Activo_DescripcionColumn),String)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Activo_DescripcionColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Activo_DescripcionColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Activo_DescripcionColumn) = value
             End Set
         End Property
         
@@ -1050,10 +1347,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Marca() As String
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.MarcaColumn),String)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.MarcaColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.MarcaColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.MarcaColumn) = value
             End Set
         End Property
         
@@ -1061,10 +1358,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Activo_Modelo() As String
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.Activo_ModeloColumn),String)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Activo_ModeloColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Activo_ModeloColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Activo_ModeloColumn) = value
             End Set
         End Property
         
@@ -1072,10 +1369,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Activo_Observacion() As String
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.Activo_ObservacionColumn),String)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Activo_ObservacionColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Activo_ObservacionColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Activo_ObservacionColumn) = value
             End Set
         End Property
         
@@ -1083,10 +1380,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Estado_Depreciacion() As String
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.Estado_DepreciacionColumn),String)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Estado_DepreciacionColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Estado_DepreciacionColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Estado_DepreciacionColumn) = value
             End Set
         End Property
         
@@ -1094,10 +1391,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Estado_Activo() As String
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.Estado_ActivoColumn),String)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Estado_ActivoColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Estado_ActivoColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Estado_ActivoColumn) = value
             End Set
         End Property
         
@@ -1105,10 +1402,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Activo_ResponsableMantenimiento() As String
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.Activo_ResponsableMantenimientoColumn),String)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Activo_ResponsableMantenimientoColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Activo_ResponsableMantenimientoColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Activo_ResponsableMantenimientoColumn) = value
             End Set
         End Property
         
@@ -1116,10 +1413,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Activo_FechaIngreso() As Date
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.Activo_FechaIngresoColumn),Date)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Activo_FechaIngresoColumn),Date)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Activo_FechaIngresoColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Activo_FechaIngresoColumn) = value
             End Set
         End Property
         
@@ -1127,10 +1424,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Activo_FechaCompra() As Date
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.Activo_FechaCompraColumn),Date)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Activo_FechaCompraColumn),Date)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Activo_FechaCompraColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Activo_FechaCompraColumn) = value
             End Set
         End Property
         
@@ -1138,10 +1435,31 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Activo_FechaUso() As Date
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.Activo_FechaUsoColumn),Date)
+                Try 
+                    Return CType(Me(Me.tablevw_ReporteActivoIngreso.Activo_FechaUsoColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Activo_FechaUso' in table 'vw_ReporteActivoIngreso' is DBNu"& _ 
+                            "ll.", e)
+                End Try
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Activo_FechaUsoColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Activo_FechaUsoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Activo_FechaGarantia() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_ReporteActivoIngreso.Activo_FechaGarantiaColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Activo_FechaGarantia' in table 'vw_ReporteActivoIngreso' is"& _ 
+                            " DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_ReporteActivoIngreso.Activo_FechaGarantiaColumn) = value
             End Set
         End Property
         
@@ -1149,10 +1467,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Centro_Costo() As String
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.Centro_CostoColumn),String)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Centro_CostoColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Centro_CostoColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Centro_CostoColumn) = value
             End Set
         End Property
         
@@ -1160,10 +1478,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Factura_Codigo() As Integer
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.Factura_CodigoColumn),Integer)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Factura_CodigoColumn),Integer)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Factura_CodigoColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Factura_CodigoColumn) = value
             End Set
         End Property
         
@@ -1172,13 +1490,14 @@ Partial Public Class dsReporteActivos
         Public Property Activo_FechaBaja() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tablevw_ReporteActivo.Activo_FechaBajaColumn),Date)
+                    Return CType(Me(Me.tablevw_ReporteActivoIngreso.Activo_FechaBajaColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Activo_FechaBaja' in table 'vw_ReporteActivo' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Activo_FechaBaja' in table 'vw_ReporteActivoIngreso' is DBN"& _ 
+                            "ull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Activo_FechaBajaColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Activo_FechaBajaColumn) = value
             End Set
         End Property
         
@@ -1187,13 +1506,14 @@ Partial Public Class dsReporteActivos
         Public Property TipoBajaActivo() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablevw_ReporteActivo.TipoBajaActivoColumn),String)
+                    Return CType(Me(Me.tablevw_ReporteActivoIngreso.TipoBajaActivoColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'TipoBajaActivo' in table 'vw_ReporteActivo' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'TipoBajaActivo' in table 'vw_ReporteActivoIngreso' is DBNul"& _ 
+                            "l.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.TipoBajaActivoColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.TipoBajaActivoColumn) = value
             End Set
         End Property
         
@@ -1202,43 +1522,14 @@ Partial Public Class dsReporteActivos
         Public Property Caracteristicas() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablevw_ReporteActivo.CaracteristicasColumn),String)
+                    Return CType(Me(Me.tablevw_ReporteActivoIngreso.CaracteristicasColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Caracteristicas' in table 'vw_ReporteActivo' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Caracteristicas' in table 'vw_ReporteActivoIngreso' is DBNu"& _ 
+                            "ll.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.CaracteristicasColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property UbicacionActual() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablevw_ReporteActivo.UbicacionActualColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'UbicacionActual' in table 'vw_ReporteActivo' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablevw_ReporteActivo.UbicacionActualColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property CustodioActual() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablevw_ReporteActivo.CustodioActualColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'CustodioActual' in table 'vw_ReporteActivo' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablevw_ReporteActivo.CustodioActualColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.CaracteristicasColumn) = value
             End Set
         End Property
         
@@ -1246,10 +1537,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Pardet_Marca() As Integer
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.Pardet_MarcaColumn),Integer)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Pardet_MarcaColumn),Integer)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Pardet_MarcaColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Pardet_MarcaColumn) = value
             End Set
         End Property
         
@@ -1257,10 +1548,10 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Parame_ClaseActivo() As Integer
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.Parame_ClaseActivoColumn),Integer)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Parame_ClaseActivoColumn),Integer)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Parame_ClaseActivoColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Parame_ClaseActivoColumn) = value
             End Set
         End Property
         
@@ -1268,71 +1559,245 @@ Partial Public Class dsReporteActivos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property Pardet_ClaseActivo() As Integer
             Get
-                Return CType(Me(Me.tablevw_ReporteActivo.Pardet_ClaseActivoColumn),Integer)
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Pardet_ClaseActivoColumn),Integer)
             End Get
             Set
-                Me(Me.tablevw_ReporteActivo.Pardet_ClaseActivoColumn) = value
+                Me(Me.tablevw_ReporteActivoIngreso.Pardet_ClaseActivoColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property codGrupo() As Integer
+            Get
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.codGrupoColumn),Integer)
+            End Get
+            Set
+                Me(Me.tablevw_ReporteActivoIngreso.codGrupoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property codTipo() As Integer
+            Get
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.codTipoColumn),Integer)
+            End Get
+            Set
+                Me(Me.tablevw_ReporteActivoIngreso.codTipoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property codClase() As Integer
+            Get
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.codClaseColumn),Integer)
+            End Get
+            Set
+                Me(Me.tablevw_ReporteActivoIngreso.codClaseColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Activo_CodigoBarraCruce() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_ReporteActivoIngreso.Activo_CodigoBarraCruceColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Activo_CodigoBarraCruce' in table 'vw_ReporteActivoIngreso'"& _ 
+                            " is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_ReporteActivoIngreso.Activo_CodigoBarraCruceColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Parame_Ubicacion() As Integer
+            Get
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Parame_UbicacionColumn),Integer)
+            End Get
+            Set
+                Me(Me.tablevw_ReporteActivoIngreso.Parame_UbicacionColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Pardet_Ubicacion() As Integer
+            Get
+                Return CType(Me(Me.tablevw_ReporteActivoIngreso.Pardet_UbicacionColumn),Integer)
+            End Get
+            Set
+                Me(Me.tablevw_ReporteActivoIngreso.Pardet_UbicacionColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CostoOriginal() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_ReporteActivoIngreso.CostoOriginalColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CostoOriginal' in table 'vw_ReporteActivoIngreso' is DBNull"& _ 
+                            ".", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_ReporteActivoIngreso.CostoOriginalColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CustodioCI() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_ReporteActivoIngreso.CustodioCIColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CustodioCI' in table 'vw_ReporteActivoIngreso' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_ReporteActivoIngreso.CustodioCIColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsProveedorNull() As Boolean
+            Return Me.IsNull(Me.tablevw_ReporteActivoIngreso.ProveedorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetProveedorNull()
+            Me(Me.tablevw_ReporteActivoIngreso.ProveedorColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCustodioNull() As Boolean
+            Return Me.IsNull(Me.tablevw_ReporteActivoIngreso.CustodioColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCustodioNull()
+            Me(Me.tablevw_ReporteActivoIngreso.CustodioColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsUbicacionInicialNull() As Boolean
+            Return Me.IsNull(Me.tablevw_ReporteActivoIngreso.UbicacionInicialColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetUbicacionInicialNull()
+            Me(Me.tablevw_ReporteActivoIngreso.UbicacionInicialColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsActivo_FechaUsoNull() As Boolean
+            Return Me.IsNull(Me.tablevw_ReporteActivoIngreso.Activo_FechaUsoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetActivo_FechaUsoNull()
+            Me(Me.tablevw_ReporteActivoIngreso.Activo_FechaUsoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsActivo_FechaGarantiaNull() As Boolean
+            Return Me.IsNull(Me.tablevw_ReporteActivoIngreso.Activo_FechaGarantiaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetActivo_FechaGarantiaNull()
+            Me(Me.tablevw_ReporteActivoIngreso.Activo_FechaGarantiaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsActivo_FechaBajaNull() As Boolean
-            Return Me.IsNull(Me.tablevw_ReporteActivo.Activo_FechaBajaColumn)
+            Return Me.IsNull(Me.tablevw_ReporteActivoIngreso.Activo_FechaBajaColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetActivo_FechaBajaNull()
-            Me(Me.tablevw_ReporteActivo.Activo_FechaBajaColumn) = Global.System.Convert.DBNull
+            Me(Me.tablevw_ReporteActivoIngreso.Activo_FechaBajaColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsTipoBajaActivoNull() As Boolean
-            Return Me.IsNull(Me.tablevw_ReporteActivo.TipoBajaActivoColumn)
+            Return Me.IsNull(Me.tablevw_ReporteActivoIngreso.TipoBajaActivoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetTipoBajaActivoNull()
-            Me(Me.tablevw_ReporteActivo.TipoBajaActivoColumn) = Global.System.Convert.DBNull
+            Me(Me.tablevw_ReporteActivoIngreso.TipoBajaActivoColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsCaracteristicasNull() As Boolean
-            Return Me.IsNull(Me.tablevw_ReporteActivo.CaracteristicasColumn)
+            Return Me.IsNull(Me.tablevw_ReporteActivoIngreso.CaracteristicasColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetCaracteristicasNull()
-            Me(Me.tablevw_ReporteActivo.CaracteristicasColumn) = Global.System.Convert.DBNull
+            Me(Me.tablevw_ReporteActivoIngreso.CaracteristicasColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsUbicacionActualNull() As Boolean
-            Return Me.IsNull(Me.tablevw_ReporteActivo.UbicacionActualColumn)
+        Public Function IsActivo_CodigoBarraCruceNull() As Boolean
+            Return Me.IsNull(Me.tablevw_ReporteActivoIngreso.Activo_CodigoBarraCruceColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetUbicacionActualNull()
-            Me(Me.tablevw_ReporteActivo.UbicacionActualColumn) = Global.System.Convert.DBNull
+        Public Sub SetActivo_CodigoBarraCruceNull()
+            Me(Me.tablevw_ReporteActivoIngreso.Activo_CodigoBarraCruceColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsCustodioActualNull() As Boolean
-            Return Me.IsNull(Me.tablevw_ReporteActivo.CustodioActualColumn)
+        Public Function IsCostoOriginalNull() As Boolean
+            Return Me.IsNull(Me.tablevw_ReporteActivoIngreso.CostoOriginalColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetCustodioActualNull()
-            Me(Me.tablevw_ReporteActivo.CustodioActualColumn) = Global.System.Convert.DBNull
+        Public Sub SetCostoOriginalNull()
+            Me(Me.tablevw_ReporteActivoIngreso.CostoOriginalColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCustodioCINull() As Boolean
+            Return Me.IsNull(Me.tablevw_ReporteActivoIngreso.CustodioCIColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCustodioCINull()
+            Me(Me.tablevw_ReporteActivoIngreso.CustodioCIColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1340,16 +1805,16 @@ Partial Public Class dsReporteActivos
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class vw_ReporteActivoRowChangeEvent
+    Public Class vw_ReporteActivoIngresoRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As vw_ReporteActivoRow
+        Private eventRow As vw_ReporteActivoIngresoRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As vw_ReporteActivoRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As vw_ReporteActivoIngresoRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -1357,7 +1822,7 @@ Partial Public Class dsReporteActivos
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As vw_ReporteActivoRow
+        Public ReadOnly Property Row() As vw_ReporteActivoIngresoRow
             Get
                 Return Me.eventRow
             End Get
