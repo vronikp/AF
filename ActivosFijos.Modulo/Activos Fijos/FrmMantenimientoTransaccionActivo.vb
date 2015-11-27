@@ -302,9 +302,10 @@ Public Class FrmMantenimientoTransaccionActivo
   End Sub
 
   Private Sub mnuacta_Click(sender As Object, e As System.EventArgs) Handles mnuacta.Click
-    Dim f As New FrmReporteTransaccionActivo(Sistema, Enumerados.EnumOpciones.ListadoTransaccionActivos)
-    f.TransaccionActivo = mTransaccionActivo
-    f.ShowDialog()
+        Dim f As New FrmReporteTransaccionActivo(Sistema, Enumerados.EnumOpciones.ListadoTransaccionActivos)
+        f.ReporteTransaccionTipo = clsReporteTransaccionActivo.EnumListaTransaccionTipo.Custodio
+        f.TransaccionActivo = mTransaccionActivo
+        f.ShowDialog()
   End Sub
 
   Private Sub mnumail_Click(sender As Object, e As System.EventArgs) Handles mnumail.Click
@@ -317,6 +318,19 @@ Public Class FrmMantenimientoTransaccionActivo
   End Sub
 
   Private Sub cmImprimir_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles cmImprimir.Opening
-    Me.mnumail.Enabled = bscustodio.Count > 0 And mTransaccionActivo.ContieneSolicitarConfirmacionCambioCustodio
+        Me.mnumail.Enabled = bscustodio.Count > 0 And mTransaccionActivo.ContieneSolicitarConfirmacionCambioCustodio
+        Me.mnuacta.Enabled = bscustodio.Count > 0
+        Me.mnuUbicacion.Enabled = bsubicacion.Count > 0
   End Sub
+
+    Private Sub mnuUbicacion_Click(sender As System.Object, e As System.EventArgs) Handles mnuUbicacion.Click
+
+    End Sub
+
+    Private Sub mnuResumenTrans_Click(sender As System.Object, e As System.EventArgs) Handles mnuResumenTrans.Click
+        Dim f As New FrmReporteTransaccionActivo(Sistema, Enumerados.EnumOpciones.ListadoTransaccionActivos)
+        f.ReporteTransaccionTipo = clsReporteTransaccionActivo.EnumListaTransaccionTipo.Resumen
+        f.TransaccionActivo = mTransaccionActivo
+        f.ShowDialog()
+    End Sub
 End Class

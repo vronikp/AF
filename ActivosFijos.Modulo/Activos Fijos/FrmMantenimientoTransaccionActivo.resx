@@ -130,17 +130,17 @@
   <data name="btnnuevocomp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABpSURBVDhPY2CgFWhZm/0/eWkyGIPYJNsD0thzb8r/oK2W
-        /zVbFIe9AcgBBgs49DAAhQMyRglYmGJQoKFjUCBiE0cJWJABIIWkYBQDQM5BdyKIjxyNeL2ALZGMtHSA
-        LQyQA5aszERs7gMAY/Xg7F048dgAAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABpSURBVDhPY6AZaFmb/T95aTIYg9hQYeIBSGPPvSn/g7Za
+        /tdsURz2BiAHGDJGNgAdowQsTDE2DDIAmzjIEKh2iAEghaRgFANAzkF2HgyDbIIpRscE0wZ6GECFiQfD
+        wADkgCUYYOQDBgYAY/Xg7EvvAIYAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnelimcomp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB9SURBVDhPvZFLCoAwDAVzJe9/F7cuXbqszCIQa34qWAhF
-        TKbzWpGv61hkUK85CvgV4h6mJiOJU8ZleA/uhH+tmDQB2YxJefL8AquBREblq2FAASibPQMFsGPUhtCs
-        xdD8HYJQzZot9Aaxg5luCGlrmkgXi1TPCf203703hZx/woqAwdv3qQAAAABJRU5ErkJggg==
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB1SURBVDhPvY47CoBADET3St7/LraWlpZZBzMQJL9F8EGK
+        bCZvMz5zbUNQ2q5Dwa8SN0eBJJLyEyyfQQizdJkgBMlhwuXPb3YjiS4qwTIF+tQHF1CAQq+jGoRZXh+C
+        U7NwKrGLYegmnHeWiZvrLpPVvMsjGTIBf8KKgCwU36kAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="bscustodio.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -150,7 +150,7 @@
     <value>681, 17</value>
   </metadata>
   <metadata name="cmImprimir.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>797, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>91</value>

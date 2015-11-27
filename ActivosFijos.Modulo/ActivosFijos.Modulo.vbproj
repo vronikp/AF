@@ -231,6 +231,12 @@
       <DependentUpon>crpListaActivosIngreso.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Activos Fijos\Reportes\crpTransaccionActivoCustodio.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crpTransaccionActivoCustodio.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Activos Fijos\Reportes\dsReporteActivos.vb">
       <DependentUpon>dsReporteActivos.xsd</DependentUpon>
     </Compile>
@@ -241,6 +247,19 @@
     </Compile>
     <Compile Include="Activos Fijos\Reportes\dsReporteActivosIngreso.vb">
       <DependentUpon>dsReporteActivosIngreso.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Activos Fijos\Reportes\dsReporteTransaccionActivoCustodio.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReporteTransaccionActivoCustodio.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Activos Fijos\Reportes\dsReporteTransaccionActivoCustodio.vb">
+      <DependentUpon>dsReporteTransaccionActivoCustodio.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Activos Fijos\Reportes\dsReporteTransaccionActivoUbicacion.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReporteTransaccionActivoUbicacion.xsd</DependentUpon>
     </Compile>
     <Compile Include="Activos Fijos\Reportes\FrmReporteIngresoActivos.Designer.vb">
       <DependentUpon>FrmReporteIngresoActivos.vb</DependentUpon>
@@ -793,6 +812,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crpListaActivosIngreso.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Activos Fijos\Reportes\crpTransaccionActivoCustodio.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpTransaccionActivoCustodio.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\Reportes\FrmReporteIngresoActivos.resx">
       <DependentUpon>FrmReporteIngresoActivos.vb</DependentUpon>
     </EmbeddedResource>
@@ -1105,6 +1128,28 @@
     </None>
     <None Include="Activos Fijos\Reportes\dsReporteTransaccion.xss">
       <DependentUpon>dsReporteTransaccion.xsd</DependentUpon>
+    </None>
+    <None Include="Activos Fijos\Reportes\dsReporteTransaccionActivoCustodio.xsc">
+      <DependentUpon>dsReporteTransaccionActivoCustodio.xsd</DependentUpon>
+    </None>
+    <None Include="Activos Fijos\Reportes\dsReporteTransaccionActivoCustodio.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReporteTransaccionActivoCustodio.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Activos Fijos\Reportes\dsReporteTransaccionActivoCustodio.xss">
+      <DependentUpon>dsReporteTransaccionActivoCustodio.xsd</DependentUpon>
+    </None>
+    <None Include="Activos Fijos\Reportes\dsReporteTransaccionActivoUbicacion.xsc">
+      <DependentUpon>dsReporteTransaccionActivoUbicacion.xsd</DependentUpon>
+    </None>
+    <None Include="Activos Fijos\Reportes\dsReporteTransaccionActivoUbicacion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReporteTransaccionActivoUbicacion.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Activos Fijos\Reportes\dsReporteTransaccionActivoUbicacion.xss">
+      <DependentUpon>dsReporteTransaccionActivoUbicacion.xsd</DependentUpon>
     </None>
     <None Include="Activos Fijos\Reportes\dsResumenDepreciacionPorTipo.xsc">
       <DependentUpon>dsResumenDepreciacionPorTipo.xsd</DependentUpon>
