@@ -39,7 +39,7 @@ Public Class FrmReporteTransaccionActivo
                 info.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4
                 'Me.CrystalReportViewer1.Zoom(1)
                 Me.ReporteDatos = info
-            ElseIf ReporteTransaccionTipo = EnumListaTransaccionTipo.Custodio Then
+            ElseIf ReporteTransaccionTipo = EnumListaTransaccionTipo.Custodio1 Then
                 Dim info As New crpTransaccionActivoCustodio
                 info.DataDefinition.FormulaFields("Empresa").Text = String.Format("'{0}'", New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EmpresaActivo, 1).Descripcion)
                 'info.DataDefinition.FormulaFields("filtro").Text = String.Format("'Desde {0} Hasta {1}'", Me.dtfecdesde.Value.ToShortDateString, Me.dtfechasta.Value.ToShortDateString)
@@ -48,8 +48,21 @@ Public Class FrmReporteTransaccionActivo
                 info.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4
                 'Me.CrystalReportViewer1.Zoom(1)
                 Me.ReporteDatos = info
+            ElseIf ReporteTransaccionTipo = EnumListaTransaccionTipo.Custodio2 Then
+                Dim info As New crpTransaccionActivoCustodio2
+                info.SetDataSource(clsReporteTransaccionActivo.RetornarTransaccionActivoCustodio2DS(mTransaccionActivo))
+                info.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4
+                'Me.CrystalReportViewer1.Zoom(1)
+                Me.ReporteDatos = info
             ElseIf ReporteTransaccionTipo = EnumListaTransaccionTipo.Ubicacion Then
+                Dim info As New crpTransaccionActivoUbicacion
+                info.DataDefinition.FormulaFields("Empresa").Text = String.Format("'{0}'", New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EmpresaActivo, 1).Descripcion)
+                'info.DataDefinition.FormulaFields("filtro").Text = String.Format("'Desde {0} Hasta {1}'", Me.dtfecdesde.Value.ToShortDateString, Me.dtfechasta.Value.ToShortDateString)
 
+                info.SetDataSource(clsReporteTransaccionActivo.RetornarTransaccionActivoUbicacionDS(mTransaccionActivo))
+                info.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4
+                'Me.CrystalReportViewer1.Zoom(1)
+                Me.ReporteDatos = info
             End If
         Catch Ex As Exception
             MsgBox(Ex.Message, MsgBoxStyle.Critical, "Error")

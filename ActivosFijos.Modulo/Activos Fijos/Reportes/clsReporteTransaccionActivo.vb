@@ -70,6 +70,37 @@ Public Class clsReporteTransaccionActivo
         Return ds
     End Function
 
+    Public Shared Function RetornarTransaccionActivoCustodio2DS(_TransaccionActivo As TransaccionActivo) As dsReporteTransaccionActivoCustodio2
+        Dim bReturn As Boolean
+        Dim ds As New dsReporteTransaccionActivoCustodio2
+        With _TransaccionActivo.OperadorDatos
+            .AgregarParametro("@Accion", "RC2")
+            .AgregarParametro("@Transa_Codigo", _TransaccionActivo.Transa_Codigo)
+            .Comando.CommandText = "proc_TransaccionActivo"
+
+            If .Proveedor = enumProveedorDatos.SQL Then
+                Dim DataAdapter As SqlDataAdapter
+                DataAdapter = New SqlDataAdapter(.Comando)
+                Try
+                    DataAdapter.Fill(ds, "vw_TransaccionActivoCustodio2")
+                Catch ex As Exception
+                    bReturn = False
+                End Try
+            ElseIf .Proveedor = enumProveedorDatos.Sybase Then
+                Dim DataAdapter As OleDbDataAdapter
+                DataAdapter = New OleDbDataAdapter(.Comando)
+                .ReconfigurarParametros()
+                Try
+                    DataAdapter.Fill(ds, "vw_TransaccionActivoCustodio2")
+                Catch ex As Exception
+                    bReturn = False
+                End Try
+            End If
+
+            .LimpiarParametros()
+        End With
+        Return ds
+    End Function
     Public Shared Function RetornarTransaccionActivoUbicacionDS(_TransaccionActivo As TransaccionActivo) As dsReporteTransaccionActivoUbicacion
         Dim bReturn As Boolean
         Dim ds As New dsReporteTransaccionActivoUbicacion
@@ -104,7 +135,8 @@ Public Class clsReporteTransaccionActivo
 
     Public Enum EnumListaTransaccionTipo
         Resumen
-        Custodio
+        Custodio1
+        Custodio2
         Ubicacion
     End Enum
 

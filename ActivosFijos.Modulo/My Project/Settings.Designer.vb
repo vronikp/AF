@@ -203,6 +203,52 @@ Namespace My
                 Return CType(Me("DMIROConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property ExpDa() As Date
+            Get
+                Return CType(Me("ExpDa"),Date)
+            End Get
+            Set
+                Me("ExpDa") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=65.60.12.92,1430;Initial Catalog=interpro_admin;Persist Security Info"& _ 
+            "=True;User ID=interpro_chesk;Password=Ex52o0G0T")>  _
+        Public ReadOnly Property AdminConnectionString() As String
+            Get
+                Return CType(Me("AdminConnectionString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Key() As String
+            Get
+                Return CType(Me("Key"),String)
+            End Get
+            Set
+                Me("Key") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property EsAlquiler() As Boolean
+            Get
+                Return CType(Me("EsAlquiler"),Boolean)
+            End Get
+            Set
+                Me("EsAlquiler") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

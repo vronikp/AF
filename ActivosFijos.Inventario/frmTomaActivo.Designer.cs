@@ -223,6 +223,7 @@
             this.txtmarca.Name = "txtmarca";
             this.txtmarca.Size = new System.Drawing.Size(74, 19);
             this.txtmarca.TabIndex = 16;
+            this.txtmarca.PressEnter += new System.EventHandler(this.txtmarca_PressEnter);
             // 
             // txtDescripcion
             // 
@@ -409,7 +410,7 @@
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Location = new System.Drawing.Point(0, 0);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(638, 323);
+            this.tabPage2.Size = new System.Drawing.Size(630, 320);
             this.tabPage2.Text = "Otros";
             // 
             // panel1
@@ -419,7 +420,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(638, 323);
+            this.panel1.Size = new System.Drawing.Size(630, 323);
             // 
             // pnlOtros
             // 
@@ -430,7 +431,7 @@
             this.pnlOtros.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlOtros.Location = new System.Drawing.Point(71, 0);
             this.pnlOtros.Name = "pnlOtros";
-            this.pnlOtros.Size = new System.Drawing.Size(567, 323);
+            this.pnlOtros.Size = new System.Drawing.Size(559, 323);
             // 
             // txtResponsable
             // 
@@ -438,7 +439,7 @@
             this.txtResponsable.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
             this.txtResponsable.Location = new System.Drawing.Point(0, 59);
             this.txtResponsable.Name = "txtResponsable";
-            this.txtResponsable.Size = new System.Drawing.Size(567, 19);
+            this.txtResponsable.Size = new System.Drawing.Size(559, 19);
             this.txtResponsable.TabIndex = 28;
             // 
             // cboDepreciacion
@@ -447,7 +448,7 @@
             this.cboDepreciacion.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
             this.cboDepreciacion.Location = new System.Drawing.Point(0, 39);
             this.cboDepreciacion.Name = "cboDepreciacion";
-            this.cboDepreciacion.Size = new System.Drawing.Size(567, 20);
+            this.cboDepreciacion.Size = new System.Drawing.Size(559, 20);
             this.cboDepreciacion.TabIndex = 27;
             // 
             // txtObservacion
@@ -456,7 +457,7 @@
             this.txtObservacion.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
             this.txtObservacion.Location = new System.Drawing.Point(0, 20);
             this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(567, 19);
+            this.txtObservacion.Size = new System.Drawing.Size(559, 19);
             this.txtObservacion.TabIndex = 26;
             // 
             // cboEstadoActivo
@@ -465,7 +466,7 @@
             this.cboEstadoActivo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular);
             this.cboEstadoActivo.Location = new System.Drawing.Point(0, 0);
             this.cboEstadoActivo.Name = "cboEstadoActivo";
-            this.cboEstadoActivo.Size = new System.Drawing.Size(567, 20);
+            this.cboEstadoActivo.Size = new System.Drawing.Size(559, 20);
             this.cboEstadoActivo.TabIndex = 24;
             // 
             // panel8

@@ -3,6 +3,7 @@ Imports Infoware.Reglas.General
 Imports ActivosFijos.Reglas
 Imports Infoware.Datos
 Imports Infoware.Reglas
+Imports System.Data.SqlClient
 
 Public Class Loader
 #Region "General"
@@ -12,9 +13,81 @@ Public Class Loader
     Private esEstandar As Boolean = False
     Private esProfesional As Boolean = False
     Private esInterprof As Boolean = False
+    Private esAlquiler As Boolean = False
+    Private licencia As Licencia = New Licencia
 
     Sub CargarTipoLicencia(ByVal _Sistema As Sistema)
         PardetEmpresaActivo = New WWTSParametroDet(_Sistema.OperadorDatos, Enumerados.EnumParametros.EmpresaActivo, 1)
+        'If My.Application.Deployment.IsFirstRun Then
+        '    My.Settings.Key = InputBox("Escriba el código de activación:", "Activar", My.Settings.Key)
+        '    My.Settings.Save()
+        '    If ActivarVerificarLicencia(True) Then
+        '        If CargarLicencia() Then
+        '            MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
+        '        Else
+        '            MsgBox("Ha ocurrido un error durante la activación. Contácte a su proveedor.")
+        '        End If
+        '    Else
+        '        My.Settings.Key = InputBox("No se ha activado el sistema. Escriba el código de activación:", "Activar", My.Settings.Key)
+        '        My.Settings.Save()
+        '        If ActivarVerificarLicencia(True) Then
+        '            If CargarLicencia() Then
+        '                MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
+        '            Else
+        '                MsgBox("Ha ocurrido un error durante la activación. Contácte a su proveedor.")
+        '            End If
+        '        Else
+        '            My.Settings.Key = InputBox("No se ha activado el sistema. Escriba el código de activación:", "Activar", My.Settings.Key)
+        '            My.Settings.Save()
+        '            If ActivarVerificarLicencia(True) Then
+        '                If CargarLicencia() Then
+        '                    MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
+        '                Else
+        '                    MsgBox("Ha ocurrido un error durante la activación. Contácte a su proveedor.")
+        '                End If
+        '            Else
+        '                MsgBox("No se ha activado el sistema.")
+        '            End If
+        '        End If
+        '    End If
+        'End If
+        'MsgBox("Hoy " + Now.ToString)
+        'MsgBox("Exipira " + My.Settings.ExpDa.ToString)
+        'MsgBox("diferencia " + DateDiff(DateInterval.Year, Now, New Date(2016, 12, 17)).ToString)
+        If DateDiff(DateInterval.Month, Now, My.Settings.ExpDa) >= 12 Then 'ha pasado 1 año
+            If My.Settings.EsAlquiler Then
+                PardetEmpresaActivo.Pardet_DatoStr1 = ""
+                PardetEmpresaActivo.Pardet_DatoStr2 = ""
+                PardetEmpresaActivo.Pardet_DatoStr3 = ""
+                PardetEmpresaActivo.Pardet_DatoInt1 = 0
+                PardetEmpresaActivo.Pardet_DatoBit1 = False
+                PardetEmpresaActivo.Guardar()
+                My.Settings.Key = InputBox("El periodo del alquiler del sistema ha concluido. Renueve sus licencias y escriba el código de activación:", "Activar", My.Settings.Key)
+                My.Settings.Save()
+                If ActivarVerificarLicencia(True) Then
+                    If CargarLicencia() Then
+                        MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
+                    Else
+                        MsgBox("Ha ocurrido un error durante la activación. Contácte a su proveedor.")
+                    End If
+                Else
+                    MsgBox("No se ha activado el sistema.")
+                End If
+            Else
+                'verificacion de licencia
+                If ActivarVerificarLicencia(False) Then
+                    If CargarLicencia() Then
+                        MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
+                    Else
+                        MsgBox("Ha ocurrido un error durante la activación. Contácte a su proveedor.")
+                    End If
+                Else
+                    MsgBox("No se ha activado el sistema.")
+                End If
+            End If
+        End If
+        'PardetEmpresaActivo = New WWTSParametroDet(_Sistema.OperadorDatos, Enumerados.EnumParametros.EmpresaActivo, 1)
+
         If PardetEmpresaActivo.Pardet_DatoStr1 = "N9IM2I" And PardetEmpresaActivo.Pardet_DatoStr2 = "F8PP6N" And
             PardetEmpresaActivo.Pardet_DatoStr3 = "N6AI0T" And PardetEmpresaActivo.Pardet_DatoInt1 = 10814 And
             PardetEmpresaActivo.Pardet_DatoBit1 = False Then
@@ -35,6 +108,19 @@ Public Class Loader
             PardetEmpresaActivo.Pardet_DatoBit1 = True Then
             esBasica = True
             'MsgBox("es basica")
+        Else
+            My.Settings.Key = InputBox("Escriba el código de activación:", "Activar", My.Settings.Key)
+            My.Settings.Save()
+            If ActivarVerificarLicencia(True) Then
+                'MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
+                If CargarLicencia() Then
+                    MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
+                Else
+                    MsgBox("Ha ocurrido un error durante la activación. Contácte a su proveedor.")
+                End If
+            Else
+                MsgBox("No se ha activado el sistema.")
+            End If
         End If
     End Sub
 
@@ -376,6 +462,123 @@ Public Class Loader
         f.PuedeNuevo = False
         Return f
     End Function
+
+    Function ActivarVerificarLicencia(ByVal esActivar As Boolean) As Boolean
+        Dim conString As String = My.Settings.AdminConnectionString
+        Dim sqlCon = New SqlConnection(conString)
+        Dim reader As SqlDataReader
+        Dim resultado As Boolean = False
+        Try
+            Using (sqlCon)
+                Dim sqlComm As New SqlCommand
+                sqlComm.Connection = sqlCon
+                sqlComm.CommandText = "proc_Licencia"
+                sqlComm.CommandType = CommandType.StoredProcedure
+                If esActivar Then
+                    sqlComm.Parameters.AddWithValue("@accion", "ac")
+                Else
+                    sqlComm.Parameters.AddWithValue("@accion", "ve")
+                End If
+                sqlComm.Parameters.AddWithValue("@Codigo", My.Settings.Key)
+                sqlComm.CommandTimeout = 1200
+                sqlCon.Open()
+                reader = sqlComm.ExecuteReader()
+                Dim DTResults As New DataTable
+                DTResults.Load(reader)
+                If DTResults.Rows(0)(0) = 1 Then
+                    MsgBox("active en act y ver")
+                    resultado = True
+                Else
+                    MsgBox("no active en act y ver")
+                End If
+                sqlCon.Close()
+            End Using
+        Catch
+            MsgBox("Verifique su conexión a Internet.")
+            resultado = False
+        End Try
+
+        Return resultado
+    End Function
+
+    Function CargarLicencia()
+        Dim resultado As Boolean = False
+        Dim conString As String = My.Settings.AdminConnectionString
+        Dim sqlCon = New SqlConnection(conString)
+        Dim reader As SqlDataReader
+        Try
+            Using (sqlCon)
+                Dim sqlComm As New SqlCommand
+                sqlComm.Connection = sqlCon
+                sqlComm.CommandText = "proc_Licencia"
+                sqlComm.CommandType = CommandType.StoredProcedure
+                sqlComm.Parameters.AddWithValue("@accion", "c")
+                sqlComm.Parameters.AddWithValue("@Codigo", My.Settings.Key)
+                sqlComm.CommandTimeout = 1200
+                sqlCon.Open()
+                reader = sqlComm.ExecuteReader()
+                Dim DTResults As New DataTable
+                DTResults.Load(reader)
+                If DTResults.Rows.Count > 0 Then
+                    licencia.Codigo = CType(DTResults.Rows(0)("Codigo"), String)
+                    licencia.TipoVersion = CType(DTResults.Rows(0)("TipoVersion"), Integer)
+                    licencia.NoVersion = CType(DTResults.Rows(0)("NoVersion"), String)
+                    licencia.EsAlquilada = CType(DTResults.Rows(0)("EsAlquilada"), Boolean)
+                    licencia.FechaAdquisicion = CType(DTResults.Rows(0)("FechaAdquisision"), Date)
+                    licencia.FechaActivacion = CType(DTResults.Rows(0)("FechaActivacion"), Date)
+                    If Not TypeOf (DTResults.Rows(0)("FechaUltimaVerificacion")) Is DBNull Then
+                        licencia.FechaUltimaVerificacion = CDate(DTResults.Rows(0)("FechaUltimaVerificacion"))
+                    Else
+                        licencia.FechaUltimaVerificacion = Nothing
+                    End If
+                    licencia.Nombre = CType(DTResults.Rows(0)("Nombre"), String)
+
+                    My.Settings.EsAlquiler = licencia.EsAlquilada
+                    My.Settings.Save()
+                    My.Settings.ExpDa = licencia.FechaActivacion
+                    My.Settings.Save()
+
+                    If licencia.TipoVersion = 4 Then 'interprof
+                        PardetEmpresaActivo.Pardet_DatoStr1 = "N9IM2I"
+                        PardetEmpresaActivo.Pardet_DatoStr2 = "F8PP6N"
+                        PardetEmpresaActivo.Pardet_DatoStr3 = "N6AI0T"
+                        PardetEmpresaActivo.Pardet_DatoInt1 = 10814
+                        PardetEmpresaActivo.Pardet_DatoBit1 = False
+                        PardetEmpresaActivo.Guardar()
+                    ElseIf licencia.TipoVersion = 3 Then 'Profesional
+                        PardetEmpresaActivo.Pardet_DatoStr1 = "A9MP0P"
+                        PardetEmpresaActivo.Pardet_DatoStr2 = "R0MG3R"
+                        PardetEmpresaActivo.Pardet_DatoStr3 = "A6MG3O"
+                        PardetEmpresaActivo.Pardet_DatoInt1 = 151102
+                        PardetEmpresaActivo.Pardet_DatoBit1 = True
+                        PardetEmpresaActivo.Guardar()
+                    ElseIf licencia.TipoVersion = 2 Then 'Estandar
+                        PardetEmpresaActivo.Pardet_DatoStr1 = "R8MV8E"
+                        PardetEmpresaActivo.Pardet_DatoStr2 = "A9MI7S"
+                        PardetEmpresaActivo.Pardet_DatoStr3 = "R6AI0T"
+                        PardetEmpresaActivo.Pardet_DatoInt1 = 10814
+                        PardetEmpresaActivo.Pardet_DatoBit1 = False
+                        PardetEmpresaActivo.Guardar()
+                    ElseIf licencia.TipoVersion = 1 Then 'Basica
+                        PardetEmpresaActivo.Pardet_DatoStr1 = "F8MM7B"
+                        PardetEmpresaActivo.Pardet_DatoStr2 = "N9ME4A"
+                        PardetEmpresaActivo.Pardet_DatoStr3 = "F6MG3S"
+                        PardetEmpresaActivo.Pardet_DatoInt1 = 151102
+                        PardetEmpresaActivo.Pardet_DatoBit1 = True
+                        PardetEmpresaActivo.Guardar()
+                    End If
+                    resultado = True
+                End If
+
+                sqlCon.Close()
+            End Using
+        Catch
+            MsgBox("Verifique su conexión a Internet.")
+            resultado = False
+        End Try
+        Return resultado
+    End Function
+
 #End Region
 
     Function CargarReporte(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent

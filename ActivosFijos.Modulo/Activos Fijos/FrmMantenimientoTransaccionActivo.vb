@@ -301,19 +301,13 @@ Public Class FrmMantenimientoTransaccionActivo
     cmImprimir.Show(MousePosition)
   End Sub
 
-  Private Sub mnuacta_Click(sender As Object, e As System.EventArgs) Handles mnuacta.Click
-        Dim f As New FrmReporteTransaccionActivo(Sistema, Enumerados.EnumOpciones.ListadoTransaccionActivos)
-        f.ReporteTransaccionTipo = clsReporteTransaccionActivo.EnumListaTransaccionTipo.Custodio
-        f.TransaccionActivo = mTransaccionActivo
-        f.ShowDialog()
-  End Sub
 
   Private Sub mnumail_Click(sender As Object, e As System.EventArgs) Handles mnumail.Click
-    Dim f As New Infoware.Reporteador.FrmLista(Sistema, Enumerados.EnumOpciones.ListadoTransaccionActivos)
+        Dim f As New Infoware.Reporteador.FrmLista(Sistema, Enumerados.EnumOpciones.ListadoTransaccionActivos)
     f.Reporte = New Infoware.Reporteador.Reporte(Sistema.OperadorDatos, "Proc_CambioCustodioEnviarMail")
     f.Valores = New Object() {mUsuario.Usuari_Codigo, mTransaccionActivo.Transa_Codigo}
     f.EnviarMailAutomaticoyCerrar = True
-    'f.objAbrirElemento = New Infoware.Reporteador.FrmLista.AbrirElemento(AddressOf AbriadminrElemento)
+        'f.objAbrirElemento = New Infoware.Reporteador.FrmLista.AbrirElemento(AddressOf AbriadminrElemento)
     f.ShowDialog()
   End Sub
 
@@ -324,12 +318,30 @@ Public Class FrmMantenimientoTransaccionActivo
   End Sub
 
     Private Sub mnuUbicacion_Click(sender As System.Object, e As System.EventArgs) Handles mnuUbicacion.Click
-
+        Dim f As New FrmReporteTransaccionActivo(Sistema, Enumerados.EnumOpciones.ListadoTransaccionActivos)
+        f.ReporteTransaccionTipo = clsReporteTransaccionActivo.EnumListaTransaccionTipo.Ubicacion
+        f.TransaccionActivo = mTransaccionActivo
+        f.ShowDialog()
     End Sub
 
     Private Sub mnuResumenTrans_Click(sender As System.Object, e As System.EventArgs) Handles mnuResumenTrans.Click
         Dim f As New FrmReporteTransaccionActivo(Sistema, Enumerados.EnumOpciones.ListadoTransaccionActivos)
         f.ReporteTransaccionTipo = clsReporteTransaccionActivo.EnumListaTransaccionTipo.Resumen
+        f.TransaccionActivo = mTransaccionActivo
+        f.ShowDialog()
+    End Sub
+
+    Private Sub Formato1ToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles Formato1ToolStripMenuItem.Click
+        Dim f As New FrmReporteTransaccionActivo(Sistema, Enumerados.EnumOpciones.ListadoTransaccionActivos)
+        f.ReporteTransaccionTipo = clsReporteTransaccionActivo.EnumListaTransaccionTipo.Custodio1
+        f.TransaccionActivo = mTransaccionActivo
+        f.ShowDialog()
+    End Sub
+
+
+    Private Sub Formato2ToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles Formato2ToolStripMenuItem.Click
+        Dim f As New FrmReporteTransaccionActivo(Sistema, Enumerados.EnumOpciones.ListadoTransaccionActivos)
+        f.ReporteTransaccionTipo = clsReporteTransaccionActivo.EnumListaTransaccionTipo.Custodio2
         f.TransaccionActivo = mTransaccionActivo
         f.ShowDialog()
     End Sub

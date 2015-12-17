@@ -129,6 +129,7 @@
     <Compile Include="Reglas\ActivoUbicacion.vb" />
     <Compile Include="Reglas\ActivoValor.vb" />
     <Compile Include="Reglas\ActivoCaracteristica.vb" />
+    <Compile Include="Reglas\Licencia.vb" />
     <Compile Include="Reglas\TransaccionActivo.vb" />
     <Compile Include="Reglas\Depreciacion.vb" />
     <Compile Include="Reglas\DepreciacionDet.vb" />

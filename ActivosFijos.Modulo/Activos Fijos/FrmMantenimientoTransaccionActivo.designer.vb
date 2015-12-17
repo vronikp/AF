@@ -43,9 +43,9 @@ Partial Class FrmMantenimientoTransaccionActivo
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgdets = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bsdets = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.btnnuevocomp = New System.Windows.Forms.ToolStripButton()
         Me.btnelimcomp = New System.Windows.Forms.ToolStripButton()
@@ -58,14 +58,20 @@ Partial Class FrmMantenimientoTransaccionActivo
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.grpcustodio = New System.Windows.Forms.GroupBox()
         Me.dgcustodios = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bscustodio = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.grpubicacion = New System.Windows.Forms.GroupBox()
         Me.dgubicaciones = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-        Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bsubicacion = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -86,9 +92,11 @@ Partial Class FrmMantenimientoTransaccionActivo
         Me.DataGridViewTextBoxColumn45 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmImprimir = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.mnuacta = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnumail = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Formato1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Formato2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuUbicacion = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuResumenTrans = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnumail = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.pnlcabecera.SuspendLayout()
@@ -269,7 +277,7 @@ Partial Class FrmMantenimientoTransaccionActivo
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgdets.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgdets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgdets.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn20})
+        Me.dgdets.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn26})
         Me.dgdets.DataSource = Me.bsdets
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
@@ -296,17 +304,17 @@ Partial Class FrmMantenimientoTransaccionActivo
         Me.dgdets.Size = New System.Drawing.Size(424, 208)
         Me.dgdets.TabIndex = 1
         '
-        'DataGridViewTextBoxColumn17
+        'DataGridViewTextBoxColumn23
         '
-        Me.DataGridViewTextBoxColumn17.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
-        Me.DataGridViewTextBoxColumn17.ReadOnly = True
+        Me.DataGridViewTextBoxColumn23.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn23.Name = "DataGridViewTextBoxColumn23"
+        Me.DataGridViewTextBoxColumn23.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn20
+        'DataGridViewTextBoxColumn26
         '
-        Me.DataGridViewTextBoxColumn20.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
-        Me.DataGridViewTextBoxColumn20.ReadOnly = True
+        Me.DataGridViewTextBoxColumn26.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn26.Name = "DataGridViewTextBoxColumn26"
+        Me.DataGridViewTextBoxColumn26.ReadOnly = True
         '
         'ToolStrip2
         '
@@ -446,7 +454,7 @@ Partial Class FrmMantenimientoTransaccionActivo
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgcustodios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgcustodios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgcustodios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn21})
+        Me.dgcustodios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn27})
         Me.dgcustodios.DataSource = Me.bscustodio
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
@@ -471,17 +479,17 @@ Partial Class FrmMantenimientoTransaccionActivo
         Me.dgcustodios.Size = New System.Drawing.Size(358, 206)
         Me.dgcustodios.TabIndex = 0
         '
-        'DataGridViewTextBoxColumn18
+        'DataGridViewTextBoxColumn24
         '
-        Me.DataGridViewTextBoxColumn18.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
-        Me.DataGridViewTextBoxColumn18.ReadOnly = True
+        Me.DataGridViewTextBoxColumn24.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn24.Name = "DataGridViewTextBoxColumn24"
+        Me.DataGridViewTextBoxColumn24.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn21
+        'DataGridViewTextBoxColumn27
         '
-        Me.DataGridViewTextBoxColumn21.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
-        Me.DataGridViewTextBoxColumn21.ReadOnly = True
+        Me.DataGridViewTextBoxColumn27.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn27.Name = "DataGridViewTextBoxColumn27"
+        Me.DataGridViewTextBoxColumn27.ReadOnly = True
         '
         'grpubicacion
         '
@@ -509,7 +517,7 @@ Partial Class FrmMantenimientoTransaccionActivo
         DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgubicaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgubicaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgubicaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn22})
+        Me.dgubicaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn28})
         Me.dgubicaciones.DataSource = Me.bsubicacion
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
@@ -534,17 +542,53 @@ Partial Class FrmMantenimientoTransaccionActivo
         Me.dgubicaciones.Size = New System.Drawing.Size(358, 205)
         Me.dgubicaciones.TabIndex = 0
         '
-        'DataGridViewTextBoxColumn19
+        'DataGridViewTextBoxColumn25
         '
-        Me.DataGridViewTextBoxColumn19.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
-        Me.DataGridViewTextBoxColumn19.ReadOnly = True
+        Me.DataGridViewTextBoxColumn25.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn25.Name = "DataGridViewTextBoxColumn25"
+        Me.DataGridViewTextBoxColumn25.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn28
+        '
+        Me.DataGridViewTextBoxColumn28.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn28.Name = "DataGridViewTextBoxColumn28"
+        Me.DataGridViewTextBoxColumn28.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn20
+        '
+        Me.DataGridViewTextBoxColumn20.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
+        Me.DataGridViewTextBoxColumn20.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn21
+        '
+        Me.DataGridViewTextBoxColumn21.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
+        Me.DataGridViewTextBoxColumn21.ReadOnly = True
         '
         'DataGridViewTextBoxColumn22
         '
         Me.DataGridViewTextBoxColumn22.HeaderText = "No existen registros a presentar"
         Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
         Me.DataGridViewTextBoxColumn22.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn17
+        '
+        Me.DataGridViewTextBoxColumn17.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
+        Me.DataGridViewTextBoxColumn17.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn18
+        '
+        Me.DataGridViewTextBoxColumn18.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
+        Me.DataGridViewTextBoxColumn18.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn19
+        '
+        Me.DataGridViewTextBoxColumn19.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
+        Me.DataGridViewTextBoxColumn19.ReadOnly = True
         '
         'DataGridViewTextBoxColumn13
         '
@@ -660,15 +704,22 @@ Partial Class FrmMantenimientoTransaccionActivo
         '
         'mnuacta
         '
+        Me.mnuacta.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Formato1ToolStripMenuItem, Me.Formato2ToolStripMenuItem})
         Me.mnuacta.Name = "mnuacta"
         Me.mnuacta.Size = New System.Drawing.Size(229, 22)
         Me.mnuacta.Text = "Acta de cambio de Custodio"
         '
-        'mnumail
+        'Formato1ToolStripMenuItem
         '
-        Me.mnumail.Name = "mnumail"
-        Me.mnumail.Size = New System.Drawing.Size(229, 22)
-        Me.mnumail.Text = "Enviar mail"
+        Me.Formato1ToolStripMenuItem.Name = "Formato1ToolStripMenuItem"
+        Me.Formato1ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.Formato1ToolStripMenuItem.Text = "Formato 1"
+        '
+        'Formato2ToolStripMenuItem
+        '
+        Me.Formato2ToolStripMenuItem.Name = "Formato2ToolStripMenuItem"
+        Me.Formato2ToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.Formato2ToolStripMenuItem.Text = "Formato 2"
         '
         'mnuUbicacion
         '
@@ -681,6 +732,12 @@ Partial Class FrmMantenimientoTransaccionActivo
         Me.mnuResumenTrans.Name = "mnuResumenTrans"
         Me.mnuResumenTrans.Size = New System.Drawing.Size(229, 22)
         Me.mnuResumenTrans.Text = "Resumen transacción"
+        '
+        'mnumail
+        '
+        Me.mnumail.Name = "mnumail"
+        Me.mnumail.Size = New System.Drawing.Size(229, 22)
+        Me.mnumail.Text = "Enviar mail"
         '
         'FrmMantenimientoTransaccionActivo
         '
@@ -780,5 +837,13 @@ Partial Class FrmMantenimientoTransaccionActivo
     Friend WithEvents DataGridViewTextBoxColumn22 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents mnuUbicacion As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuResumenTrans As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DataGridViewTextBoxColumn23 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn24 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn25 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Formato1ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Formato2ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DataGridViewTextBoxColumn26 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn27 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn28 As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class
