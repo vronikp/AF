@@ -779,6 +779,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\CtlActivo.resx">
       <DependentUpon>CtlActivo.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\CtlParametroDetAnidado.resx">
       <DependentUpon>CtlParametroDetAnidado.vb</DependentUpon>
@@ -821,6 +822,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\CtlBuscaActivos.resx">
       <DependentUpon>CtlBuscaActivos.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\FrmListaPolizas.resx">
       <DependentUpon>FrmListaPolizas.vb</DependentUpon>

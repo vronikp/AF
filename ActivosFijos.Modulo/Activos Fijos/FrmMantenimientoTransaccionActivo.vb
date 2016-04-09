@@ -154,13 +154,13 @@ Public Class FrmMantenimientoTransaccionActivo
     Try
       Mapear_Datos()
       Dim _esnuevo As Boolean = mTransaccionActivo.EsNuevo
-      If mTransaccionActivo.Guardar(IIf(Me.chkcambiarcustodio.Checked, Me.CtlBuscaEmpleado1.Empleado, Nothing), Me.chkSolicitarconfirmacion.Checked, IIf(Me.chkcambiarubicacion.Checked, Me.CtlUbicacionActivo1.ParametroDet, Nothing)) Then
-        Auditoria.Registrar_Auditoria(Restriccion, IIf(_esnuevo, Enumerados.enumTipoAccion.Adicion, Enumerados.enumTipoAccion.Modificacion), mTransaccionActivo.Descripcion)
-        llenar_datos()
-      Else
-        'TransaccionActivos.CancelEdit()
-        Throw New Exception("No se puede guardar Transacción Activo")
-      End If
+            If mTransaccionActivo.Guardar(IIf(Me.chkcambiarcustodio.Checked, Me.CtlBuscaEmpleado1.Empleado, Nothing), Me.chkSolicitarconfirmacion.Checked, IIf(Me.chkcambiarubicacion.Checked, Me.CtlUbicacionActivo1.ParametroDet, Nothing), Restriccion) Then
+                Auditoria.Registrar_Auditoria(Restriccion, IIf(_esnuevo, Enumerados.enumTipoAccion.Adicion, Enumerados.enumTipoAccion.Modificacion), mTransaccionActivo.Descripcion)
+                llenar_datos()
+            Else
+                'TransaccionActivos.CancelEdit()
+                Throw New Exception("No se puede guardar Transacción Activo")
+            End If
       Return True
     Catch ex As Exception
       MsgBox(ex.Message & Environment.NewLine & Sistema.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")

@@ -190,56 +190,57 @@ Public Class Inventario
     Return bReturn
   End Function
 
-  Public Overridable Function Guardar() As Boolean
-    Dim Result As Integer = 0
-    Dim bReturn As Boolean = True
-    Dim sAccion As String = "M"
-    If EsNuevo Then
-      sAccion = "I"
-    End If
+    Public Overridable Function Guardar() As Boolean
+        Dim Result As Integer = 0
+        Dim bReturn As Boolean = True
+        Dim sAccion As String = "M"
+        If EsNuevo Then
+            sAccion = "I"
+        End If
 
-    Dim _comenzotransaccion As Boolean = False
-    If Not OperadorDatos.EstaenTransaccion Then
-      OperadorDatos.ComenzarTransaccion()
-      _comenzotransaccion = True
-    End If
+        Dim _comenzotransaccion As Boolean = False
+        If Not OperadorDatos.EstaenTransaccion Then
+            OperadorDatos.ComenzarTransaccion()
+            _comenzotransaccion = True
+        End If
 
-    OperadorDatos.AgregarParametro("@accion", sAccion)
-    OperadorDatos.AgregarParametro("@Parame_Ubicacion", Parame_Ubicacion)
-    OperadorDatos.AgregarParametro("@Pardet_Ubicacion", Pardet_Ubicacion)
-    OperadorDatos.AgregarParametro("@Parame_PeriodoInventario", Parame_PeriodoInventario)
-    OperadorDatos.AgregarParametro("@Pardet_PeriodoInventario", Pardet_PeriodoInventario)
-    OperadorDatos.AgregarParametro("@Invent_Descripcion", Invent_Descripcion)
-    OperadorDatos.AgregarParametro("@Invent_Fecha", Invent_Fecha)
-    OperadorDatos.AgregarParametro("@Parame_EstadoInventario", Parame_EstadoInventario)
+        OperadorDatos.AgregarParametro("@accion", sAccion)
+        OperadorDatos.AgregarParametro("@Parame_Ubicacion", Parame_Ubicacion)
+        OperadorDatos.AgregarParametro("@Pardet_Ubicacion", Pardet_Ubicacion)
+        OperadorDatos.AgregarParametro("@Parame_PeriodoInventario", Parame_PeriodoInventario)
+        OperadorDatos.AgregarParametro("@Pardet_PeriodoInventario", Pardet_PeriodoInventario)
+        OperadorDatos.AgregarParametro("@Invent_Descripcion", Invent_Descripcion)
+        OperadorDatos.AgregarParametro("@Invent_Fecha", Invent_Fecha)
+        OperadorDatos.AgregarParametro("@Parame_EstadoInventario", Parame_EstadoInventario)
         OperadorDatos.AgregarParametro("@Pardet_EstadoInventario", Pardet_EstadoInventario)
         OperadorDatos.AgregarParametro("@Invent_SolicitaConfirmacion", Invent_SolicitarConfirmacion)
-    OperadorDatos.Procedimiento = _Procedimiento
-    bReturn = OperadorDatos.Ejecutar(Result)
-    OperadorDatos.LimpiarParametros()
-    If bReturn Then
-      For Each _invdet As InventarioDet In InventarioDets
-        _invdet.Inventario = Me
-        If Not _invdet.Guardar Then
-          bReturn = False
-          Exit For
-        End If
-      Next
+        OperadorDatos.Procedimiento = _Procedimiento
+        bReturn = OperadorDatos.Ejecutar(Result)
+        OperadorDatos.LimpiarParametros()
 
-      If Not OperadorDatos.EstaenTransaccion Then
-        Me.AceptarCambios()
-      End If
-    End If
-    If _comenzotransaccion Then
-      If bReturn Then
-        OperadorDatos.TerminarTransaccion()
-        AceptarCambios()
-      Else
-        OperadorDatos.CancelarTransaccion()
-      End If
-    End If
-    Return bReturn
-  End Function
+        If bReturn And EsNuevo Then
+            For Each _invdet As InventarioDet In InventarioDets
+                _invdet.Inventario = Me
+                If Not _invdet.Guardar Then
+                    bReturn = False
+                    Exit For
+                End If
+            Next
+
+            If Not OperadorDatos.EstaenTransaccion Then
+                Me.AceptarCambios()
+            End If
+        End If
+        If _comenzotransaccion Then
+            If bReturn Then
+                OperadorDatos.TerminarTransaccion()
+                AceptarCambios()
+            Else
+                OperadorDatos.CancelarTransaccion()
+            End If
+        End If
+        Return bReturn
+    End Function
 
   Public Overridable Sub AceptarCambios()
     EsNuevo = False

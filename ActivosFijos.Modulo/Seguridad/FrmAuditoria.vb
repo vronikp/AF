@@ -31,9 +31,10 @@ Public Class FrmAuditoria
     Dim bReturn As Boolean = True
     Dim ds As New dsAuditoria
     With _OperadorDatos
-      .AgregarParametro("@accion", "ra")
+            .AgregarParametro("@accion", "ra")
       .AgregarParametro("@fechadesde", _FechaDesde.Date)
-      .AgregarParametro("@fechahasta", _FechaHasta.Date.AddDays(1))
+            .AgregarParametro("@fechahasta", _FechaHasta.Date.AddDays(1))
+            .AgregarParametro("@filtro", txtcodigo.Text)
       If _Usuario IsNot Nothing Then
         .AgregarParametro("@Usuari_Codigo", _Usuario.Usuari_Codigo)
       End If
@@ -76,7 +77,6 @@ Public Class FrmAuditoria
 
   Private Sub chksolousuario_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chksolousuario.CheckedChanged, dtfecdesde.Validated, dtfechasta.Validated, ComboBoxUsuario1.CambioItem
     Me.ComboBoxUsuario1.Enabled = Me.chksolousuario.Checked
-    Llenar_datos()
   End Sub
 
 #Region "New"
@@ -103,7 +103,11 @@ Public Class FrmAuditoria
     Me.dtfechasta.Value = Now.Date
 
     mListaLlenarDatos = True
-    Llenar_datos()
+        'Llenar_datos()
   End Sub
 #End Region
+
+    Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
+        Llenar_datos()
+    End Sub
 End Class

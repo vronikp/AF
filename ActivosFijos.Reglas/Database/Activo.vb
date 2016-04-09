@@ -19,7 +19,7 @@ Imports System.Xml.Serialization
 
 #Region "Activo"
 Partial Public Class Activo
-  Inherits _Database
+    Inherits _Database
 
   Private mActivo_Codigo As Integer = 0
 

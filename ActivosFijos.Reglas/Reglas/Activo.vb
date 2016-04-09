@@ -399,42 +399,47 @@ Public Class Activo
 #End Region
 
 #Region "Componentes"
-  Private WithEvents mComponentes As ActivoComponenteList = Nothing
-  Private mComponentesEli As ActivoComponenteList = Nothing
 
-  Public Property Componentes As ActivoComponenteList
-    Get
-      If mComponentes Is Nothing Then
-        If EsNuevo Then
-          mComponentes = New ActivoComponenteList
-        Else
-          mComponentes = ActivoComponenteList.ObtenerLista(Me)
-        End If
-      End If
-      Return mComponentes
-    End Get
-    Set(value As ActivoComponenteList)
-      mComponentes = value
-    End Set
-  End Property
+    Private WithEvents mComponentes As ActivoComponenteList = Nothing
+    Private mComponentesEli As ActivoComponenteList = Nothing
 
-  Public Property ComponentesEli As ActivoComponenteList
-    Get
-      If mComponentesEli Is Nothing Then
-        mComponentesEli = New ActivoComponenteList
-      End If
-      Return mComponentesEli
-    End Get
-    Set(value As ActivoComponenteList)
-      mComponentesEli = value
-    End Set
-  End Property
+    Public Property Componentes As ActivoComponenteList
+        Get
+            'MsgBox("Obtener componentes")
+            If mComponentes Is Nothing Then
+                If EsNuevo Then
+                    'MsgBox("Es nuevo")
+                    mComponentes = New ActivoComponenteList
+                Else
+                    'MsgBox("No es nuevo")
+                    mComponentes = ActivoComponenteList.ObtenerLista(Me)
+                    'MsgBox("Obtuve componentes")
+                End If
+            End If
+            Return mComponentes
+        End Get
+        Set(value As ActivoComponenteList)
+            mComponentes = value
+        End Set
+    End Property
 
-  Private Sub mComponentes_AddingNew(sender As Object, e As System.ComponentModel.AddingNewEventArgs) Handles mComponentes.AddingNew
-    Dim _caract = New ActivoComponente(OperadorDatos, True)
-    _caract.Activo = Me
-    e.NewObject = _caract
-  End Sub
+    Public Property ComponentesEli As ActivoComponenteList
+        Get
+            If mComponentesEli Is Nothing Then
+                mComponentesEli = New ActivoComponenteList
+            End If
+            Return mComponentesEli
+        End Get
+        Set(value As ActivoComponenteList)
+            mComponentesEli = value
+        End Set
+    End Property
+
+    Private Sub mComponentes_AddingNew(sender As Object, e As System.ComponentModel.AddingNewEventArgs) Handles mComponentes.AddingNew
+        Dim _caract = New ActivoComponente(OperadorDatos, True)
+        _caract.Activo = Me
+        e.NewObject = _caract
+    End Sub
 #End Region
 
 #Region "Inventarios"

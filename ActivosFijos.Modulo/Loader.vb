@@ -486,10 +486,7 @@ Public Class Loader
                 Dim DTResults As New DataTable
                 DTResults.Load(reader)
                 If DTResults.Rows(0)(0) = 1 Then
-                    MsgBox("active en act y ver")
                     resultado = True
-                Else
-                    MsgBox("no active en act y ver")
                 End If
                 sqlCon.Close()
             End Using
