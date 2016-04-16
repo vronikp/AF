@@ -85,7 +85,9 @@ Public Class FrmDepreciacion
     If Not mDepreciacion.Guardar Then
       MsgBox(Sistema.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
     Else
-      MsgBox("Proceso terminado", MsgBoxStyle.Information, "Información")
+            MsgBox("Proceso terminado", MsgBoxStyle.Information, "Información")
+            Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Adicion,
+                                      "Se generó la depreciación del periodo " + mDeprec_Codigo)
     End If
   End Sub
 
@@ -106,7 +108,9 @@ Public Class FrmDepreciacion
 
     Dim f As New FrmReporteDepreciacion(Sistema, Restriccion)
     f.Depreciacion = _depreciacion
-    f.ShowDialog()
+        f.ShowDialog()
+        Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Impresion,
+                                  "Se generó el reporte de depreciación " + mDeprec_Codigo)
   End Sub
 
   Private Sub btnexportar_Click(sender As System.Object, e As System.EventArgs) Handles btnexportar.Click
@@ -114,7 +118,9 @@ Public Class FrmDepreciacion
     f.Reporte = New Infoware.Reporteador.Reporte(Sistema.OperadorDatos, "Proc_Depreciacion_Exportar")
     f.Valores = New Object() {Me.cbofrecuenciadepreciacion.ParametroDet.Pardet_Secuencia, IIf(Me.cbofrecuenciadepreciacion.ParametroDet.Pardet_Secuencia = Enumerados.enumFrecuenciaDepreciacion.Mensual, Me.dtperiodo.Value.ToString("yyyyMM"), Me.dtperiodo.Value.ToString("yyyyMMdd")), Me.dtperiodo.Value.Date.AddDays(-Me.dtperiodo.Value.Date.Day + 1).AddMonths(1).AddDays(-1)}
     'f.objAbrirElemento = New Infoware.Reporteador.FrmLista.AbrirElemento(AddressOf AbriadminrElemento)
-    f.ShowDialog()
+        f.ShowDialog()
+        Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Impresion,
+                                  "Se exportó la depreciación.")
   End Sub
 
   Private Sub btngenerartxt_Click(sender As System.Object, e As System.EventArgs) Handles btngenerartxt.Click
@@ -156,7 +162,9 @@ Public Class FrmDepreciacion
         _texto = _texto + vbCrLf
         My.Computer.FileSystem.WriteAllText(_archivotxt, _texto, True)
       Next
-      Shell("Notepad " + _archivotxt, AppWinStyle.NormalFocus, False)
+            Shell("Notepad " + _archivotxt, AppWinStyle.NormalFocus, False)
+            Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Impresion,
+                                  "Se generó el txt de la depreciación " + _coddeprec)
     End If
   End Sub
 
@@ -178,7 +186,9 @@ Public Class FrmDepreciacion
       If mDepreciacion.Eliminar() Then
         MsgBox("Proceso terminado", MsgBoxStyle.Information, "Información")
         Me.bsdepreciacion.DataSource = Nothing
-        Me.cbofrecuenciadepreciacion.Select()
+                Me.cbofrecuenciadepreciacion.Select()
+                Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Eliminacion,
+                                          "Se eliminó la depreciación del periodo " + mDeprec_Codigo)
       End If
     Catch ex As Exception
       MsgBox(ex.Message, MsgBoxStyle.Critical, "Error")
@@ -203,7 +213,9 @@ Public Class FrmDepreciacion
       Me.bsdepreciacion.DataSource = DepreciacionDetList.ObtenerLista(mDepreciacion)
       Me.dgdepreciacion.DataSource = bsdepreciacion
 
-      Me.dgdepreciacion.AutoDiscover()
+            Me.dgdepreciacion.AutoDiscover()
+            Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Impresion,
+                                          "Se mostró la depreciación del periodo " + mDeprec_Codigo + " del tipo " + cbotipodepreciacion.ParametroDet.Descripcion)
     Catch ex As Exception
       MsgBox(ex.Message, MsgBoxStyle.Exclamation, "Error")
       Exit Sub

@@ -36,9 +36,9 @@ Partial Class FrmCargaActivosLote
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lbl_registro = New System.Windows.Forms.Label()
         Me.dgcargaract = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bscargaract = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btncargarplantillaact = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -49,6 +49,8 @@ Partial Class FrmCargaActivosLote
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -193,7 +195,7 @@ Partial Class FrmCargaActivosLote
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgcargaract.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgcargaract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgcargaract.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn12})
+        Me.dgcargaract.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn14})
         Me.dgcargaract.DataSource = Me.bscargaract
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
@@ -217,15 +219,15 @@ Partial Class FrmCargaActivosLote
         Me.dgcargaract.Size = New System.Drawing.Size(466, 294)
         Me.dgcargaract.TabIndex = 34
         '
-        'DataGridViewTextBoxColumn11
+        'DataGridViewTextBoxColumn13
         '
-        Me.DataGridViewTextBoxColumn11.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        Me.DataGridViewTextBoxColumn13.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
         '
-        'DataGridViewTextBoxColumn12
+        'DataGridViewTextBoxColumn14
         '
-        Me.DataGridViewTextBoxColumn12.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.DataGridViewTextBoxColumn14.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
         '
         'btncargarplantillaact
         '
@@ -354,6 +356,16 @@ Partial Class FrmCargaActivosLote
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Tipo de lote:"
         '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        '
         'DataGridViewTextBoxColumn10
         '
         Me.DataGridViewTextBoxColumn10.HeaderText = "No existen registros a presentar"
@@ -472,4 +484,6 @@ Partial Class FrmCargaActivosLote
   Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
     Friend WithEvents DataGridViewTextBoxColumn11 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn12 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn13 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn14 As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

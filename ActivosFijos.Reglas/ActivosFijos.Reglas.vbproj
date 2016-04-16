@@ -79,6 +79,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PlantillaCambioCustodio.vb" />
     <Compile Include="PlantillaInventario.vb" />
     <Compile Include="PlantillaCaracteristica.vb" />
     <Compile Include="Database\Activo.vb" />

@@ -289,16 +289,18 @@ Public Class FrmMantenimientoTransaccionActivo
       Exit Sub
     End If
     If mTransaccionActivo.EsNuevo Then
-      If MsgBox("¿Desea guardar la transacción para poder imprimirla?", MsgBoxStyle.YesNo, "Pregunta") = MsgBoxResult.Yes Then
-        If Not Guardar_datos() Then
-          Exit Sub
+            If MsgBox("¿Desea guardar la transacción para poder imprimirla?", MsgBoxStyle.YesNo, "Pregunta") = MsgBoxResult.Yes Then
+                If Not Restriccion.Restri_Ingreso Then
+                    If Not Guardar_datos() Then
+                        Exit Sub
+                    End If
+                End If
+            Else
+                Exit Sub
+            End If
         End If
-      Else
-        Exit Sub
-      End If
-    End If
 
-    cmImprimir.Show(MousePosition)
+        cmImprimir.Show(MousePosition)
   End Sub
 
 

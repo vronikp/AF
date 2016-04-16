@@ -945,15 +945,27 @@ Public Class Activo
     Next
   End Sub
 
-  Public Overridable Function Eliminar() As Boolean
-    Dim bReturn As Boolean = True
-    OperadorDatos.AgregarParametro("@accion", "E")
-    OperadorDatos.AgregarParametro("@Activo_Codigo", Activo_Codigo)
-    OperadorDatos.Procedimiento = _Procedimiento
-    bReturn = OperadorDatos.Ejecutar
-    OperadorDatos.LimpiarParametros()
-    Return bReturn
-  End Function
+    Public Overridable Function Eliminar() As Boolean
+
+        Dim bReturn As Boolean = True
+        OperadorDatos.AgregarParametro("@accion", "E")
+        OperadorDatos.AgregarParametro("@Activo_Codigo", Activo_Codigo)
+        OperadorDatos.Procedimiento = _Procedimiento
+        bReturn = OperadorDatos.Ejecutar
+        OperadorDatos.LimpiarParametros()
+        Return bReturn
+    End Function
+
+    Public Overridable Function ReversarBaja() As Boolean
+        Dim bReturn As Boolean = True
+        OperadorDatos.AgregarParametro("@accion", "rb")
+        OperadorDatos.AgregarParametro("@Activo_Codigo", Activo_Codigo)
+        OperadorDatos.AgregarParametro("@Activo_CodigoBarra", Activo_CodigoBarra)
+        OperadorDatos.Procedimiento = _Procedimiento
+        bReturn = OperadorDatos.Ejecutar
+        OperadorDatos.LimpiarParametros()
+        Return bReturn
+    End Function
 
   Public Function Clone() As Object Implements System.ICloneable.Clone
     Dim _activo As New Activo(OperadorDatos, Activo_Codigo)

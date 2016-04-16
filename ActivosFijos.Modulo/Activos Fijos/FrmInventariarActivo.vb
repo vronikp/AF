@@ -185,6 +185,10 @@ Public Class FrmInventariarActivo
             'Me.Close()
             MsgBox("Inventario correctamente registrado", MsgBoxStyle.Information, "Información")
             Me.pnlactivo.Visible = False
+            Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Adicion,
+                                      "(" + Activo.Activo_CodigoBarra + ") Se inventarió " + Activo.Descripcion + " con estado de inventario " +
+                                     invdet.PardetEstadoInventario.Descripcion + " en el periodo " + invdet.Inventario.PardetPeriodoInventario.Descripcion +
+                                     " ubicacion " + invdet.Inventario.PardetUbicacion.DescripcionLarga)
         Else
             MsgBox(invdet.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
             Exit Sub
@@ -216,7 +220,11 @@ Public Class FrmInventariarActivo
       End If
       invdet.PardetEstadoInventario = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EstadoInventarioActivo, Enumerados.enumEstadoInventarioActivo.NoInventariado)
       If invdet.Guardar() Then
-        MsgBox("Activo fue No Inventariado con éxito", MsgBoxStyle.Information, "Información")
+                MsgBox("Activo fue No Inventariado con éxito", MsgBoxStyle.Information, "Información")
+                Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Adicion,
+                                      "(" + Activo.Activo_CodigoBarra + ") Se desinventarió " + Activo.Descripcion + " en el periodo " +
+                                      invdet.Inventario.PardetPeriodoInventario.Descripcion +
+                                     " ubicacion " + invdet.Inventario.PardetUbicacion.DescripcionLarga)
       Else
         MsgBox(invdet.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
       End If

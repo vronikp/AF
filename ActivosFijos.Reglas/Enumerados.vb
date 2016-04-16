@@ -27,7 +27,8 @@ Public Class Enumerados
     ReporteActaEntregaCustodio = 209
     Depreciacion = 210
     ReporteResumenDepreciacion = 211
-    DarBajaActivo = 212
+        DarBajaActivo = 212
+        DarBajaActivoReversar = 213
     InventarioActivo = 214
     ResumenDepreciacionPorTipo = 216
 

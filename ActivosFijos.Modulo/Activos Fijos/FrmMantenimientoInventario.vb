@@ -123,7 +123,8 @@ Public Class FrmMantenimientoInventario
         Mapear_Datos()
         Dim _esnuevo As Boolean = mInventario.EsNuevo
         If mInventario.Guardar() Then
-            Auditoria.Registrar_Auditoria(Restriccion, IIf(_esnuevo, Enumerados.enumTipoAccion.Adicion, Enumerados.enumTipoAccion.Modificacion), mInventario.Descripcion)
+            Auditoria.Registrar_Auditoria(Restriccion, IIf(_esnuevo, Enumerados.enumTipoAccion.Adicion, Enumerados.enumTipoAccion.Modificacion), mInventario.Descripcion + " " +
+                                          mInventario.PardetPeriodoInventario.Descripcion + " " + mInventario.PardetUbicacion.DescripcionLarga + " " + mInventario.PardetEstadoInventario.Descripcion)
 
             Return True
         Else
