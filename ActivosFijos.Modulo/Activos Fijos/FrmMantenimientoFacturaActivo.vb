@@ -107,6 +107,11 @@ Public Class FrmMantenimientoFacturaActivo
 
     Private Function Guardar_datos() As Boolean
         Mapear_Datos()
+        If mFacturaActivo.Proveedor Is Nothing Then
+            MsgBox("No se puede guardar Factura, el Proveedor no existe.", "Error")
+            Return False
+        End If
+
         Dim _esnuevo As Boolean = mFacturaActivo.EsNuevo
         If mFacturaActivo.Guardar() Then
             Auditoria.Registrar_Auditoria(Restriccion, IIf(_esnuevo, Enumerados.enumTipoAccion.Adicion, Enumerados.enumTipoAccion.Modificacion), mFacturaActivo.Descripcion)

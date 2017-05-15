@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root>
+<Usuarios>
+	<Usuario>
+		<Usuari_Codigo>mvpozo</Usuari_Codigo>
+	</Usuario>
+</Usuarios>
+<Bodegas>
+    <Bodega>
+	<Empres_Codigo>1</Empres_Codigo>
+	<Sucurs_Codigo>1</Sucurs_Codigo>
+	<Bodega_Codigo>1</Bodega_Codigo>
+	<Bodega_Nombre>Bodega Principal de Matriz</Bodega_Nombre>
+    </Bodega>
+    <Bodega>
+	<Empres_Codigo>1</Empres_Codigo>
+	<Sucurs_Codigo>2</Sucurs_Codigo>
+	<Bodega_Codigo>1</Bodega_Codigo>
+	<Bodega_Nombre>Bodega Principal de Sucursal 1</Bodega_Nombre>
+    </Bodega>
+    <Bodega>
+	<Empres_Codigo>1</Empres_Codigo>
+	<Sucurs_Codigo>2</Sucurs_Codigo>
+	<Bodega_Codigo>1</Bodega_Codigo>
+	<Bodega_Nombre>Bodega 2 de Sucursal 1</Bodega_Nombre>
+    </Bodega>
+</Bodegas>
+<Ubicaciones>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>2</Pardet_Ubicacion>
+		<Ubicac_Codigo>1-1-1</Ubicac_Codigo>
+		<Ubicac_Descripcion>(1-1-1)Piso 1>Seccion 1>Percha 1</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+	<Sucurs_Codigo>1</Sucurs_Codigo>
+	<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>3</Pardet_Ubicacion>
+		<Ubicac_Codigo>1-1-2</Ubicac_Codigo>
+		<Ubicac_Descripcion>(1-1-2)Piso 1>Seccion 1>Percha 2</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>4</Pardet_Ubicacion>
+		<Ubicac_Codigo>1-1-3</Ubicac_Codigo>
+		<Ubicac_Descripcion>(1-1-3)Piso 1>Seccion 1>Percha 3</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>5</Pardet_Ubicacion>
+		<Ubicac_Codigo>1-1-4</Ubicac_Codigo>
+		<Ubicac_Descripcion>((1-1-4)Piso 1>Seccion 1>Percha 4</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>6</Pardet_Ubicacion>
+		<Ubicac_Codigo>1-1-5</Ubicac_Codigo>
+		<Ubicac_Descripcion>(1-1-5)Piso 1>Seccion 1>Percha 5</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>7</Pardet_Ubicacion>
+		<Ubicac_Codigo>1-2-1</Ubicac_Codigo>
+		<Ubicac_Descripcion>(1-2-1)Piso 1>Seccion 2>Percha 1</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>8</Pardet_Ubicacion>
+		<Ubicac_Codigo>1-2-2</Ubicac_Codigo>
+		<Ubicac_Descripcion>(1-2-2)Piso 1>Seccion 2>Percha 2</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>9</Pardet_Ubicacion>
+		<Ubicac_Codigo>1-2-3</Ubicac_Codigo>
+		<Ubicac_Descripcion>(1-2-3)Piso 1>Seccion 2>Percha 3</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>10</Pardet_Ubicacion>
+		<Ubicac_Codigo>1-2-4</Ubicac_Codigo>
+		<Ubicac_Descripcion>(1-2-4)Piso 1>Seccion 2>Percha 4</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>11</Pardet_Ubicacion>
+		<Ubicac_Codigo>1-2-5</Ubicac_Codigo>
+		<Ubicac_Descripcion>(1-2-5)Piso 1>Seccion 2>Percha 5</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>12</Pardet_Ubicacion>
+		<Ubicac_Codigo>0-1-1</Ubicac_Codigo>
+		<Ubicac_Descripcion>(0-1-1)Planta Baja>Seccion 1>Percha 1</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>13</Pardet_Ubicacion>
+		<Ubicac_Codigo>0-1-2</Ubicac_Codigo>
+		<Ubicac_Descripcion>(0-1-2)Planta Baja>Seccion 1>Percha 2</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>14</Pardet_Ubicacion>
+		<Ubicac_Codigo>0-1-3</Ubicac_Codigo>
+		<Ubicac_Descripcion>(0-1-3)Planta Baja>Seccion 1>Percha 3</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>15</Pardet_Ubicacion>
+		<Ubicac_Codigo>0-1-4</Ubicac_Codigo>
+		<Ubicac_Descripcion>(0-1-4)Planta Baja>Seccion 1>Percha 4</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>16</Pardet_Ubicacion>
+		<Ubicac_Codigo>0-1-5</Ubicac_Codigo>
+		<Ubicac_Descripcion>(0-1-5)Planta Baja>Seccion 1>Percha 5</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>17</Pardet_Ubicacion>
+		<Ubicac_Codigo>0-2-1</Ubicac_Codigo>
+		<Ubicac_Descripcion>(0-2-1)Planta Baja>Seccion 2>Percha 1</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>18</Pardet_Ubicacion>
+		<Ubicac_Codigo>0-2-2</Ubicac_Codigo>
+		<Ubicac_Descripcion>(0-2-2)Planta Baja>Seccion 2>Percha 2</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>19</Pardet_Ubicacion>
+		<Ubicac_Codigo>0-2-3</Ubicac_Codigo>
+		<Ubicac_Descripcion>(0-2-3)Planta Baja>Seccion 2>Percha 3</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>20</Pardet_Ubicacion>
+		<Ubicac_Codigo>0-2-4</Ubicac_Codigo>
+		<Ubicac_Descripcion>(0-2-4)Planta Baja>Seccion 2>Percha 4</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+	<Ubicacion>
+		<Parame_Ubicacion>10079</Parame_Ubicacion>
+		<Pardet_Ubicacion>21</Pardet_Ubicacion>
+		<Ubicac_Codigo>0-2-5</Ubicac_Codigo>
+		<Ubicac_Descripcion>(0-2-5)Planta Baja>Seccion 2>Percha 5</Ubicac_Descripcion>
+		<Empres_Codigo>1</Empres_Codigo>
+		<Sucurs_Codigo>1</Sucurs_Codigo>
+		<Bodega_Codigo>1</Bodega_Codigo>
+	</Ubicacion>
+</Ubicaciones>
+</Root>

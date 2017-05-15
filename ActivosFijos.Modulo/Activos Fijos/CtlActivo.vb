@@ -136,8 +136,11 @@ Public Class CtlActivo
         Me.dgvaloracion.AutoDiscover()
 
         If mesClon Then
+            MsgBox(mUbicacionClone.DescripcionLarga)
+            MsgBox(mCustodioClone.NombreCompleto)
             Me.CtlUbicacionActivo1.ParametroDet = mUbicacionClone
             Me.CtlBuscaCustodio.Empleado = mCustodioClone
+            MsgBox(Me.CtlBuscaCustodio.Empleado.NombreCompleto)
             Me.txtcostoactivo.Value = mCostoClone
             Me.txtvalorsalvamento.Value = mSalvamentoClone
             Me.txtperiodosdepreciables.Value = mPeriodosClone

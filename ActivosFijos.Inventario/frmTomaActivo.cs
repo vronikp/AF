@@ -68,6 +68,7 @@ namespace ActivosFijos
             txtCodigo.Text = "";
             cboTipo.SelectedIndex = -1;
             cboClase.SelectedIndex = -1;
+            pnladic.Controls.Clear();
             txtDescripcion.Text = "";
             txtmarca.Text = "";
             cboMarca.SelectedIndex = -1;
@@ -77,7 +78,7 @@ namespace ActivosFijos
             cboDepreciacion.SelectedIndex = -1;
             txtObservacion.Text = "";
             txtResponsable.Text = "";
-            pnladic.Controls.Clear();
+            
 
             pnlBusqueda.Enabled = false;
             btnGuardar.Enabled = true;
@@ -275,7 +276,7 @@ namespace ActivosFijos
             pnlBusqueda.Enabled = true;
             btnGuardar.Enabled = false;
             CargandoArchivo = true;
-            pnladic.Controls.Clear();
+            //pnladic.Controls.Clear();
             if (string.IsNullOrEmpty(txtActivo.Text) && string.IsNullOrEmpty(txtSerie1.Text))
             {
                 tbActivo.Enabled = false;
@@ -350,7 +351,7 @@ namespace ActivosFijos
                         btnLimpiar.Enabled = true;
                         btnGuardar.Enabled = true;
                         txtCodigo.Text = txtActivo.Text;
-                        CargarCaracteristicasporTipo();
+                        //CargarCaracteristicasporTipo();
                         pnlDatos.Enabled = true;
                         pnladic.Enabled = true;
                         pnlOtros.Enabled = true;

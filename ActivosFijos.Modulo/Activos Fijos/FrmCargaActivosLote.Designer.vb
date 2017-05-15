@@ -26,7 +26,7 @@ Partial Class FrmCargaActivosLote
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.gbPlantilla = New System.Windows.Forms.GroupBox()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.btnGenerarPlantillaact = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -36,11 +36,15 @@ Partial Class FrmCargaActivosLote
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.lbl_registro = New System.Windows.Forms.Label()
         Me.dgcargaract = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bscargaract = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btncargarplantillaact = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.gbXml = New System.Windows.Forms.GroupBox()
+        Me.ProgressBar2 = New System.Windows.Forms.ProgressBar()
+        Me.btnGenerarXml = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.pnlinventario = New System.Windows.Forms.Panel()
         Me.cboInventario = New ActivosFijos.Modulo.ComboBoxParametroDet()
@@ -49,6 +53,10 @@ Partial Class FrmCargaActivosLote
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -64,13 +72,14 @@ Partial Class FrmCargaActivosLote
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnlcuerpo.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.gbPlantilla.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgcargaract, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bscargaract, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbXml.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.pnlinventario.SuspendLayout()
         Me.SuspendLayout()
@@ -81,18 +90,18 @@ Partial Class FrmCargaActivosLote
         Me.pnlcuerpo.Size = New System.Drawing.Size(647, 517)
         Me.pnlcuerpo.Controls.SetChildIndex(Me.Panel1, 0)
         '
-        'GroupBox1
+        'gbPlantilla
         '
-        Me.GroupBox1.Controls.Add(Me.ProgressBar1)
-        Me.GroupBox1.Controls.Add(Me.btnGenerarPlantillaact)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupBox1.Location = New System.Drawing.Point(3, 3)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(478, 80)
-        Me.GroupBox1.TabIndex = 2
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Generación de plantilla"
+        Me.gbPlantilla.Controls.Add(Me.ProgressBar1)
+        Me.gbPlantilla.Controls.Add(Me.btnGenerarPlantillaact)
+        Me.gbPlantilla.Controls.Add(Me.Label1)
+        Me.gbPlantilla.Dock = System.Windows.Forms.DockStyle.Top
+        Me.gbPlantilla.Location = New System.Drawing.Point(3, 3)
+        Me.gbPlantilla.Name = "gbPlantilla"
+        Me.gbPlantilla.Size = New System.Drawing.Size(478, 80)
+        Me.gbPlantilla.TabIndex = 2
+        Me.gbPlantilla.TabStop = False
+        Me.gbPlantilla.Text = "Generación de plantilla"
         '
         'ProgressBar1
         '
@@ -145,7 +154,8 @@ Partial Class FrmCargaActivosLote
         'TabPage1
         '
         Me.TabPage1.Controls.Add(Me.GroupBox2)
-        Me.TabPage1.Controls.Add(Me.GroupBox1)
+        Me.TabPage1.Controls.Add(Me.gbXml)
+        Me.TabPage1.Controls.Add(Me.gbPlantilla)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -161,9 +171,9 @@ Partial Class FrmCargaActivosLote
         Me.GroupBox2.Controls.Add(Me.btncargarplantillaact)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox2.Location = New System.Drawing.Point(3, 83)
+        Me.GroupBox2.Location = New System.Drawing.Point(3, 163)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(478, 380)
+        Me.GroupBox2.Size = New System.Drawing.Size(478, 300)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Cargar plantilla"
@@ -195,7 +205,7 @@ Partial Class FrmCargaActivosLote
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgcargaract.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgcargaract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgcargaract.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn14})
+        Me.dgcargaract.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn18})
         Me.dgcargaract.DataSource = Me.bscargaract
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
@@ -216,18 +226,18 @@ Partial Class FrmCargaActivosLote
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgcargaract.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgcargaract.RowHeadersVisible = False
-        Me.dgcargaract.Size = New System.Drawing.Size(466, 294)
+        Me.dgcargaract.Size = New System.Drawing.Size(466, 214)
         Me.dgcargaract.TabIndex = 34
         '
-        'DataGridViewTextBoxColumn13
+        'DataGridViewTextBoxColumn17
         '
-        Me.DataGridViewTextBoxColumn13.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        Me.DataGridViewTextBoxColumn17.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
         '
-        'DataGridViewTextBoxColumn14
+        'DataGridViewTextBoxColumn18
         '
-        Me.DataGridViewTextBoxColumn14.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
+        Me.DataGridViewTextBoxColumn18.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
         '
         'btncargarplantillaact
         '
@@ -249,6 +259,48 @@ Partial Class FrmCargaActivosLote
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Dé clic en Cargar plantilla para comenzar el proceso de lectura de la hoja de Mic" & _
     "rosoft Excel con los datos iniciales"
+        '
+        'gbXml
+        '
+        Me.gbXml.Controls.Add(Me.ProgressBar2)
+        Me.gbXml.Controls.Add(Me.btnGenerarXml)
+        Me.gbXml.Controls.Add(Me.Label6)
+        Me.gbXml.Dock = System.Windows.Forms.DockStyle.Top
+        Me.gbXml.Location = New System.Drawing.Point(3, 83)
+        Me.gbXml.Name = "gbXml"
+        Me.gbXml.Size = New System.Drawing.Size(478, 80)
+        Me.gbXml.TabIndex = 4
+        Me.gbXml.TabStop = False
+        Me.gbXml.Text = "Generación de carga PDA"
+        Me.gbXml.Visible = False
+        '
+        'ProgressBar2
+        '
+        Me.ProgressBar2.Location = New System.Drawing.Point(170, 42)
+        Me.ProgressBar2.Name = "ProgressBar2"
+        Me.ProgressBar2.Size = New System.Drawing.Size(242, 23)
+        Me.ProgressBar2.TabIndex = 2
+        '
+        'btnGenerarXml
+        '
+        Me.btnGenerarXml.Location = New System.Drawing.Point(6, 42)
+        Me.btnGenerarXml.Name = "btnGenerarXml"
+        Me.btnGenerarXml.Size = New System.Drawing.Size(158, 23)
+        Me.btnGenerarXml.TabIndex = 1
+        Me.btnGenerarXml.Text = "Generar carga"
+        Me.btnGenerarXml.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.SystemColors.Info
+        Me.Label6.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label6.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.Label6.Location = New System.Drawing.Point(3, 16)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(472, 13)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Dé clic en Generar carga para que se genere un archivo xml para cargar la informa" & _
+    "ción de los activos en la PDA."
         '
         'Panel2
         '
@@ -356,6 +408,26 @@ Partial Class FrmCargaActivosLote
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Tipo de lote:"
         '
+        'DataGridViewTextBoxColumn16
+        '
+        Me.DataGridViewTextBoxColumn16.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
+        '
+        'DataGridViewTextBoxColumn15
+        '
+        Me.DataGridViewTextBoxColumn15.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
+        '
+        'DataGridViewTextBoxColumn14
+        '
+        Me.DataGridViewTextBoxColumn14.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
+        '
+        'DataGridViewTextBoxColumn13
+        '
+        Me.DataGridViewTextBoxColumn13.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        '
         'DataGridViewTextBoxColumn12
         '
         Me.DataGridViewTextBoxColumn12.HeaderText = "No existen registros a presentar"
@@ -433,7 +505,7 @@ Partial Class FrmCargaActivosLote
         Me.Name = "FrmCargaActivosLote"
         Me.Text = "Carga en lote"
         Me.pnlcuerpo.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
+        Me.gbPlantilla.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
@@ -441,6 +513,7 @@ Partial Class FrmCargaActivosLote
         Me.GroupBox2.PerformLayout()
         CType(Me.dgcargaract, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bscargaract, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbXml.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.pnlinventario.ResumeLayout(False)
@@ -450,7 +523,7 @@ Partial Class FrmCargaActivosLote
 
     End Sub
   Friend WithEvents Panel1 As System.Windows.Forms.Panel
-  Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+  Friend WithEvents gbPlantilla As System.Windows.Forms.GroupBox
   Friend WithEvents btnGenerarPlantillaact As System.Windows.Forms.Button
   Friend WithEvents Label1 As System.Windows.Forms.Label
   Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
@@ -482,8 +555,16 @@ Partial Class FrmCargaActivosLote
   Friend WithEvents DataGridViewTextBoxColumn9 As System.Windows.Forms.DataGridViewTextBoxColumn
   Friend WithEvents DataGridViewTextBoxColumn10 As System.Windows.Forms.DataGridViewTextBoxColumn
   Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
-    Friend WithEvents DataGridViewTextBoxColumn11 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn12 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn13 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn14 As System.Windows.Forms.DataGridViewTextBoxColumn
+  Friend WithEvents DataGridViewTextBoxColumn11 As System.Windows.Forms.DataGridViewTextBoxColumn
+  Friend WithEvents DataGridViewTextBoxColumn12 As System.Windows.Forms.DataGridViewTextBoxColumn
+  Friend WithEvents DataGridViewTextBoxColumn13 As System.Windows.Forms.DataGridViewTextBoxColumn
+  Friend WithEvents DataGridViewTextBoxColumn14 As System.Windows.Forms.DataGridViewTextBoxColumn
+  Friend WithEvents DataGridViewTextBoxColumn15 As System.Windows.Forms.DataGridViewTextBoxColumn
+  Friend WithEvents gbXml As System.Windows.Forms.GroupBox
+  Friend WithEvents ProgressBar2 As System.Windows.Forms.ProgressBar
+  Friend WithEvents btnGenerarXml As System.Windows.Forms.Button
+  Friend WithEvents Label6 As System.Windows.Forms.Label
+  Friend WithEvents DataGridViewTextBoxColumn16 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn17 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn18 As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

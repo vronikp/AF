@@ -43,8 +43,12 @@ Public Class PlantillaActivo
       Return mCodigoAux
     End Get
     Set(value As String)
-      mCodigoAux = value
-    End Set
+            If String.IsNullOrWhiteSpace(value) Then
+                mCodigoAux = ""
+            Else
+                mCodigoAux = value
+            End If
+        End Set
   End Property
 
   Private mSerie As String = ""
@@ -472,7 +476,11 @@ Public Class PlantillaActivo
     OperadorDatos.AgregarParametro("@ResponsableMantenimiento", ResponsableMantenimiento)
     OperadorDatos.AgregarParametro("@FechaIngreso", FechaIngreso)
     OperadorDatos.AgregarParametro("@FechaCompra", FechaCompra)
-    OperadorDatos.AgregarParametro("@FechaUso", FechaUso)
+
+        If Not FechaUso = Nothing Then
+            OperadorDatos.AgregarParametro("@FechaUso", FechaUso)
+        End If
+
     If Not FechaBaja = Nothing Then
       OperadorDatos.AgregarParametro("@FechaBaja", FechaBaja)
     End If

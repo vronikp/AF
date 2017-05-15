@@ -117,10 +117,10 @@ Public Class CtlIdentificacion
         For t As Integer = 1 To coeficientes.Length
           Dim res As Integer = 0
           res = CInt(_ident.Substring(t - 1, 1)) * CInt(coeficientes.Substring(t - 1, 1))
-          If res > 9 Then
-            res = CInt(res.ToString.Substring(0, 1)) + CInt(res.ToString.Substring(1, 1))
-          End If
-          suma += res
+                    If res > 9 And modulo = 10 Then
+                        res = CInt(res.ToString.Substring(0, 1)) + CInt(res.ToString.Substring(1, 1))
+                    End If
+                    suma += res
         Next
 
         Dim verificador As Integer = 0
@@ -128,7 +128,7 @@ Public Class CtlIdentificacion
         If residuo = 0 Then
           verificador = 0
         Else
-          verificador = 10 - residuo
+                    verificador = modulo - residuo
         End If
         If Not CInt(_ident.Substring(coeficientes.Length, 1)) = verificador Then
           MsgBox(String.Format("El {0} es inválido", tiporuc), MsgBoxStyle.Critical, "Error")

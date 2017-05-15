@@ -8,7 +8,7 @@ Public Class clsReporteActivo
         Dim bReturn As Boolean
         Dim ds As New dsReporteActivosValorizacionDet
         With _Activo.OperadorDatos
-            .AgregarParametro("@Accion", "Ri")
+            .AgregarParametro("@Accion", "RF")
             .AgregarParametro("@Activo_Codigo", _Activo.Activo_Codigo)
             .Comando.CommandText = "proc_Activo"
 
