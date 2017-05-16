@@ -99,35 +99,42 @@ Public Class FrmMantenimientoUsuario
     e.Cancel = Not Guardar_datos()
   End Sub
 
-  Private Sub Mapear_datos()
-    Me.CtlRestricciones1.EndEdit()
+	Private Sub Mapear_datos()
+		Me.CtlRestricciones1.EndEdit()
 
-    mUsuario.Usuari_Codigo = Me.txtcodigo.Text
-    mUsuario.Usuari_Descripcion = Me.txtdescripcion.Text
-    mUsuario.Usuari_Mensaje = Me.txtmensaje.Text
-    mUsuario.Usuari_Password = Me.txtcontrasena.Text
-    mUsuario.Usuari_Activo = Me.chkactivo.Checked
+		mUsuario.Usuari_Codigo = Me.txtcodigo.Text
+		mUsuario.Usuari_Descripcion = Me.txtdescripcion.Text
+		mUsuario.Usuari_Mensaje = Me.txtmensaje.Text
+		mUsuario.Usuari_Activo = Me.chkactivo.Checked
 
-    mUsuario.Usuari_RegEntSal = Me.chkregentsal.Checked
-    mUsuario.Usuari_RegIngModEli = Me.chkmoddat.Checked
-    mUsuario.Usuari_RegImp = Me.chkregimp.Checked
-    mUsuario.Usuari_RegConfidencial = Me.chkmaniconf.Checked
+		mUsuario.Usuari_RegEntSal = Me.chkregentsal.Checked
+		mUsuario.Usuari_RegIngModEli = Me.chkmoddat.Checked
+		mUsuario.Usuari_RegImp = Me.chkregimp.Checked
+		mUsuario.Usuari_RegConfidencial = Me.chkmaniconf.Checked
 
-    If Me.chkempleado.Checked Then
-      mUsuario.Empleado = Me.CtlBuscaEmpleado1.Empleado
-    Else
-      mUsuario.Empleado = Nothing
-    End If
-    If Me.chkubicacion.Checked Then
-      mUsuario.PardetUbicacion = Me.CtlUbicacionActivo1.ParametroDet
-    Else
-      mUsuario.PardetUbicacion = Nothing
-    End If
-    mUsuario.Usuari_RequerirAprobacionCambioCustodio = Me.chkcambiocustodio.Checked
-    mUsuario.Usuari_CambiarContrasena = Me.chkcambcontrpr.Checked
+		If Me.chkempleado.Checked Then
+			mUsuario.Empleado = Me.CtlBuscaEmpleado1.Empleado
+		Else
+			mUsuario.Empleado = Nothing
+		End If
+		If Me.chkubicacion.Checked Then
+			mUsuario.PardetUbicacion = Me.CtlUbicacionActivo1.ParametroDet
+		Else
+			mUsuario.PardetUbicacion = Nothing
+		End If
+		mUsuario.Usuari_RequerirAprobacionCambioCustodio = Me.chkcambiocustodio.Checked
+
+		If txtcodigo.Text.Contains("\") Then
+			Me.txtcontrasena.Text = ""
+			Me.chkcambcontrpr.Checked = False
+			Me.chkcambiocontrasena.Checked = False
+		End If
+
+		mUsuario.Usuari_Password = Me.txtcontrasena.Text
+		mUsuario.Usuari_CambiarContrasena = Me.chkcambcontrpr.Checked
   End Sub
 
-  Private Function Guardar_datos() As Boolean
+	Private Function Guardar_datos() As Boolean
     Mapear_datos()
     Dim _esnuevo As Boolean = mUsuario.EsNuevo
     If mUsuario.Usuari_Codigo = Restriccion.Usuari_Codigo Then
@@ -258,4 +265,8 @@ Public Class FrmMantenimientoUsuario
   Private Sub chkubicacion_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkubicacion.CheckedChanged
     Me.CtlUbicacionActivo1.Enabled = Me.chkubicacion.Checked
   End Sub
+
+  Private Sub txtcodigo_TextChanged(sender As Object, e As EventArgs) Handles txtcodigo.TextChanged
+		Me.pnlcontrasena.Enabled = Not Me.txtcodigo.Text.Contains("\")
+	End Sub
 End Class
