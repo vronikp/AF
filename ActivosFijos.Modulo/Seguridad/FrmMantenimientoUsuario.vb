@@ -155,8 +155,17 @@ Public Class FrmMantenimientoUsuario
       End If
       Return True
     Else
-      'Usuarios.CancelEdit()
-      MsgBox("No se puede guardar Usuario" & Environment.NewLine & Sistema.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
+      Select Case mUsuario.ResultCode
+        Case -11
+          MsgBox("La contraseña no cumple con el mínimo requerido", MsgBoxStyle.Critical, "Error")
+        Case -10
+          MsgBox("La contraseña debe ser diferente de las últimas registradas", MsgBoxStyle.Critical, "Error")
+        Case -12, -13, -14, -15
+          MsgBox("La contraseña debe cumplir con los requisitos de complejidad", MsgBoxStyle.Critical, "Error")
+        Case Else
+          MsgBox("No se puede guardar Usuario" & Environment.NewLine & Sistema.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
+      End Select
+
       Return False
     End If
   End Function

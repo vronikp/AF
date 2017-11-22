@@ -27,6 +27,17 @@ Public Class WWTSUsuario
 
   Private mUsuari_Activo As Boolean = True
 
+  Private mResultCode As Integer
+
+  Public Property ResultCode As Integer
+    Get
+      Return mResultCode
+    End Get
+    Set(value As Integer)
+      mResultCode = value
+    End Set
+  End Property
+
   Public Overridable Property Entida_Empleado() As Integer
     Get
       Return mEntida_Empleado
@@ -266,7 +277,8 @@ Public Class WWTSUsuario
       .Procedimiento = _Procedimiento
       bReturn = .Ejecutar(dsResult)
       .LimpiarParametros()
-      If bReturn Then
+      If bReturn AndAlso Not dsResult Is Nothing AndAlso dsResult.Rows.Count > 0 Then
+        ResultCode = CInt(dsResult.Rows(0)(0))
 
         For Each _restriccion As Restriccion In Restricciones
           _restriccion.Usuario = Me
