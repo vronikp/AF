@@ -394,8 +394,10 @@ Public Class Loader
                             _opciones.Add(New Opcion(_restriccion, AddressOf CargarUsuario))
                         Case Enumerados.EnumOpciones.Auditoria
                             _opciones.Add(New Opcion(_restriccion, AddressOf CargarAuditoria))
-                    End Select
-                End If
+            Case Enumerados.EnumOpciones.Politicas
+              _opciones.Add(New Opcion(_restriccion, AddressOf CargarPoliticas))
+          End Select
+        End If
             End If
         Next
         Return _opciones
@@ -463,7 +465,15 @@ Public Class Loader
         Return f
     End Function
 
-    Function ActivarVerificarLicencia(ByVal esActivar As Boolean) As Boolean
+  Function CargarPoliticas(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+    Dim f As New FrmListaParametroDets(_Sistema, _Restriccion, False)
+    f.Parame_Codigo = Enumerados.EnumParametros.Politicas
+    f.PuedeNuevo = False
+    Return f
+  End Function
+
+
+  Function ActivarVerificarLicencia(ByVal esActivar As Boolean) As Boolean
         Dim conString As String = My.Settings.AdminConnectionString
         Dim sqlCon = New SqlConnection(conString)
         Dim reader As SqlDataReader

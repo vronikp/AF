@@ -36,6 +36,7 @@ Public Class Enumerados
 
     InventariarDesdePDA = 300
 
+    Politicas = 905
     Usuarios = 910
     Auditoria = 912
 
@@ -48,6 +49,7 @@ Public Class Enumerados
 #Region "Parametros"
   Enum EnumParametros
     Nulo = 0
+    Politicas = 2
     Modulos = 4
     Opciones = 5
     TipoAccion = 10
