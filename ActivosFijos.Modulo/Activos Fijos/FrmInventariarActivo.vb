@@ -3,7 +3,9 @@ Imports Infoware.Consola.Base
 Imports ActivosFijos.Reglas
 
 Public Class FrmInventariarActivo
-  Private mInventario As Inventario = Nothing
+    Private mInventario As Inventario = Nothing
+    Private mActivoClon As Activo = Nothing
+    Private mesClon As Boolean = False
   Public Property Inventario As Inventario
     Get
       Return mInventario
@@ -134,7 +136,6 @@ Public Class FrmInventariarActivo
         'MessageBox.Show(Sistema.UsuarioString)
         'End If
 
-
         If Activo.EsNuevo Then
             Try
                 Me.CtlActivo1.Mapear_datos()
@@ -146,7 +147,7 @@ Public Class FrmInventariarActivo
                     invdet.InvDet_Activo = True
                     invdet.PardetEstadoInventario = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EstadoInventarioActivo, Enumerados.enumEstadoInventarioActivo.EncontradoNuevo)
                     Me.CtlActivo1.Activo.Recargar()
-                    Me.CtlActivo1.llenar_datos()
+                    'Me.CtlActivo1.llenar_datos()
                 Else
                     MsgBox(Sistema.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
                     Exit Sub
@@ -179,12 +180,28 @@ Public Class FrmInventariarActivo
             Exit Sub
         End If
 
+        'preguntar si se clona
+        If MsgBox("¿Desea limpiar los campos?", MsgBoxStyle.YesNo) = MsgBoxResult.No Then
+            mesClon = True
+            mActivoClon = Me.CtlActivo1.Activo.Clone
+            For Each car As ActivoCaracteristica In mActivoClon.Caracteristicas
+                car.Activo_Codigo = 0
+                car.EsNuevo = True
+            Next
+            Me.CtlActivo1.txtcodigobarra.Text = ""
+            Me.CtlActivo1.txtcodigoauxiliar.Text = ""
+            Me.CtlActivo1.txtserie.Text = ""
+        Else
+            mesClon = False
+            Me.CtlActivo1.llenar_datos()
+        End If
+
+
         invdet.Usuari_CodigoPDA = Sistema.UsuarioString
 
         If invdet.Guardar(Me.CtlBuscaCustodio.Empleado.Entida_Codigo, Me.CtlUbicacionActivo1.ParametroDet.Parame_Codigo, Me.CtlUbicacionActivo1.ParametroDet.Pardet_Secuencia) Then
             'Me.Close()
             MsgBox("Inventario correctamente registrado", MsgBoxStyle.Information, "Información")
-            Me.pnlactivo.Visible = False
             Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Adicion,
                                       "(" + Activo.Activo_CodigoBarra + ") Se inventarió " + Activo.Descripcion + " con estado de inventario " +
                                      invdet.PardetEstadoInventario.Descripcion + " en el periodo " + invdet.Inventario.PardetPeriodoInventario.Descripcion +
@@ -192,6 +209,17 @@ Public Class FrmInventariarActivo
         Else
             MsgBox(invdet.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
             Exit Sub
+        End If
+
+        If mesClon Then
+            Dim activos As New ActivoList
+            activos.Add(mActivoClon)
+            Me.BindingSource1.DataSource = activos
+            Me.DataGridView1.AutoDiscover()
+            Me.pnlactivo.Visible = True
+        Else
+            Me.pnlactivo.Visible = False
+            Me.pnlCabecera.Visible = True
         End If
     End Sub
 
@@ -234,4 +262,24 @@ Public Class FrmInventariarActivo
     End Try
 
   End Sub
+
+    Private Sub btnControlCabecera_Click(sender As System.Object, e As System.EventArgs) Handles btnControlCabecera.Click
+        If pnlCabecera.Visible Then
+            pnlCabecera.Visible = False
+            btnControlCabecera.Text = ">>"
+        Else
+            pnlCabecera.Visible = True
+            btnControlCabecera.Text = "<<"
+        End If
+    End Sub
+
+
+    Private Sub btnAbrirActaEntrega_Click(sender As System.Object, e As System.EventArgs) Handles btnAbrirActaEntrega.Click
+        Dim f As New FrmReporteActaEntregaCustodio(Sistema, Restriccion, False)
+        f.Custodio = CtlBuscaCustodio.Empleado
+        f.rdoConstatacion.Checked = True
+        f.cboPeriodoInventario.ParametroDet = mInventario.PardetPeriodoInventario
+        f.cboInventario.ParametroDet = mInventario.PardetUbicacion
+        f.Show()
+    End Sub
 End Class

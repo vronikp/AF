@@ -35,17 +35,19 @@ Partial Class FrmInventariarActivo
         Me.pnlactivo = New System.Windows.Forms.Panel()
         Me.CtlActivo1 = New ActivosFijos.Modulo.CtlActivo()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.btnControlCabecera = New System.Windows.Forms.Button()
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.btnNoInventariado = New System.Windows.Forms.Button()
         Me.btninventariar = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pnlCabecera = New System.Windows.Forms.Panel()
         Me.DataGridView1 = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnlcierre = New System.Windows.Forms.Panel()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.btnbuscaractivos = New System.Windows.Forms.ToolStripButton()
         Me.btnnuevo = New System.Windows.Forms.ToolStripButton()
+        Me.btnAbrirActaEntrega = New System.Windows.Forms.ToolStripButton()
         Me.txtserie = New Infoware.Controles.Base.TextBoxStd()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtcodigobarra = New Infoware.Controles.Base.TextBoxStd()
@@ -53,6 +55,14 @@ Partial Class FrmInventariarActivo
         Me.CtlBuscaCustodio = New ActivosFijos.Modulo.CtlBuscaEmpleado()
         Me.CtlUbicacionActivo1 = New ActivosFijos.Modulo.CtlParametroDetAnidado()
         Me.Label22 = New System.Windows.Forms.Label()
+        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -67,7 +77,7 @@ Partial Class FrmInventariarActivo
         Me.TabPage2.SuspendLayout()
         Me.pnlactivo.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        Me.pnlCabecera.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlcierre.SuspendLayout()
         Me.ToolStrip2.SuspendLayout()
@@ -106,7 +116,7 @@ Partial Class FrmInventariarActivo
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.pnlactivo)
-        Me.TabPage2.Controls.Add(Me.Panel1)
+        Me.TabPage2.Controls.Add(Me.pnlCabecera)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -136,6 +146,7 @@ Partial Class FrmInventariarActivo
         '
         'Panel3
         '
+        Me.Panel3.Controls.Add(Me.btnControlCabecera)
         Me.Panel3.Controls.Add(Me.btncancelar)
         Me.Panel3.Controls.Add(Me.btnNoInventariado)
         Me.Panel3.Controls.Add(Me.btninventariar)
@@ -145,51 +156,60 @@ Partial Class FrmInventariarActivo
         Me.Panel3.Size = New System.Drawing.Size(733, 35)
         Me.Panel3.TabIndex = 1
         '
+        'btnControlCabecera
+        '
+        Me.btnControlCabecera.Location = New System.Drawing.Point(6, 5)
+        Me.btnControlCabecera.Name = "btnControlCabecera"
+        Me.btnControlCabecera.Size = New System.Drawing.Size(27, 23)
+        Me.btnControlCabecera.TabIndex = 3
+        Me.btnControlCabecera.Text = "<<"
+        Me.btnControlCabecera.UseVisualStyleBackColor = True
+        '
         'btncancelar
         '
-        Me.btncancelar.Location = New System.Drawing.Point(265, 5)
+        Me.btncancelar.Location = New System.Drawing.Point(289, 5)
         Me.btncancelar.Name = "btncancelar"
-        Me.btncancelar.Size = New System.Drawing.Size(120, 23)
+        Me.btncancelar.Size = New System.Drawing.Size(119, 23)
         Me.btncancelar.TabIndex = 1
         Me.btncancelar.Text = "Cancelar"
         Me.btncancelar.UseVisualStyleBackColor = True
         '
         'btnNoInventariado
         '
-        Me.btnNoInventariado.Location = New System.Drawing.Point(391, 5)
+        Me.btnNoInventariado.Location = New System.Drawing.Point(164, 5)
         Me.btnNoInventariado.Name = "btnNoInventariado"
-        Me.btnNoInventariado.Size = New System.Drawing.Size(253, 23)
+        Me.btnNoInventariado.Size = New System.Drawing.Size(119, 23)
         Me.btnNoInventariado.TabIndex = 2
-        Me.btnNoInventariado.Text = "Asignar estado No Inventariado"
+        Me.btnNoInventariado.Text = "Desinventariar"
         Me.btnNoInventariado.UseVisualStyleBackColor = True
         '
         'btninventariar
         '
-        Me.btninventariar.Location = New System.Drawing.Point(6, 5)
+        Me.btninventariar.Location = New System.Drawing.Point(39, 5)
         Me.btninventariar.Name = "btninventariar"
-        Me.btninventariar.Size = New System.Drawing.Size(253, 23)
+        Me.btninventariar.Size = New System.Drawing.Size(119, 23)
         Me.btninventariar.TabIndex = 0
-        Me.btninventariar.Text = "Guardar cambios e inventariar"
+        Me.btninventariar.Text = "Inventariar"
         Me.btninventariar.UseVisualStyleBackColor = True
         '
-        'Panel1
+        'pnlCabecera
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.Info
-        Me.Panel1.Controls.Add(Me.DataGridView1)
-        Me.Panel1.Controls.Add(Me.pnlcierre)
-        Me.Panel1.Controls.Add(Me.txtserie)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.txtcodigobarra)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.CtlBuscaCustodio)
-        Me.Panel1.Controls.Add(Me.CtlUbicacionActivo1)
-        Me.Panel1.Controls.Add(Me.Label22)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(3, 3)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Padding = New System.Windows.Forms.Padding(5)
-        Me.Panel1.Size = New System.Drawing.Size(273, 613)
-        Me.Panel1.TabIndex = 1
+        Me.pnlCabecera.BackColor = System.Drawing.SystemColors.Info
+        Me.pnlCabecera.Controls.Add(Me.DataGridView1)
+        Me.pnlCabecera.Controls.Add(Me.pnlcierre)
+        Me.pnlCabecera.Controls.Add(Me.txtserie)
+        Me.pnlCabecera.Controls.Add(Me.Label2)
+        Me.pnlCabecera.Controls.Add(Me.txtcodigobarra)
+        Me.pnlCabecera.Controls.Add(Me.Label1)
+        Me.pnlCabecera.Controls.Add(Me.CtlBuscaCustodio)
+        Me.pnlCabecera.Controls.Add(Me.CtlUbicacionActivo1)
+        Me.pnlCabecera.Controls.Add(Me.Label22)
+        Me.pnlCabecera.Dock = System.Windows.Forms.DockStyle.Left
+        Me.pnlCabecera.Location = New System.Drawing.Point(3, 3)
+        Me.pnlCabecera.Name = "pnlCabecera"
+        Me.pnlCabecera.Padding = New System.Windows.Forms.Padding(5)
+        Me.pnlCabecera.Size = New System.Drawing.Size(273, 613)
+        Me.pnlCabecera.TabIndex = 1
         '
         'DataGridView1
         '
@@ -206,7 +226,7 @@ Partial Class FrmInventariarActivo
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn12})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn20})
         Me.DataGridView1.DataSource = Me.BindingSource1
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
@@ -231,17 +251,17 @@ Partial Class FrmInventariarActivo
         Me.DataGridView1.Size = New System.Drawing.Size(263, 223)
         Me.DataGridView1.TabIndex = 23
         '
-        'DataGridViewTextBoxColumn11
+        'DataGridViewTextBoxColumn19
         '
-        Me.DataGridViewTextBoxColumn11.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        Me.DataGridViewTextBoxColumn11.ReadOnly = True
+        Me.DataGridViewTextBoxColumn19.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
+        Me.DataGridViewTextBoxColumn19.ReadOnly = True
         '
-        'DataGridViewTextBoxColumn12
+        'DataGridViewTextBoxColumn20
         '
-        Me.DataGridViewTextBoxColumn12.HeaderText = "No existen registros a presentar"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        Me.DataGridViewTextBoxColumn12.ReadOnly = True
+        Me.DataGridViewTextBoxColumn20.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
+        Me.DataGridViewTextBoxColumn20.ReadOnly = True
         '
         'pnlcierre
         '
@@ -255,7 +275,7 @@ Partial Class FrmInventariarActivo
         'ToolStrip2
         '
         Me.ToolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnbuscaractivos, Me.btnnuevo})
+        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnbuscaractivos, Me.btnnuevo, Me.btnAbrirActaEntrega})
         Me.ToolStrip2.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip2.Name = "ToolStrip2"
         Me.ToolStrip2.Size = New System.Drawing.Size(263, 25)
@@ -277,6 +297,14 @@ Partial Class FrmInventariarActivo
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(62, 22)
         Me.btnnuevo.Text = "Nuevo"
+        '
+        'btnAbrirActaEntrega
+        '
+        Me.btnAbrirActaEntrega.Image = CType(resources.GetObject("btnAbrirActaEntrega.Image"), System.Drawing.Image)
+        Me.btnAbrirActaEntrega.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnAbrirActaEntrega.Name = "btnAbrirActaEntrega"
+        Me.btnAbrirActaEntrega.Size = New System.Drawing.Size(110, 22)
+        Me.btnAbrirActaEntrega.Text = "Acta de Entrega"
         '
         'txtserie
         '
@@ -360,6 +388,54 @@ Partial Class FrmInventariarActivo
         Me.Label22.TabIndex = 3
         Me.Label22.Text = "Ubicación"
         '
+        'DataGridViewTextBoxColumn18
+        '
+        Me.DataGridViewTextBoxColumn18.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
+        Me.DataGridViewTextBoxColumn18.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn17
+        '
+        Me.DataGridViewTextBoxColumn17.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
+        Me.DataGridViewTextBoxColumn17.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn16
+        '
+        Me.DataGridViewTextBoxColumn16.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
+        Me.DataGridViewTextBoxColumn16.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn15
+        '
+        Me.DataGridViewTextBoxColumn15.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
+        Me.DataGridViewTextBoxColumn15.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn14
+        '
+        Me.DataGridViewTextBoxColumn14.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
+        Me.DataGridViewTextBoxColumn14.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn13
+        '
+        Me.DataGridViewTextBoxColumn13.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        Me.DataGridViewTextBoxColumn13.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.DataGridViewTextBoxColumn12.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.HeaderText = "No existen registros a presentar"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        Me.DataGridViewTextBoxColumn11.ReadOnly = True
+        '
         'DataGridViewTextBoxColumn10
         '
         Me.DataGridViewTextBoxColumn10.HeaderText = "No existen registros a presentar"
@@ -421,8 +497,8 @@ Partial Class FrmInventariarActivo
         Me.TabPage2.ResumeLayout(False)
         Me.pnlactivo.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
+        Me.pnlCabecera.ResumeLayout(False)
+        Me.pnlCabecera.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlcierre.ResumeLayout(False)
         Me.pnlcierre.PerformLayout()
@@ -432,38 +508,48 @@ Partial Class FrmInventariarActivo
         Me.PerformLayout()
 
     End Sub
-  Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-  Friend WithEvents BindingSource1 As System.Windows.Forms.BindingSource
-  Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
-  Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
-  Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-  Friend WithEvents CtlActivo1 As ActivosFijos.Modulo.CtlActivo
-  Friend WithEvents Panel1 As System.Windows.Forms.Panel
-  Friend WithEvents CtlBuscaCustodio As ActivosFijos.Modulo.CtlBuscaEmpleado
-  Friend WithEvents CtlUbicacionActivo1 As ActivosFijos.Modulo.CtlParametroDetAnidado
-  Friend WithEvents Label22 As System.Windows.Forms.Label
-  Friend WithEvents txtserie As Infoware.Controles.Base.TextBoxStd
-  Friend WithEvents Label2 As System.Windows.Forms.Label
-  Friend WithEvents txtcodigobarra As Infoware.Controles.Base.TextBoxStd
-  Friend WithEvents Label1 As System.Windows.Forms.Label
-  Friend WithEvents pnlcierre As System.Windows.Forms.Panel
-  Friend WithEvents ToolStrip2 As System.Windows.Forms.ToolStrip
-  Friend WithEvents btnbuscaractivos As System.Windows.Forms.ToolStripButton
-  Friend WithEvents DataGridView1 As Infoware.Consola.Base.DataGridViewAutoDiscover
-  Friend WithEvents pnlactivo As System.Windows.Forms.Panel
-  Friend WithEvents Panel3 As System.Windows.Forms.Panel
-  Friend WithEvents btninventariar As System.Windows.Forms.Button
-  Friend WithEvents btncancelar As System.Windows.Forms.Button
-  Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
-  Friend WithEvents btnnuevo As System.Windows.Forms.ToolStripButton
-  Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
-  Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
-  Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
-  Friend WithEvents btnNoInventariado As System.Windows.Forms.Button
-  Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
-  Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
-  Friend WithEvents DataGridViewTextBoxColumn9 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BindingSource1 As System.Windows.Forms.BindingSource
+    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents CtlActivo1 As ActivosFijos.Modulo.CtlActivo
+    Friend WithEvents pnlCabecera As System.Windows.Forms.Panel
+    Friend WithEvents CtlBuscaCustodio As ActivosFijos.Modulo.CtlBuscaEmpleado
+    Friend WithEvents CtlUbicacionActivo1 As ActivosFijos.Modulo.CtlParametroDetAnidado
+    Friend WithEvents Label22 As System.Windows.Forms.Label
+    Friend WithEvents txtserie As Infoware.Controles.Base.TextBoxStd
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents txtcodigobarra As Infoware.Controles.Base.TextBoxStd
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents pnlcierre As System.Windows.Forms.Panel
+    Friend WithEvents ToolStrip2 As System.Windows.Forms.ToolStrip
+    Friend WithEvents btnbuscaractivos As System.Windows.Forms.ToolStripButton
+    Friend WithEvents DataGridView1 As Infoware.Consola.Base.DataGridViewAutoDiscover
+    Friend WithEvents pnlactivo As System.Windows.Forms.Panel
+    Friend WithEvents Panel3 As System.Windows.Forms.Panel
+    Friend WithEvents btninventariar As System.Windows.Forms.Button
+    Friend WithEvents btncancelar As System.Windows.Forms.Button
+    Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents btnnuevo As System.Windows.Forms.ToolStripButton
+    Friend WithEvents DataGridViewTextBoxColumn4 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents btnNoInventariado As System.Windows.Forms.Button
+    Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn9 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn11 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn12 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents btnControlCabecera As System.Windows.Forms.Button
+    Friend WithEvents DataGridViewTextBoxColumn13 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn14 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn15 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn16 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents btnAbrirActaEntrega As System.Windows.Forms.ToolStripButton
+    Friend WithEvents DataGridViewTextBoxColumn17 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn18 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn19 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn20 As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

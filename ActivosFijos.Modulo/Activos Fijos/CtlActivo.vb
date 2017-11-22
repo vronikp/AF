@@ -77,8 +77,13 @@ Public Class CtlActivo
         Me.txtcodigoauxiliar.Text = mActivo.Activo_CodigoAux
         Me.txtserie.Text = mActivo.Activo_Serie
 
-        Me.CtlGrupoTipoClase.ParametroEnum = Enumerados.EnumParametros.ClaseActivo
-        Me.CtlGrupoTipoClase.ParametroDet = mActivo.PardetClaseActivo
+        If mActivo.PardetClaseActivo IsNot Nothing Then
+            Me.cboGrupo.ParametroDet = mActivo.PardetClaseActivo.PardetPadre.PardetPadre
+            Me.cboTipo.ParametroDet = mActivo.PardetClaseActivo.PardetPadre
+            Me.cboClase.ParametroDet = mActivo.PardetClaseActivo
+        End If
+        'Me.CtlGrupoTipoClase.ParametroEnum = Enumerados.EnumParametros.ClaseActivo
+        'Me.CtlGrupoTipoClase.ParametroDet = mActivo.PardetClaseActivo
 
         Me.txtdescripcion.Text = mActivo.Activo_Descripcion
         Me.cbomarca.ParametroDet = mActivo.PardetMarca
@@ -159,7 +164,7 @@ Public Class CtlActivo
 #End Region
 
     Sub llenar_caracteristicas()
-        If Activo Is Nothing OrElse CtlGrupoTipoClase.ParametroDet Is Nothing Then
+        If Activo Is Nothing OrElse cboTipo.ParametroDet Is Nothing Then
             Exit Sub
         End If
         'Activo.Caracteristicas = Nothing
@@ -176,8 +181,8 @@ Public Class CtlActivo
         End While
 
         Dim _nuevasCaracts As New WWTSParametroDetList
-        If Me.CtlGrupoTipoClase.ParametroDet.PardetPadre IsNot Nothing Then
-            _nuevasCaracts = WWTSParametroDetList.ObtenerLista(Sistema.OperadorDatos, Enumerados.EnumParametros.CaracteristicaActivo, WWTSParametroDetList.enumTipoObjeto.Nada, Me.CtlGrupoTipoClase.ParametroDet.PardetPadre)
+        If Me.cboTipo.ParametroDet IsNot Nothing Then
+            _nuevasCaracts = WWTSParametroDetList.ObtenerLista(Sistema.OperadorDatos, Enumerados.EnumParametros.CaracteristicaActivo, WWTSParametroDetList.enumTipoObjeto.Nada, Me.cboTipo.ParametroDet)
         End If
 
         For Each _caractp As WWTSParametroDet In _nuevasCaracts
@@ -211,11 +216,11 @@ Public Class CtlActivo
         mActivo.Activo_CodigoBarraCruce = Me.txtcodbarracruce.Text
         mActivo.Activo_CodigoAux = Me.txtcodigoauxiliar.Text
         mActivo.Activo_Serie = Me.txtserie.Text
-        If Me.CtlGrupoTipoClase.ParametroDet Is Nothing OrElse Not Me.CtlGrupoTipoClase.ParametroDet.Parame_Codigo = Enumerados.EnumParametros.ClaseActivo Then
+        If Me.cboClase.ParametroDet Is Nothing OrElse Not Me.cboClase.ParametroDet.Parame_Codigo = Enumerados.EnumParametros.ClaseActivo Then
             Me.TabControl1.SelectedTab = Me.TpUbicacion
             Throw New Exception("Debe seleccionar una clase de activo")
         End If
-        mActivo.PardetClaseActivo = Me.CtlGrupoTipoClase.ParametroDet
+        mActivo.PardetClaseActivo = Me.cboClase.ParametroDet
         mActivo.Activo_Descripcion = Me.txtdescripcion.Text
         mActivo.PardetMarca = Me.cbomarca.ParametroDet
         mActivo.Activo_Modelo = Me.txtmodelo.Text
@@ -286,6 +291,24 @@ Public Class CtlActivo
         RaiseEvent CopiarActivo(Me, Nothing)
     End Sub
 
+    Public Function clonar() As Boolean
+        If mActivo Is Nothing Then
+            Return False
+        End If
+        Dim _Activo As Activo = mActivo.Clone
+        mesClon = True
+        mUbicacionClone = mActivo.UbicacionActual
+        mCustodioClone = mActivo.CustodioActual
+        mCostoClone = mActivo.CostoActual
+        mSalvamentoClone = mActivo.SalvamentoActual
+        mPeriodosClone = mActivo.PeriodosDepreciablesActual
+        mFrecuenciaClone = mActivo.FrecuenciaDepreciacionActual
+        mActivoCopiar = _Activo
+
+        RaiseEvent CopiarActivo(Me, Nothing)
+        Return True
+    End Function
+
     Private Sub CtlActivo_Load(sender As Object, e As System.EventArgs) Handles Me.Load
     End Sub
 
@@ -311,8 +334,11 @@ Public Class CtlActivo
 
         Me.CtlBuscaFactura1.OperadorDatos = Sistema.OperadorDatos
 
-        Me.CtlGrupoTipoClase.ParametroEnum = Enumerados.EnumParametros.ClaseActivo
-        Me.CtlGrupoTipoClase.llenar_Datos()
+        Me.cboGrupo.Parametro = Enumerados.EnumParametros.GrupoActivo
+        Me.cboGrupo.OperadorDatos = Sistema.OperadorDatos
+        Me.cboGrupo.Llenar_Datos()
+        'Me.CtlGrupoTipoClase.ParametroEnum = Enumerados.EnumParametros.ClaseActivo
+        'Me.CtlGrupoTipoClase.llenar_Datos()
 
         Me.cbomarca.Parametro = Enumerados.EnumParametros.MarcaActivo
         Me.cbomarca.OperadorDatos = Sistema.OperadorDatos
@@ -361,13 +387,6 @@ Public Class CtlActivo
         End If
     End Sub
 
-    Private Sub CtlGrupoTipoClase_DespuesSeleccionar(sender As Object, e As System.EventArgs) Handles CtlGrupoTipoClase.DespuesSeleccionar
-        If CtlGrupoTipoClase.ParametroDet Is Nothing OrElse CtlGrupoTipoClase.ParametroDet.PardetPadre Is Nothing Then
-            Exit Sub
-        End If
-        Me.txtperiodosdepreciables.Value = Me.CtlGrupoTipoClase.ParametroDet.PardetPadre.Pardet_DatoInt1
-        llenar_caracteristicas()
-    End Sub
 
 #Region "Componentes"
     Private Sub btnnuevocomp_Click(sender As System.Object, e As System.EventArgs) Handles btnnuevocomp.Click
@@ -481,5 +500,46 @@ Public Class CtlActivo
 
     Private Sub CtlBuscaProveedor1_Load(sender As System.Object, e As System.EventArgs) Handles CtlBuscaProveedor1.Load
 
+    End Sub
+
+    Private Sub cboGrupo_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cboGrupo.SelectedIndexChanged
+        Me.cboTipo.Parametro = Enumerados.EnumParametros.TipoActivo
+        Me.cboTipo.OperadorDatos = Sistema.OperadorDatos
+        'Me.cboTipo.ParametroDet.PardetPadre = Me.cboGrupo.ParametroDet
+        Me.cboTipo.Llenar_Datos(WWTSParametroDetList.enumTipoObjeto.Nada, Me.cboGrupo.ParametroDet)
+    End Sub
+
+    Private Sub cboTipo_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cboTipo.SelectedIndexChanged
+        If cboTipo.ParametroDet Is Nothing Then
+            Exit Sub
+        End If
+        Me.cboClase.Parametro = Enumerados.EnumParametros.ClaseActivo
+        Me.cboClase.OperadorDatos = Sistema.OperadorDatos
+        Me.cboClase.Llenar_Datos(WWTSParametroDetList.enumTipoObjeto.Nada, Me.cboTipo.ParametroDet)
+
+        Me.txtperiodosdepreciables.Value = Me.cboTipo.ParametroDet.Pardet_DatoInt1
+        llenar_caracteristicas()
+    End Sub
+
+    Private Sub btnNuevoMarca_Click(sender As System.Object, e As System.EventArgs) Handles btnNuevoMarca.Click
+        Dim _param As WWTSParametro
+        _param = New WWTSParametro(Sistema.OperadorDatos, Me.cbomarca.Parametro)
+        Dim menumtipoobjeto As Infoware.Reglas.General.ParametroDetList.enumTipoObjeto = WWTSParametroDetList.enumTipoObjeto.Nada
+        If Not _param.Parame_esImagen And Not String.IsNullOrEmpty(_param.Parame_LeyendaDatoImg1) Then
+            Dim f As New FrmParametroDetFile
+            f.ParametroDet = New WWTSParametroDet(Sistema.OperadorDatos, Me.cbomarca.Parametro, True)
+            'f.Direccion = IMantenimiento.Accion.Ingreso
+            If f.ShowDialog() = DialogResult.OK Then
+                Me.cbomarca.Llenar_Datos(menumtipoobjeto, Me.cbomarca.ParametroDet.PardetPadre)
+            End If
+        Else
+            Dim f As New FrmParametroDet
+            f.enumtipoobjeto = menumtipoobjeto
+            f.ParametroDet = New WWTSParametroDet(Sistema.OperadorDatos, Me.cbomarca.Parametro, True)
+            'f.Direccion = IMantenimiento.Accion.Ingreso
+            If f.ShowDialog() = DialogResult.OK Then
+                Me.cbomarca.Llenar_Datos(menumtipoobjeto, Me.cbomarca.ParametroDet.PardetPadre)
+            End If
+        End If
     End Sub
 End Class
