@@ -22,6 +22,11 @@ values (2, 6, 'Complejidad, mínima cantidad de números', '', 1, 1)
 insert into ParametroDet (Parame_Codigo, Pardet_Secuencia, Pardet_Descripcion, Pardet_DatoStr1, Pardet_DatoInt1, Pardet_Modificable)
 values (2, 7, 'Complejidad, mínima cantidad de caracteres especiales', '', 1, 1)
 
+CREATE Table UsuarioPasswords (
+Usuari_Codigo char(18), 
+Histor_Fecha datetime, 
+Histor_Password varbinary(255))
+
 insert into UsuarioPasswords (Usuari_Codigo, Histor_Fecha, Histor_Password)
 select usuari_codigo, getdate(), usuari_password 
 from Usuario

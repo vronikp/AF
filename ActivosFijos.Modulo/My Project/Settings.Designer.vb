@@ -249,6 +249,17 @@ Namespace My
                 Me("EsAlquiler") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=INTERPROF15\SQL2008R2;Initial Catalog=GADDuran;User ID=sa;Password=sa"& _ 
+            "123")>  _
+        Public ReadOnly Property GADDuranConnectionString() As String
+            Get
+                Return CType(Me("GADDuranConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
