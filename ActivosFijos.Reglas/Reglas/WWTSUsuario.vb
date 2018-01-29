@@ -276,23 +276,26 @@ Public Class WWTSUsuario
 
       .Procedimiento = _Procedimiento
       bReturn = .Ejecutar(dsResult)
-      .LimpiarParametros()
-      If bReturn AndAlso Not dsResult Is Nothing AndAlso dsResult.Rows.Count > 0 Then
-        ResultCode = CInt(dsResult.Rows(0)(0))
+            .LimpiarParametros()
 
-        For Each _restriccion As Restriccion In Restricciones
-          _restriccion.Usuario = Me
-          If Not _restriccion.Guardar() Then
-            bReturn = False
-            Exit For
-          End If
-        Next
+            If bReturn AndAlso Not dsResult Is Nothing AndAlso dsResult.Rows.Count > 0 Then
+                ResultCode = CInt(dsResult.Rows(0)(0))
+                If ResultCode < 0 Then
+                    Return False
+                End If
+                For Each _restriccion As Restriccion In Restricciones
+                    _restriccion.Usuario = Me
+                    If Not _restriccion.Guardar() Then
+                        bReturn = False
+                        Exit For
+                    End If
+                Next
 
-        If Not OperadorDatos.EstaenTransaccion Then
-          EsNuevo = False
-          EsModificado = False
-        End If
-      End If
+                If Not OperadorDatos.EstaenTransaccion Then
+                    EsNuevo = False
+                    EsModificado = False
+                End If
+            End If
     End With
 
     If _comenzotransaccion Then
