@@ -27,17 +27,6 @@ Public Class WWTSUsuario
 
   Private mUsuari_Activo As Boolean = True
 
-  Private mResultCode As Integer
-
-  Public Property ResultCode As Integer
-    Get
-      Return mResultCode
-    End Get
-    Set(value As Integer)
-      mResultCode = value
-    End Set
-  End Property
-
   Public Overridable Property Entida_Empleado() As Integer
     Get
       Return mEntida_Empleado

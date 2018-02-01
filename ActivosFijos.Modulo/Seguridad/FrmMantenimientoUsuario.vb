@@ -130,11 +130,11 @@ Public Class FrmMantenimientoUsuario
 			Me.chkcambiocontrasena.Checked = False
 		End If
 
-		mUsuario.Usuari_Password = Me.txtcontrasena.Text
-		mUsuario.Usuari_CambiarContrasena = Me.chkcambcontrpr.Checked
+    mUsuario.Usuari_Password = Me.txtcontrasena.Text.Trim
+    mUsuario.Usuari_CambiarContrasena = Me.chkcambcontrpr.Checked
   End Sub
 
-	Private Function Guardar_datos() As Boolean
+  Private Function Guardar_datos() As Boolean
     Mapear_datos()
     Dim _esnuevo As Boolean = mUsuario.EsNuevo
     If mUsuario.Usuari_Codigo = Restriccion.Usuari_Codigo Then
@@ -144,12 +144,16 @@ Public Class FrmMantenimientoUsuario
       End If
     End If
 
-    If mUsuario.Guardar() Then
+    Dim _guardar As Boolean
+    If Not _esnuevo AndAlso Me.chkcambiocontrasena.Checked Then
+      _guardar = mUsuario.CambiarContrasena()
+    End If
+    If _guardar Then
+      _guardar = mUsuario.Guardar()
+    End If
+    If _guardar Then
       Auditoria.Registrar_Auditoria(Restriccion, IIf(_esnuevo, Enumerados.enumTipoAccion.Adicion, Enumerados.enumTipoAccion.Modificacion), mUsuario.Usuari_Descripcion)
 
-      If Not _esnuevo AndAlso Me.chkcambiocontrasena.Checked Then
-        mUsuario.CambiarContrasena()
-      End If
       If mUsuario.Usuari_Codigo = Restriccion.Usuari_Codigo Then
         MsgBox("Los cambios efectuados serán efectivos en el próximo reinicio del sistema", MsgBoxStyle.Information, "Información")
       End If
