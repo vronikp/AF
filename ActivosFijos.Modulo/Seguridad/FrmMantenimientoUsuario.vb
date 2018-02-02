@@ -144,7 +144,7 @@ Public Class FrmMantenimientoUsuario
       End If
     End If
 
-    Dim _guardar As Boolean
+    Dim _guardar As Boolean = True
     If Not _esnuevo AndAlso Me.chkcambiocontrasena.Checked Then
       _guardar = mUsuario.CambiarContrasena()
     End If
