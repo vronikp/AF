@@ -4,6 +4,7 @@ Imports Infoware.Reportes
 Imports ActivosFijos.Reglas
 Imports Microsoft.Office.Interop
 Imports System.Reflection
+Imports ActivosFijos.Integration
 
 Public Class FrmDepreciacion
 
@@ -85,9 +86,9 @@ Public Class FrmDepreciacion
     If Not mDepreciacion.Guardar Then
       MsgBox(Sistema.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
     Else
-            MsgBox("Proceso terminado", MsgBoxStyle.Information, "Información")
-            Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Adicion,
-                                      "Se generó la depreciación del periodo " + mDeprec_Codigo)
+      MsgBox("Proceso terminado", MsgBoxStyle.Information, "Información")
+      Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Adicion,
+                                "Se generó la depreciación del periodo " + mDeprec_Codigo)
     End If
   End Sub
 
@@ -108,9 +109,9 @@ Public Class FrmDepreciacion
 
     Dim f As New FrmReporteDepreciacion(Sistema, Restriccion)
     f.Depreciacion = _depreciacion
-        f.ShowDialog()
-        Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Impresion,
-                                  "Se generó el reporte de depreciación " + mDeprec_Codigo)
+    f.ShowDialog()
+    Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Impresion,
+                              "Se generó el reporte de depreciación " + mDeprec_Codigo)
   End Sub
 
   Private Sub btnexportar_Click(sender As System.Object, e As System.EventArgs) Handles btnexportar.Click
@@ -118,9 +119,9 @@ Public Class FrmDepreciacion
     f.Reporte = New Infoware.Reporteador.Reporte(Sistema.OperadorDatos, "Proc_Depreciacion_Exportar")
     f.Valores = New Object() {Me.cbofrecuenciadepreciacion.ParametroDet.Pardet_Secuencia, IIf(Me.cbofrecuenciadepreciacion.ParametroDet.Pardet_Secuencia = Enumerados.enumFrecuenciaDepreciacion.Mensual, Me.dtperiodo.Value.ToString("yyyyMM"), Me.dtperiodo.Value.ToString("yyyyMMdd")), Me.dtperiodo.Value.Date.AddDays(-Me.dtperiodo.Value.Date.Day + 1).AddMonths(1).AddDays(-1)}
     'f.objAbrirElemento = New Infoware.Reporteador.FrmLista.AbrirElemento(AddressOf AbriadminrElemento)
-        f.ShowDialog()
-        Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Impresion,
-                                  "Se exportó la depreciación.")
+    f.ShowDialog()
+    Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Impresion,
+                              "Se exportó la depreciación.")
   End Sub
 
   Private Sub btngenerartxt_Click(sender As System.Object, e As System.EventArgs) Handles btngenerartxt.Click
@@ -162,8 +163,8 @@ Public Class FrmDepreciacion
         _texto = _texto + vbCrLf
         My.Computer.FileSystem.WriteAllText(_archivotxt, _texto, True)
       Next
-            Shell("Notepad " + _archivotxt, AppWinStyle.NormalFocus, False)
-            Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Impresion,
+      Shell("Notepad " + _archivotxt, AppWinStyle.NormalFocus, False)
+      Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Impresion,
                                   "Se generó el txt de la depreciación " + _coddeprec)
     End If
   End Sub
@@ -186,9 +187,9 @@ Public Class FrmDepreciacion
       If mDepreciacion.Eliminar() Then
         MsgBox("Proceso terminado", MsgBoxStyle.Information, "Información")
         Me.bsdepreciacion.DataSource = Nothing
-                Me.cbofrecuenciadepreciacion.Select()
-                Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Eliminacion,
-                                          "Se eliminó la depreciación del periodo " + mDeprec_Codigo)
+        Me.cbofrecuenciadepreciacion.Select()
+        Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Eliminacion,
+                                  "Se eliminó la depreciación del periodo " + mDeprec_Codigo)
       End If
     Catch ex As Exception
       MsgBox(ex.Message, MsgBoxStyle.Critical, "Error")
@@ -213,13 +214,40 @@ Public Class FrmDepreciacion
       Me.bsdepreciacion.DataSource = DepreciacionDetList.ObtenerLista(mDepreciacion)
       Me.dgdepreciacion.DataSource = bsdepreciacion
 
-            Me.dgdepreciacion.AutoDiscover()
-            Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Impresion,
-                                          "Se mostró la depreciación del periodo " + mDeprec_Codigo + " del tipo " + cbotipodepreciacion.ParametroDet.Descripcion)
+      Me.dgdepreciacion.AutoDiscover()
+      Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Impresion,
+                                    "Se mostró la depreciación del periodo " + mDeprec_Codigo + " del tipo " + cbotipodepreciacion.ParametroDet.Descripcion)
     Catch ex As Exception
       MsgBox(ex.Message, MsgBoxStyle.Exclamation, "Error")
       Exit Sub
     End Try
 
   End Sub
+
+  Private Sub btngenerarasiento_Click(sender As Object, e As EventArgs) Handles btngenerartxt.Click
+    Dim _coddeprec As String = IIf(Me.cbofrecuenciadepreciacion.ParametroDet.Pardet_Secuencia = Enumerados.enumFrecuenciaDepreciacion.Mensual, Me.dtperiodo.Value.ToString("yyyyMM"), Me.dtperiodo.Value.ToString("yyyyMMdd"))
+
+    Dim ds As New DataTable
+    Dim bReturn As Boolean = False
+    With Sistema.OperadorDatos
+      .AgregarParametro("@accion", Nothing)
+      .AgregarParametro("@cbo_Frecuencia_Depreciacion", Me.cbofrecuenciadepreciacion.ParametroDet.Pardet_Secuencia)
+      .AgregarParametro("@cba_Codigo_Depreciacion", _coddeprec)
+      .AgregarParametro("@Fecha_ultimo_dia_mes", Me.dtperiodo.Value.Date.AddDays(-Me.dtperiodo.Value.Date.Day + 1).AddMonths(1).AddDays(-1))
+      .Procedimiento = "Proc_Depreciacion_Asiento"
+      bReturn = .Ejecutar(ds)
+      .LimpiarParametros()
+
+    End With
+    If bReturn AndAlso Not ds Is Nothing AndAlso ds.Rows.Count > 0 Then
+      Dim result As String = Nothing
+      If Asiento.Generar(EnumTipoIntegracion.DMiro, ds, result) Then
+        Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Confidencial,
+                                  "Se generó el asiento de la depreciación " + _coddeprec)
+      Else
+        MsgBox(result, "Error")
+      End If
+    End If
+  End Sub
+
 End Class

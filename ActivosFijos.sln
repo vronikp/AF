@@ -1,11 +1,17 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ActivosFijos.Modulo", "ActivosFijos.Modulo\ActivosFijos.Modulo.vbproj", "{24929B3D-3D02-4CEA-94B8-0FA13869C534}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ActivosFijos.Reglas", "ActivosFijos.Reglas\ActivosFijos.Reglas.vbproj", "{36279C53-6E4D-4AB0-9687-64075A391C0D}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupActivosFijos", "SetupActivosFijos\SetupActivosFijos.vdproj", "{3ECACBA1-929C-41E8-AC88-45EFA819EB5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActivosFijos.Integration.DMiro", "ActivosFijos.Integration\ActivosFijos.Integration.DMiro\ActivosFijos.Integration.DMiro.csproj", "{AC64D746-7521-4261-93FA-2654D32C05A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActivosFijos.Integration.Core", "ActivosFijos.Integration.Core\ActivosFijos.Integration.Core.csproj", "{4DC473AD-133B-44CD-B419-E1913F3305A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,8 +55,35 @@ Global
 		{3ECACBA1-929C-41E8-AC88-45EFA819EB5A}.Release|Mixed Platforms.Build.0 = Release
 		{3ECACBA1-929C-41E8-AC88-45EFA819EB5A}.Release|x86.ActiveCfg = Release
 		{3ECACBA1-929C-41E8-AC88-45EFA819EB5A}.Release|x86.Build.0 = Release
+		{AC64D746-7521-4261-93FA-2654D32C05A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC64D746-7521-4261-93FA-2654D32C05A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC64D746-7521-4261-93FA-2654D32C05A6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AC64D746-7521-4261-93FA-2654D32C05A6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AC64D746-7521-4261-93FA-2654D32C05A6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AC64D746-7521-4261-93FA-2654D32C05A6}.Debug|x86.Build.0 = Debug|Any CPU
+		{AC64D746-7521-4261-93FA-2654D32C05A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC64D746-7521-4261-93FA-2654D32C05A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC64D746-7521-4261-93FA-2654D32C05A6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AC64D746-7521-4261-93FA-2654D32C05A6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AC64D746-7521-4261-93FA-2654D32C05A6}.Release|x86.ActiveCfg = Release|Any CPU
+		{AC64D746-7521-4261-93FA-2654D32C05A6}.Release|x86.Build.0 = Release|Any CPU
+		{4DC473AD-133B-44CD-B419-E1913F3305A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DC473AD-133B-44CD-B419-E1913F3305A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DC473AD-133B-44CD-B419-E1913F3305A0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4DC473AD-133B-44CD-B419-E1913F3305A0}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4DC473AD-133B-44CD-B419-E1913F3305A0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4DC473AD-133B-44CD-B419-E1913F3305A0}.Debug|x86.Build.0 = Debug|Any CPU
+		{4DC473AD-133B-44CD-B419-E1913F3305A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DC473AD-133B-44CD-B419-E1913F3305A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DC473AD-133B-44CD-B419-E1913F3305A0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4DC473AD-133B-44CD-B419-E1913F3305A0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4DC473AD-133B-44CD-B419-E1913F3305A0}.Release|x86.ActiveCfg = Release|Any CPU
+		{4DC473AD-133B-44CD-B419-E1913F3305A0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2DDDF9A3-FE16-46AA-9586-20A281A0A701}
 	EndGlobalSection
 EndGlobal

@@ -29,19 +29,24 @@ Partial Class FrmDepreciacion
     Me.Panel1 = New System.Windows.Forms.Panel()
     Me.GroupBox2 = New System.Windows.Forms.GroupBox()
     Me.dtperiodo = New System.Windows.Forms.DateTimePicker()
+    Me.cbotipodepreciacion = New ActivosFijos.Modulo.ComboBoxParametroDet()
+    Me.cbofrecuenciadepreciacion = New ActivosFijos.Modulo.ComboBoxParametroDet()
     Me.Label1 = New System.Windows.Forms.Label()
     Me.Label11 = New System.Windows.Forms.Label()
     Me.Label10 = New System.Windows.Forms.Label()
     Me.dgdepreciacion = New Infoware.Consola.Base.DataGridViewAutoDiscover()
-    Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.bsdepreciacion = New System.Windows.Forms.BindingSource(Me.components)
-    Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.btngenerarasiento = New System.Windows.Forms.Button()
     Me.btngenerartxt = New System.Windows.Forms.Button()
     Me.btnexportar = New System.Windows.Forms.Button()
     Me.btnmostrar = New System.Windows.Forms.Button()
     Me.btnimprimir = New System.Windows.Forms.Button()
     Me.btneliminar = New System.Windows.Forms.Button()
     Me.btngenerar = New System.Windows.Forms.Button()
+    Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+    Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -55,9 +60,8 @@ Partial Class FrmDepreciacion
     Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.DataGridViewTextBoxColumn44 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-    Me.cbotipodepreciacion = New ActivosFijos.Modulo.ComboBoxParametroDet()
-    Me.cbofrecuenciadepreciacion = New ActivosFijos.Modulo.ComboBoxParametroDet()
     Me.pnlcuerpo.SuspendLayout()
+    CType(Me.ListBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
     Me.Panel1.SuspendLayout()
     Me.GroupBox2.SuspendLayout()
     CType(Me.dgdepreciacion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,6 +93,7 @@ Partial Class FrmDepreciacion
     Me.GroupBox2.Controls.Add(Me.Label11)
     Me.GroupBox2.Controls.Add(Me.Label10)
     Me.GroupBox2.Controls.Add(Me.dgdepreciacion)
+    Me.GroupBox2.Controls.Add(Me.btngenerarasiento)
     Me.GroupBox2.Controls.Add(Me.btngenerartxt)
     Me.GroupBox2.Controls.Add(Me.btnexportar)
     Me.GroupBox2.Controls.Add(Me.btnmostrar)
@@ -110,6 +115,44 @@ Partial Class FrmDepreciacion
     Me.dtperiodo.Name = "dtperiodo"
     Me.dtperiodo.Size = New System.Drawing.Size(235, 20)
     Me.dtperiodo.TabIndex = 3
+    '
+    'cbotipodepreciacion
+    '
+    Me.cbotipodepreciacion.AbriralEntrar = False
+    Me.cbotipodepreciacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+    Me.cbotipodepreciacion.FormattingEnabled = True
+    Me.cbotipodepreciacion.Location = New System.Drawing.Point(170, 103)
+    Me.cbotipodepreciacion.Margin = New System.Windows.Forms.Padding(2)
+    Me.cbotipodepreciacion.MostrarRutaCompleta = False
+    Me.cbotipodepreciacion.Name = "cbotipodepreciacion"
+    Me.cbotipodepreciacion.OperadorDatos = Nothing
+    Me.cbotipodepreciacion.Parametro = ActivosFijos.Reglas.Enumerados.EnumParametros.TipoEntidad
+    Me.cbotipodepreciacion.ParametroDet = Nothing
+    Me.cbotipodepreciacion.PuedeActualizar = True
+    Me.cbotipodepreciacion.PuedeEliminar = True
+    Me.cbotipodepreciacion.PuedeModificar = True
+    Me.cbotipodepreciacion.PuedeNuevo = True
+    Me.cbotipodepreciacion.Size = New System.Drawing.Size(235, 21)
+    Me.cbotipodepreciacion.TabIndex = 9
+    '
+    'cbofrecuenciadepreciacion
+    '
+    Me.cbofrecuenciadepreciacion.AbriralEntrar = False
+    Me.cbofrecuenciadepreciacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+    Me.cbofrecuenciadepreciacion.FormattingEnabled = True
+    Me.cbofrecuenciadepreciacion.Location = New System.Drawing.Point(170, 23)
+    Me.cbofrecuenciadepreciacion.Margin = New System.Windows.Forms.Padding(2)
+    Me.cbofrecuenciadepreciacion.MostrarRutaCompleta = False
+    Me.cbofrecuenciadepreciacion.Name = "cbofrecuenciadepreciacion"
+    Me.cbofrecuenciadepreciacion.OperadorDatos = Nothing
+    Me.cbofrecuenciadepreciacion.Parametro = ActivosFijos.Reglas.Enumerados.EnumParametros.TipoEntidad
+    Me.cbofrecuenciadepreciacion.ParametroDet = Nothing
+    Me.cbofrecuenciadepreciacion.PuedeActualizar = True
+    Me.cbofrecuenciadepreciacion.PuedeEliminar = True
+    Me.cbofrecuenciadepreciacion.PuedeModificar = True
+    Me.cbofrecuenciadepreciacion.PuedeNuevo = True
+    Me.cbofrecuenciadepreciacion.Size = New System.Drawing.Size(235, 21)
+    Me.cbofrecuenciadepreciacion.TabIndex = 1
     '
     'Label1
     '
@@ -156,7 +199,7 @@ Partial Class FrmDepreciacion
     DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
     Me.dgdepreciacion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
     Me.dgdepreciacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-    Me.dgdepreciacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn13})
+    Me.dgdepreciacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn15})
     Me.dgdepreciacion.DataSource = Me.bsdepreciacion
     DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
     DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
@@ -180,15 +223,24 @@ Partial Class FrmDepreciacion
     Me.dgdepreciacion.Size = New System.Drawing.Size(672, 299)
     Me.dgdepreciacion.TabIndex = 12
     '
-    'DataGridViewTextBoxColumn12
+    'DataGridViewTextBoxColumn14
     '
-    Me.DataGridViewTextBoxColumn12.HeaderText = "No existen registros a presentar"
-    Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+    Me.DataGridViewTextBoxColumn14.HeaderText = "No existen registros a presentar"
+    Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
     '
-    'DataGridViewTextBoxColumn13
+    'DataGridViewTextBoxColumn15
     '
-    Me.DataGridViewTextBoxColumn13.HeaderText = "No existen registros a presentar"
-    Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+    Me.DataGridViewTextBoxColumn15.HeaderText = "No existen registros a presentar"
+    Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
+    '
+    'btngenerarasiento
+    '
+    Me.btngenerarasiento.Location = New System.Drawing.Point(533, 104)
+    Me.btngenerarasiento.Name = "btngenerarasiento"
+    Me.btngenerarasiento.Size = New System.Drawing.Size(115, 23)
+    Me.btngenerarasiento.TabIndex = 7
+    Me.btngenerarasiento.Text = "Generar asiento"
+    Me.btngenerarasiento.UseVisualStyleBackColor = True
     '
     'btngenerartxt
     '
@@ -243,6 +295,16 @@ Partial Class FrmDepreciacion
     Me.btngenerar.TabIndex = 4
     Me.btngenerar.Text = "Generar"
     Me.btngenerar.UseVisualStyleBackColor = True
+    '
+    'DataGridViewTextBoxColumn13
+    '
+    Me.DataGridViewTextBoxColumn13.HeaderText = "No existen registros a presentar"
+    Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+    '
+    'DataGridViewTextBoxColumn12
+    '
+    Me.DataGridViewTextBoxColumn12.HeaderText = "No existen registros a presentar"
+    Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
     '
     'DataGridViewTextBoxColumn11
     '
@@ -308,44 +370,6 @@ Partial Class FrmDepreciacion
     '
     Me.OpenFileDialog1.FileName = "OpenFileDialog1"
     '
-    'cbotipodepreciacion
-    '
-    Me.cbotipodepreciacion.AbriralEntrar = False
-    Me.cbotipodepreciacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-    Me.cbotipodepreciacion.FormattingEnabled = True
-    Me.cbotipodepreciacion.Location = New System.Drawing.Point(170, 103)
-    Me.cbotipodepreciacion.Margin = New System.Windows.Forms.Padding(2)
-    Me.cbotipodepreciacion.MostrarRutaCompleta = False
-    Me.cbotipodepreciacion.Name = "cbotipodepreciacion"
-    Me.cbotipodepreciacion.OperadorDatos = Nothing
-    Me.cbotipodepreciacion.Parametro = ActivosFijos.Reglas.Enumerados.EnumParametros.TipoEntidad
-    Me.cbotipodepreciacion.ParametroDet = Nothing
-    Me.cbotipodepreciacion.PuedeActualizar = True
-    Me.cbotipodepreciacion.PuedeEliminar = True
-    Me.cbotipodepreciacion.PuedeModificar = True
-    Me.cbotipodepreciacion.PuedeNuevo = True
-    Me.cbotipodepreciacion.Size = New System.Drawing.Size(235, 21)
-    Me.cbotipodepreciacion.TabIndex = 9
-    '
-    'cbofrecuenciadepreciacion
-    '
-    Me.cbofrecuenciadepreciacion.AbriralEntrar = False
-    Me.cbofrecuenciadepreciacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-    Me.cbofrecuenciadepreciacion.FormattingEnabled = True
-    Me.cbofrecuenciadepreciacion.Location = New System.Drawing.Point(170, 23)
-    Me.cbofrecuenciadepreciacion.Margin = New System.Windows.Forms.Padding(2)
-    Me.cbofrecuenciadepreciacion.MostrarRutaCompleta = False
-    Me.cbofrecuenciadepreciacion.Name = "cbofrecuenciadepreciacion"
-    Me.cbofrecuenciadepreciacion.OperadorDatos = Nothing
-    Me.cbofrecuenciadepreciacion.Parametro = ActivosFijos.Reglas.Enumerados.EnumParametros.TipoEntidad
-    Me.cbofrecuenciadepreciacion.ParametroDet = Nothing
-    Me.cbofrecuenciadepreciacion.PuedeActualizar = True
-    Me.cbofrecuenciadepreciacion.PuedeEliminar = True
-    Me.cbofrecuenciadepreciacion.PuedeModificar = True
-    Me.cbofrecuenciadepreciacion.PuedeNuevo = True
-    Me.cbofrecuenciadepreciacion.Size = New System.Drawing.Size(235, 21)
-    Me.cbofrecuenciadepreciacion.TabIndex = 1
-    '
     'FrmDepreciacion
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -354,6 +378,7 @@ Partial Class FrmDepreciacion
     Me.Name = "FrmDepreciacion"
     Me.Text = "Depreciación"
     Me.pnlcuerpo.ResumeLayout(False)
+    CType(Me.ListBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
     Me.Panel1.ResumeLayout(False)
     Me.GroupBox2.ResumeLayout(False)
     Me.GroupBox2.PerformLayout()
@@ -394,4 +419,7 @@ Partial Class FrmDepreciacion
   Friend WithEvents DataGridViewTextBoxColumn12 As System.Windows.Forms.DataGridViewTextBoxColumn
   Friend WithEvents btnmostrar As System.Windows.Forms.Button
   Friend WithEvents DataGridViewTextBoxColumn13 As System.Windows.Forms.DataGridViewTextBoxColumn
+  Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
+  Friend WithEvents btngenerarasiento As Button
+  Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
 End Class
