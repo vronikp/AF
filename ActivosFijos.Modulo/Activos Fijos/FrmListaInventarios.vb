@@ -107,8 +107,9 @@ Public Class FrmListaInventarios
     Me.ListBindingSource.DataSource = GetType(Inventario)
     mInventarios = InventarioList.ObtenerLista(Sistema.OperadorDatos, Usuario.PardetUbicacion, Nothing, _filtro)
     Dim mitemssort As New Infoware.Reglas.SortedView(mInventarios)
-    ListBindingSource.DataSource = mitemssort
-  End Sub
+        ListBindingSource.DataSource = mitemssort
+        Me.DataGridView1.AutoDiscover()
+    End Sub
 
   Private Sub mInventarios_AddingNew(ByVal sender As Object, ByVal e As System.ComponentModel.AddingNewEventArgs) Handles mInventarios.AddingNew
     Dim _Inventario As Inventario = New Inventario(Sistema.OperadorDatos, True)

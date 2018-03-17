@@ -68,6 +68,37 @@ Public Class clsReporteActivo
         Return ds
     End Function
 
+    Public Shared Function RetornarActaBajaDS(_transaccionBaja As TransaccionBaja) As dsActaBaja
+        Dim bReturn As Boolean
+        Dim ds As New dsActaBaja
+        With _transaccionBaja.OperadorDatos
+            .AgregarParametro("@Accion", "R")
+            .AgregarParametro("@TraBaj_Codigo", _transaccionBaja.TraBaj_Codigo)
+            .Comando.CommandText = "proc_TransaccionBaja"
+
+            If .Proveedor = enumProveedorDatos.SQL Then
+                Dim DataAdapter As SqlDataAdapter
+                DataAdapter = New SqlDataAdapter(.Comando)
+                Try
+                    DataAdapter.Fill(ds, "vw_TransaccionBaja")
+                Catch ex As Exception
+                    bReturn = False
+                End Try
+            ElseIf .Proveedor = enumProveedorDatos.Sybase Then
+                Dim DataAdapter As OleDbDataAdapter
+                DataAdapter = New OleDbDataAdapter(.Comando)
+                .ReconfigurarParametros()
+                Try
+                    DataAdapter.Fill(ds, "vw_TransaccionBaja")
+                Catch ex As Exception
+                    bReturn = False
+                End Try
+            End If
+            .LimpiarParametros()
+        End With
+        Return ds
+    End Function
+
     Public Enum EnumListaActivosOrden
         GrupoTipoClase
         Custodio

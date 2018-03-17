@@ -37,9 +37,11 @@ Public Class Activo
 
   Private mActivo_Imagen As System.Drawing.Image = Nothing
 
-  Private mCambio_Imagen As Boolean = False
+    Private mCambio_Imagen As Boolean = False
 
-  Public Sub New(ByVal _OperadorDatos As OperadorDatos, ByVal _EsNuevo As Boolean)
+    Private mTransaccionBaja As TransaccionBaja = Nothing
+
+    Public Sub New(ByVal _OperadorDatos As OperadorDatos, ByVal _EsNuevo As Boolean)
     MyBase.New()
     OperadorDatos = _OperadorDatos
     EsNuevo = _EsNuevo
@@ -306,21 +308,34 @@ Public Class Activo
     End Set
   End Property
 
-  'Facturaactivo
-  Public Overridable Property Facturaactivo() As FacturaActivo
-    Get
-      If mFacturaactivo Is Nothing AndAlso Factura_Codigo > 0 Then
-        mFacturaactivo = New FacturaActivo(OperadorDatos, Factura_Codigo)
-      End If
-      Return Me.mFacturaactivo
-    End Get
-    Set(value As FacturaActivo)
-      Me.mFacturaactivo = value
-      Factura_Codigo = value.Factura_Codigo
-    End Set
-  End Property
+    'Facturaactivo
+    Public Overridable Property Facturaactivo() As FacturaActivo
+        Get
+            If mFacturaactivo Is Nothing AndAlso Factura_Codigo > 0 Then
+                mFacturaactivo = New FacturaActivo(OperadorDatos, Factura_Codigo)
+            End If
+            Return Me.mFacturaactivo
+        End Get
+        Set(value As FacturaActivo)
+            Me.mFacturaactivo = value
+            Factura_Codigo = value.Factura_Codigo
+        End Set
+    End Property
 
-  Public Overridable ReadOnly Property Activo_ImagenStream() As Byte()
+    Public Overridable Property Transaccionbaja() As TransaccionBaja
+        Get
+            If mTransaccionBaja Is Nothing AndAlso TraBaj_Codigo > 0 Then
+                mTransaccionBaja = New TransaccionBaja(OperadorDatos, TraBaj_Codigo)
+            End If
+            Return Me.mTransaccionBaja
+        End Get
+        Set(value As TransaccionBaja)
+            Me.mTransaccionBaja = value
+            TraBaj_Codigo = value.TraBaj_Codigo
+        End Set
+    End Property
+
+    Public Overridable ReadOnly Property Activo_ImagenStream() As Byte()
     Get
       Dim imagen() As Byte
       Dim Result As Object = Nothing
@@ -848,8 +863,9 @@ Public Class Activo
     If Not Activo_FechaBaja = Nothing Then
       OperadorDatos.AgregarParametro("@Activo_FechaBaja", Activo_FechaBaja)
       OperadorDatos.AgregarParametro("@Parame_TipoBajaActivo", Parame_TipoBajaActivo)
-      OperadorDatos.AgregarParametro("@Pardet_TipoBajaActivo", Pardet_TipoBajaActivo)
-    End If
+            OperadorDatos.AgregarParametro("@Pardet_TipoBajaActivo", Pardet_TipoBajaActivo)
+            OperadorDatos.AgregarParametro("@TraBaj_Codigo", Transaccionbaja.TraBaj_Codigo)
+        End If
 
     If EsNuevo Then
       OperadorDatos.AgregarParametro("@Parame_Ubicacion", _Ubicacion.Parame_Codigo)
@@ -1005,13 +1021,13 @@ Public Class ActivoList
     Return oResult
   End Function
 
-  'Tipo Rango Fechas
-  '0 Compra entre
-  '1 Ingreso entre
-  '2 Uso entre
-  '3 Baja entre
-  '4 Sin fecha de uso
-  '5 Sin fecha de baja
+    'Tipo Rango Fechas
+    '0 Compra entre
+    '1 Ingreso entre
+    '2 Uso entre
+    '3 Baja entre
+    '4 Sin fecha de uso
+    '5 Sin fecha de baja
 
     Public Shared Function ObtenerLista(ByVal _OperadorDatos As OperadorDatos, ByVal _CodigoBarras As String, ByVal _CodigoAux As String, ByVal _Serie As String, ByVal _Descripcion As String, ByVal _Clase As WWTSParametroDet, ByVal _Marca As WWTSParametroDet, ByVal _Modelo As String, ByVal _Proveedor As Proveedor, ByVal _Factura As FacturaActivo, ByVal _Custodio As Empleado, ByVal _Ubicacion As WWTSParametroDet, ByVal _Estadoinv As WWTSParametroDet, ByVal _SoloActivos As Boolean, ByVal _RangoFecha As Integer, ByVal _Desde As Date, ByVal _Hasta As Date, ByVal _TipoBaja As WWTSParametroDet, Optional ByVal _filtro As String = "") As ActivoList
         Dim oResult As New ActivoList
@@ -1076,28 +1092,53 @@ Public Class ActivoList
         End If
         Return oResult
     End Function
-  'Public Shared Function ObtenerLista(_TransaccionActivo As TransaccionActivo, Optional ByVal _filtro As String = "") As ActivoList
-  '  Dim oResult As New ActivoList
-  '  Dim bReturn As Boolean
-  '  Dim ds As DataTable = Nothing
-  '  With _TransaccionActivo.OperadorDatos
-  '    .AgregarParametro("@Accion", "FT")
-  '    .AgregarParametro("@Transa_Codigo", _TransaccionActivo.Transa_Codigo)
 
-  '    .AgregarParametro("@filtro", _filtro)
-  '    .Procedimiento = "proc_Activo"
-  '    bReturn = .Ejecutar(ds)
-  '    .LimpiarParametros()
-  '  End With
-  '  If bReturn AndAlso Not ds Is Nothing AndAlso ds.Rows.Count > 0 Then
-  '    For Each _dr As DataRow In ds.Rows
-  '      Dim _fila As New Activo(_TransaccionActivo.OperadorDatos, False)
-  '      _fila.MapearDataRowaObjeto(_dr)
-  '      oResult.Add(_fila)
-  '    Next
-  '  End If
-  '  Return oResult
-  'End Function
+
+    Public Shared Function ObtenerLista(_TransaccionBaja As TransaccionBaja, Optional ByVal _filtro As String = "") As ActivoList
+        Dim oResult As New ActivoList
+        Dim bReturn As Boolean
+        Dim ds As DataTable = Nothing
+        With _TransaccionBaja.OperadorDatos
+            .AgregarParametro("@Accion", "FB")
+            .AgregarParametro("@TraBaj_Codigo", _TransaccionBaja.TraBaj_Codigo)
+            .AgregarParametro("@filtro", _filtro)
+            .Procedimiento = "proc_Activo"
+            bReturn = .Ejecutar(ds)
+            .LimpiarParametros()
+        End With
+        If bReturn AndAlso Not ds Is Nothing AndAlso ds.Rows.Count > 0 Then
+            For Each _dr As DataRow In ds.Rows
+                Dim _fila As New Activo(_TransaccionBaja.OperadorDatos, False)
+                _fila.MapearDataRowaObjeto(_dr)
+                oResult.Add(_fila)
+            Next
+        End If
+        Return oResult
+    End Function
+
+
+    'Public Shared Function ObtenerLista(_TransaccionActivo As TransaccionActivo, Optional ByVal _filtro As String = "") As ActivoList
+    '  Dim oResult As New ActivoList
+    '  Dim bReturn As Boolean
+    '  Dim ds As DataTable = Nothing
+    '  With _TransaccionActivo.OperadorDatos
+    '    .AgregarParametro("@Accion", "FT")
+    '    .AgregarParametro("@Transa_Codigo", _TransaccionActivo.Transa_Codigo)
+
+    '    .AgregarParametro("@filtro", _filtro)
+    '    .Procedimiento = "proc_Activo"
+    '    bReturn = .Ejecutar(ds)
+    '    .LimpiarParametros()
+    '  End With
+    '  If bReturn AndAlso Not ds Is Nothing AndAlso ds.Rows.Count > 0 Then
+    '    For Each _dr As DataRow In ds.Rows
+    '      Dim _fila As New Activo(_TransaccionActivo.OperadorDatos, False)
+    '      _fila.MapearDataRowaObjeto(_dr)
+    '      oResult.Add(_fila)
+    '    Next
+    '  End If
+    '  Return oResult
+    'End Function
 
 End Class
 #End Region

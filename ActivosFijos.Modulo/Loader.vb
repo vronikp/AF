@@ -253,6 +253,8 @@ Public Class Loader
                                 _opciones.Add(New Opcion(_restriccion, AddressOf CargarDepreciacion))
                             Case Enumerados.EnumOpciones.ReporteResumenDepreciacion
                                 _opciones.Add(New Opcion(_restriccion, AddressOf CargarReporteResumenDepreciacion))
+                            Case Enumerados.EnumOpciones.ListaBajas
+                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarListaBajaActivo))
                             Case Enumerados.EnumOpciones.DarBajaActivo
                                 _opciones.Add(New Opcion(_restriccion, AddressOf CargarBajaActivo))
                             Case Enumerados.EnumOpciones.InventarioActivo
@@ -348,8 +350,13 @@ Public Class Loader
         End If
     End Function
 
-    Function CargarBajaActivo(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+    Function CargarListaBajaActivo(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
         Dim f As New FrmListaBajasActivo(_Sistema, _Restriccion, False)
+        Return f
+    End Function
+
+    Function CargarBajaActivo(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+        Dim f As New FrmListaTransaccionBajas(_Sistema, _Restriccion, False)
         Return f
     End Function
 

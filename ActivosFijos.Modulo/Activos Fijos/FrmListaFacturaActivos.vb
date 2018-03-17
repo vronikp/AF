@@ -154,8 +154,9 @@ Public Class FrmListaFacturaActivos
     Me.ListBindingSource.DataSource = GetType(FacturaActivo)
     mFacturaActivos = FacturaActivoList.ObtenerLista(Proveedor, _filtro)
     Dim mitemssort As New Infoware.Reglas.SortedView(mFacturaActivos)
-    ListBindingSource.DataSource = mitemssort
-  End Sub
+        ListBindingSource.DataSource = mitemssort
+        Me.DataGridView1.AutoDiscover()
+    End Sub
 
   Private Sub mFacturaActivos_AddingNew(ByVal sender As Object, ByVal e As System.ComponentModel.AddingNewEventArgs) Handles mFacturaActivos.AddingNew
     Dim _FacturaActivo As FacturaActivo = New FacturaActivo(Sistema.OperadorDatos, True)

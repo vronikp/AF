@@ -67,9 +67,74 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.Engine.13.0.3501\lib\net20\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ClientDoc, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.ReportAppServer.ClientDoc.13.0.3501\lib\net20\CrystalDecisions.ReportAppServer.ClientDoc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommLayer, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CommLayer.13.0.3501\lib\net20\CrystalDecisions.ReportAppServer.CommLayer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonControls, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CommonControls.13.0.3501\lib\net20\CrystalDecisions.ReportAppServer.CommonControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonObjectModel, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CommonObjectModel.13.0.3501\lib\net20\CrystalDecisions.ReportAppServer.CommonObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.ReportAppServer.Controllers.13.0.3501\lib\net20\CrystalDecisions.ReportAppServer.Controllers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CubeDefModel, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.ReportAppServer.CubeDefModel.13.0.3501\lib\net20\CrystalDecisions.ReportAppServer.CubeDefModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataDefModel, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.ReportAppServer.DataDefModel.13.0.3501\lib\net20\CrystalDecisions.ReportAppServer.DataDefModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataSetConversion, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.ReportAppServer.DataSetConversion.13.0.3501\lib\net20\CrystalDecisions.ReportAppServer.DataSetConversion.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ObjectFactory, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.ReportAppServer.ObjectFactory.13.0.3501\lib\net20\CrystalDecisions.ReportAppServer.ObjectFactory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Prompting, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.ReportAppServer.Prompting.13.0.3501\lib\net20\CrystalDecisions.ReportAppServer.Prompting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ReportDefModel, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.ReportAppServer.ReportDefModel.13.0.3501\lib\net20\CrystalDecisions.ReportAppServer.ReportDefModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.XmlSerialize, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\CrystalReports.ReportAppServer.XmlSerialize.13.0.3501\lib\net20\CrystalDecisions.ReportAppServer.XmlSerialize.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalReports.Shared.13.0.3501\lib\net20\CrystalDecisions.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Infoware.Consola.Base">
       <HintPath>..\ICA\Infoware.Consola.Base.dll</HintPath>
     </Reference>
@@ -100,6 +165,9 @@
     <Reference Include="Infoware.Reportes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ICA\Infoware.Reportes.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -137,6 +205,13 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activos Fijos\clsReporteBaja.vb" />
+    <Compile Include="Activos Fijos\FrmListaTransaccionesBajas.designer.vb">
+      <DependentUpon>FrmListaTransaccionesBajas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Activos Fijos\FrmListaTransaccionesBajas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Activos Fijos\FrmMantenimientoDesinventariar.Designer.vb">
       <DependentUpon>FrmMantenimientoDesinventariar.vb</DependentUpon>
     </Compile>
@@ -218,6 +293,12 @@
     <Compile Include="Activos Fijos\FrmMantenimientoBajaActivo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Activos Fijos\FrmMantenimientoTransaccionBaja.designer.vb">
+      <DependentUpon>FrmMantenimientoTransaccionBaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Activos Fijos\FrmMantenimientoTransaccionBaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Activos Fijos\FrmMantenimientoTransaccionActivo.designer.vb">
       <DependentUpon>FrmMantenimientoTransaccionActivo.vb</DependentUpon>
     </Compile>
@@ -247,6 +328,12 @@
     <Compile Include="Activos Fijos\Reportes\clsReporteResumenDepreciacion.vb" />
     <Compile Include="Activos Fijos\Reportes\clsResumenDepreciacionPorTipo.vb" />
     <Compile Include="Activos Fijos\Reportes\clsReporteSRIActaRecepcion.vb" />
+    <Compile Include="Activos Fijos\Reportes\crpActaBaja.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crpActaBaja.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Activos Fijos\Reportes\crpActaRecepcionFormato41.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -282,6 +369,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>crpTransaccionActivoUbicacion.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Activos Fijos\Reportes\dsActaBaja.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsActaBaja.xsd</DependentUpon>
     </Compile>
     <Compile Include="Activos Fijos\Reportes\dsActaConstatacionGADD.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -355,6 +447,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsSriActaRecepcion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Activos Fijos\Reportes\FrmReporteTransaccionBaja.Designer.vb">
+      <DependentUpon>FrmReporteTransaccionBaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Activos Fijos\Reportes\FrmReporteTransaccionBaja.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Activos Fijos\Reportes\FrmResumenDepreciacionPorTipo.Designer.vb">
       <DependentUpon>FrmResumenDepreciacionPorTipo.vb</DependentUpon>
@@ -792,6 +890,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Activos Fijos\FrmListaTransaccionesBajas.resx">
+      <DependentUpon>FrmListaTransaccionesBajas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\FrmMantenimientoDesinventariar.resx">
       <DependentUpon>FrmMantenimientoDesinventariar.vb</DependentUpon>
     </EmbeddedResource>
@@ -832,6 +933,9 @@
     <EmbeddedResource Include="Activos Fijos\FrmMantenimientoBajaActivo.resx">
       <DependentUpon>FrmMantenimientoBajaActivo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Activos Fijos\FrmMantenimientoTransaccionBaja.resx">
+      <DependentUpon>FrmMantenimientoTransaccionBaja.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\FrmMantenimientoTransaccionActivo.resx">
       <DependentUpon>FrmMantenimientoTransaccionActivo.vb</DependentUpon>
     </EmbeddedResource>
@@ -862,6 +966,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\FrmMantenimientoFacturaActivo.resx">
       <DependentUpon>FrmMantenimientoFacturaActivo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activos Fijos\Reportes\crpActaBaja.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpActaBaja.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\Reportes\crpActaRecepcionFormato4.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -901,6 +1009,9 @@
     <EmbeddedResource Include="Activos Fijos\Reportes\crpSriActaRecepcion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crpSriActaRecepcion.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activos Fijos\Reportes\FrmReporteTransaccionBaja.resx">
+      <DependentUpon>FrmReporteTransaccionBaja.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\Reportes\FrmResumenDepreciacionPorTipo.resx">
       <DependentUpon>FrmResumenDepreciacionPorTipo.vb</DependentUpon>
@@ -1082,6 +1193,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Activos Fijos\Reportes\dsActaBaja.xsc">
+      <DependentUpon>dsActaBaja.xsd</DependentUpon>
+    </None>
+    <None Include="Activos Fijos\Reportes\dsActaBaja.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsActaBaja.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Activos Fijos\Reportes\dsActaBaja.xss">
+      <DependentUpon>dsActaBaja.xsd</DependentUpon>
+    </None>
     <None Include="Activos Fijos\Reportes\dsActaConstatacionF2.xsc">
       <DependentUpon>dsActaConstatacionF2.xsd</DependentUpon>
     </None>
@@ -1276,6 +1398,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="packages.config" />
     <None Include="Seguridad\dsAuditoria.xsc">
       <DependentUpon>dsAuditoria.xsd</DependentUpon>
     </None>

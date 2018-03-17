@@ -158,8 +158,9 @@ Public Class FrmListaActivoCustodioAprobar
     Me.ToolStrip2.Visible = False
 
     Me.DataGridView1.BringToFront()
-    Me.DataGridView1.MultiSelect = True
-    Llenar_datos()
+        Me.DataGridView1.MultiSelect = True
+        Me.DataGridView1.AutoDiscover()
+        Llenar_datos()
   End Sub
 #End Region
 

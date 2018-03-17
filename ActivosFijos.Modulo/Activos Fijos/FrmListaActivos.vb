@@ -156,11 +156,12 @@ Public Class FrmListaActivos
     Me.ListBindingSource.DataSource = GetType(Activo)
     'mActivos = ActivoList.ObtenerLista(Sistema.OperadorDatos, _filtro)
     mActivos = Me.CtlBuscaActivos1.Activos
-    If mActivos IsNot Nothing Then
-      Dim mitemssort As New Infoware.Reglas.SortedView(mActivos)
-      ListBindingSource.DataSource = mitemssort
-    End If
-  End Sub
+        If mActivos IsNot Nothing Then
+            Dim mitemssort As New Infoware.Reglas.SortedView(mActivos)
+            ListBindingSource.DataSource = mitemssort
+        End If
+        Me.DataGridView1.AutoDiscover()
+    End Sub
 
   Private Sub mActivos_AddingNew(ByVal sender As Object, ByVal e As System.ComponentModel.AddingNewEventArgs) Handles mActivos.AddingNew
     Dim _Activo As Activo = New Activo(Sistema.OperadorDatos, True)
@@ -193,9 +194,9 @@ Public Class FrmListaActivos
 
     ToolStripManager.Merge(Me.ToolStrip2, Me.ToolStrip1)
     Me.ToolStrip2.Visible = False
-
+        Me.DataGridView1.AutoDiscover()
         'Llenar_datos()
-  End Sub
+    End Sub
 #End Region
 
   'Private Sub DataGridView1_CellMouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs)

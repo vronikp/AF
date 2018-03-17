@@ -101,8 +101,9 @@ Public Class FrmListaPolizas
     Me.ListBindingSource.DataSource = GetType(Poliza)
     mPolizas = PolizaList.ObtenerLista(Sistema.OperadorDatos, Nothing, _filtro)
     Dim mitemssort As New Infoware.Reglas.SortedView(mPolizas)
-    ListBindingSource.DataSource = mitemssort
-  End Sub
+        ListBindingSource.DataSource = mitemssort
+        Me.DataGridView1.AutoDiscover()
+    End Sub
 
   Private Sub mPolizas_AddingNew(ByVal sender As Object, ByVal e As System.ComponentModel.AddingNewEventArgs) Handles mPolizas.AddingNew
     Dim _Poliza As Poliza = New Poliza(Sistema.OperadorDatos, True)

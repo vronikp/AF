@@ -101,8 +101,9 @@ Public Class FrmListaTransaccionActivos
     Me.ListBindingSource.DataSource = GetType(TransaccionActivo)
     mTransaccionActivos = TransaccionActivoList.ObtenerLista(Sistema.OperadorDatos, New wwtsusuario(sistema.operadorDatos, sistema.usuario.usuari_codigo), _filtro)
     Dim mitemssort As New Infoware.Reglas.SortedView(mTransaccionActivos)
-    ListBindingSource.DataSource = mitemssort
-  End Sub
+        ListBindingSource.DataSource = mitemssort
+        Me.DataGridView1.AutoDiscover()
+    End Sub
 
   Private Sub mTransaccionActivos_AddingNew(ByVal sender As Object, ByVal e As System.ComponentModel.AddingNewEventArgs) Handles mTransaccionActivos.AddingNew
     Dim _TransaccionActivo As TransaccionActivo = New TransaccionActivo(Sistema.OperadorDatos, True)

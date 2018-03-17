@@ -81,6 +81,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\TransaccionBaja.vb" />
     <Compile Include="PlantillaAuditoria.vb" />
     <Compile Include="PlantillaCambioCustodio.vb" />
     <Compile Include="PlantillaInventario.vb" />
@@ -152,6 +153,7 @@
     <Compile Include="Reglas\Poliza.vb" />
     <Compile Include="Reglas\PolizaDet.vb" />
     <Compile Include="Reglas\Proveedor.vb" />
+    <Compile Include="Reglas\TransaccionBaja.vb" />
     <Compile Include="Reglas\WWTSParametro.vb" />
     <Compile Include="Reglas\WWTSParametroDet.vb" />
     <Compile Include="Reglas\WWTSUsuario.vb" />
