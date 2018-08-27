@@ -31,8 +31,9 @@ Public Class FrmListaParametroDets
         If Me.ComboBoxParametro1.Parametro Is Nothing OrElse mParametro Is Nothing OrElse Not CInt(Me.ComboBoxParametro1.SelectedValue) = mParametro.Parame_Codigo Then
           Me.ComboBoxParametro1.Parametro = value
           mParametro = value
-          mParame_Codigo = value.Parame_Codigo
-          Llenar_datos()
+                    mParame_Codigo = value.Parame_Codigo
+
+                    Llenar_datos()
         End If
       End If
     End Set
@@ -148,23 +149,88 @@ Public Class FrmListaParametroDets
     MyBase.PuedeEliminar = Parametro.Parame_Modificable AndAlso Restriccion.Restri_Eliminacion
 
     MyBase.Titulo = Parametro.Parame_Descripcion
-    MyBase.AgregarLeyenda = String.Format("Agregar un nuevo {0}", Parametro.Parame_Descripcion)
+        MyBase.AgregarLeyenda = String.Format("Agregar un nuevo {0}", Parametro.Parame_Descripcion)
+        mParametro.Recargar()
 
-    'Me.DataGridView1.Columns.Clear()
+        Me.DataGridView1.Columns.Clear()
 
-    'Dim DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    'DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-    'DataGridViewTextBoxColumn1.DataPropertyName = "Descripcion"
-    'DataGridViewTextBoxColumn1.HeaderText = "Descripción"
-    'DataGridViewTextBoxColumn1.Width = 250
-    'Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
+        Dim DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+        DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        DataGridViewTextBoxColumn1.DataPropertyName = "Descripcion"
+        DataGridViewTextBoxColumn1.HeaderText = "Descripción"
+        DataGridViewTextBoxColumn1.Width = 250
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
 
-    Me.ListBindingSource.DataSource = GetType(WWTSParametroDet)
+        If Parametro.ParametroPadre IsNot Nothing Then
+            Dim DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
+            DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
+            DataGridViewTextBoxColumn3.DataPropertyName = "PardetPadreString"
+            DataGridViewTextBoxColumn3.HeaderText = Parametro.ParametroPadre.Parame_Descripcion
+            DataGridViewTextBoxColumn3.Width = 180
+            Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn3})
+        End If
+        If Parametro.TieneDatoStr1 Then
+            Dim DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+            DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
+            DataGridViewTextBoxColumn2.DataPropertyName = "Pardet_DatoStr1"
+            DataGridViewTextBoxColumn2.HeaderText = Parametro.Parame_LeyendaDatoStr1
+            DataGridViewTextBoxColumn2.Width = 125
+            Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn2})
+        End If
+        If Parametro.TieneDatoStr2 Then
+            DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+            DataGridViewTextBoxColumn1.DataPropertyName = "Pardet_DatoStr2"
+            DataGridViewTextBoxColumn1.HeaderText = Parametro.Parame_LeyendaDatoStr1
+            DataGridViewTextBoxColumn1.Width = 125
+            Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
+        End If
+
+        If Parametro.TieneDatoStr3 Then
+            DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+            DataGridViewTextBoxColumn1.DataPropertyName = "Pardet_DatoStr3"
+            DataGridViewTextBoxColumn1.HeaderText = Parametro.Parame_LeyendaDatoStr1
+            DataGridViewTextBoxColumn1.Width = 125
+            Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
+        End If
+
+        If Parametro.TieneDatoInt1 Then
+            Dim estilonum2 As New DataGridViewCellStyle()
+            estilonum2.Format = "N0"
+
+            DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+            DataGridViewTextBoxColumn1.DataPropertyName = "Pardet_DatoInt1"
+            DataGridViewTextBoxColumn1.HeaderText = Parametro.Parame_LeyendaDatoInt1
+            DataGridViewTextBoxColumn1.Width = 75
+            DataGridViewTextBoxColumn1.DefaultCellStyle = estilonum2
+            Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
+        End If
+
+        If Parametro.TieneDatoDec1 Then
+            Dim estilonum2 As New DataGridViewCellStyle()
+            estilonum2.Format = "N2"
+
+            DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+            DataGridViewTextBoxColumn1.DataPropertyName = "Pardet_DatoDec1"
+            DataGridViewTextBoxColumn1.HeaderText = Parametro.Parame_LeyendaDatoDec1
+            DataGridViewTextBoxColumn1.Width = 75
+            DataGridViewTextBoxColumn1.DefaultCellStyle = estilonum2
+            Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
+        End If
+
+        If Parametro.TieneDatoLeyenda Then
+            DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+            DataGridViewTextBoxColumn1.DataPropertyName = "Pardet_Leyenda"
+            DataGridViewTextBoxColumn1.HeaderText = Parametro.Parame_LeyendaDatoStr1
+            DataGridViewTextBoxColumn1.Width = 125
+            Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
+        End If
+
+        Me.ListBindingSource.DataSource = GetType(WWTSParametroDet)
     mParametroDets = WWTSParametroDetList.ObtenerLista(Sistema.OperadorDatos, mParame_Codigo, WWTSParametroDetList.enumTipoObjeto.Nada, Nothing, _filtro)
     Dim mitemssort As New Infoware.Reglas.SortedView(mParametroDets)
     ListBindingSource.DataSource = mitemssort
-    Me.DataGridView1.AutoDiscover()
-  End Sub
+        'Me.DataGridView1.AutoDiscover()
+    End Sub
 
   Private Sub mParametroDets_AddingNew(ByVal sender As Object, ByVal e As System.ComponentModel.AddingNewEventArgs) Handles mParametroDets.AddingNew
     Dim _ParametroDet As WWTSParametroDet = New WWTSParametroDet(Sistema.OperadorDatos, mParame_Codigo, True)
@@ -208,16 +274,22 @@ Public Class FrmListaParametroDets
   End Property
 
   Private Sub FrmListaParametroDets_DespuesSeleccionarCampos(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.DespuesSeleccionarCampos
-    Dim DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+        Dim DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
 
-    If Parametro.ParametroPadre IsNot Nothing Then
-      DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-      DataGridViewTextBoxColumn1.DataPropertyName = "PardetPadreString"
-      DataGridViewTextBoxColumn1.HeaderText = Parametro.ParametroPadre.Parame_Descripcion
-      DataGridViewTextBoxColumn1.Width = 180
-      Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
-    End If
-    If Parametro.TieneDatoStr1 Then
+        DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        DataGridViewTextBoxColumn1.DataPropertyName = "Descripcion"
+        DataGridViewTextBoxColumn1.HeaderText = "Descripción"
+        DataGridViewTextBoxColumn1.Width = 250
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
+
+        If Parametro.ParametroPadre IsNot Nothing Then
+            DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+            DataGridViewTextBoxColumn1.DataPropertyName = "PardetPadreString"
+            DataGridViewTextBoxColumn1.HeaderText = Parametro.ParametroPadre.Parame_Descripcion
+            DataGridViewTextBoxColumn1.Width = 180
+            Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
+        End If
+        If Parametro.TieneDatoStr1 Then
       DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
       DataGridViewTextBoxColumn1.DataPropertyName = "Pardet_DatoStr1"
       DataGridViewTextBoxColumn1.HeaderText = Parametro.Parame_LeyendaDatoStr1

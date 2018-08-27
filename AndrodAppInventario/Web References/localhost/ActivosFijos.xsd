@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8889/ActivosFijos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ActivosFijosServices" />
+  <xs:element name="CargarActivo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Activo_Codigo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Serie" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CargarActivoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ActivosFijosServices" minOccurs="0" name="CargarActivoResult" nillable="true" type="q1:Activo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivoInventariado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Activo_Codigo" type="xs:int" />
+        <xs:element minOccurs="0" name="Parame_PeriodoInventario" type="xs:int" />
+        <xs:element minOccurs="0" name="Pardet_PeriodoInventario" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivoInventariadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ActivoInventariadoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarInventarioDet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUsuario" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ActivosFijosServices" minOccurs="0" name="mInventario" nillable="true" type="q2:Inventario" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ActivosFijosServices" minOccurs="0" name="mActivo" nillable="true" type="q3:Activo" />
+        <xs:element minOccurs="0" name="mCustodio" type="xs:int" />
+        <xs:element minOccurs="0" name="mParame_Ubicacion" type="xs:int" />
+        <xs:element minOccurs="0" name="mPardet_Ubicacion" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GuardarInventarioDetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GuardarInventarioDetResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaActivos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mCustodio" type="xs:int" />
+        <xs:element minOccurs="0" name="mParame_Ubicacion" type="xs:int" />
+        <xs:element minOccurs="0" name="mPardet_Ubicacion" type="xs:int" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ActivosFijosServices" minOccurs="0" name="mInventario" nillable="true" type="q4:Inventario" />
+        <xs:element minOccurs="0" name="soloInventariados" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaActivosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ActivosFijosServices" minOccurs="0" name="ListaActivosResult" nillable="true" type="q5:ArrayOfActivo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IniciarSesion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mUsuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mContrasena" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IniciarSesionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IniciarSesionResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InventariosActivos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InventariosActivosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ActivosFijosServices" minOccurs="0" name="InventariosActivosResult" nillable="true" type="q6:ArrayOfInventario" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaCaracteristicas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parame_tipo" type="xs:int" />
+        <xs:element minOccurs="0" name="pardet_tipo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaCaracteristicasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ActivosFijosServices" minOccurs="0" name="ListaCaracteristicasResult" nillable="true" type="q7:ArrayOfCaracteristica" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaEmpleados">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parcial" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaEmpleadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ActivosFijosServices" minOccurs="0" name="ListaEmpleadosResult" nillable="true" type="q8:ArrayOfEmpleado" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaFacturas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="_proveedor" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaFacturasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ActivosFijosServices" minOccurs="0" name="ListaFacturasResult" nillable="true" type="q9:ArrayOfFactura" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaProveedores">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaProveedoresResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ActivosFijosServices" minOccurs="0" name="ListaProveedoresResult" nillable="true" type="q10:ArrayOfProveedor" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ParametroList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parame_codigo" type="xs:int" />
+        <xs:element minOccurs="0" name="parame_padre" type="xs:int" />
+        <xs:element minOccurs="0" name="pardet_padre" type="xs:int" />
+        <xs:element minOccurs="0" name="filtro" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ParametroListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ActivosFijosServices" minOccurs="0" name="ParametroListResult" nillable="true" type="q11:ArrayOfParametro" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ParametroTreeList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parame_inicio" type="xs:int" />
+        <xs:element minOccurs="0" name="pardet_inicio" type="xs:int" />
+        <xs:element minOccurs="0" name="parame_fin" type="xs:int" />
+        <xs:element minOccurs="0" name="solo_visibles" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ParametroTreeListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ActivosFijosServices" minOccurs="0" name="ParametroTreeListResult" nillable="true" type="q12:ArrayOfParametro" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

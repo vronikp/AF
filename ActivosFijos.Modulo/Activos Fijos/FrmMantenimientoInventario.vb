@@ -214,7 +214,7 @@ Public Class FrmMantenimientoInventario
 
     If mInventario.EsNuevo Then
       Dim mdets As New InventarioDetList
-      For Each _activo As Activo In ActivoList.ObtenerLista(Sistema.OperadorDatos, "", "", "", "", Nothing, Nothing, "", Nothing, Nothing, Nothing, Me.CtlUbicacionActivo1.ParametroDet, Nothing, True, -1, Nothing, Nothing, Nothing)
+      For Each _activo As Activo In ActivoList.ObtenerLista(Sistema.OperadorDatos, "", "", "", "", Nothing, Nothing, "", Nothing, Nothing, Nothing, Me.CtlUbicacionActivo1.ParametroDet, Nothing, Nothing, True, -1, Nothing, Nothing, Nothing)
         Dim _actubis As ActivoUbicacionList = ActivoUbicacionList.ObtenerActivos(_activo)
         Dim _actcus As ActivoCustodioList = ActivoCustodioList.ObtenerActivos(_activo)
         If Not (_actubis Is Nothing OrElse _actubis.Count = 0) AndAlso Not (_actcus Is Nothing OrElse _actcus.Count = 0) Then

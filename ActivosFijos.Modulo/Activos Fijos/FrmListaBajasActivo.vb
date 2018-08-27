@@ -103,9 +103,9 @@ Public Class FrmListaBajasActivo
         MyBase.AgregarLeyenda = "Agregar una nueva Baja de Activos"
 
         Me.ListBindingSource.DataSource = GetType(Activo)
-        mActivos = ActivoList.ObtenerLista(Me.Sistema.OperadorDatos, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, IIf(Me.chkubicacion.Checked, Me.CtlUbicacionActivo1.ParametroDet, Nothing), Nothing, False, 3, Me.dtfecdesde.Value, Me.dtfechasta.Value, IIf(Me.chktipobaja.Checked, Me.CtlTipoBaja.ParametroDet, Nothing))
+    mActivos = ActivoList.ObtenerLista(Me.Sistema.OperadorDatos, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, IIf(Me.chkubicacion.Checked, Me.CtlUbicacionActivo1.ParametroDet, Nothing), Nothing, Nothing, False, 3, Me.dtfecdesde.Value, Me.dtfechasta.Value, IIf(Me.chktipobaja.Checked, Me.CtlTipoBaja.ParametroDet, Nothing))
 
-        Dim mitemssort As New Infoware.Reglas.SortedView(mActivos)
+    Dim mitemssort As New Infoware.Reglas.SortedView(mActivos)
         ListBindingSource.DataSource = mitemssort
         Me.DataGridView1.AutoDiscover()
     End Sub

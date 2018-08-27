@@ -1,0 +1,211 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Infoware.Reportes
+</name>
+</assembly>
+<members>
+<member name="T:Infoware.Reportes.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Infoware.Reportes.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Infoware.Reportes.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:Infoware.Reportes.My.Resources.Resources.open">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:Infoware.Reportes.My.Resources.Resources.print">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:Infoware.Reportes.My.Resources.Resources.save">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="T:Infoware.Reportes.ReportColumn">
+ <summary>
+ Defines a column into whch text can be rendered on a line
+ of a table when the <see cref="T:vbReport.ReportDocument" />
+ is bound to a datasource.
+ </summary>
+</member>
+<member name="E:Infoware.Reportes.ReportDocument.ReportBegin">
+ <summary>
+ Raised once immediately before anything is printed to the report. The cursor is on the first line of the first page.
+ </summary>
+</member>
+<member name="E:Infoware.Reportes.ReportDocument.PrintPageBegin">
+ <summary>
+ Raised for each page immediately before anything is printed to that page. The cursor is on the first line of the page.
+ </summary>
+</member>
+<member name="E:Infoware.Reportes.ReportDocument.PrintPageBodyStart">
+ <summary>
+ Raised for each page immediately after the header for the page has been printed. The cursor is on the first line of the report body.
+ </summary>
+</member>
+<member name="E:Infoware.Reportes.ReportDocument.PrintPageBodyEnd">
+ <summary>
+ Raised for each page immediately before the footer for the page is printed. The cursor is on the first line of the header.
+ </summary>
+</member>
+<member name="E:Infoware.Reportes.ReportDocument.PrintPageEnd">
+ <summary>
+ Raised for each page after the footer has been printed. The cursor is past the end of the footer, typically into the bottom margin of the page.
+ </summary>
+</member>
+<member name="E:Infoware.Reportes.ReportDocument.ReportEnd">
+ <summary>
+ Raised once at the very end of the report after all other printing is complete. The cursor is past the end of the footer on the last page, typically into the bottom margin of the page.
+ </summary>
+</member>
+<member name="P:Infoware.Reportes.ReportDocument.DataSource">
+ <summary>
+ By setting this property we provide the report with a data source. The
+ data in the data source will be rendered into the report in tabular
+ format based on the columns defined in the <see cref="P:vbReport.ReportDocument.Columns" />
+ property.
+ </summary>
+ <value>A valid data source.</value>
+</member>
+<member name="P:Infoware.Reportes.ReportDocument.DataMember">
+ <summary>
+ The DataMember property allows us to easily set a single column
+ of data to be displayed when the report is bound to a data source.
+ If we want to display multiple columns of data in the report
+ we should use the <see cref="P:vbReport.ReportDocument.Columns" />
+ property to define the columns.
+ </summary>
+ <value>A valid data source.</value>
+</member>
+<member name="T:Infoware.Reportes.ReportLineJustification">
+ <summary>
+ This is a list of the possible text justification values
+ used by the 
+ <see cref="M:vbReport.ReportPageEventArgs.Write(System.String,vbReport.ReportLineJustification)" />
+ and
+ <see cref="M:vbReport.ReportPageEventArgs.WriteLine(System.String,vbReport.ReportLineJustification)" />
+ methods.
+ </summary>
+</member>
+<member name="T:Infoware.Reportes.ReportPageEventArgs">
+ <summary>
+ The ReportPageEventArgs the type of the parameter provided by
+ the events raised from the <see cref="T:vbReport.ReportDocument" /> 
+ object. This class includes methods to simplify the process of
+ rendering text output into each page of the report.
+ </summary>
+</member>
+<member name="M:Infoware.Reportes.ReportPageEventArgs.Write(System.String)">
+ <summary>
+ Writes some text to the report starting at the current cursor location.
+ The cursor is moved to the right, but not down to the next line.
+ </summary>
+ <param name="Text">The text to render.</param>
+</member>
+<member name="M:Infoware.Reportes.ReportPageEventArgs.Write(System.String,Infoware.Reportes.ReportLineJustification)">
+ <summary>
+ Writes text to the report on the current line, but justified based on
+ the justification parameter value. 
+ The cursor is moved to the right, but not down to the next line.
+ </summary>
+ <param name="Text">The text to render.</param>
+ <param name="Justification">Indicates the justification for the text.</param>
+</member>
+<member name="M:Infoware.Reportes.ReportPageEventArgs.WriteColumn(System.Object,Infoware.Reportes.ReportColumn)">
+ <summary>
+ This method writes text into a specific column within the report on
+ the current line. It uses a <see cref="T:vbReport.ReportColumn" />
+ object to define the X position and width of the column. The cursor
+ is not moved by calling this method.
+ </summary>
+ <param name="Text">The text to render into the column.</param>
+ <param name="column">The <see cref="T:vbReport.ReportColumn" /> object defining this column.</param>
+</member>
+<member name="M:Infoware.Reportes.ReportPageEventArgs.WriteLine">
+ <summary>
+ Moves the cursor down one line and to the left side of the page.
+ </summary>
+</member>
+<member name="M:Infoware.Reportes.ReportPageEventArgs.WriteLine(System.String)">
+ <summary>
+ Writes text to the report starting at the current cursor location and 
+ then moves the cursor down one line and to the left side of the page.
+ </summary>
+ <param name="Text">The text to render.</param>
+</member>
+<member name="M:Infoware.Reportes.ReportPageEventArgs.WriteLine(System.String,Infoware.Reportes.ReportLineJustification)">
+ <summary>
+ Writes text to the report on the current line, but justified based on
+ the justification parameter value. 
+ The cursor is moved to the right, but not down to the next line.
+ </summary>
+ <param name="Text">The text to render.</param>
+ <param name="Justification">Indicates the justification for the text.</param>
+</member>
+<member name="M:Infoware.Reportes.ReportPageEventArgs.HorizontalRule">
+ <summary>
+ Draws a horizontal line across the width of the page on the current
+ line. After the line is drawn the cursor is moved down one line and
+ to the left side of the page.
+ </summary>
+</member>
+<member name="P:Infoware.Reportes.ReportPageEventArgs.CurrentX">
+ <summary>
+ Sets or returns the current X position (left to right) of the
+ cursor on the page.
+ </summary>
+ <value>The horizontal position of the cursor.</value>
+</member>
+<member name="P:Infoware.Reportes.ReportPageEventArgs.CurrentY">
+ <summary>
+ Sets or returns the current Y position (top to bottom) of the
+ cursor on the page.
+ </summary>
+ <value>The vertical position of the cursor.</value>
+</member>
+<member name="M:Infoware.Reportes.ReportPageEventArgs.PositionToStart">
+ <summary>
+ Moves the cursor to the top left corner of the page.
+ </summary>
+</member>
+<member name="P:Infoware.Reportes.ReportPageEventArgs.PageBottom">
+ <summary>
+ Returns the Y value correspondign to the bottom of the page
+ body. This is the position immediately above the start of the 
+ page footer.
+ </summary>
+ <value>The Y value of the bottom of the page.</value>
+</member>
+<member name="P:Infoware.Reportes.ReportPageEventArgs.EndOfPage">
+ <summary>
+ Returns True if the cursor's current location is beyond the bottom of
+ the page body. This doesn't mean we're into the bottom margin, but may
+ indicate that the cursor in the page's footer region.
+ </summary>
+ <value>A Boolean indicating whether the cursor is past the end of the page.</value>
+</member>
+<member name="P:Infoware.Reportes.ReportPageEventArgs.PageNumber">
+ <summary>
+ Returns the page number of the current page. This value is automatically
+ incremented as each new page is rendered.
+ </summary>
+ <value>The current page number.</value>
+</member>
+</members>
+</doc>

@@ -2,11 +2,69 @@
 <xs:schema id="dsReporteActivosIngreso" targetNamespace="http://tempuri.org/dsReporteActivosIngreso.xsd" xmlns:mstns="http://tempuri.org/dsReporteActivosIngreso.xsd" xmlns="http://tempuri.org/dsReporteActivosIngreso.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DMIROConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DMIROConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ActivosFijos.Modulo.My.MySettings.GlobalReference.Default.DMIROConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="AFDepNuevaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AFDepNuevaConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ActivosFijos.Modulo.My.MySettings.GlobalReference.Default.AFDepNuevaConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
-        <Tables />
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_ReporteActivoIngresoTableAdapter" GeneratorDataComponentClassName="vw_ReporteActivoIngresoTableAdapter" Name="vw_ReporteActivoIngreso" UserDataComponentName="vw_ReporteActivoIngresoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AFDepNuevaConnectionString (MySettings)" DbObjectName="AFDepNueva.dbo.vw_ReporteActivoIngreso" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Proveedor, ProveedorCodigo, Factura_Numero, Factura_Fecha, Custodio, CustodioCodigo, UbicacionInicial, Activo_Codigo, Activo_Serie, Grupo, Tipo, Clase, Activo_CodigoBarra, Activo_CodigoAux, Activo_Descripcion, Marca, Activo_Modelo, Activo_Observacion, Estado_Depreciacion, Estado_Activo, Activo_ResponsableMantenimiento, Activo_FechaIngreso, Activo_FechaCompra, Activo_FechaUso, Activo_FechaGarantia, Centro_Costo, Factura_Codigo, Activo_FechaBaja, TipoBajaActivo, Caracteristicas, Pardet_Marca, Parame_ClaseActivo, Pardet_ClaseActivo, codGrupo, codTipo, codClase, Activo_CodigoBarraCruce, Parame_Ubicacion, Pardet_Ubicacion, CostoOriginal, CustodioCI FROM dbo.vw_ReporteActivoIngreso</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Proveedor" DataSetColumn="Proveedor" />
+              <Mapping SourceColumn="ProveedorCodigo" DataSetColumn="ProveedorCodigo" />
+              <Mapping SourceColumn="Factura_Numero" DataSetColumn="Factura_Numero" />
+              <Mapping SourceColumn="Factura_Fecha" DataSetColumn="Factura_Fecha" />
+              <Mapping SourceColumn="Custodio" DataSetColumn="Custodio" />
+              <Mapping SourceColumn="CustodioCodigo" DataSetColumn="CustodioCodigo" />
+              <Mapping SourceColumn="UbicacionInicial" DataSetColumn="UbicacionInicial" />
+              <Mapping SourceColumn="Activo_Codigo" DataSetColumn="Activo_Codigo" />
+              <Mapping SourceColumn="Activo_Serie" DataSetColumn="Activo_Serie" />
+              <Mapping SourceColumn="Grupo" DataSetColumn="Grupo" />
+              <Mapping SourceColumn="Tipo" DataSetColumn="Tipo" />
+              <Mapping SourceColumn="Clase" DataSetColumn="Clase" />
+              <Mapping SourceColumn="Activo_CodigoBarra" DataSetColumn="Activo_CodigoBarra" />
+              <Mapping SourceColumn="Activo_CodigoAux" DataSetColumn="Activo_CodigoAux" />
+              <Mapping SourceColumn="Activo_Descripcion" DataSetColumn="Activo_Descripcion" />
+              <Mapping SourceColumn="Marca" DataSetColumn="Marca" />
+              <Mapping SourceColumn="Activo_Modelo" DataSetColumn="Activo_Modelo" />
+              <Mapping SourceColumn="Activo_Observacion" DataSetColumn="Activo_Observacion" />
+              <Mapping SourceColumn="Estado_Depreciacion" DataSetColumn="Estado_Depreciacion" />
+              <Mapping SourceColumn="Estado_Activo" DataSetColumn="Estado_Activo" />
+              <Mapping SourceColumn="Activo_ResponsableMantenimiento" DataSetColumn="Activo_ResponsableMantenimiento" />
+              <Mapping SourceColumn="Activo_FechaIngreso" DataSetColumn="Activo_FechaIngreso" />
+              <Mapping SourceColumn="Activo_FechaCompra" DataSetColumn="Activo_FechaCompra" />
+              <Mapping SourceColumn="Activo_FechaUso" DataSetColumn="Activo_FechaUso" />
+              <Mapping SourceColumn="Activo_FechaGarantia" DataSetColumn="Activo_FechaGarantia" />
+              <Mapping SourceColumn="Centro_Costo" DataSetColumn="Centro_Costo" />
+              <Mapping SourceColumn="Factura_Codigo" DataSetColumn="Factura_Codigo" />
+              <Mapping SourceColumn="Activo_FechaBaja" DataSetColumn="Activo_FechaBaja" />
+              <Mapping SourceColumn="TipoBajaActivo" DataSetColumn="TipoBajaActivo" />
+              <Mapping SourceColumn="Caracteristicas" DataSetColumn="Caracteristicas" />
+              <Mapping SourceColumn="Pardet_Marca" DataSetColumn="Pardet_Marca" />
+              <Mapping SourceColumn="Parame_ClaseActivo" DataSetColumn="Parame_ClaseActivo" />
+              <Mapping SourceColumn="Pardet_ClaseActivo" DataSetColumn="Pardet_ClaseActivo" />
+              <Mapping SourceColumn="codGrupo" DataSetColumn="codGrupo" />
+              <Mapping SourceColumn="codTipo" DataSetColumn="codTipo" />
+              <Mapping SourceColumn="codClase" DataSetColumn="codClase" />
+              <Mapping SourceColumn="Activo_CodigoBarraCruce" DataSetColumn="Activo_CodigoBarraCruce" />
+              <Mapping SourceColumn="Parame_Ubicacion" DataSetColumn="Parame_Ubicacion" />
+              <Mapping SourceColumn="Pardet_Ubicacion" DataSetColumn="Pardet_Ubicacion" />
+              <Mapping SourceColumn="CostoOriginal" DataSetColumn="CostoOriginal" />
+              <Mapping SourceColumn="CustodioCI" DataSetColumn="CustodioCI" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
@@ -32,7 +90,13 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Factura_Fecha" msprop:Generator_ColumnVarNameInTable="columnFactura_Fecha" msprop:Generator_ColumnPropNameInRow="Factura_Fecha" msprop:Generator_ColumnPropNameInTable="Factura_FechaColumn" msprop:Generator_UserColumnName="Factura_Fecha" type="xs:dateTime" />
+              <xs:element name="Factura_Fecha" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFactura_Fecha" msprop:Generator_ColumnPropNameInRow="Factura_Fecha" msprop:Generator_ColumnPropNameInTable="Factura_FechaColumn" msprop:Generator_UserColumnName="Factura_Fecha" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="129" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="Custodio" msprop:Generator_ColumnVarNameInTable="columnCustodio" msprop:Generator_ColumnPropNameInRow="Custodio" msprop:Generator_ColumnPropNameInTable="CustodioColumn" msprop:Generator_UserColumnName="Custodio" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -195,9 +259,5 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:vw_ReporteActivoIngreso" />
-      <xs:field xpath="mstns:Activo_Codigo" />
-    </xs:unique>
   </xs:element>
 </xs:schema>

@@ -60,7 +60,7 @@ namespace ActivosFijosServices
                 if (string.IsNullOrWhiteSpace(mCodigoBarra))
                 {
                     activo = ActivoList.ObtenerLista(this.mOperadorDatosList[0], "", "", mSerie,
-                        "", null, null, "", null, null, null, null, null, true, -1, DateTime.Now, DateTime.Now, null,null )[0];
+                        "", null, null, "", null, null, null, null, null, null, true, -1, DateTime.Now, DateTime.Now, null,null )[0];
                 }
                 else
                 {
@@ -412,14 +412,14 @@ namespace ActivosFijosServices
                 new ActivosFijos.Reglas.Empleado(this.mOperadorDatosList[0], mCustodio),
                 new WWTSParametroDet(this.mOperadorDatosList[0], mParame_Ubicacion, mPardet_Ubicacion),
                 new WWTSParametroDet(this.mOperadorDatosList[0], (int)Enumerados.EnumParametros.EstadoInventarioActivo, (int)Enumerados.enumEstadoInventarioActivo.NoInventariado), 
-                true, -1, DateTime.MinValue, DateTime.MinValue, null, "inventario");
+                null, true, -1, DateTime.MinValue, DateTime.MinValue, null, "inventario");
             }
             else
             {
                 listaActivos = ActivoList.ObtenerLista(this.mOperadorDatosList[0], null, null, null, null, null, null, null, null, null,
                 new ActivosFijos.Reglas.Empleado(this.mOperadorDatosList[0], mCustodio),
                 new WWTSParametroDet(this.mOperadorDatosList[0], mParame_Ubicacion, mPardet_Ubicacion),
-                null, true, -1, DateTime.MinValue, DateTime.MinValue, null, "inventario");
+                null, null, true, -1, DateTime.MinValue, DateTime.MinValue, null, "inventario");
             }
             
             //InventarioList list = InventarioList.ObtenerListaActivos(this.mOperadorDatosList[0], null, null);

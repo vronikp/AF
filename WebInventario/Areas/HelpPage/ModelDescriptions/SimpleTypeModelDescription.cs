@@ -1,0 +1,6 @@
+namespace WebInventario.Areas.HelpPage.ModelDescriptions
+{
+    public class SimpleTypeModelDescription : ModelDescription
+    {
+    }
+}

@@ -29,6 +29,10 @@ Public Class CtlBuscaActivos
         Me.cboestadoinv.Parametro = Reglas.Enumerados.EnumParametros.EstadoInventarioActivo
         Me.cboestadoinv.Llenar_Datos()
 
+        Me.cboEstadoDep.OperadorDatos = mOperadorDatos
+        Me.cboEstadoDep.Parametro = Reglas.Enumerados.EnumParametros.EstadoDepreciacion
+        Me.cboEstadoDep.Llenar_Datos()
+
         Me.CtlBuscaFactura1.OperadorDatos = mOperadorDatos
 
         Me.CtlBuscaProveedor1.SoloActivos = True
@@ -102,7 +106,7 @@ Public Class CtlBuscaActivos
   End Sub
 
   Public Sub Llenar_Datos()
-    mActivos = ActivoList.ObtenerLista(mOperadorDatos, Me.txtcodigobarra.Text, Me.txtcodigoaux.Text, Me.txtserie.Text, Me.txtdescripcion.Text, IIf(Me.chkgrupo.Checked, Me.CtlGrupoTipoClase.ParametroDet, Nothing), IIf(Me.chkmarca.Checked, Me.cboMarca.ParametroDet, Nothing), Me.txtmodelo.Text, IIf(Me.chkproveedor.Checked, Me.CtlBuscaProveedor1.Proveedor, Nothing), IIf(Me.chkfactura.Checked, Me.CtlBuscaFactura1.FacturaActivo, Nothing), IIf(Me.chkcustodio.Checked, Me.CtlBuscaEmpleado1.Empleado, Nothing), IIf(Me.chkubicacion.Checked, Me.CtlUbicacionActivo1.ParametroDet, Nothing), IIf(Me.chkestadoinv.Checked, Me.cboestadoinv.ParametroDet, Nothing), Me.chksoloactivos.Checked, IIf(Me.chkfecha.Checked, Me.cbotipofecha.SelectedIndex, -1), IIf(Me.chkfecha.Checked, Me.dtfecdesde.Value, Nothing), IIf(Me.chkfecha.Checked, Me.dtfechasta.Value, Nothing), Nothing)
+    mActivos = ActivoList.ObtenerLista(mOperadorDatos, Me.txtcodigobarra.Text, Me.txtcodigoaux.Text, Me.txtserie.Text, Me.txtdescripcion.Text, IIf(Me.chkgrupo.Checked, Me.CtlGrupoTipoClase.ParametroDet, Nothing), IIf(Me.chkmarca.Checked, Me.cboMarca.ParametroDet, Nothing), Me.txtmodelo.Text, IIf(Me.chkproveedor.Checked, Me.CtlBuscaProveedor1.Proveedor, Nothing), IIf(Me.chkfactura.Checked, Me.CtlBuscaFactura1.FacturaActivo, Nothing), IIf(Me.chkcustodio.Checked, Me.CtlBuscaEmpleado1.Empleado, Nothing), IIf(Me.chkubicacion.Checked, Me.CtlUbicacionActivo1.ParametroDet, Nothing), IIf(Me.chkestadoinv.Checked, Me.cboestadoinv.ParametroDet, Nothing), IIf(Me.chkEstdoDep.Checked, Me.cboEstadoDep.ParametroDet, Nothing), Me.chksoloactivos.Checked, IIf(Me.chkfecha.Checked, Me.cbotipofecha.SelectedIndex, -1), IIf(Me.chkfecha.Checked, Me.dtfecdesde.Value, Nothing), IIf(Me.chkfecha.Checked, Me.dtfechasta.Value, Nothing), Nothing)
 
   End Sub
 
@@ -195,10 +199,13 @@ Public Class CtlBuscaActivos
     If Me.chkubicacion.Checked Then
       _filtro = AgregarFiltro(_filtro, "Ubicación: " + Me.CtlUbicacionActivo1.ParametroDet.DescripcionLarga)
     End If
-    If Me.chkestadoinv.Checked Then
-      _filtro = AgregarFiltro(_filtro, "Estado de inventario: " + Me.cboestadoinv.ParametroDet.Descripcion)
-    End If
-    If Me.chkfecha.Checked Then
+        If Me.chkestadoinv.Checked Then
+            _filtro = AgregarFiltro(_filtro, "Estado de inventario: " + Me.cboestadoinv.ParametroDet.Descripcion)
+        End If
+        If Me.chkEstdoDep.Checked Then
+            _filtro = AgregarFiltro(_filtro, "Estado de depreciación: " + Me.cboestadodep.ParametroDet.Descripcion)
+        End If
+        If Me.chkfecha.Checked Then
       If Me.cbotipofecha.SelectedIndex < 4 Then
         _filtro = AgregarFiltro(_filtro, "Rango de fechas de " + Me.cbotipofecha.SelectedText + ": " + Me.dtfecdesde.Value.ToShortDateString + " y " + Me.dtfechasta.Value.ToShortDateString)
       Else
@@ -270,4 +277,9 @@ Public Class CtlBuscaActivos
         f.dsReporteActivos = clsReporteActivo.RetornarListaActivosIngresoDS(mOperadorDatos, Me.txtcodigobarra.Text, Me.txtcodigoaux.Text, Me.txtserie.Text, Me.txtdescripcion.Text, IIf(Me.chkgrupo.Checked, Me.CtlGrupoTipoClase.ParametroDet, Nothing), IIf(Me.chkmarca.Checked, Me.cboMarca.ParametroDet, Nothing), Me.txtmodelo.Text, IIf(Me.chkproveedor.Checked, Me.CtlBuscaProveedor1.Proveedor, Nothing), IIf(Me.chkfactura.Checked, Me.CtlBuscaFactura1.FacturaActivo, Nothing), IIf(Me.chkcustodio.Checked, Me.CtlBuscaEmpleado1.Empleado, Nothing), IIf(Me.chkubicacion.Checked, Me.CtlUbicacionActivo1.ParametroDet, Nothing), IIf(Me.chkestadoinv.Checked, Me.cboestadoinv.ParametroDet, Nothing), Me.chksoloactivos.Checked, IIf(Me.chkfecha.Checked, Me.cbotipofecha.SelectedIndex, -1), IIf(Me.chkfecha.Checked, Me.dtfecdesde.Value, Nothing), IIf(Me.chkfecha.Checked, Me.dtfechasta.Value, Nothing))
         f.ShowDialog()
     End Sub
+
+  Private Sub chkEstdoDep_CheckedChanged(sender As Object, e As EventArgs) Handles chkEstdoDep.CheckedChanged
+    Me.pnlEstadoDep.Visible = Me.chkEstdoDep.Checked
+    dimensionartodo()
+  End Sub
 End Class

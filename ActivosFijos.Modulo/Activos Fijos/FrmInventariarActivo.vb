@@ -110,7 +110,7 @@ Public Class FrmInventariarActivo
       Exit Sub
     End If
     Dim activos As ActivoList
-    activos = ActivoList.ObtenerLista(Sistema.OperadorDatos, Me.txtcodigobarra.Text, "", Me.txtserie.Text, "", Nothing, Nothing, "", Nothing, Nothing, Nothing, Nothing, Nothing, True, -1, DateTime.Now, DateTime.Now, Nothing)
+    activos = ActivoList.ObtenerLista(Sistema.OperadorDatos, Me.txtcodigobarra.Text, "", Me.txtserie.Text, "", Nothing, Nothing, "", Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, True, -1, DateTime.Now, DateTime.Now, Nothing)
 
     If activos.Count = 0 Then
       MsgBox("No existe el activo, Se registrará como nuevo", MsgBoxStyle.Information, "Información")

@@ -1,0 +1,173 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Infoware.Controles.Base
+</name>
+</assembly>
+<members>
+<member name="T:Infoware.Controles.Base.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Infoware.Controles.Base.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Infoware.Controles.Base.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:Infoware.Controles.Base.My.Resources.Resources.abrir">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:Infoware.Controles.Base.My.Resources.Resources.eliminar">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:Infoware.Controles.Base.My.Resources.Resources.Escaner">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:Infoware.Controles.Base.My.Resources.Resources.imagen">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:Infoware.Controles.Base.My.Resources.Resources.NormalColor_Generic_down">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Infoware.Controles.Base.My.Resources.Resources.NormalColor_Generic_down_over">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Infoware.Controles.Base.My.Resources.Resources.NormalColor_Generic_up">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Infoware.Controles.Base.My.Resources.Resources.NormalColor_Generic_up_over">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Infoware.Controles.Base.My.Resources.Resources.nuevo">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:Infoware.Controles.Base.My.Resources.Resources.save">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="T:Infoware.Controles.Base.Paths">
+ -----------------------------------------------------------------------------
+ Project	 : XPCommonControls
+ Class	 : XPCommonControls.Paths
+ 
+ -----------------------------------------------------------------------------
+ <summary>
+ predefined paths for drawing routines
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[Mike]	14.03.2004	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:Infoware.Controles.Base.TextBoxCalculator.CalculateOnPressEnter">
+-----------------------------------------------------------------------------
+ <summary>
+ Inidica si calculamos automaticamente el resultado al presionar ENTER
+ </summary>
+ <value></value>
+ <remarks></remarks>
+ <history>
+ 	[gbonansea] 	23/09/2004	Created
+ </history>
+-----------------------------------------------------------------------------
+</member>
+<member name="P:Infoware.Controles.Base.TextBoxCalculator.CalculateOnLeave">
+-----------------------------------------------------------------------------
+ <summary>
+ Indica si calculamos automaticamente el resultado al salir del control
+ </summary>
+ <value></value>
+ <remarks></remarks>
+ <history>
+ 	[gbonansea] 	23/09/2004	Created
+ </history>
+-----------------------------------------------------------------------------
+</member>
+<member name="M:Infoware.Controles.Base.TextBoxCalculator.GetResult">
+-----------------------------------------------------------------------------
+ <summary>
+ Calculo el resultado
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+ <history>
+ 	[gbonansea] 	23/09/2004	Created
+ </history>
+-----------------------------------------------------------------------------
+</member>
+<member name="M:Infoware.Controles.Base.TextBoxCalculator.Calculate">
+-----------------------------------------------------------------------------
+ <summary>
+ Calcula el resultado de la expresion
+ </summary>
+ <remarks></remarks>
+ <history>
+ 	[gbonansea] 	13/09/2004	Created
+ </history>
+-----------------------------------------------------------------------------
+</member>
+<member name="M:Infoware.Controles.Base.TextBoxCalculator.OnKeyPress(System.Windows.Forms.KeyPressEventArgs)">
+-----------------------------------------------------------------------------
+ <summary>
+ sobreescribimos el evento OnKeyPress para permitir solo caracteres numericos
+ </summary>
+ <remarks></remarks>
+ <history>
+ 	[gbonansea] 	13/09/2004	Created
+ </history>
+-----------------------------------------------------------------------------
+</member>
+<member name="M:Infoware.Controles.Base.TextBoxCalculator.OnLeave(System.EventArgs)">
+-----------------------------------------------------------------------------
+ <summary>
+ Sobreescribrimos el evento Leave que se ejecuta cuando salimos del TextBox
+ </summary>
+ <remarks></remarks>
+ <history>
+ 	[gbonansea] 	23/09/2004	Created
+ </history>
+-----------------------------------------------------------------------------
+</member>
+<member name="M:Infoware.Controles.Base.TextBoxStd.DrawTextPrompt">
+ <summary>
+ Overload to automatically create the Graphics region before drawing the text prompt
+ </summary>
+ <remarks>The Graphics region is disposed after drawing the prompt.</remarks>
+</member>
+<member name="M:Infoware.Controles.Base.TextBoxStd.DrawTextPrompt(System.Drawing.Graphics)">
+ <summary>
+ Draws the PromptText in the TextBox.ClientRectangle using the PromptFont and PromptForeColor
+ </summary>
+ <param name="g">The Graphics region to draw the prompt on</param>
+</member>
+</members>
+</doc>

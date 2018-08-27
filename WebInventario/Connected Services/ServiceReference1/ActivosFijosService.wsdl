@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ActivosFijosService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8889/ActivosFijos.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8889/ActivosFijos.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8889/ActivosFijos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ActivosFijosServices" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IActivosFijosService_CargarActivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CargarActivo" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_CargarActivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CargarActivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_ActivoInventariado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActivoInventariado" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_ActivoInventariado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActivoInventariadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_GuardarInventarioDet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarInventarioDet" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_GuardarInventarioDet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GuardarInventarioDetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_ListaActivos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaActivos" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_ListaActivos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaActivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_IniciarSesion_InputMessage">
+    <wsdl:part name="parameters" element="tns:IniciarSesion" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_IniciarSesion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IniciarSesionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_InventariosActivos_InputMessage">
+    <wsdl:part name="parameters" element="tns:InventariosActivos" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_InventariosActivos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InventariosActivosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_ListaCaracteristicas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaCaracteristicas" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_ListaCaracteristicas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaCaracteristicasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_ListaEmpleados_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaEmpleados" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_ListaEmpleados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaEmpleadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_ListaFacturas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaFacturas" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_ListaFacturas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaFacturasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_ListaProveedores_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaProveedores" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_ListaProveedores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaProveedoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_ParametroList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ParametroList" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_ParametroList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ParametroListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_ParametroTreeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ParametroTreeList" />
+  </wsdl:message>
+  <wsdl:message name="IActivosFijosService_ParametroTreeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ParametroTreeListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IActivosFijosService">
+    <wsdl:operation name="CargarActivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActivosFijosService/CargarActivo" message="tns:IActivosFijosService_CargarActivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActivosFijosService/CargarActivoResponse" message="tns:IActivosFijosService_CargarActivo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActivoInventariado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActivosFijosService/ActivoInventariado" message="tns:IActivosFijosService_ActivoInventariado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActivosFijosService/ActivoInventariadoResponse" message="tns:IActivosFijosService_ActivoInventariado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarInventarioDet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActivosFijosService/GuardarInventarioDet" message="tns:IActivosFijosService_GuardarInventarioDet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActivosFijosService/GuardarInventarioDetResponse" message="tns:IActivosFijosService_GuardarInventarioDet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaActivos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActivosFijosService/ListaActivos" message="tns:IActivosFijosService_ListaActivos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActivosFijosService/ListaActivosResponse" message="tns:IActivosFijosService_ListaActivos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IniciarSesion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActivosFijosService/IniciarSesion" message="tns:IActivosFijosService_IniciarSesion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActivosFijosService/IniciarSesionResponse" message="tns:IActivosFijosService_IniciarSesion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InventariosActivos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActivosFijosService/InventariosActivos" message="tns:IActivosFijosService_InventariosActivos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActivosFijosService/InventariosActivosResponse" message="tns:IActivosFijosService_InventariosActivos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaCaracteristicas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActivosFijosService/ListaCaracteristicas" message="tns:IActivosFijosService_ListaCaracteristicas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActivosFijosService/ListaCaracteristicasResponse" message="tns:IActivosFijosService_ListaCaracteristicas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaEmpleados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActivosFijosService/ListaEmpleados" message="tns:IActivosFijosService_ListaEmpleados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActivosFijosService/ListaEmpleadosResponse" message="tns:IActivosFijosService_ListaEmpleados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaFacturas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActivosFijosService/ListaFacturas" message="tns:IActivosFijosService_ListaFacturas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActivosFijosService/ListaFacturasResponse" message="tns:IActivosFijosService_ListaFacturas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaProveedores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActivosFijosService/ListaProveedores" message="tns:IActivosFijosService_ListaProveedores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActivosFijosService/ListaProveedoresResponse" message="tns:IActivosFijosService_ListaProveedores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ParametroList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActivosFijosService/ParametroList" message="tns:IActivosFijosService_ParametroList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActivosFijosService/ParametroListResponse" message="tns:IActivosFijosService_ParametroList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ParametroTreeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActivosFijosService/ParametroTreeList" message="tns:IActivosFijosService_ParametroTreeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActivosFijosService/ParametroTreeListResponse" message="tns:IActivosFijosService_ParametroTreeList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IActivosFijosService" type="tns:IActivosFijosService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CargarActivo">
+      <soap:operation soapAction="http://tempuri.org/IActivosFijosService/CargarActivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActivoInventariado">
+      <soap:operation soapAction="http://tempuri.org/IActivosFijosService/ActivoInventariado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarInventarioDet">
+      <soap:operation soapAction="http://tempuri.org/IActivosFijosService/GuardarInventarioDet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaActivos">
+      <soap:operation soapAction="http://tempuri.org/IActivosFijosService/ListaActivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IniciarSesion">
+      <soap:operation soapAction="http://tempuri.org/IActivosFijosService/IniciarSesion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InventariosActivos">
+      <soap:operation soapAction="http://tempuri.org/IActivosFijosService/InventariosActivos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaCaracteristicas">
+      <soap:operation soapAction="http://tempuri.org/IActivosFijosService/ListaCaracteristicas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaEmpleados">
+      <soap:operation soapAction="http://tempuri.org/IActivosFijosService/ListaEmpleados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaFacturas">
+      <soap:operation soapAction="http://tempuri.org/IActivosFijosService/ListaFacturas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaProveedores">
+      <soap:operation soapAction="http://tempuri.org/IActivosFijosService/ListaProveedores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParametroList">
+      <soap:operation soapAction="http://tempuri.org/IActivosFijosService/ParametroList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParametroTreeList">
+      <soap:operation soapAction="http://tempuri.org/IActivosFijosService/ParametroTreeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ActivosFijosService">
+    <wsdl:port name="BasicHttpBinding_IActivosFijosService" binding="tns:BasicHttpBinding_IActivosFijosService">
+      <soap:address location="http://localhost:8889/ActivosFijos.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ActivosFijosServices" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ActivosFijosServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Activo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo_Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="Activo_CodigoAux" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Activo_CodigoBarra" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Activo_Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Activo_FechaBaja" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Activo_FechaCompra" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Activo_FechaIngreso" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Activo_FechaUso" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Activo_Modelo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Activo_Observacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Activo_ResponsableMantenimiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Activo_Serie" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Caracteristicas" nillable="true" type="tns:ArrayOfCaracteristica" />
+      <xs:element minOccurs="0" name="Entida_Custodio" type="xs:int" />
+      <xs:element minOccurs="0" name="Entida_Proveedor" type="xs:int" />
+      <xs:element minOccurs="0" name="Factura_Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="Parame_CentroCosto" type="xs:int" />
+      <xs:element minOccurs="0" name="Parame_ClaseActivo" type="xs:int" />
+      <xs:element minOccurs="0" name="Parame_EstadoActivo" type="xs:int" />
+      <xs:element minOccurs="0" name="Parame_EstadoDepreciacion" type="xs:int" />
+      <xs:element minOccurs="0" name="Parame_Marca" type="xs:int" />
+      <xs:element minOccurs="0" name="Parame_TipoBajaActivo" type="xs:int" />
+      <xs:element minOccurs="0" name="Pardet_CentroCosto" type="xs:int" />
+      <xs:element minOccurs="0" name="Pardet_ClaseActivo" type="xs:int" />
+      <xs:element minOccurs="0" name="Pardet_EstadoActivo" type="xs:int" />
+      <xs:element minOccurs="0" name="Pardet_EstadoDepreciacion" type="xs:int" />
+      <xs:element minOccurs="0" name="Pardet_Grupo" type="xs:int" />
+      <xs:element minOccurs="0" name="Pardet_Marca" type="xs:int" />
+      <xs:element minOccurs="0" name="Pardet_Tipo" type="xs:int" />
+      <xs:element minOccurs="0" name="Pardet_TipoBajaActivo" type="xs:int" />
+      <xs:element minOccurs="0" name="Pardet_Ubicacion" type="xs:int" />
+      <xs:element minOccurs="0" name="esNuevo" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Activo" nillable="true" type="tns:Activo" />
+  <xs:complexType name="ArrayOfCaracteristica">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Caracteristica" nillable="true" type="tns:Caracteristica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCaracteristica" nillable="true" type="tns:ArrayOfCaracteristica" />
+  <xs:complexType name="Caracteristica">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActCar_Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CaracteristicaText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Parame_Caracteristica" type="xs:int" />
+      <xs:element minOccurs="0" name="Pardet_Caracteristica" type="xs:int" />
+      <xs:element minOccurs="0" name="esNuevo" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Caracteristica" nillable="true" type="tns:Caracteristica" />
+  <xs:complexType name="Inventario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Invent_Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Parame_EstadoInventario" type="xs:int" />
+      <xs:element minOccurs="0" name="Parame_PeriodoInventario" type="xs:int" />
+      <xs:element minOccurs="0" name="Parame_Ubicacion" type="xs:int" />
+      <xs:element minOccurs="0" name="Pardet_EstadoInventario" type="xs:int" />
+      <xs:element minOccurs="0" name="Pardet_PeriodoInventario" type="xs:int" />
+      <xs:element minOccurs="0" name="Pardet_Ubicacion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Inventario" nillable="true" type="tns:Inventario" />
+  <xs:complexType name="ArrayOfActivo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Activo" nillable="true" type="tns:Activo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActivo" nillable="true" type="tns:ArrayOfActivo" />
+  <xs:complexType name="ArrayOfInventario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Inventario" nillable="true" type="tns:Inventario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInventario" nillable="true" type="tns:ArrayOfInventario" />
+  <xs:complexType name="ArrayOfEmpleado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Empleado" nillable="true" type="tns:Empleado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmpleado" nillable="true" type="tns:ArrayOfEmpleado" />
+  <xs:complexType name="Empleado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Emplea_Custodio" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreCompleto" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Empleado" nillable="true" type="tns:Empleado" />
+  <xs:complexType name="ArrayOfFactura">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Factura" nillable="true" type="tns:Factura" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFactura" nillable="true" type="tns:ArrayOfFactura" />
+  <xs:complexType name="Factura">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Factura_Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="Proveedor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Factura" nillable="true" type="tns:Factura" />
+  <xs:complexType name="ArrayOfProveedor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Proveedor" nillable="true" type="tns:Proveedor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProveedor" nillable="true" type="tns:ArrayOfProveedor" />
+  <xs:complexType name="Proveedor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NombreCompleto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Provee_Codigo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Proveedor" nillable="true" type="tns:Proveedor" />
+  <xs:complexType name="ArrayOfParametro">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Parametro" nillable="true" type="tns:Parametro" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParametro" nillable="true" type="tns:ArrayOfParametro" />
+  <xs:complexType name="Parametro">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Parame_Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="Pardet_Secuencia" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Parametro" nillable="true" type="tns:Parametro" />
+</xs:schema>

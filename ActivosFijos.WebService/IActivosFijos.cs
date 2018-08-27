@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Web;
 using System.Text;
 
 namespace ActivosFijosServices
@@ -19,8 +20,11 @@ namespace ActivosFijosServices
         string GuardarInventarioDet(string mUsuario, Inventario mInventario, Activo mActivo, int mCustodio, int mParame_Ubicacion, int mPardet_Ubicacion);
         [OperationContract]
         Activo[] ListaActivos(int mCustodio, int mParame_Ubicacion, int mPardet_Ubicacion, Inventario mInventario, bool soloInventariados);
+
         [OperationContract]
+        [WebGet(UriTemplate = "IniciarSesion/{mUsuario}/{mContrasena}", ResponseFormat = WebMessageFormat.Json)]
         bool IniciarSesion(string mUsuario, string mContrasena);
+
         [OperationContract]
         Inventario[] InventariosActivos();
         [OperationContract]

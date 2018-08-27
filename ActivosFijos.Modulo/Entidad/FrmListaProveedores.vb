@@ -110,39 +110,47 @@ Public Class FrmListaProveedores
     MyBase.Titulo = "Proveedores"
     MyBase.AgregarLeyenda = "Agregar un nuevo Proveedor"
 
-    'Me.DataGridView1.Columns.Clear()
+        'Me.DataGridView1.Columns.Clear()
 
-    'Dim DataGridViewTextBoxColumn0 As System.Windows.Forms.DataGridViewCheckBoxColumn
-    'DataGridViewTextBoxColumn0 = New System.Windows.Forms.DataGridViewCheckBoxColumn
-    'DataGridViewTextBoxColumn0.DataPropertyName = "Provee_Visible"
-    'DataGridViewTextBoxColumn0.HeaderText = "Activo"
-    'DataGridViewTextBoxColumn0.Width = 50
-    'Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn0})
+        'Dim DataGridViewTextBoxColumn0 As System.Windows.Forms.DataGridViewCheckBoxColumn
+        'DataGridViewTextBoxColumn0 = New System.Windows.Forms.DataGridViewCheckBoxColumn
+        'DataGridViewTextBoxColumn0.DataPropertyName = "Provee_Visible"
+        'DataGridViewTextBoxColumn0.HeaderText = "Activo"
+        'DataGridViewTextBoxColumn0.Width = 50
+        'Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn0})
 
-    'Dim DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    'DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-    'DataGridViewTextBoxColumn1.DataPropertyName = "NombreCompleto"
-    'DataGridViewTextBoxColumn1.HeaderText = "Nombre de Proveedor"
-    'DataGridViewTextBoxColumn1.Width = 250
-    'Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
+        'Dim DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+        ' DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        'DataGridViewTextBoxColumn1.DataPropertyName = "RUC"
+        'DataGridViewTextBoxColumn1.HeaderText = "RUC de Proveedor"
+        'DataGridViewTextBoxColumn1.Width = 250
+        'Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
 
-    'DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-    'DataGridViewTextBoxColumn1.DataPropertyName = "DireccionesString"
-    'DataGridViewTextBoxColumn1.HeaderText = "Dirección"
-    'DataGridViewTextBoxColumn1.Width = 250
-    'Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
+        'Dim DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+        'DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        'DataGridViewTextBoxColumn2.DataPropertyName = "NombreCompleto"
+        'DataGridViewTextBoxColumn2.HeaderText = "Nombre de Proveedor"
+        'DataGridViewTextBoxColumn2.Width = 250
+        'Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn2})
 
-    'DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-    'DataGridViewTextBoxColumn1.DataPropertyName = "TelefonosString"
-    'DataGridViewTextBoxColumn1.HeaderText = "Teléfono"
-    'DataGridViewTextBoxColumn1.Width = 250
-    'Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
+        'DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        'DataGridViewTextBoxColumn1.DataPropertyName = "DireccionesString"
+        'DataGridViewTextBoxColumn1.HeaderText = "Dirección"
+        'DataGridViewTextBoxColumn1.Width = 250
+        'Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
 
-    Me.ListBindingSource.DataSource = GetType(Proveedor)
+        'DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        'DataGridViewTextBoxColumn1.DataPropertyName = "TelefonosString"
+        'DataGridViewTextBoxColumn1.HeaderText = "Teléfono"
+        'DataGridViewTextBoxColumn1.Width = 250
+        'Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {DataGridViewTextBoxColumn1})
+
+        Me.ListBindingSource.DataSource = GetType(Proveedor)
     mProveedores = ProveedorList.ObtenerLista(Sistema.OperadorDatos, Me.chkSoloActivos.Checked, _filtro)
     Dim mitemssort As New Infoware.Reglas.SortedView(mProveedores)
-    ListBindingSource.DataSource = mitemssort
-  End Sub
+        ListBindingSource.DataSource = mitemssort
+        Me.DataGridView1.AutoDiscover()
+    End Sub
 
   Private Sub mProveedores_AddingNew(ByVal sender As Object, ByVal e As System.ComponentModel.AddingNewEventArgs) Handles mProveedores.AddingNew
     Dim _Proveedor As Proveedor = New Proveedor(Sistema.OperadorDatos, True)

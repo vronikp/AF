@@ -141,8 +141,9 @@ Public Class FrmListaPeritos
     Me.ListBindingSource.DataSource = GetType(Perito)
     mPeritos = PeritoList.ObtenerLista(Sistema.OperadorDatos, _filtro)
     Dim mitemssort As New Infoware.Reglas.SortedView(mPeritos)
-    ListBindingSource.DataSource = mitemssort
-  End Sub
+        ListBindingSource.DataSource = mitemssort
+        Me.DataGridView1.AutoDiscover()
+    End Sub
 
   Private Sub mPeritos_AddingNew(ByVal sender As Object, ByVal e As System.ComponentModel.AddingNewEventArgs) Handles mPeritos.AddingNew
     Dim _Perito As Perito = New Perito(Sistema.OperadorDatos, True)

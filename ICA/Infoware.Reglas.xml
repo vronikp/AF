@@ -1,0 +1,243 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Infoware.Reglas
+</name>
+</assembly>
+<members>
+<member name="T:Infoware.Reglas.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Infoware.Reglas.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Infoware.Reglas.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:Infoware.Reglas.SortedView">
+ <summary>
+ Provides a sorted view into an existing IList (collection).
+ </summary>
+</member>
+<member name="M:Infoware.Reglas.SortedView.#ctor(System.Collections.IList)">
+ <summary>
+ Creates a new view based on the provided IList object.
+ </summary>
+ <param name="list">The IList (collection) containing the data.</param>
+</member>
+<member name="M:Infoware.Reglas.SortedView.CopyTo(System.Array,System.Int32)">
+ <summary>
+ Copies the underlying data to an array.
+ </summary>
+ <param name="array">Array to hold the data.</param>
+ <param name="index">Index in the array to start the copy.</param>
+</member>
+<member name="P:Infoware.Reglas.SortedView.Count">
+ <summary>
+ Returns the number of items in the collection.
+ </summary>
+</member>
+<member name="P:Infoware.Reglas.SortedView.IsSynchronized">
+ <summary>
+ Returns True if the underlying IList object is synchronized.
+ </summary>
+</member>
+<member name="P:Infoware.Reglas.SortedView.SyncRoot">
+ <summary>
+ Returns the SyncRoot object for the underling IList object.
+ </summary>
+</member>
+<member name="M:Infoware.Reglas.SortedView.GetEnumerator">
+ <summary>
+ Returns the enumerator for the list.
+ </summary>
+ <remarks>
+ If the view is sorted, the enumerator provides a sorted
+ view of the data. If the view is not sorted, the enumerator
+ from the underlying IList object is used.
+ </remarks>
+</member>
+<member name="M:Infoware.Reglas.SortedView.Add(System.Object)">
+ <summary>
+ Implemented by IList source object.
+ </summary>
+</member>
+<member name="M:Infoware.Reglas.SortedView.Clear">
+ <summary>
+ Implemented by IList source object.
+ </summary>
+</member>
+<member name="M:Infoware.Reglas.SortedView.Contains(System.Object)">
+ <summary>
+ Returns True if the list contains the specified value.
+ </summary>
+</member>
+<member name="M:Infoware.Reglas.SortedView.IndexOf(System.Object)">
+ <summary>
+ Returns the index of the specified value.
+ </summary>
+ <remarks>
+ If the view is sorted then the index is the index 
+ within the sorted list, not the underlying IList object.
+ </remarks>
+</member>
+<member name="M:Infoware.Reglas.SortedView.Insert(System.Int32,System.Object)">
+ <summary>
+ Implemented by IList source object.
+ </summary>
+</member>
+<member name="P:Infoware.Reglas.SortedView.IsFixedSize">
+ <summary>
+ Returns True if the underling IList object is fixed size.
+ </summary>
+</member>
+<member name="P:Infoware.Reglas.SortedView.IsReadOnly">
+ <summary>
+ Returns True. The view is always read only.
+ </summary>
+</member>
+<member name="P:Infoware.Reglas.SortedView.Item(System.Int32)">
+ <summary>
+ Returns the item at the specified index. Does NOT allow setting a new
+ value.
+ </summary>
+ <remarks>
+ <para>
+ If the list is sorted, this returns the items in the appropriate sorted
+ order. Otherwise the order will match that of the underlying IList object.
+ </para><para>
+ Attempting to set the value will result in an exception. To set a value,
+ set it in the underling IList object.
+ </para>
+ </remarks>
+ <param name="index">The index of the item to return.</param>
+ <returns>The item at the specified index.</returns>
+</member>
+<member name="M:Infoware.Reglas.SortedView.GetSortedItem(System.Int32)">
+ <summary>
+ Returns the appropriate item for an index
+ based on the current sort.
+ </summary>
+</member>
+<member name="M:Infoware.Reglas.SortedView.Remove(System.Object)">
+ <summary>
+ Implemented by IList source object.
+ </summary>
+</member>
+<member name="M:Infoware.Reglas.SortedView.RemoveAt(System.Int32)">
+ <summary>
+ Implemented by IList source object.
+ </summary>
+</member>
+<member name="M:Infoware.Reglas.SortedView.AddIndex(System.ComponentModel.PropertyDescriptor)">
+ <summary>
+ Implemented by IList source object.
+ </summary>
+</member>
+<member name="M:Infoware.Reglas.SortedView.AddNew">
+ <summary>
+ Implemented by IList source object.
+ </summary>
+</member>
+<member name="P:Infoware.Reglas.SortedView.AllowEdit">
+ <summary>
+ Implemented by IList source object.
+ </summary>
+</member>
+<member name="P:Infoware.Reglas.SortedView.AllowNew">
+ <summary>
+ Implemented by IList source object.
+ </summary>
+</member>
+<member name="P:Infoware.Reglas.SortedView.AllowRemove">
+ <summary>
+ Implemented by IList source object.
+ </summary>
+</member>
+<member name="M:Infoware.Reglas.SortedView.ApplySort(System.String,System.ComponentModel.ListSortDirection)">
+ <summary>
+ Applies a sort to the view.
+ </summary>
+ <param name="property">The text name of the property on which to sort.</param>
+ <param name="direction">The direction to sort the data.</param>
+</member>
+<member name="M:Infoware.Reglas.SortedView.ApplySort(System.ComponentModel.PropertyDescriptor,System.ComponentModel.ListSortDirection)">
+ <summary>
+ Applies a sort to the view.
+ </summary>
+ <param name="property">A PropertyDescriptor for the property on which to sort.</param>
+ <param name="direction">The direction to sort the data.</param>
+</member>
+<member name="M:Infoware.Reglas.SortedView.Find(System.ComponentModel.PropertyDescriptor,System.Object)">
+ <summary>
+ Implemented by IList source object.
+ </summary>
+</member>
+<member name="P:Infoware.Reglas.SortedView.IsSorted">
+ <summary>
+ Returns True if the view is currently sorted.
+ </summary>
+</member>
+<member name="E:Infoware.Reglas.SortedView.ListChanged">
+ <summary>
+ Raised to indicate that the list's data has changed.
+ </summary>
+ <remarks>
+ This event is raised if the underling IList object's data changes
+ (assuming the underling IList also implements the IBindingList
+ interface). It is also raised if the sort property or direction
+ is changed to indicate that the view's data has changed.
+ </remarks>
+</member>
+<member name="M:Infoware.Reglas.SortedView.RemoveIndex(System.ComponentModel.PropertyDescriptor)">
+ <summary>
+ Implemented by IList source object.
+ </summary>
+</member>
+<member name="M:Infoware.Reglas.SortedView.RemoveSort">
+ <summary>
+ Removes any sort currently applied to the view.
+ </summary>
+</member>
+<member name="P:Infoware.Reglas.SortedView.SortDirection">
+ <summary>
+ Returns the direction of the current sort.
+ </summary>
+</member>
+<member name="P:Infoware.Reglas.SortedView.SortProperty">
+ <summary>
+ Returns the PropertyDescriptor of the current sort.
+ </summary>
+</member>
+<member name="P:Infoware.Reglas.SortedView.SupportsChangeNotification">
+ <summary>
+ Returns True since this object does raise the
+ ListChanged event.
+ </summary>
+</member>
+<member name="P:Infoware.Reglas.SortedView.SupportsSearching">
+ <summary>
+ Implemented by IList source object.
+ </summary>
+</member>
+<member name="P:Infoware.Reglas.SortedView.SupportsSorting">
+ <summary>
+ Returns True. Sorting is supported.
+ </summary>
+</member>
+<member name="P:Infoware.Reglas._Database.EsNuevo">
+ <summary>
+ EsNuevo
+ </summary>
+ <remarks>Indica si el registro es nuevo o es uno ya existente</remarks>
+</member>
+</members>
+</doc>

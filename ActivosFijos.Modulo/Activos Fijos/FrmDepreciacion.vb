@@ -224,30 +224,30 @@ Public Class FrmDepreciacion
 
   End Sub
 
-  Private Sub btngenerarasiento_Click(sender As Object, e As EventArgs) Handles btngenerartxt.Click
-    Dim _coddeprec As String = IIf(Me.cbofrecuenciadepreciacion.ParametroDet.Pardet_Secuencia = Enumerados.enumFrecuenciaDepreciacion.Mensual, Me.dtperiodo.Value.ToString("yyyyMM"), Me.dtperiodo.Value.ToString("yyyyMMdd"))
+    Private Sub btngenerarasiento_Click(sender As Object, e As EventArgs) Handles btngenerarasiento.Click
+        Dim _coddeprec As String = IIf(Me.cbofrecuenciadepreciacion.ParametroDet.Pardet_Secuencia = Enumerados.enumFrecuenciaDepreciacion.Mensual, Me.dtperiodo.Value.ToString("yyyyMM"), Me.dtperiodo.Value.ToString("yyyyMMdd"))
 
-    Dim ds As New DataTable
-    Dim bReturn As Boolean = False
-    With Sistema.OperadorDatos
-      .AgregarParametro("@accion", Nothing)
-      .AgregarParametro("@cbo_Frecuencia_Depreciacion", Me.cbofrecuenciadepreciacion.ParametroDet.Pardet_Secuencia)
-      .AgregarParametro("@cba_Codigo_Depreciacion", _coddeprec)
-      .AgregarParametro("@Fecha_ultimo_dia_mes", Me.dtperiodo.Value.Date.AddDays(-Me.dtperiodo.Value.Date.Day + 1).AddMonths(1).AddDays(-1))
-      .Procedimiento = "Proc_Depreciacion_Asiento"
-      bReturn = .Ejecutar(ds)
-      .LimpiarParametros()
+        Dim ds As New DataTable
+        Dim bReturn As Boolean = False
+        With Sistema.OperadorDatos
+            .AgregarParametro("@accion", Nothing)
+            .AgregarParametro("@cbo_Frecuencia_Depreciacion", Me.cbofrecuenciadepreciacion.ParametroDet.Pardet_Secuencia)
+            .AgregarParametro("@cba_Codigo_Depreciacion", _coddeprec)
+            .AgregarParametro("@Fecha_ultimo_dia_mes", Me.dtperiodo.Value.Date.AddDays(-Me.dtperiodo.Value.Date.Day + 1).AddMonths(1).AddDays(-1))
+            .Procedimiento = "Proc_Depreciacion_Asiento"
+            bReturn = .Ejecutar(ds)
+            .LimpiarParametros()
 
-    End With
-    If bReturn AndAlso Not ds Is Nothing AndAlso ds.Rows.Count > 0 Then
-      Dim result As String = Nothing
-      If Asiento.Generar(EnumTipoIntegracion.DMiro, ds, result) Then
-        Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Confidencial,
+        End With
+        If bReturn AndAlso Not ds Is Nothing AndAlso ds.Rows.Count > 0 Then
+            Dim result As String = Nothing
+            If Asiento.Generar(EnumTipoIntegracion.DMiro, ds, result) Then
+                Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Confidencial,
                                   "Se generó el asiento de la depreciación " + _coddeprec)
-      Else
-        MsgBox(result, "Error")
-      End If
-    End If
-  End Sub
+            Else
+                MsgBox(result, "Error")
+            End If
+        End If
+    End Sub
 
 End Class

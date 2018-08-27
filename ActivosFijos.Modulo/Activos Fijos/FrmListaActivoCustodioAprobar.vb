@@ -115,8 +115,9 @@ Public Class FrmListaActivoCustodioAprobar
       mActivoCustodios = New ActivoCustodioList
     End If
     Dim mitemssort As New Infoware.Reglas.SortedView(mActivoCustodios)
-    ListBindingSource.DataSource = mitemssort
-  End Sub
+        ListBindingSource.DataSource = mitemssort
+        Me.DataGridView1.AutoDiscover()
+    End Sub
 
   Private Sub mActivos_AddingNew(ByVal sender As Object, ByVal e As System.ComponentModel.AddingNewEventArgs) Handles mActivoCustodios.AddingNew
     Dim _Activo As Activo = New Activo(Sistema.OperadorDatos, True)

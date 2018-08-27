@@ -36,21 +36,32 @@ Public Class Proveedor
     End If
   End Sub
 
-  'Entidad
-  Public Overridable Property Entidad() As Entidad
-    Get
-      If Me.mEntidad Is Nothing Then
-        Me.mEntidad = New Entidad(OperadorDatos, Entida_Codigo)
-      End If
-      Return Me.mEntidad
-    End Get
-    Set(ByVal value As Entidad)
-      Me.mEntidad = value
-      Entida_Codigo = Me.mEntidad.Entida_Codigo
-    End Set
-  End Property
+    'Entidad
+    Public Overridable Property Entidad() As Entidad
+        Get
+            If Me.mEntidad Is Nothing Then
+                Me.mEntidad = New Entidad(OperadorDatos, Entida_Codigo)
+            End If
+            Return Me.mEntidad
+        End Get
+        Set(ByVal value As Entidad)
+            Me.mEntidad = value
+            Entida_Codigo = Me.mEntidad.Entida_Codigo
+        End Set
+    End Property
 
-  <Infoware.Reportes.CampoReporteAtributo("Nombre de Proveedor", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 250, True)> _
+    <Infoware.Reportes.CampoReporteAtributo("RUC", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 125, True)>
+    Public ReadOnly Property RUC() As String
+        Get
+            If Entidad Is Nothing Then
+                Return String.Empty
+            Else
+                Return mEntidad.IdentificacionesString
+            End If
+        End Get
+    End Property
+
+    <Infoware.Reportes.CampoReporteAtributo("Nombre de Proveedor", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 250, True)> _
   Public ReadOnly Property NombreCompleto() As String
     Get
       If Entidad Is Nothing Then
@@ -68,8 +79,8 @@ Public Class Proveedor
     End Get
   End Property
 
-  <Infoware.Reportes.CampoReporteAtributo("Teléfono", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 250, True)> _
-  Public ReadOnly Property TelefonosString() As String
+    <Infoware.Reportes.CampoReporteAtributo("Teléfono", Infoware.Reportes.CampoReporteAtributo.EnumTipoDato.Texto, 100, True)>
+    Public ReadOnly Property TelefonosString() As String
     Get
       Return Entidad.TelefonosString
     End Get

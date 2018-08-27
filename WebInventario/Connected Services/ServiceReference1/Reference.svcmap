@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="52ab4e24-a38d-4978-a4c2-469fd5d2e3b9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8889/ActivosFijos.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ActivosFijos.xsd" MetadataType="Schema" ID="c9b69a8f-e0c9-459e-bcf0-29a00517027a" SourceId="1" SourceUrl="http://localhost:8889/ActivosFijos.svc?xsd=xsd0" />
+    <MetadataFile FileName="ActivosFijos.disco" MetadataType="Disco" ID="8b9495f0-fd83-414b-828c-b54f208dce04" SourceId="1" SourceUrl="http://localhost:8889/ActivosFijos.svc?disco" />
+    <MetadataFile FileName="ActivosFijosService.wsdl" MetadataType="Wsdl" ID="16e11830-3c52-4a48-9268-0efff6c828a7" SourceId="1" SourceUrl="http://localhost:8889/ActivosFijos.svc?wsdl" />
+    <MetadataFile FileName="ActivosFijos1.xsd" MetadataType="Schema" ID="a39e5a09-8c01-42d5-81b7-ae8685c5526d" SourceId="1" SourceUrl="http://localhost:8889/ActivosFijos.svc?xsd=xsd1" />
+    <MetadataFile FileName="ActivosFijos2.xsd" MetadataType="Schema" ID="1a43bbe3-defe-4678-bcb1-56a69929e0f7" SourceId="1" SourceUrl="http://localhost:8889/ActivosFijos.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
