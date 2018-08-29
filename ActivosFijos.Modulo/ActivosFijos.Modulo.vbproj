@@ -157,6 +157,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activos Fijos\clsReporteBaja.vb" />
+    <Compile Include="Activos Fijos\FrmGenerarAsientos.Designer.vb">
+      <DependentUpon>FrmGenerarAsientos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Activos Fijos\FrmGenerarAsientos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Activos Fijos\FrmListaTransaccionesBajas.designer.vb">
       <DependentUpon>FrmListaTransaccionesBajas.vb</DependentUpon>
     </Compile>
@@ -841,6 +847,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Activos Fijos\FrmGenerarAsientos.resx">
+      <DependentUpon>FrmGenerarAsientos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\FrmListaTransaccionesBajas.resx">
       <DependentUpon>FrmListaTransaccionesBajas.vb</DependentUpon>
     </EmbeddedResource>

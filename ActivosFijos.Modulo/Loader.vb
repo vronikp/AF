@@ -8,349 +8,364 @@ Imports System.Data.SqlClient
 Public Class Loader
 #Region "General"
 
-    Public PardetEmpresaActivo As WWTSParametroDet
-    Private esBasica As Boolean = False
-    Private esEstandar As Boolean = False
-    Private esProfesional As Boolean = False
-    Private esInterprof As Boolean = False
-    Private esAlquiler As Boolean = False
-    Private licencia As Licencia = New Licencia
+  Public PardetEmpresaActivo As WWTSParametroDet
+  Private esBasica As Boolean = False
+  Private esEstandar As Boolean = False
+  Private esProfesional As Boolean = False
+  Private esInterprof As Boolean = False
+  Private esAlquiler As Boolean = False
+  Private licencia As Licencia = New Licencia
 
-    Sub CargarTipoLicencia(ByVal _Sistema As Sistema)
-        PardetEmpresaActivo = New WWTSParametroDet(_Sistema.OperadorDatos, Enumerados.EnumParametros.EmpresaActivo, 1)
-        'If My.Application.Deployment.IsFirstRun Then
-        '    My.Settings.Key = InputBox("Escriba el código de activación:", "Activar", My.Settings.Key)
-        '    My.Settings.Save()
-        '    If ActivarVerificarLicencia(True) Then
-        '        If CargarLicencia() Then
-        '            MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
-        '        Else
-        '            MsgBox("Ha ocurrido un error durante la activación. Contácte a su proveedor.")
-        '        End If
-        '    Else
-        '        My.Settings.Key = InputBox("No se ha activado el sistema. Escriba el código de activación:", "Activar", My.Settings.Key)
-        '        My.Settings.Save()
-        '        If ActivarVerificarLicencia(True) Then
-        '            If CargarLicencia() Then
-        '                MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
-        '            Else
-        '                MsgBox("Ha ocurrido un error durante la activación. Contácte a su proveedor.")
-        '            End If
-        '        Else
-        '            My.Settings.Key = InputBox("No se ha activado el sistema. Escriba el código de activación:", "Activar", My.Settings.Key)
-        '            My.Settings.Save()
-        '            If ActivarVerificarLicencia(True) Then
-        '                If CargarLicencia() Then
-        '                    MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
-        '                Else
-        '                    MsgBox("Ha ocurrido un error durante la activación. Contácte a su proveedor.")
-        '                End If
-        '            Else
-        '                MsgBox("No se ha activado el sistema.")
-        '            End If
-        '        End If
-        '    End If
-        'End If
-        'MsgBox("Hoy " + Now.ToString)
-        'MsgBox("Exipira " + My.Settings.ExpDa.ToString)
-        'MsgBox("diferencia " + DateDiff(DateInterval.Year, Now, New Date(2016, 12, 17)).ToString)
-        If DateDiff(DateInterval.Month, Now, My.Settings.ExpDa) >= 12 Then 'ha pasado 1 año
-            If My.Settings.EsAlquiler Then
-                PardetEmpresaActivo.Pardet_DatoStr1 = ""
-                PardetEmpresaActivo.Pardet_DatoStr2 = ""
-                PardetEmpresaActivo.Pardet_DatoStr3 = ""
-                PardetEmpresaActivo.Pardet_DatoInt1 = 0
-                PardetEmpresaActivo.Pardet_DatoBit1 = False
-                PardetEmpresaActivo.Guardar()
-                My.Settings.Key = InputBox("El periodo del alquiler del sistema ha concluido. Renueve sus licencias y escriba el código de activación:", "Activar", My.Settings.Key)
-                My.Settings.Save()
-                If ActivarVerificarLicencia(True) Then
-                    If CargarLicencia() Then
-                        MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
-                    Else
-                        MsgBox("Ha ocurrido un error durante la activación. Contácte a su proveedor.")
-                    End If
-                Else
-                    MsgBox("No se ha activado el sistema.")
-                End If
-            Else
-                'verificacion de licencia
-                If ActivarVerificarLicencia(False) Then
-                    If CargarLicencia() Then
-                        MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
-                    Else
-                        MsgBox("Ha ocurrido un error durante la activación. Contácte a su proveedor.")
-                    End If
-                Else
-                    MsgBox("No se ha activado el sistema.")
-                End If
-            End If
+  Sub CargarTipoLicencia(ByVal _Sistema As Sistema)
+    PardetEmpresaActivo = New WWTSParametroDet(_Sistema.OperadorDatos, Enumerados.EnumParametros.EmpresaActivo, 1)
+    'If My.Application.Deployment.IsFirstRun Then
+    '    My.Settings.Key = InputBox("Escriba el código de activación:", "Activar", My.Settings.Key)
+    '    My.Settings.Save()
+    '    If ActivarVerificarLicencia(True) Then
+    '        If CargarLicencia() Then
+    '            MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
+    '        Else
+    '            MsgBox("Ha ocurrido un error durante la activación. Contácte a su proveedor.")
+    '        End If
+    '    Else
+    '        My.Settings.Key = InputBox("No se ha activado el sistema. Escriba el código de activación:", "Activar", My.Settings.Key)
+    '        My.Settings.Save()
+    '        If ActivarVerificarLicencia(True) Then
+    '            If CargarLicencia() Then
+    '                MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
+    '            Else
+    '                MsgBox("Ha ocurrido un error durante la activación. Contácte a su proveedor.")
+    '            End If
+    '        Else
+    '            My.Settings.Key = InputBox("No se ha activado el sistema. Escriba el código de activación:", "Activar", My.Settings.Key)
+    '            My.Settings.Save()
+    '            If ActivarVerificarLicencia(True) Then
+    '                If CargarLicencia() Then
+    '                    MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
+    '                Else
+    '                    MsgBox("Ha ocurrido un error durante la activación. Contácte a su proveedor.")
+    '                End If
+    '            Else
+    '                MsgBox("No se ha activado el sistema.")
+    '            End If
+    '        End If
+    '    End If
+    'End If
+    'MsgBox("Hoy " + Now.ToString)
+    'MsgBox("Exipira " + My.Settings.ExpDa.ToString)
+    'MsgBox("diferencia " + DateDiff(DateInterval.Year, Now, New Date(2016, 12, 17)).ToString)
+    If DateDiff(DateInterval.Month, Now, My.Settings.ExpDa) >= 12 Then 'ha pasado 1 año
+      If My.Settings.EsAlquiler Then
+        PardetEmpresaActivo.Pardet_DatoStr1 = ""
+        PardetEmpresaActivo.Pardet_DatoStr2 = ""
+        PardetEmpresaActivo.Pardet_DatoStr3 = ""
+        PardetEmpresaActivo.Pardet_DatoInt1 = 0
+        PardetEmpresaActivo.Pardet_DatoBit1 = False
+        PardetEmpresaActivo.Guardar()
+        My.Settings.Key = InputBox("El periodo del alquiler del sistema ha concluido. Renueve sus licencias y escriba el código de activación:", "Activar", My.Settings.Key)
+        My.Settings.Save()
+        If ActivarVerificarLicencia(True) Then
+          If CargarLicencia() Then
+            MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
+          Else
+            MsgBox("Ha ocurrido un error durante la activación. Contácte a su proveedor.")
+          End If
+        Else
+          MsgBox("No se ha activado el sistema.")
         End If
-        'PardetEmpresaActivo = New WWTSParametroDet(_Sistema.OperadorDatos, Enumerados.EnumParametros.EmpresaActivo, 1)
+      Else
+        'verificacion de licencia
+        If ActivarVerificarLicencia(False) Then
+          If CargarLicencia() Then
+            MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
+          Else
+            MsgBox("Ha ocurrido un error durante la activación. Contácte a su proveedor.")
+          End If
+        Else
+          MsgBox("No se ha activado el sistema.")
+        End If
+      End If
+    End If
+    'PardetEmpresaActivo = New WWTSParametroDet(_Sistema.OperadorDatos, Enumerados.EnumParametros.EmpresaActivo, 1)
 
-        If PardetEmpresaActivo.Pardet_DatoStr1 = "N9IM2I" And PardetEmpresaActivo.Pardet_DatoStr2 = "F8PP6N" And
+    If PardetEmpresaActivo.Pardet_DatoStr1 = "N9IM2I" And PardetEmpresaActivo.Pardet_DatoStr2 = "F8PP6N" And
             PardetEmpresaActivo.Pardet_DatoStr3 = "N6AI0T" And PardetEmpresaActivo.Pardet_DatoInt1 = 10814 And
             PardetEmpresaActivo.Pardet_DatoBit1 = False Then
-            esInterprof = True
-            'MsgBox("es interprof")
-        ElseIf PardetEmpresaActivo.Pardet_DatoStr1 = "A9MP0P" And PardetEmpresaActivo.Pardet_DatoStr2 = "R0MG3R" And
+      esInterprof = True
+      'MsgBox("es interprof")
+    ElseIf PardetEmpresaActivo.Pardet_DatoStr1 = "A9MP0P" And PardetEmpresaActivo.Pardet_DatoStr2 = "R0MG3R" And
             PardetEmpresaActivo.Pardet_DatoStr3 = "A6MG3O" And PardetEmpresaActivo.Pardet_DatoInt1 = 151102 And
             PardetEmpresaActivo.Pardet_DatoBit1 = True Then
-            esProfesional = True
-            'MsgBox("es profesional")
-        ElseIf PardetEmpresaActivo.Pardet_DatoStr1 = "R8MV8E" And PardetEmpresaActivo.Pardet_DatoStr2 = "A9MI7S" And
+      esProfesional = True
+      'MsgBox("es profesional")
+    ElseIf PardetEmpresaActivo.Pardet_DatoStr1 = "R8MV8E" And PardetEmpresaActivo.Pardet_DatoStr2 = "A9MI7S" And
             PardetEmpresaActivo.Pardet_DatoStr3 = "R6AI0T" And PardetEmpresaActivo.Pardet_DatoInt1 = 10814 And
             PardetEmpresaActivo.Pardet_DatoBit1 = False Then
-            esEstandar = True
-            'MsgBox("es estandar")
-        ElseIf PardetEmpresaActivo.Pardet_DatoStr1 = "F8MM7B" And PardetEmpresaActivo.Pardet_DatoStr2 = "N9ME4A" And
+      esEstandar = True
+      'MsgBox("es estandar")
+    ElseIf PardetEmpresaActivo.Pardet_DatoStr1 = "F8MM7B" And PardetEmpresaActivo.Pardet_DatoStr2 = "N9ME4A" And
             PardetEmpresaActivo.Pardet_DatoStr3 = "F6MG3S" And PardetEmpresaActivo.Pardet_DatoInt1 = 151102 And
             PardetEmpresaActivo.Pardet_DatoBit1 = True Then
-            esBasica = True
-            'MsgBox("es basica")
+      esBasica = True
+      'MsgBox("es basica")
+    Else
+      My.Settings.Key = InputBox("Escriba el código de activación:", "Activar", My.Settings.Key)
+      My.Settings.Save()
+      If ActivarVerificarLicencia(True) Then
+        'MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
+        If CargarLicencia() Then
+          MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
         Else
-            My.Settings.Key = InputBox("Escriba el código de activación:", "Activar", My.Settings.Key)
-            My.Settings.Save()
-            If ActivarVerificarLicencia(True) Then
-                'MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
-                If CargarLicencia() Then
-                    MsgBox("Interprof IFA " + licencia.NoVersion + " " + licencia.TipoVersionDescripcion + " se ha activado con éxito.")
-                Else
-                    MsgBox("Ha ocurrido un error durante la activación. Contácte a su proveedor.")
-                End If
-            Else
-                MsgBox("No se ha activado el sistema.")
-            End If
+          MsgBox("Ha ocurrido un error durante la activación. Contácte a su proveedor.")
         End If
-    End Sub
+      Else
+        MsgBox("No se ha activado el sistema.")
+      End If
+    End If
+  End Sub
 
-    Function CargarModuloGeneral(ByVal _Sistema As Sistema) As List(Of GrupoOpcion)
-        'MsgBox("Cargar modulo general")
-        Dim _grupos As New List(Of GrupoOpcion)
-        If _Sistema.Usuario.Restricciones.porModulo(Enumerados.EnumModulos.General) Then
-            _grupos.Add(New GrupoOpcion(New ParametroDet(_Sistema.OperadorDatos, 4, Enumerados.EnumModulos.General), CargarOpcionesGeneral(_Sistema, False), CargarOpcionesGeneral(_Sistema, True), CargarOpcionesGeneralRep(_Sistema)))
+  Function CargarModuloGeneral(ByVal _Sistema As Sistema) As List(Of GrupoOpcion)
+    'MsgBox("Cargar modulo general")
+    Dim _grupos As New List(Of GrupoOpcion)
+    If _Sistema.Usuario.Restricciones.porModulo(Enumerados.EnumModulos.General) Then
+      _grupos.Add(New GrupoOpcion(New ParametroDet(_Sistema.OperadorDatos, 4, Enumerados.EnumModulos.General), CargarOpcionesGeneral(_Sistema, False), CargarOpcionesGeneral(_Sistema, True), CargarOpcionesGeneralRep(_Sistema)))
+    End If
+    CargarTipoLicencia(_Sistema)
+    Return _grupos
+  End Function
+
+  Function CargarOpcionesGeneral(ByVal _Sistema As Sistema, ByVal _SoloFavoritas As Boolean) As List(Of Opcion)
+    'MsgBox("cargar opciones general")
+    CargarTipoLicencia(_Sistema)
+    Dim _opciones As New List(Of Opcion)
+    If esBasica Or esEstandar Or esProfesional Or esInterprof Then
+      For Each _restriccion As Restriccion In _Sistema.Restricciones
+        If Not _SoloFavoritas Or (_SoloFavoritas AndAlso _restriccion.Restri_Favorito) Then
+          If _restriccion.Restri_Lectura Then
+            Select Case CType(_restriccion.Pardet_Opciones, Enumerados.EnumOpciones)
+              Case Enumerados.EnumOpciones.ListadoProveedores
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarProveedores))
+              Case Enumerados.EnumOpciones.ListadoEmpleados
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarEmpleados))
+              Case Enumerados.EnumOpciones.ListadoPeritos
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarPeritos))
+              Case Enumerados.EnumOpciones.Caracteristicas
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarCaracteristicas))
+              Case Enumerados.EnumOpciones.Secuencias
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarSecuencias))
+                '_opciones.Add(New Opcion(_restriccion, AddressOf CargarWCFService))
+            End Select
+          End If
         End If
-        CargarTipoLicencia(_Sistema)
-        Return _grupos
-    End Function
+      Next
+    End If
+    Return _opciones
+  End Function
 
-    Function CargarOpcionesGeneral(ByVal _Sistema As Sistema, ByVal _SoloFavoritas As Boolean) As List(Of Opcion)
-        'MsgBox("cargar opciones general")
-        CargarTipoLicencia(_Sistema)
-        Dim _opciones As New List(Of Opcion)
-        If esBasica Or esEstandar Or esProfesional Or esInterprof Then
-            For Each _restriccion As Restriccion In _Sistema.Restricciones
-                If Not _SoloFavoritas Or (_SoloFavoritas AndAlso _restriccion.Restri_Favorito) Then
-                    If _restriccion.Restri_Lectura Then
-                        Select Case CType(_restriccion.Pardet_Opciones, Enumerados.EnumOpciones)
-                            Case Enumerados.EnumOpciones.ListadoProveedores
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarProveedores))
-                            Case Enumerados.EnumOpciones.ListadoEmpleados
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarEmpleados))
-                            Case Enumerados.EnumOpciones.ListadoPeritos
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarPeritos))
-                            Case Enumerados.EnumOpciones.Caracteristicas
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarCaracteristicas))
-                            Case Enumerados.EnumOpciones.Secuencias
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarSecuencias))
-                                '_opciones.Add(New Opcion(_restriccion, AddressOf CargarWCFService))
-                        End Select
-                    End If
-                End If
-            Next
+  Function CargarOpcionesGeneralRep(ByVal _Sistema As Sistema) As List(Of Opcion)
+    CargarTipoLicencia(_Sistema)
+    Dim _opciones As New List(Of Opcion)
+    If esBasica Or esEstandar Or esProfesional Or esInterprof Then
+      For Each _restriccion As Restriccion In _Sistema.Restricciones
+        If _restriccion.Restri_Lectura Then
+          Select Case CType(_restriccion.Pardet_Opciones, Enumerados.EnumOpciones)
+            Case Enumerados.EnumOpciones.ReportesGeneral
+              Dim _reportes As Infoware.Reporteador.ReporteList = Infoware.Reporteador.ReporteList.ObtenerLista(_Sistema.OperadorDatos, "REPG")
+
+              For Each _reporte As Infoware.Reporteador.Reporte In _reportes
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarReporte, _reporte.NombreReporte, _reporte))
+              Next
+
+          End Select
         End If
-        Return _opciones
-    End Function
+      Next
+    End If
+    Return _opciones
+  End Function
 
-    Function CargarOpcionesGeneralRep(ByVal _Sistema As Sistema) As List(Of Opcion)
-        CargarTipoLicencia(_Sistema)
-        Dim _opciones As New List(Of Opcion)
-        If esBasica Or esEstandar Or esProfesional Or esInterprof Then
-            For Each _restriccion As Restriccion In _Sistema.Restricciones
-                If _restriccion.Restri_Lectura Then
-                    Select Case CType(_restriccion.Pardet_Opciones, Enumerados.EnumOpciones)
-                        Case Enumerados.EnumOpciones.ReportesGeneral
-                            Dim _reportes As Infoware.Reporteador.ReporteList = Infoware.Reporteador.ReporteList.ObtenerLista(_Sistema.OperadorDatos, "REPG")
+  Function CargarProveedores(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+    Dim f As New FrmListaProveedores(_Sistema, _Restriccion, False)
+    Return f
+  End Function
 
-                            For Each _reporte As Infoware.Reporteador.Reporte In _reportes
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarReporte, _reporte.NombreReporte, _reporte))
-                            Next
+  Function CargarEmpleados(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+    Dim f As New FrmListaEmpleados(_Sistema, _Restriccion, False)
+    Return f
+  End Function
 
-                    End Select
-                End If
-            Next
-        End If
-        Return _opciones
-    End Function
+  Function CargarPeritos(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+    Dim f As New FrmListaPeritos(_Sistema, _Restriccion, False)
+    Return f
+  End Function
 
-    Function CargarProveedores(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-        Dim f As New FrmListaProveedores(_Sistema, _Restriccion, False)
-        Return f
-    End Function
+  Function CargarCaracteristicas(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+    Dim f As New FrmListaParametroDets(_Sistema, _Restriccion, False)
+    f.Parame_Codigo = Enumerados.EnumParametros.CaracteristicaActivo
+    Return f
+  End Function
 
-    Function CargarEmpleados(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-        Dim f As New FrmListaEmpleados(_Sistema, _Restriccion, False)
-        Return f
-    End Function
+  Function CargarSecuencias(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+    Dim f As New FrmListaParametroDets(_Sistema, _Restriccion, False)
+    f.Parame_Codigo = Enumerados.EnumParametros.Secuencias
+    Return f
+  End Function
 
-    Function CargarPeritos(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-        Dim f As New FrmListaPeritos(_Sistema, _Restriccion, False)
-        Return f
-    End Function
-
-    Function CargarCaracteristicas(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-        Dim f As New FrmListaParametroDets(_Sistema, _Restriccion, False)
-        f.Parame_Codigo = Enumerados.EnumParametros.CaracteristicaActivo
-        Return f
-    End Function
-
-    Function CargarSecuencias(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-        Dim f As New FrmListaParametroDets(_Sistema, _Restriccion, False)
-        f.Parame_Codigo = Enumerados.EnumParametros.Secuencias
-        Return f
-    End Function
-
-    'Function CargarWCFService(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-    '  Dim f As New FrmWCFService(_Sistema, _Restriccion, False)
-    '  Return f
-    'End Function
+  'Function CargarWCFService(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+  '  Dim f As New FrmWCFService(_Sistema, _Restriccion, False)
+  '  Return f
+  'End Function
 
 #End Region
 
 #Region "ActivoFijo"
-    Function CargarModuloActivoFijo(ByVal _Sistema As Sistema) As List(Of GrupoOpcion)
-        CargarTipoLicencia(_Sistema)
-        Dim _grupos As New List(Of GrupoOpcion)
-        If esBasica Or esEstandar Or esProfesional Or esInterprof Then
-            If _Sistema.Usuario.Restricciones.porModulo(Enumerados.EnumModulos.ActivosFijos) Then
-                _grupos.Add(New GrupoOpcion(New ParametroDet(_Sistema.OperadorDatos, 4, Enumerados.EnumModulos.ActivosFijos), CargarOpcionesActivoFijo(_Sistema, False), CargarOpcionesActivoFijo(_Sistema, True), CargarOpcionesActivoFijoRep(_Sistema)))
-            End If
+
+  Function CargarModuloActivoFijo(ByVal _Sistema As Sistema) As List(Of GrupoOpcion)
+    CargarTipoLicencia(_Sistema)
+    Dim _grupos As New List(Of GrupoOpcion)
+    If esBasica Or esEstandar Or esProfesional Or esInterprof Then
+      If _Sistema.Usuario.Restricciones.porModulo(Enumerados.EnumModulos.ActivosFijos) Then
+        _grupos.Add(New GrupoOpcion(New ParametroDet(_Sistema.OperadorDatos, 4, Enumerados.EnumModulos.ActivosFijos), CargarOpcionesActivoFijo(_Sistema, False), CargarOpcionesActivoFijo(_Sistema, True), CargarOpcionesActivoFijoRep(_Sistema)))
+      End If
+    End If
+    Return _grupos
+  End Function
+
+  Function CargarOpcionesActivoFijo(ByVal _Sistema As Sistema, ByVal _SoloFavoritas As Boolean) As List(Of Opcion)
+    CargarTipoLicencia(_Sistema)
+    Dim _opciones As New List(Of Opcion)
+    If esBasica Or esEstandar Or esProfesional Or esInterprof Then
+      For Each _restriccion As Restriccion In _Sistema.Restricciones
+        If Not _SoloFavoritas Or (_SoloFavoritas AndAlso _restriccion.Restri_Favorito) Then
+          If _restriccion.Restri_Lectura Then
+            Select Case CType(_restriccion.Pardet_Opciones, Enumerados.EnumOpciones)
+              Case Enumerados.EnumOpciones.ListadoActivos
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarActivos))
+              Case Enumerados.EnumOpciones.CargarActivosLote
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarActivosLote))
+              Case Enumerados.EnumOpciones.ListadoPolizas
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarPolizas))
+              Case Enumerados.EnumOpciones.ListadoTransaccionActivos
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarTransacciones))
+              Case Enumerados.EnumOpciones.ListadoPendientesCustodio
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarPendientesAprobacion))
+              Case Enumerados.EnumOpciones.ReporteActaEntregaCustodio
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarReporteActaEntregaCustodio))
+              Case Enumerados.EnumOpciones.Depreciacion
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarDepreciacion))
+              Case Enumerados.EnumOpciones.ReporteResumenDepreciacion
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarReporteResumenDepreciacion))
+              Case Enumerados.EnumOpciones.GenerarAsientos
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarGenerarAsientos))
+              Case Enumerados.EnumOpciones.ListaBajas
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarListaBajaActivo))
+              Case Enumerados.EnumOpciones.DarBajaActivo
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarBajaActivo))
+              Case Enumerados.EnumOpciones.InventarioActivo
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarInventarioActivo))
+              Case Enumerados.EnumOpciones.ResumenDepreciacionPorTipo
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarResumenDepreciacionPorTipo))
+                '  Case Enumerados.EnumOpciones.Seleccion
+                '    _opciones.Add(New Opcion(_restriccion, AddressOf CargarSeleccion))
+                '  Case Enumerados.EnumOpciones.TestxArea
+                '    _opciones.Add(New Opcion(_restriccion, AddressOf CargarTestxArea))
+                '  Case Enumerados.EnumOpciones.Personal
+                '    _opciones.Add(New Opcion(_restriccion, AddressOf CargarPersonal))
+            End Select
+          End If
         End If
-        Return _grupos
-    End Function
+      Next
+    End If
+    Return _opciones
+  End Function
 
-    Function CargarOpcionesActivoFijo(ByVal _Sistema As Sistema, ByVal _SoloFavoritas As Boolean) As List(Of Opcion)
-        CargarTipoLicencia(_Sistema)
-        Dim _opciones As New List(Of Opcion)
-        If esBasica Or esEstandar Or esProfesional Or esInterprof Then
-            For Each _restriccion As Restriccion In _Sistema.Restricciones
-                If Not _SoloFavoritas Or (_SoloFavoritas AndAlso _restriccion.Restri_Favorito) Then
-                    If _restriccion.Restri_Lectura Then
-                        Select Case CType(_restriccion.Pardet_Opciones, Enumerados.EnumOpciones)
-                            Case Enumerados.EnumOpciones.ListadoActivos
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarActivos))
-                            Case Enumerados.EnumOpciones.CargarActivosLote
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarActivosLote))
-                            Case Enumerados.EnumOpciones.ListadoPolizas
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarPolizas))
-                            Case Enumerados.EnumOpciones.ListadoTransaccionActivos
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarTransacciones))
-                            Case Enumerados.EnumOpciones.ListadoPendientesCustodio
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarPendientesAprobacion))
-                            Case Enumerados.EnumOpciones.ReporteActaEntregaCustodio
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarReporteActaEntregaCustodio))
-                            Case Enumerados.EnumOpciones.Depreciacion
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarDepreciacion))
-                            Case Enumerados.EnumOpciones.ReporteResumenDepreciacion
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarReporteResumenDepreciacion))
-                            Case Enumerados.EnumOpciones.ListaBajas
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarListaBajaActivo))
-                            Case Enumerados.EnumOpciones.DarBajaActivo
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarBajaActivo))
-                            Case Enumerados.EnumOpciones.InventarioActivo
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarInventarioActivo))
-                            Case Enumerados.EnumOpciones.ResumenDepreciacionPorTipo
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarResumenDepreciacionPorTipo))
-                                '  Case Enumerados.EnumOpciones.Seleccion
-                                '    _opciones.Add(New Opcion(_restriccion, AddressOf CargarSeleccion))
-                                '  Case Enumerados.EnumOpciones.TestxArea
-                                '    _opciones.Add(New Opcion(_restriccion, AddressOf CargarTestxArea))
-                                '  Case Enumerados.EnumOpciones.Personal
-                                '    _opciones.Add(New Opcion(_restriccion, AddressOf CargarPersonal))
-                        End Select
-                    End If
-                End If
-            Next
+  Function CargarOpcionesActivoFijoRep(ByVal _Sistema As Sistema) As List(Of Opcion)
+    CargarTipoLicencia(_Sistema)
+    Dim _opciones As New List(Of Opcion)
+    If esBasica Or esEstandar Or esProfesional Or esInterprof Then
+      For Each _restriccion As Restriccion In _Sistema.Restricciones
+        If _restriccion.Restri_Lectura Then
+          Select Case CType(_restriccion.Pardet_Opciones, Enumerados.EnumOpciones)
+            Case Enumerados.EnumOpciones.ReportesActivosFijos
+              Dim _reportes As Infoware.Reporteador.ReporteList = Infoware.Reporteador.ReporteList.ObtenerLista(_Sistema.OperadorDatos, "REPR")
+
+              For Each _reporte As Infoware.Reporteador.Reporte In _reportes
+                _opciones.Add(New Opcion(_restriccion, AddressOf CargarReporte, _reporte.NombreReporte, _reporte))
+              Next
+
+          End Select
         End If
-        Return _opciones
-    End Function
+      Next
+    End If
+    Return _opciones
+  End Function
 
-    Function CargarOpcionesActivoFijoRep(ByVal _Sistema As Sistema) As List(Of Opcion)
-        CargarTipoLicencia(_Sistema)
-        Dim _opciones As New List(Of Opcion)
-        If esBasica Or esEstandar Or esProfesional Or esInterprof Then
-            For Each _restriccion As Restriccion In _Sistema.Restricciones
-                If _restriccion.Restri_Lectura Then
-                    Select Case CType(_restriccion.Pardet_Opciones, Enumerados.EnumOpciones)
-                        Case Enumerados.EnumOpciones.ReportesActivosFijos
-                            Dim _reportes As Infoware.Reporteador.ReporteList = Infoware.Reporteador.ReporteList.ObtenerLista(_Sistema.OperadorDatos, "REPR")
+  Function CargarActivos(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+    Dim f As New FrmMantenimientoActivo(_Sistema, _Restriccion)
+    f.Activo = New Activo(_Sistema.OperadorDatos, True)
+    Return f
+  End Function
 
-                            For Each _reporte As Infoware.Reporteador.Reporte In _reportes
-                                _opciones.Add(New Opcion(_restriccion, AddressOf CargarReporte, _reporte.NombreReporte, _reporte))
-                            Next
+  Function CargarActivosLote(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+    ''If 
+    Dim f As New FrmCargaActivosLote(_Sistema, _Restriccion)
+    Return f
+  End Function
 
-                    End Select
-                End If
-            Next
-        End If
-        Return _opciones
-    End Function
+  Function CargarPolizas(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+    Dim f As New FrmListaPolizas(_Sistema, _Restriccion, False)
+    Return f
+  End Function
 
-    Function CargarActivos(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-        Dim f As New FrmMantenimientoActivo(_Sistema, _Restriccion)
-        f.Activo = New Activo(_Sistema.OperadorDatos, True)
-        Return f
-    End Function
+  Function CargarTransacciones(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+    Dim f As New FrmListaTransaccionActivos(_Sistema, _Restriccion, False)
+    Return f
+  End Function
 
-    Function CargarActivosLote(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-        ''If 
-        Dim f As New FrmCargaActivosLote(_Sistema, _Restriccion)
-        Return f
-    End Function
+  Function CargarPendientesAprobacion(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+    Dim f As New FrmListaActivoCustodioAprobar(_Sistema, _Restriccion, False)
+    Return f
+  End Function
 
-    Function CargarPolizas(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-        Dim f As New FrmListaPolizas(_Sistema, _Restriccion, False)
-        Return f
-    End Function
+  Function CargarReporteActaEntregaCustodio(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+    Dim f As New FrmReporteActaEntregaCustodio(_Sistema, _Restriccion, False)
+    Return f
+  End Function
 
-    Function CargarTransacciones(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-        Dim f As New FrmListaTransaccionActivos(_Sistema, _Restriccion, False)
-        Return f
-    End Function
+  Function CargarDepreciacion(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+    CargarTipoLicencia(_Sistema)
+    If esProfesional Or esInterprof Then
+      Dim f As New FrmDepreciacion(_Sistema, _Restriccion)
+      Return f
+    Else
+      MsgBox("Esta opción no está disponible en su versión del sistema", MsgBoxStyle.Information, "Información")
+      Return Nothing
+    End If
+  End Function
 
-    Function CargarPendientesAprobacion(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-        Dim f As New FrmListaActivoCustodioAprobar(_Sistema, _Restriccion, False)
-        Return f
-    End Function
+  Function CargarGenerarAsientos(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+    CargarTipoLicencia(_Sistema)
+    If esProfesional Or esInterprof Then
+      Dim f As New FrmGenerarAsientos(_Sistema, _Restriccion)
+      Return f
+    Else
+      MsgBox("Esta opción no está disponible en su versión del sistema", MsgBoxStyle.Information, "Información")
+      Return Nothing
+    End If
+  End Function
 
-    Function CargarReporteActaEntregaCustodio(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-        Dim f As New FrmReporteActaEntregaCustodio(_Sistema, _Restriccion, False)
-        Return f
-    End Function
 
-    Function CargarDepreciacion(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-        CargarTipoLicencia(_Sistema)
-        If esProfesional Or esInterprof Then
-            Dim f As New FrmDepreciacion(_Sistema, _Restriccion)
-            Return f
-        Else
-            MsgBox("Esta opción no está disponible en su versión del sistema", MsgBoxStyle.Information, "Información")
-            Return Nothing
-        End If
-    End Function
+  Function CargarReporteResumenDepreciacion(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+    CargarTipoLicencia(_Sistema)
+    If esProfesional Or esInterprof Then
+      Dim f As New FrmReporteResumenDepreciacion(_Sistema, _Restriccion)
+      Return f
+    Else
+      MsgBox("Esta opción no está disponible en su versión del sistema", MsgBoxStyle.Information, "Información")
+      Return Nothing
+    End If
+  End Function
 
-    Function CargarReporteResumenDepreciacion(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-        CargarTipoLicencia(_Sistema)
-        If esProfesional Or esInterprof Then
-            Dim f As New FrmReporteResumenDepreciacion(_Sistema, _Restriccion)
-            Return f
-        Else
-            MsgBox("Esta opción no está disponible en su versión del sistema", MsgBoxStyle.Information, "Información")
-            Return Nothing
-        End If
-    End Function
-
-    Function CargarListaBajaActivo(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+  Function CargarListaBajaActivo(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
         Dim f As New FrmListaBajasActivo(_Sistema, _Restriccion, False)
         Return f
     End Function

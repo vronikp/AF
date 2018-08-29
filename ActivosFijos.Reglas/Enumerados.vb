@@ -32,6 +32,7 @@ Public Class Enumerados
     InventarioActivo = 214
     ListaBajas = 215
     ResumenDepreciacionPorTipo = 216
+    GenerarAsientos = 217
 
     ReportesActivosFijos = 299
 

@@ -22,5 +22,25 @@ namespace ActivosFijos.Integration
             }
             return false;
         }
+
+        public static bool GenerarCabecera(EnumTipoIntegracion tipoIntegracion, DataTable ds, out string Result)
+        {
+            Result = null;
+            if (tipoIntegracion == EnumTipoIntegracion.DMiro)
+            {
+                return DMiro.Asiento.Generar(ds, out Result);
+            }
+            return false;
+        }
+
+        public static bool GenerarDetalle(EnumTipoIntegracion tipoIntegracion, DataTable ds, out string Result)
+        {
+            Result = null;
+            if (tipoIntegracion == EnumTipoIntegracion.DMiro)
+            {
+                return DMiro.Asiento.Generar(ds, out Result);
+            }
+            return false;
+        }
     }
 }
