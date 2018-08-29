@@ -54,9 +54,9 @@ Public Class FrmMantenimientoActivo
     End If
 
     Me.CtlActivo1.Activo = mActivo
-    If mActivo.EsNuevo Then
-      Me.CtlActivo1.CtlBuscaCustodio.Empleado = mCustodioActual
-    End If
+    'If mActivo.EsNuevo Then
+    'Me.CtlActivo1.CtlBuscaCustodio.Empleado = mCustodioActual
+    'End If
   End Sub
 
 #Region "Cerrar y Cancelar"

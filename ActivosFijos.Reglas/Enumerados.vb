@@ -27,11 +27,11 @@ Public Class Enumerados
     ReporteActaEntregaCustodio = 209
     Depreciacion = 210
     ReporteResumenDepreciacion = 211
-        DarBajaActivo = 212
-        DarBajaActivoReversar = 213
-        InventarioActivo = 214
-        ListaBajas = 215
-        ResumenDepreciacionPorTipo = 216
+    DarBajaActivo = 212
+    DarBajaActivoReversar = 213
+    InventarioActivo = 214
+    ListaBajas = 215
+    ResumenDepreciacionPorTipo = 216
 
     ReportesActivosFijos = 299
 
@@ -42,8 +42,8 @@ Public Class Enumerados
     Auditoria = 912
 
     Modulos = 9005
-        Opciones = 9010
-        Parametros = 9015
+    Opciones = 9010
+    Parametros = 9015
   End Enum
 #End Region
 
@@ -172,6 +172,7 @@ Public Class Enumerados
 
     EmpresaActivo = 10001
     Secuencias = 10002
+    ParametroDepreciacion = 10003
     GrupoActivo = 10009
     TipoActivo = 10019
     ClaseActivo = 10029
