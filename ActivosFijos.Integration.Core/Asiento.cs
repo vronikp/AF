@@ -14,29 +14,30 @@ namespace ActivosFijos.Integration
 
     public class Asiento
     {
-        public static bool Generar(EnumTipoIntegracion tipoIntegracion, DataTable ds, out string Result)
+        public static bool Generar(string tipoIntegracion, DataTable ds, out string Result)
         {
             Result = null;
-            if (tipoIntegracion == EnumTipoIntegracion.DMiro) {
+            if (tipoIntegracion == EnumTipoIntegracion.DMiro.ToString()) {
                 return DMiro.Asiento.Generar(ds, out Result);
             }
             return false;
         }
 
-        public static bool GenerarCabecera(EnumTipoIntegracion tipoIntegracion, DataTable ds, out string Result)
+        public static bool GenerarCabecera(string tipoIntegracion, DataTable ds,  out string Result, out string NumeroAsiento)
         {
             Result = null;
-            if (tipoIntegracion == EnumTipoIntegracion.DMiro)
+            NumeroAsiento = null;
+            if (tipoIntegracion == EnumTipoIntegracion.DMiro.ToString())
             {
-                return DMiro.Asiento.Generar(ds, out Result);
+                return DMiro.Asiento.GenerarCabecera(ds, out Result, out NumeroAsiento);
             }
             return false;
         }
 
-        public static bool GenerarDetalle(EnumTipoIntegracion tipoIntegracion, DataTable ds, out string Result)
+        public static bool GenerarDetalle(string tipoIntegracion, DataTable ds, out string Result)
         {
             Result = null;
-            if (tipoIntegracion == EnumTipoIntegracion.DMiro)
+            if (tipoIntegracion == EnumTipoIntegracion.DMiro.ToString())
             {
                 return DMiro.Asiento.Generar(ds, out Result);
             }

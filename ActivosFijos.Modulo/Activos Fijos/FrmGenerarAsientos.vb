@@ -41,43 +41,11 @@ Public Class FrmGenerarAsientos
 #End Region
 
 
-  'Private Sub btnimprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnimprimir.Click
-  '  Dim _depreciacion As Depreciacion
-  '  Dim mDeprec_Codigo As String
-  '  If Me.cbofrecuenciadepreciacion.ParametroDet.Pardet_Secuencia = Enumerados.enumFrecuenciaDepreciacion.Mensual Then
-  '    mDeprec_Codigo = Me.dtperiodo.Value.ToString("yyyyMM")
-  '  Else
-  '    mDeprec_Codigo = Me.dtperiodo.Value.ToString("yyyyMMdd")
-  '  End If
-
-  '  Try
-  '    _depreciacion = New Depreciacion(Sistema.OperadorDatos, Me.cbofrecuenciadepreciacion.ParametroDet.Parame_Codigo, Me.cbofrecuenciadepreciacion.ParametroDet.Pardet_Secuencia, Me.cbotipodepreciacion.ParametroDet.Parame_Codigo, Me.cbotipodepreciacion.ParametroDet.Pardet_Secuencia, mDeprec_Codigo)
-  '  Catch ex As Exception
-  '    Exit Sub
-  '  End Try
-
-  '  Dim f As New FrmReporteDepreciacion(Sistema, Restriccion)
-  '  f.Depreciacion = _depreciacion
-  '  f.ShowDialog()
-  '  Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Impresion,
-  '                            "Se generó el reporte de depreciación " + mDeprec_Codigo)
-  'End Sub
-
-  'Private Sub btnexportar_Click(sender As System.Object, e As System.EventArgs) Handles btnexportar.Click
-  '  Dim f As New Infoware.Reporteador.FrmLista(Sistema, Enumerados.EnumOpciones.Depreciacion)
-  '  f.Reporte = New Infoware.Reporteador.Reporte(Sistema.OperadorDatos, "Proc_Depreciacion_Exportar")
-  '  f.Valores = New Object() {Me.cbofrecuenciadepreciacion.ParametroDet.Pardet_Secuencia, IIf(Me.cbofrecuenciadepreciacion.ParametroDet.Pardet_Secuencia = Enumerados.enumFrecuenciaDepreciacion.Mensual, Me.dtperiodo.Value.ToString("yyyyMM"), Me.dtperiodo.Value.ToString("yyyyMMdd")), Me.dtperiodo.Value.Date.AddDays(-Me.dtperiodo.Value.Date.Day + 1).AddMonths(1).AddDays(-1)}
-  '  'f.objAbrirElemento = New Infoware.Reporteador.FrmLista.AbrirElemento(AddressOf AbriadminrElemento)
-  '  f.ShowDialog()
-  '  Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Impresion,
-  '                            "Se exportó la depreciación.")
-  'End Sub
-
   Private Sub btnmostrar_Click(sender As System.Object, e As System.EventArgs) Handles btnmostrar.Click
     Try
       Me.dgdepreciacion.Columns.Clear()
       Me.dgdepreciacion.AutoGenerateColumns = True
-      Me.bsdepreciacion.DataSource = obtenerAsientoDetalle(0, "mostrar")
+      Me.bsdepreciacion.DataSource = obtenerAsiento(0, "mostrar")
       Me.dgdepreciacion.DataSource = bsdepreciacion
 
       If Me.dgdepreciacion.Rows.Count() = 0 Then
@@ -101,7 +69,7 @@ Public Class FrmGenerarAsientos
   Private Sub btnexportar_Click(sender As Object, e As EventArgs) Handles btnexportar.Click
     Me.dgdepreciacion.Columns.Clear()
     Me.dgdepreciacion.AutoGenerateColumns = True
-    Me.bsdepreciacion.DataSource = obtenerAsientoDetalle(0, "mostrar")
+    Me.bsdepreciacion.DataSource = obtenerAsiento(0, "mostrar")
     Me.dgdepreciacion.DataSource = bsdepreciacion
 
     If Me.dgdepreciacion.Rows.Count() = 0 Then
@@ -132,7 +100,7 @@ Public Class FrmGenerarAsientos
 
   Private Sub btngenerartxt_Click(sender As System.Object, e As System.EventArgs) Handles btngenerartxt.Click
     Dim ds As New DataTable
-    ds = obtenerAsientoDetalle(0, "exportarTxt")
+    ds = obtenerAsiento(0, "exportarTxt")
 
     If Not ds Is Nothing AndAlso ds.Rows.Count > 0 Then
       Dim _archivotxt As String = System.IO.Path.Combine(My.Computer.FileSystem.SpecialDirectories.MyDocuments,
@@ -165,32 +133,6 @@ Public Class FrmGenerarAsientos
     End If
   End Sub
 
-  'Private Sub btngenerarasiento_Click(sender As Object, e As EventArgs) Handles btngenerarasiento.Click
-  '  Dim _coddeprec As String = IIf(Me.cbofrecuenciadepreciacion.ParametroDet.Pardet_Secuencia = Enumerados.enumFrecuenciaDepreciacion.Mensual, Me.dtperiodo.Value.ToString("yyyyMM"), Me.dtperiodo.Value.ToString("yyyyMMdd"))
-
-  '  Dim ds As New DataTable
-  '  Dim bReturn As Boolean = False
-  '  With Sistema.OperadorDatos
-  '    .AgregarParametro("@accion", Nothing)
-  '    .AgregarParametro("@cbo_Frecuencia_Depreciacion", Me.cbofrecuenciadepreciacion.ParametroDet.Pardet_Secuencia)
-  '    .AgregarParametro("@cba_Codigo_Depreciacion", _coddeprec)
-  '    .AgregarParametro("@Fecha_ultimo_dia_mes", Me.dtperiodo.Value.Date.AddDays(-Me.dtperiodo.Value.Date.Day + 1).AddMonths(1).AddDays(-1))
-  '    .Procedimiento = "Proc_Depreciacion_Asiento"
-  '    bReturn = .Ejecutar(ds)
-  '    .LimpiarParametros()
-
-  '  End With
-  '  If bReturn AndAlso Not ds Is Nothing AndAlso ds.Rows.Count > 0 Then
-  '    Dim result As String = Nothing
-  '    If Asiento.Generar(EnumTipoIntegracion.DMiro, ds, result) Then
-  '      Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Confidencial,
-  '                                "Se generó el asiento de la depreciación " + _coddeprec)
-  '    Else
-  '      MsgBox(result, "Error")
-  '    End If
-  '  End If
-  'End Sub
-
   Private Sub obtenerParametros()
     If mParametroDepreciacion.Pardet_DatoStr1 = "MENSUAL" Then
       mCodigoPeriodo = Me.dtperiodo.Value.ToString("yyyyMM")
@@ -207,7 +149,7 @@ Public Class FrmGenerarAsientos
     End If
   End Sub
 
-  Private Function obtenerAsientoDetalle(_numeroAsiento As Integer, _accion As String) As DataTable
+  Private Function obtenerAsiento(_numeroAsiento As String, _accion As String) As DataTable
     obtenerParametros()
     Dim ds As New DataTable
     Dim bReturn As Boolean = False
@@ -217,7 +159,7 @@ Public Class FrmGenerarAsientos
       .AgregarParametro("@codigoPeriodo", mCodigoPeriodo)
       .AgregarParametro("@tipoAsiento", mTipoAsiento)
       .AgregarParametro("@numeroAsiento", _numeroAsiento)
-      .Procedimiento = "Proc_Depreciacion_Asiento"
+      .Procedimiento = "proc_GenerarAsientos"
       bReturn = .Ejecutar(ds)
       .LimpiarParametros()
     End With
@@ -232,7 +174,7 @@ Public Class FrmGenerarAsientos
   Private Sub btnimprimir_Click(sender As Object, e As EventArgs) Handles btnimprimir.Click
     Me.dgdepreciacion.Columns.Clear()
     Me.dgdepreciacion.AutoGenerateColumns = True
-    Me.bsdepreciacion.DataSource = obtenerAsientoDetalle(0, "mostrar")
+    Me.bsdepreciacion.DataSource = obtenerAsiento(0, "mostrar")
     Me.dgdepreciacion.DataSource = bsdepreciacion
 
     If Me.dgdepreciacion.Rows.Count() = 0 Then
@@ -251,6 +193,32 @@ Public Class FrmGenerarAsientos
       previo.Text = Me.Text
       previo.WindowState = FormWindowState.Maximized
       previo.ShowDialog()
+    End If
+  End Sub
+
+  Private Sub btngenerarasiento_Click(sender As Object, e As EventArgs) Handles btngenerarasiento.Click
+    Dim dsc As New DataTable
+    Dim dsd As New DataTable
+    Dim resultCode As Integer = 999
+    Dim result As String = Nothing
+    Dim numAsiento As String = Nothing
+
+    dsc = obtenerAsiento(0, "cabecera")
+
+    If Not dsc Is Nothing AndAlso dsc.Rows.Count > 0 Then
+      If Asiento.GenerarCabecera(mParametroDepreciacion.Pardet_DatoStr3, dsc, result, numAsiento) Then
+        Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Confidencial,
+                                    "Se generó la cabecera del asiento de la " + cboTipoAsiento.ValueMember.ToString + " " + mCodigoPeriodo)
+        dsd = obtenerAsiento(numAsiento, "asiento")
+        If Asiento.GenerarDetalle(mParametroDepreciacion.Pardet_DatoStr3, dsd, result) Then
+          Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Confidencial,
+                                    "Se generó el asiento " + numAsiento + " de la " + cboTipoAsiento.ValueMember.ToString + " " + mCodigoPeriodo)
+        Else
+          MsgBox(result, "Error")
+        End If
+      Else
+        MsgBox(result, "Error")
+      End If
     End If
   End Sub
 End Class

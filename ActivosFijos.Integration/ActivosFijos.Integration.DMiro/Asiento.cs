@@ -36,7 +36,7 @@ namespace ActivosFijos.Integration.DMiro
                 string asiento = "";
                 if (!asiento_app_anterior.Equals(asiento_app))
                 {
-                    var cabresult = Cabecera(ws, anio, asiento_app, glosa, sistema);
+                    var cabresult = Cabecera(ws, asiento_app, anio, glosa, sistema);
                     if (cabresult.ErrorCode != "0")
                     {
                         Result = Result + string.Format("Error creando cabecera {0}. {1}. ", asiento_app, cabresult.Error);
@@ -52,12 +52,12 @@ namespace ActivosFijos.Integration.DMiro
                     );
                 }
 
-                var detresult = Detalle(ws, asiento, sucursal, ctactble, ctocostos, esDebito, glosadet, monto);
+                /*var detresult = Detalle(ws, asiento, sucursal, ctactble, ctocostos, esDebito, glosadet, monto);
                 if (detresult.ErrorCode != "0")
                 {
                     Result = Result + string.Format("Error creando detalle linea {0} de cabecera {1}. {2}. ", linea, asiento_app, detresult.Error);
                     return false;
-                }
+                }*/
             }
 
             bool TodoOk = true;
@@ -89,6 +89,85 @@ namespace ActivosFijos.Integration.DMiro
                     {
                         Result = Result + string.Format("Error anulando asiento {0}. {1}. ", asiento.pn_asiento, anularesult.Error);
                     }
+                }
+            }
+
+            return true;
+        }
+
+        public static bool GenerarCabecera(DataTable ds, out string Result, out string NumeroAsiento)
+        {
+            Result = null;
+            NumeroAsiento = null;
+            var ws = new WSDMiro.TopazMiddleWareWSClient();
+            
+            var linea = 0;
+            string asiento_app = "";
+            int anio =0;
+            string glosa="";
+            string sistema="";
+
+            foreach (DataRow row in ds.Rows)
+            {
+                linea++;
+                asiento_app = row[0].ToString();
+                int.TryParse(row[1].ToString(), out anio);
+                glosa = row[2].ToString();
+                sistema = row[3].ToString();
+            }
+            var cabresult = Cabecera(ws, asiento_app, anio, glosa, sistema);
+            if (cabresult.ErrorCode != "0")
+            {
+                Result = Result + string.Format("Error creando cabecera {0}. {1}. ", asiento_app, cabresult.Error);
+                return false;
+            }
+            NumeroAsiento = cabresult.Sw_DmInsertaAsientos.Sw_DmInsertaAsiento.Pn_asiento;
+            return true;
+        }
+
+        public static bool GenerarDetalle(DataTable ds, out string Result)
+        {
+            Result = null;
+            var ws = new WSDMiro.TopazMiddleWareWSClient();
+
+            int asiento = 0;
+            var linea = 0;
+            
+            foreach (DataRow row in ds.Rows)
+            {
+                linea++;
+                int.TryParse(row[0].ToString(), out asiento);
+                int.TryParse(row[1].ToString(), out int sucursal);
+                int.TryParse(row[2].ToString(), out int ctactble);
+                int.TryParse(row[3].ToString(), out int ctocostos);
+                string debitoCredito = row[4].ToString();
+                string glosadet = row[5].ToString();
+                decimal.TryParse(row[6].ToString(), out decimal monto);
+                
+                
+                var detresult = Detalle(ws, asiento, sucursal, ctactble, ctocostos, debitoCredito, glosadet, monto);
+                if (detresult.ErrorCode != "0")
+                {
+                    Result = Result + string.Format("Error creando detalle linea {0} de asiento {1}. {2}. ", linea, asiento.ToString(), detresult.Error);
+                    return false;
+                }
+            }
+
+            bool TodoOk = true;
+            
+            var cierreresult = Cierre(ws, asiento.ToString());
+            if (cierreresult.ErrorCode != "0")
+            {
+                Result = Result + string.Format("Error cerrando cabecera {0}. {1}. ", asiento.ToString(), cierreresult.Error);
+                TodoOk = false;
+            }            
+
+            if (!TodoOk)
+            {
+                var anularesult = Anula(ws, asiento.ToString());
+                if (anularesult.ErrorCode != "0")
+                {
+                    Result = Result + string.Format("Error anulando asiento {0}. {1}. ", asiento.ToString(), anularesult.Error);
                 }
             }
 
@@ -184,7 +263,7 @@ namespace ActivosFijos.Integration.DMiro
         }
 
         private static DetalleResponse.TopazMiddleWareResponse Detalle(TopazMiddleWareWSClient ws, 
-            string asiento, string sucursal, string ctactble, string ctocostos, Boolean esDebito,
+            int asiento, int sucursal, int ctactble, int ctocostos, string debitoCredito,
             string glosa, decimal monto)
         {
             var transaction = new DetalleRequest.XmlJBankRequest()
@@ -203,7 +282,7 @@ namespace ActivosFijos.Integration.DMiro
                 new DetalleRequest.XmlJBankField()
                 {
                     FieldName = "pn_asiento",
-                    FieldValue = asiento
+                    FieldValue = asiento.ToString()
                 }
             );
 
@@ -211,7 +290,7 @@ namespace ActivosFijos.Integration.DMiro
                  new DetalleRequest.XmlJBankField()
                  {
                      FieldName = "pn_sucursal",
-                     FieldValue = sucursal
+                     FieldValue = sucursal.ToString()
                  }
              );
 
@@ -219,7 +298,7 @@ namespace ActivosFijos.Integration.DMiro
                  new DetalleRequest.XmlJBankField()
                  {
                      FieldName = "pn_cta_contable",
-                     FieldValue = ctactble
+                     FieldValue = ctactble.ToString()
                  }
              );
 
@@ -227,7 +306,7 @@ namespace ActivosFijos.Integration.DMiro
                  new DetalleRequest.XmlJBankField()
                  {
                      FieldName = "pn_ctro_costo",
-                     FieldValue = ctocostos
+                     FieldValue = ctocostos.ToString()
                  }
              );
 
@@ -235,7 +314,8 @@ namespace ActivosFijos.Integration.DMiro
                  new DetalleRequest.XmlJBankField()
                  {
                      FieldName = "pv_debito_credito",
-                     FieldValue = esDebito ? "D" : "C"
+                     //FieldValue = esDebito ? "D" : "C"
+                     FieldValue = debitoCredito
                  }
              );
 
@@ -265,7 +345,7 @@ namespace ActivosFijos.Integration.DMiro
             return detalleResponse.executeResult.Deserialize<DetalleResponse.TopazMiddleWareResponse>();
         }
 
-        private static CabeceraResponse.TopazMiddleWareResponse Cabecera(WSDMiro.TopazMiddleWareWSClient ws, int anio, string asiento_app, string glosa, string sistema)
+        private static CabeceraResponse.TopazMiddleWareResponse Cabecera(WSDMiro.TopazMiddleWareWSClient ws, string asiento_app, int anio, string glosa, string sistema)
         {
             var transaccion = new CabeceraRequest.XmlJBankRequest()
             {
