@@ -31,7 +31,7 @@ Public Class FrmGenerarAsientos
 
     mParametroDepreciacion = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.ParametroDepreciacion, 1)
 
-    If mParametroDepreciacion.Pardet_DatoStr1 = "MENSUAL" Then
+    If mParametroDepreciacion.Pardet_DatoStr1.ToUpper() = "MENSUAL" Then
       Me.dtperiodo.CustomFormat = "yyyy/MM"
     Else
       Me.dtperiodo.CustomFormat = "yyyy/MM/dd"
@@ -134,7 +134,7 @@ Public Class FrmGenerarAsientos
   End Sub
 
   Private Sub obtenerParametros()
-    If mParametroDepreciacion.Pardet_DatoStr1 = "MENSUAL" Then
+    If mParametroDepreciacion.Pardet_DatoStr1.ToUpper() = "MENSUAL" Then
       mCodigoPeriodo = Me.dtperiodo.Value.ToString("yyyyMM")
     Else
       mCodigoPeriodo = Me.dtperiodo.Value.ToString("yyyyMMdd")
@@ -214,10 +214,10 @@ Public Class FrmGenerarAsientos
           Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Confidencial,
                                     "Se generó el asiento " + numAsiento + " de la " + cboTipoAsiento.ValueMember.ToString + " " + mCodigoPeriodo)
         Else
-          MsgBox(result, "Error")
+          MsgBox(result, MsgBoxStyle.Exclamation, "Error")
         End If
       Else
-        MsgBox(result, "Error")
+        MsgBox(result, MsgBoxStyle.Exclamation, "Error")
       End If
     End If
   End Sub

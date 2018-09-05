@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsActaBaja" targetNamespace="http://tempuri.org/dsActaBaja.xsd" xmlns:mstns="http://tempuri.org/dsActaBaja.xsd" xmlns="http://tempuri.org/dsActaBaja.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="AF_DMIROConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AF_DMIROConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ActivosFijos.Modulo.My.MySettings.GlobalReference.Default.AF_DMIROConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_TransaccionBajaTableAdapter" GeneratorDataComponentClassName="vw_TransaccionBajaTableAdapter" Name="vw_TransaccionBaja" UserDataComponentName="vw_TransaccionBajaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AF_DMIROConnectionString (MySettings)" DbObjectName="AF_DMIRO.dbo.vw_TransaccionBaja" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TraBaj_Codigo, Usuari_Codigo, TraBaj_Fecha, TraBaj_Observacion, TipoBaja, Activo_CodigoBarra, Activo_Clase, Activo_Descripcion, Activo_Marca, Activo_Modelo, Activo_Serie, CustodioActual, UbicacionActual, Cabecera, Pie FROM dbo.vw_TransaccionBaja</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TraBaj_Codigo" DataSetColumn="TraBaj_Codigo" />
+              <Mapping SourceColumn="Usuari_Codigo" DataSetColumn="Usuari_Codigo" />
+              <Mapping SourceColumn="TraBaj_Fecha" DataSetColumn="TraBaj_Fecha" />
+              <Mapping SourceColumn="TraBaj_Observacion" DataSetColumn="TraBaj_Observacion" />
+              <Mapping SourceColumn="TipoBaja" DataSetColumn="TipoBaja" />
+              <Mapping SourceColumn="Activo_CodigoBarra" DataSetColumn="Activo_CodigoBarra" />
+              <Mapping SourceColumn="Activo_Clase" DataSetColumn="Activo_Clase" />
+              <Mapping SourceColumn="Activo_Descripcion" DataSetColumn="Activo_Descripcion" />
+              <Mapping SourceColumn="Activo_Marca" DataSetColumn="Activo_Marca" />
+              <Mapping SourceColumn="Activo_Modelo" DataSetColumn="Activo_Modelo" />
+              <Mapping SourceColumn="Activo_Serie" DataSetColumn="Activo_Serie" />
+              <Mapping SourceColumn="CustodioActual" DataSetColumn="CustodioActual" />
+              <Mapping SourceColumn="UbicacionActual" DataSetColumn="UbicacionActual" />
+              <Mapping SourceColumn="Cabecera" DataSetColumn="Cabecera" />
+              <Mapping SourceColumn="Pie" DataSetColumn="Pie" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsActaBaja" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsActaBaja" msprop:Generator_UserDSName="dsActaBaja">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vw_TransaccionBaja" msprop:Generator_TableClassName="vw_TransaccionBajaDataTable" msprop:Generator_TableVarName="tablevw_TransaccionBaja" msprop:Generator_TablePropName="vw_TransaccionBaja" msprop:Generator_RowDeletingName="vw_TransaccionBajaRowDeleting" msprop:Generator_RowChangingName="vw_TransaccionBajaRowChanging" msprop:Generator_RowEvHandlerName="vw_TransaccionBajaRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_TransaccionBajaRowDeleted" msprop:Generator_UserTableName="vw_TransaccionBaja" msprop:Generator_RowChangedName="vw_TransaccionBajaRowChanged" msprop:Generator_RowEvArgName="vw_TransaccionBajaRowChangeEvent" msprop:Generator_RowClassName="vw_TransaccionBajaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TraBaj_Codigo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTraBaj_Codigo" msprop:Generator_ColumnPropNameInRow="TraBaj_Codigo" msprop:Generator_ColumnPropNameInTable="TraBaj_CodigoColumn" msprop:Generator_UserColumnName="TraBaj_Codigo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Usuari_Codigo" msprop:Generator_ColumnVarNameInTable="columnUsuari_Codigo" msprop:Generator_ColumnPropNameInRow="Usuari_Codigo" msprop:Generator_ColumnPropNameInTable="Usuari_CodigoColumn" msprop:Generator_UserColumnName="Usuari_Codigo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="18" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TraBaj_Fecha" msprop:Generator_ColumnVarNameInTable="columnTraBaj_Fecha" msprop:Generator_ColumnPropNameInRow="TraBaj_Fecha" msprop:Generator_ColumnPropNameInTable="TraBaj_FechaColumn" msprop:Generator_UserColumnName="TraBaj_Fecha" type="xs:dateTime" />
+              <xs:element name="TraBaj_Observacion" msprop:Generator_ColumnVarNameInTable="columnTraBaj_Observacion" msprop:Generator_ColumnPropNameInRow="TraBaj_Observacion" msprop:Generator_ColumnPropNameInTable="TraBaj_ObservacionColumn" msprop:Generator_UserColumnName="TraBaj_Observacion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="350" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TipoBaja" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTipoBaja" msprop:Generator_ColumnPropNameInRow="TipoBaja" msprop:Generator_ColumnPropNameInTable="TipoBajaColumn" msprop:Generator_UserColumnName="TipoBaja" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Activo_CodigoBarra" msprop:Generator_ColumnVarNameInTable="columnActivo_CodigoBarra" msprop:Generator_ColumnPropNameInRow="Activo_CodigoBarra" msprop:Generator_ColumnPropNameInTable="Activo_CodigoBarraColumn" msprop:Generator_UserColumnName="Activo_CodigoBarra">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Activo_Clase" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnActivo_Clase" msprop:Generator_ColumnPropNameInRow="Activo_Clase" msprop:Generator_ColumnPropNameInTable="Activo_ClaseColumn" msprop:Generator_UserColumnName="Activo_Clase" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Activo_Descripcion" msprop:Generator_ColumnVarNameInTable="columnActivo_Descripcion" msprop:Generator_ColumnPropNameInRow="Activo_Descripcion" msprop:Generator_ColumnPropNameInTable="Activo_DescripcionColumn" msprop:Generator_UserColumnName="Activo_Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Activo_Marca" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnActivo_Marca" msprop:Generator_ColumnPropNameInRow="Activo_Marca" msprop:Generator_ColumnPropNameInTable="Activo_MarcaColumn" msprop:Generator_UserColumnName="Activo_Marca" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Activo_Modelo" msprop:Generator_ColumnVarNameInTable="columnActivo_Modelo" msprop:Generator_ColumnPropNameInRow="Activo_Modelo" msprop:Generator_ColumnPropNameInTable="Activo_ModeloColumn" msprop:Generator_UserColumnName="Activo_Modelo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Activo_Serie" msprop:Generator_ColumnVarNameInTable="columnActivo_Serie" msprop:Generator_ColumnPropNameInRow="Activo_Serie" msprop:Generator_ColumnPropNameInTable="Activo_SerieColumn" msprop:Generator_UserColumnName="Activo_Serie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustodioActual" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCustodioActual" msprop:Generator_ColumnPropNameInRow="CustodioActual" msprop:Generator_ColumnPropNameInTable="CustodioActualColumn" msprop:Generator_UserColumnName="CustodioActual" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UbicacionActual" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnUbicacionActual" msprop:Generator_ColumnPropNameInRow="UbicacionActual" msprop:Generator_ColumnPropNameInTable="UbicacionActualColumn" msprop:Generator_UserColumnName="UbicacionActual" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cabecera" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCabecera" msprop:Generator_ColumnPropNameInRow="Cabecera" msprop:Generator_ColumnPropNameInTable="CabeceraColumn" msprop:Generator_UserColumnName="Cabecera" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="604" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Pie" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPie" msprop:Generator_ColumnPropNameInRow="Pie" msprop:Generator_ColumnPropNameInTable="PieColumn" msprop:Generator_UserColumnName="Pie" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="198" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

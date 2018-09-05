@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e8fe737b-7ef4-47d5-bb72-9d9c05ed0a1b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9af74423-10e6-40ec-b645-6d9fc3edfcf1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,7 +22,7 @@
     <MetadataSource Address="http://172.22.2.69:8280/jbankws/services/TopazMiddleWareWS?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="TopazMiddleWareWSService.wsdl" MetadataType="Wsdl" ID="6c83e2ce-a6f3-48a3-b605-4f99edc524ce" SourceId="1" SourceUrl="http://172.22.2.69:8280/jbankws/services/TopazMiddleWareWS?wsdl" />
+    <MetadataFile FileName="TopazMiddleWareWSService.wsdl" MetadataType="Wsdl" ID="442d1ad8-0051-4356-bf33-702292fd0799" SourceId="1" SourceUrl="http://172.22.2.69:8280/jbankws/services/TopazMiddleWareWS?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

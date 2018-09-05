@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteResumenDepreciacion" targetNamespace="http://tempuri.org/dsReporteResumenDepreciacion.xsd" xmlns:mstns="http://tempuri.org/dsReporteResumenDepreciacion.xsd" xmlns="http://tempuri.org/dsReporteResumenDepreciacion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="activosfijosConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="activosfijosConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ActivosFijos.Modulo.My.MySettings.GlobalReference.Default.activosfijosConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteResumenDepreciacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteResumenDepreciacion" msprop:Generator_UserDSName="dsReporteResumenDepreciacion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vw_ReporteResumenDepreciacion" msprop:Generator_TableClassName="vw_ReporteResumenDepreciacionDataTable" msprop:Generator_TableVarName="tablevw_ReporteResumenDepreciacion" msprop:Generator_TablePropName="vw_ReporteResumenDepreciacion" msprop:Generator_RowDeletingName="vw_ReporteResumenDepreciacionRowDeleting" msprop:Generator_UserTableName="vw_ReporteResumenDepreciacion" msprop:Generator_RowChangingName="vw_ReporteResumenDepreciacionRowChanging" msprop:Generator_RowEvHandlerName="vw_ReporteResumenDepreciacionRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_ReporteResumenDepreciacionRowDeleted" msprop:Generator_RowEvArgName="vw_ReporteResumenDepreciacionRowChangeEvent" msprop:Generator_RowChangedName="vw_ReporteResumenDepreciacionRowChanged" msprop:Generator_RowClassName="vw_ReporteResumenDepreciacionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ubicacion" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnUbicacion" msprop:Generator_ColumnPropNameInRow="Ubicacion" msprop:Generator_ColumnPropNameInTable="UbicacionColumn" msprop:Generator_UserColumnName="Ubicacion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Codigo_Barras" msprop:Generator_ColumnVarNameInTable="columnCodigo_Barras" msprop:Generator_ColumnPropNameInRow="Codigo_Barras" msprop:Generator_ColumnPropNameInTable="Codigo_BarrasColumn" msprop:Generator_UserColumnName="Codigo_Barras">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Clase" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnClase" msprop:Generator_ColumnPropNameInRow="Clase" msprop:Generator_ColumnPropNameInTable="ClaseColumn" msprop:Generator_UserColumnName="Clase" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Custodio" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCustodio" msprop:Generator_ColumnPropNameInRow="Custodio" msprop:Generator_ColumnPropNameInTable="CustodioColumn" msprop:Generator_UserColumnName="Custodio" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Serie" msprop:Generator_ColumnVarNameInTable="columnSerie" msprop:Generator_ColumnPropNameInRow="Serie" msprop:Generator_ColumnPropNameInTable="SerieColumn" msprop:Generator_UserColumnName="Serie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Modelo" msprop:Generator_ColumnVarNameInTable="columnModelo" msprop:Generator_ColumnPropNameInRow="Modelo" msprop:Generator_ColumnPropNameInTable="ModeloColumn" msprop:Generator_UserColumnName="Modelo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaCompra" msprop:Generator_ColumnVarNameInTable="columnFechaCompra" msprop:Generator_ColumnPropNameInRow="FechaCompra" msprop:Generator_ColumnPropNameInTable="FechaCompraColumn" msprop:Generator_UserColumnName="FechaCompra" type="xs:dateTime" />
+              <xs:element name="Inicial" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnInicial" msprop:Generator_ColumnPropNameInRow="Inicial" msprop:Generator_ColumnPropNameInTable="InicialColumn" msprop:Generator_UserColumnName="Inicial" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Valoracion" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnValoracion" msprop:Generator_ColumnPropNameInRow="Valoracion" msprop:Generator_ColumnPropNameInTable="ValoracionColumn" msprop:Generator_UserColumnName="Valoracion" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Rescate" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRescate" msprop:Generator_ColumnPropNameInRow="Rescate" msprop:Generator_ColumnPropNameInTable="RescateColumn" msprop:Generator_UserColumnName="Rescate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Vida_util_remanente" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnVida_util_remanente" msprop:Generator_ColumnPropNameInRow="Vida_util_remanente" msprop:Generator_ColumnPropNameInTable="Vida_util_remanenteColumn" msprop:Generator_UserColumnName="Vida_util_remanente" type="xs:int" minOccurs="0" />
+              <xs:element name="Anio" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAnio" msprop:Generator_ColumnPropNameInRow="Anio" msprop:Generator_ColumnPropNameInTable="AnioColumn" msprop:Generator_UserColumnName="Anio" type="xs:int" minOccurs="0" />
+              <xs:element name="Depreciable" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDepreciable" msprop:Generator_ColumnPropNameInRow="Depreciable" msprop:Generator_ColumnPropNameInTable="DepreciableColumn" msprop:Generator_UserColumnName="Depreciable" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Deprec_Mensual" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDeprec_Mensual" msprop:Generator_ColumnPropNameInRow="Deprec_Mensual" msprop:Generator_ColumnPropNameInTable="Deprec_MensualColumn" msprop:Generator_UserColumnName="Deprec_Mensual" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Factura_Numero" msprop:Generator_ColumnVarNameInTable="columnFactura_Numero" msprop:Generator_ColumnPropNameInRow="Factura_Numero" msprop:Generator_ColumnPropNameInTable="Factura_NumeroColumn" msprop:Generator_UserColumnName="Factura_Numero">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreCompleto" msprop:Generator_ColumnVarNameInTable="columnNombreCompleto" msprop:Generator_ColumnPropNameInRow="NombreCompleto" msprop:Generator_ColumnPropNameInTable="NombreCompletoColumn" msprop:Generator_UserColumnName="NombreCompleto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="201" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Identi_Numero" msprop:Generator_ColumnVarNameInTable="columnIdenti_Numero" msprop:Generator_ColumnPropNameInRow="Identi_Numero" msprop:Generator_ColumnPropNameInTable="Identi_NumeroColumn" msprop:Generator_UserColumnName="Identi_Numero" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

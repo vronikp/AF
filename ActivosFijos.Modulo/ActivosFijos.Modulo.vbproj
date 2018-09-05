@@ -135,6 +135,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
@@ -628,6 +629,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Activos Fijos\Reportes\clsReporteActivo.vb" />
+    <Compile Include="Connected Services\WSDMiro\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Entidad\CtlBuscaEmpleado.designer.vb">
       <DependentUpon>CtlBuscaEmpleado.vb</DependentUpon>
     </Compile>
@@ -1350,6 +1356,19 @@
     </None>
     <None Include="ActivosFijos.Modulo_TemporaryKey.pfx" />
     <None Include="app.config" />
+    <None Include="Connected Services\WSDMiro\ActivosFijos.Modulo.WSDMiro.executeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSDMiro\ActivosFijos.Modulo.WSDMiro.executeResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSDMiro\ActivosFijos.Modulo.WSDMiro.undoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSDMiro\ActivosFijos.Modulo.WSDMiro.undoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WSDMiro\TopazMiddleWareWSService.wsdl" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -1491,6 +1510,21 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WSDMiro\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSDMiro\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSDMiro\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WSDMiro\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

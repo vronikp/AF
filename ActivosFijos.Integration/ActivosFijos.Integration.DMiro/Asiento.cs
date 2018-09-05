@@ -99,7 +99,10 @@ namespace ActivosFijos.Integration.DMiro
         {
             Result = null;
             NumeroAsiento = null;
-            var ws = new WSDMiro.TopazMiddleWareWSClient();
+
+            var remoteAdd = new System.ServiceModel.EndpointAddress("http://172.22.2.69:8280/jbankws/services/TopazMiddleWareWS?wsdl");
+            
+            var ws = new WSDMiro.TopazMiddleWareWSClient(new System.ServiceModel.BasicHttpBinding(), remoteAdd);
             
             var linea = 0;
             string asiento_app = "";
@@ -347,7 +350,10 @@ namespace ActivosFijos.Integration.DMiro
 
         private static CabeceraResponse.TopazMiddleWareResponse Cabecera(WSDMiro.TopazMiddleWareWSClient ws, string asiento_app, int anio, string glosa, string sistema)
         {
-            var transaccion = new CabeceraRequest.XmlJBankRequest()
+
+            try
+            {
+                var transaccion = new CabeceraRequest.XmlJBankRequest()
             {
                 XmlJBankService = new CabeceraRequest.XmlJBankService()
                 {
@@ -388,14 +394,24 @@ namespace ActivosFijos.Integration.DMiro
                 }
             );
 
-            var transaccionResponse = ws.execute(
-                new WSDMiro.execute()
+                var execute1 = new WSDMiro.execute()
                 {
+                    executionInfo = "<![CDATA[<?xml version=\"1.0\" encoding=\"UTF-8\"?><xmlJBankExecutionParameters><authentication><type/><userName>TOP</userName><password>1234miro</password><sessionID>2</sessionID></authentication></xmlJBankExecutionParameters>]]>",
                     request = transaccion.Serialize()
-                }
-            );
+                };
+                Console.WriteLine(execute1.ToString());
 
-            return transaccionResponse.executeResult.Deserialize<CabeceraResponse.TopazMiddleWareResponse>();
+                var transaccionResponse = ws.execute(execute1);
+
+                return transaccionResponse.executeResult.Deserialize<CabeceraResponse.TopazMiddleWareResponse>();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+
+            return null;
         }
     }
 }

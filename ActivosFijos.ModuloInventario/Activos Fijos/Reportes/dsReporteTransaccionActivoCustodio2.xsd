@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsReporteTransaccionActivoCustodio2" targetNamespace="http://tempuri.org/dsReporteTransaccionActivoCustodio2.xsd" xmlns:mstns="http://tempuri.org/dsReporteTransaccionActivoCustodio2.xsd" xmlns="http://tempuri.org/dsReporteTransaccionActivoCustodio2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DMIROConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DMIROConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ActivosFijos.Modulo.My.MySettings.GlobalReference.Default.DMIROConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsReporteTransaccionActivoCustodio2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteTransaccionActivoCustodio2" msprop:Generator_UserDSName="dsReporteTransaccionActivoCustodio2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vw_TransaccionActivoCustodio2" msprop:Generator_TableClassName="vw_TransaccionActivoCustodio2DataTable" msprop:Generator_TableVarName="tablevw_TransaccionActivoCustodio2" msprop:Generator_TablePropName="vw_TransaccionActivoCustodio2" msprop:Generator_RowDeletingName="vw_TransaccionActivoCustodio2RowDeleting" msprop:Generator_RowChangingName="vw_TransaccionActivoCustodio2RowChanging" msprop:Generator_RowEvHandlerName="vw_TransaccionActivoCustodio2RowChangeEventHandler" msprop:Generator_RowDeletedName="vw_TransaccionActivoCustodio2RowDeleted" msprop:Generator_UserTableName="vw_TransaccionActivoCustodio2" msprop:Generator_RowChangedName="vw_TransaccionActivoCustodio2RowChanged" msprop:Generator_RowEvArgName="vw_TransaccionActivoCustodio2RowChangeEvent" msprop:Generator_RowClassName="vw_TransaccionActivoCustodio2Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Transa_Codigo" msprop:Generator_ColumnVarNameInTable="columnTransa_Codigo" msprop:Generator_ColumnPropNameInRow="Transa_Codigo" msprop:Generator_ColumnPropNameInTable="Transa_CodigoColumn" msprop:Generator_UserColumnName="Transa_Codigo" type="xs:int" />
+              <xs:element name="Activo_CodigoBarra" msprop:Generator_ColumnVarNameInTable="columnActivo_CodigoBarra" msprop:Generator_ColumnPropNameInRow="Activo_CodigoBarra" msprop:Generator_ColumnPropNameInTable="Activo_CodigoBarraColumn" msprop:Generator_UserColumnName="Activo_CodigoBarra">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Usuari_Descripcion" msprop:Generator_ColumnVarNameInTable="columnUsuari_Descripcion" msprop:Generator_ColumnPropNameInRow="Usuari_Descripcion" msprop:Generator_ColumnPropNameInTable="Usuari_DescripcionColumn" msprop:Generator_UserColumnName="Usuari_Descripcion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Transa_Fecha" msprop:Generator_ColumnVarNameInTable="columnTransa_Fecha" msprop:Generator_ColumnPropNameInRow="Transa_Fecha" msprop:Generator_ColumnPropNameInTable="Transa_FechaColumn" msprop:Generator_UserColumnName="Transa_Fecha" type="xs:dateTime" />
+              <xs:element name="Transa_Observacion" msprop:Generator_ColumnVarNameInTable="columnTransa_Observacion" msprop:Generator_ColumnPropNameInRow="Transa_Observacion" msprop:Generator_ColumnPropNameInTable="Transa_ObservacionColumn" msprop:Generator_UserColumnName="Transa_Observacion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="350" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaDesde" msprop:Generator_ColumnVarNameInTable="columnFechaDesde" msprop:Generator_ColumnPropNameInRow="FechaDesde" msprop:Generator_ColumnPropNameInTable="FechaDesdeColumn" msprop:Generator_UserColumnName="FechaDesde" type="xs:dateTime" />
+              <xs:element name="FechaHasta" msprop:Generator_ColumnVarNameInTable="columnFechaHasta" msprop:Generator_ColumnPropNameInRow="FechaHasta" msprop:Generator_ColumnPropNameInTable="FechaHastaColumn" msprop:Generator_UserColumnName="FechaHasta" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CustodioActual" msprop:Generator_ColumnVarNameInTable="columnCustodioActual" msprop:Generator_ColumnPropNameInRow="CustodioActual" msprop:Generator_ColumnPropNameInTable="CustodioActualColumn" msprop:Generator_UserColumnName="CustodioActual" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="201" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustodioAnterior" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCustodioAnterior" msprop:Generator_ColumnPropNameInRow="CustodioAnterior" msprop:Generator_ColumnPropNameInTable="CustodioAnteriorColumn" msprop:Generator_UserColumnName="CustodioAnterior" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="201" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Clase" msprop:Generator_ColumnVarNameInTable="columnClase" msprop:Generator_ColumnPropNameInRow="Clase" msprop:Generator_ColumnPropNameInTable="ClaseColumn" msprop:Generator_UserColumnName="Clase">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Descripcion" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Marca" msprop:Generator_ColumnVarNameInTable="columnMarca" msprop:Generator_ColumnPropNameInRow="Marca" msprop:Generator_ColumnPropNameInTable="MarcaColumn" msprop:Generator_UserColumnName="Marca">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Activo_Modelo" msprop:Generator_ColumnVarNameInTable="columnActivo_Modelo" msprop:Generator_ColumnPropNameInRow="Activo_Modelo" msprop:Generator_ColumnPropNameInTable="Activo_ModeloColumn" msprop:Generator_UserColumnName="Activo_Modelo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Activo_Serie" msprop:Generator_ColumnVarNameInTable="columnActivo_Serie" msprop:Generator_ColumnPropNameInRow="Activo_Serie" msprop:Generator_ColumnPropNameInTable="Activo_SerieColumn" msprop:Generator_UserColumnName="Activo_Serie">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Activo_Observacion" msprop:Generator_ColumnVarNameInTable="columnActivo_Observacion" msprop:Generator_ColumnPropNameInRow="Activo_Observacion" msprop:Generator_ColumnPropNameInTable="Activo_ObservacionColumn" msprop:Generator_UserColumnName="Activo_Observacion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="350" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Estado_Activo" msprop:Generator_ColumnVarNameInTable="columnEstado_Activo" msprop:Generator_ColumnPropNameInRow="Estado_Activo" msprop:Generator_ColumnPropNameInTable="Estado_ActivoColumn" msprop:Generator_UserColumnName="Estado_Activo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Caracteristicas" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCaracteristicas" msprop:Generator_ColumnPropNameInRow="Caracteristicas" msprop:Generator_ColumnPropNameInTable="CaracteristicasColumn" msprop:Generator_UserColumnName="Caracteristicas" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustodioID" msprop:Generator_ColumnVarNameInTable="columnCustodioID" msprop:Generator_ColumnPropNameInRow="CustodioID" msprop:Generator_ColumnPropNameInTable="CustodioIDColumn" msprop:Generator_UserColumnName="CustodioID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustodioAnteriorID" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCustodioAnteriorID" msprop:Generator_ColumnPropNameInRow="CustodioAnteriorID" msprop:Generator_ColumnPropNameInTable="CustodioAnteriorIDColumn" msprop:Generator_UserColumnName="CustodioAnteriorID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PersonaElaboradoPor" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPersonaElaboradoPor" msprop:Generator_ColumnPropNameInRow="PersonaElaboradoPor" msprop:Generator_ColumnPropNameInTable="PersonaElaboradoPorColumn" msprop:Generator_UserColumnName="PersonaElaboradoPor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PersonaElaboradoPorCI" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPersonaElaboradoPorCI" msprop:Generator_ColumnPropNameInRow="PersonaElaboradoPorCI" msprop:Generator_ColumnPropNameInTable="PersonaElaboradoPorCIColumn" msprop:Generator_UserColumnName="PersonaElaboradoPorCI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Titulo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTitulo" msprop:Generator_ColumnPropNameInRow="Titulo" msprop:Generator_ColumnPropNameInTable="TituloColumn" msprop:Generator_UserColumnName="Titulo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="57" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Parrafo1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnParrafo1" msprop:Generator_ColumnPropNameInRow="Parrafo1" msprop:Generator_ColumnPropNameInTable="Parrafo1Column" msprop:Generator_UserColumnName="Parrafo1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="530" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Parrafo2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnParrafo2" msprop:Generator_ColumnPropNameInRow="Parrafo2" msprop:Generator_ColumnPropNameInTable="Parrafo2Column" msprop:Generator_UserColumnName="Parrafo2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="268" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Parrafo3" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnParrafo3" msprop:Generator_ColumnPropNameInRow="Parrafo3" msprop:Generator_ColumnPropNameInTable="Parrafo3Column" msprop:Generator_UserColumnName="Parrafo3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="562" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Parrafo4" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnParrafo4" msprop:Generator_ColumnPropNameInRow="Parrafo4" msprop:Generator_ColumnPropNameInTable="Parrafo4Column" msprop:Generator_UserColumnName="Parrafo4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="365" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Parrafo5" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnParrafo5" msprop:Generator_ColumnPropNameInRow="Parrafo5" msprop:Generator_ColumnPropNameInTable="Parrafo5Column" msprop:Generator_UserColumnName="Parrafo5" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="206" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Valoracion" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnValoracion" msprop:Generator_ColumnPropNameInRow="Valoracion" msprop:Generator_ColumnPropNameInTable="ValoracionColumn" msprop:Generator_UserColumnName="Valoracion" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vw_TransaccionActivoCustodio2" />
+      <xs:field xpath="mstns:Transa_Codigo" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
