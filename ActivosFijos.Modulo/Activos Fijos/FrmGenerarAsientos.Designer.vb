@@ -23,9 +23,9 @@ Partial Class FrmGenerarAsientos
   <System.Diagnostics.DebuggerStepThrough()>
   Private Sub InitializeComponent()
     Me.components = New System.ComponentModel.Container()
-    Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-    Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-    Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+    Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+    Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+    Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
     Me.Panel1 = New System.Windows.Forms.Panel()
     Me.GroupBox2 = New System.Windows.Forms.GroupBox()
     Me.cboTipoAsiento = New ActivosFijos.Modulo.ComboBoxParametroDet()
@@ -59,12 +59,16 @@ Partial Class FrmGenerarAsientos
     Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.DataGridViewTextBoxColumn44 = New System.Windows.Forms.DataGridViewTextBoxColumn()
     Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+    Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
+    Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+    Me.btnConfigurarWS = New System.Windows.Forms.ToolStripButton()
     Me.pnlcuerpo.SuspendLayout()
     CType(Me.ListBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
     Me.Panel1.SuspendLayout()
     Me.GroupBox2.SuspendLayout()
     CType(Me.dgdepreciacion, System.ComponentModel.ISupportInitialize).BeginInit()
     CType(Me.bsdepreciacion, System.ComponentModel.ISupportInitialize).BeginInit()
+    Me.ToolStrip2.SuspendLayout()
     Me.SuspendLayout()
     '
     'pnlcuerpo
@@ -157,35 +161,35 @@ Partial Class FrmGenerarAsientos
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
     Me.dgdepreciacion.AutoGenerateColumns = False
-    DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-    DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-    DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-    DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-    DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-    DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-    DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-    Me.dgdepreciacion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+    DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+    DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+    DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+    DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+    DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+    DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+    DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+    Me.dgdepreciacion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
     Me.dgdepreciacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
     Me.dgdepreciacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn18})
     Me.dgdepreciacion.DataSource = Me.bsdepreciacion
-    DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-    DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-    DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-    DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-    DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-    DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-    DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-    Me.dgdepreciacion.DefaultCellStyle = DataGridViewCellStyle5
+    DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+    DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+    DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+    DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+    DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+    DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+    DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+    Me.dgdepreciacion.DefaultCellStyle = DataGridViewCellStyle2
     Me.dgdepreciacion.Location = New System.Drawing.Point(6, 99)
     Me.dgdepreciacion.Name = "dgdepreciacion"
-    DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-    DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-    DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-    DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-    DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-    DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-    DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-    Me.dgdepreciacion.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+    DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+    DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+    DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+    DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+    DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+    DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+    DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+    Me.dgdepreciacion.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
     Me.dgdepreciacion.RowHeadersVisible = False
     Me.dgdepreciacion.Size = New System.Drawing.Size(672, 358)
     Me.dgdepreciacion.TabIndex = 12
@@ -334,13 +338,42 @@ Partial Class FrmGenerarAsientos
     '
     Me.OpenFileDialog1.FileName = "OpenFileDialog1"
     '
+    'ToolStrip2
+    '
+    Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator1, Me.btnConfigurarWS})
+    Me.ToolStrip2.Location = New System.Drawing.Point(0, 49)
+    Me.ToolStrip2.Name = "ToolStrip2"
+    Me.ToolStrip2.Size = New System.Drawing.Size(704, 25)
+    Me.ToolStrip2.TabIndex = 7
+    Me.ToolStrip2.Text = "ToolStrip2"
+    '
+    'ToolStripSeparator1
+    '
+    Me.ToolStripSeparator1.MergeAction = System.Windows.Forms.MergeAction.Insert
+    Me.ToolStripSeparator1.MergeIndex = 1
+    Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+    Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+    '
+    'btnConfigurarWS
+    '
+    Me.btnConfigurarWS.ImageTransparentColor = System.Drawing.Color.Magenta
+    Me.btnConfigurarWS.MergeAction = System.Windows.Forms.MergeAction.Insert
+    Me.btnConfigurarWS.MergeIndex = 10
+    Me.btnConfigurarWS.Name = "btnConfigurarWS"
+    Me.btnConfigurarWS.Size = New System.Drawing.Size(88, 22)
+    Me.btnConfigurarWS.Text = "Configurar WS"
+    Me.btnConfigurarWS.ToolTipText = "Configurar WS"
+    '
     'FrmGenerarAsientos
     '
     Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
     Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
     Me.ClientSize = New System.Drawing.Size(704, 566)
+    Me.Controls.Add(Me.ToolStrip2)
     Me.Name = "FrmGenerarAsientos"
     Me.Text = "Generar Asientos Contables"
+    Me.Controls.SetChildIndex(Me.pnlcuerpo, 0)
+    Me.Controls.SetChildIndex(Me.ToolStrip2, 0)
     Me.pnlcuerpo.ResumeLayout(False)
     CType(Me.ListBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
     Me.Panel1.ResumeLayout(False)
@@ -348,6 +381,8 @@ Partial Class FrmGenerarAsientos
     Me.GroupBox2.PerformLayout()
     CType(Me.dgdepreciacion, System.ComponentModel.ISupportInitialize).EndInit()
     CType(Me.bsdepreciacion, System.ComponentModel.ISupportInitialize).EndInit()
+    Me.ToolStrip2.ResumeLayout(False)
+    Me.ToolStrip2.PerformLayout()
     Me.ResumeLayout(False)
     Me.PerformLayout()
 
@@ -385,4 +420,7 @@ Partial Class FrmGenerarAsientos
   Friend WithEvents btnmostrar As Button
   Friend WithEvents btnimprimir As Button
   Friend WithEvents DataGridViewTextBoxColumn18 As DataGridViewTextBoxColumn
+  Friend WithEvents ToolStrip2 As ToolStrip
+  Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+  Friend WithEvents btnConfigurarWS As ToolStripButton
 End Class

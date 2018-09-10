@@ -10,6 +10,7 @@ Public Class FrmGenerarAsientos
   Dim mCodigoPeriodo As String
   Dim mTipoAsiento As String
   Dim mParametroDepreciacion As WWTSParametroDet
+  Dim mParametroServicioWeb As WWTSParametroDet = Nothing
 
 #Region "New"
   Public Sub New(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, Optional ByVal _OpcionNuevo As Enumerados.EnumOpciones = Enumerados.EnumOpciones.ListadoActivos)
@@ -30,6 +31,7 @@ Public Class FrmGenerarAsientos
     MyBase.Tabla = "Generar asientos"
 
     mParametroDepreciacion = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.ParametroDepreciacion, 1)
+    mParametroServicioWeb = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumOpciones.Sistema, 2)
 
     If mParametroDepreciacion.Pardet_DatoStr1.ToUpper() = "MENSUAL" Then
       Me.dtperiodo.CustomFormat = "yyyy/MM"
@@ -205,20 +207,36 @@ Public Class FrmGenerarAsientos
 
     dsc = obtenerAsiento(0, "cabecera")
 
+    If mParametroServicioWeb Is Nothing Then
+      MsgBox("Debe configurar el Servicio Web", MsgBoxStyle.Exclamation, "Error")
+      Exit Sub
+    Else
+      mParametroServicioWeb.Recargar()
+    End If
+
     If Not dsc Is Nothing AndAlso dsc.Rows.Count > 0 Then
-      If Asiento.GenerarCabecera(mParametroDepreciacion.Pardet_DatoStr3, dsc, result, numAsiento) Then
+      If Asiento.GenerarCabecera(mParametroDepreciacion.Pardet_DatoStr3, dsc, result, numAsiento, mParametroServicioWeb) Then
         Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Confidencial,
                                     "Se generó la cabecera del asiento de la " + cboTipoAsiento.ValueMember.ToString + " " + mCodigoPeriodo)
         dsd = obtenerAsiento(numAsiento, "asiento")
-        If Asiento.GenerarDetalle(mParametroDepreciacion.Pardet_DatoStr3, dsd, result) Then
+        If Asiento.GenerarDetalle(mParametroDepreciacion.Pardet_DatoStr3, dsd, result, mParametroServicioWeb) Then
           Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Confidencial,
                                     "Se generó el asiento " + numAsiento + " de la " + cboTipoAsiento.ValueMember.ToString + " " + mCodigoPeriodo)
         Else
+          Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Confidencial,
+                                    "Error al generar el detalle del asiento " + numAsiento + " de la " + cboTipoAsiento.ValueMember.ToString + " " + mCodigoPeriodo + " " + result)
           MsgBox(result, MsgBoxStyle.Exclamation, "Error")
         End If
       Else
+        Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Confidencial,
+                                    "Error al generar la cabecera del asiento de la " + cboTipoAsiento.ValueMember.ToString + " " + mCodigoPeriodo + " " + result)
         MsgBox(result, MsgBoxStyle.Exclamation, "Error")
       End If
     End If
+  End Sub
+
+  Private Sub btnConfigurarWS_Click(sender As Object, e As EventArgs) Handles btnConfigurarWS.Click
+    Dim f As New FrmMantenimientoWS(Sistema, Enumerados.EnumOpciones.ConfigurarWS)
+    f.ShowDialog()
   End Sub
 End Class

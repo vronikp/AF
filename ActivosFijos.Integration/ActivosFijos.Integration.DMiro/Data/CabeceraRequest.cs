@@ -3,42 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace ActivosFijos.Integration.DMiro.Data
 {
     public class CabeceraRequest
     {
-        [XmlRoot(ElementName = "xmlJBankField")]
-        public class XmlJBankField
-        {
-            [XmlElement(ElementName = "fieldName")]
-            public string FieldName { get; set; }
-            [XmlElement(ElementName = "fieldValue")]
-            public string FieldValue { get; set; }
-        }
+        public string pv_asiento_app { get; set; }
+        public int pn_anio { get; set; }
+        public string pv_glosa { get; set; }
+        public string pv_sistema { get; set; }
 
-        [XmlRoot(ElementName = "xmlJBankFields")]
-        public class XmlJBankFields
-        {
-            [XmlElement(ElementName = "xmlJBankField")]
-            public List<XmlJBankField> XmlJBankField { get; set; }
-        }
+        public CabeceraRequest() { }
 
-        [XmlRoot(ElementName = "xmlJBankService")]
-        public class XmlJBankService
+        public CabeceraRequest(string _pv_asiento_app, int _pn_anio, string _pv_glosa, string _pv_sistema)
         {
-            [XmlElement(ElementName = "serviceName")]
-            public string ServiceName { get; set; }
-            [XmlElement(ElementName = "xmlJBankFields")]
-            public XmlJBankFields XmlJBankFields { get; set; }
-        }
-
-        [XmlRoot(ElementName = "xmlJBankRequest")]
-        public class XmlJBankRequest
-        {
-            [XmlElement(ElementName = "xmlJBankService")]
-            public XmlJBankService XmlJBankService { get; set; }
+            this.pv_asiento_app = _pv_asiento_app;
+            this.pn_anio = _pn_anio;
+            this.pv_glosa = _pv_glosa;
+            this.pv_sistema = _pv_sistema;
         }
     }
 }

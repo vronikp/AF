@@ -3,43 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace ActivosFijos.Integration.DMiro.Data
 {
     public class AnulaRequest
     {
-        [XmlRoot(ElementName = "xmlJBankField")]
-        public class XmlJBankField
-        {
-            [XmlElement(ElementName = "fieldName")]
-            public string FieldName { get; set; }
-            [XmlElement(ElementName = "fieldValue")]
-            public string FieldValue { get; set; }
-        }
+        public string pv_asiento_app { get; set; }
+        public int pn_anio { get; set; }
+        public int pn_asiento { get; set; }
+        public string pv_sistema { get; set; }
 
-        [XmlRoot(ElementName = "xmlJBankFields")]
-        public class XmlJBankFields
-        {
-            [XmlElement(ElementName = "xmlJBankField")]
-            public List<XmlJBankField> XmlJBankField { get; set; }
-        }
+        public AnulaRequest() { }
 
-        [XmlRoot(ElementName = "xmlJBankService")]
-        public class XmlJBankService
+        public AnulaRequest(string _pv_asiento_app, int _pn_anio, int _pn_asiento, string _pv_sistema)
         {
-            [XmlElement(ElementName = "serviceName")]
-            public string ServiceName { get; set; }
-            [XmlElement(ElementName = "xmlJBankFields")]
-            public XmlJBankFields XmlJBankFields { get; set; }
+            this.pv_asiento_app = _pv_asiento_app;
+            this.pn_anio = _pn_anio;
+            this.pn_asiento = _pn_asiento;
+            this.pv_sistema = _pv_sistema;
         }
-
-        [XmlRoot(ElementName = "xmlJBankRequest")]
-        public class XmlJBankRequest
-        {
-            [XmlElement(ElementName = "xmlJBankService")]
-            public XmlJBankService XmlJBankService { get; set; }
-        }
-
     }
 }

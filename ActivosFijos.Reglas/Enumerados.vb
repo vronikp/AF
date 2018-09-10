@@ -33,6 +33,7 @@ Public Class Enumerados
     ListaBajas = 215
     ResumenDepreciacionPorTipo = 216
     GenerarAsientos = 217
+    ConfigurarWS = 218
 
     ReportesActivosFijos = 299
 

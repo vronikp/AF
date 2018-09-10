@@ -24,7 +24,7 @@ namespace ActivosFijos.Integration.DMiro
                 using (var writer = XmlWriter.Create(stringWriter))
                 {
                     xmlserializer.Serialize(writer, value);
-                    return stringWriter.ToString();
+                    return "<![CDATA["+stringWriter.ToString()+ "]]>";
                 }
             }
             catch (Exception ex)
