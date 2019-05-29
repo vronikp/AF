@@ -267,9 +267,6 @@ Public Class FrmMantenimientoUsuario
     Me.ComboBoxUsuario1.Enabled = Me.chkcopiarrestricciones.Checked
   End Sub
 
-  Private Sub FrmMantenimientoUsuario_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-  End Sub
 
   Private Sub chkempleado_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkempleado.CheckedChanged
     Me.CtlBuscaEmpleado1.Enabled = Me.chkempleado.Checked

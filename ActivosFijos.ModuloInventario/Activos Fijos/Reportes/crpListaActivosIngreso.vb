@@ -45,7 +45,7 @@ Public Class crpListaActivosIngreso
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "ActivosFijos.Modulo.crpListaActivosIngreso.rpt"
+            Return "ActivosFijos.ModuloInventario.crpListaActivosIngreso.rpt"
         End Get
         Set
             'Do nothing

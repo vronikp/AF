@@ -40,9 +40,9 @@ Partial Class FrmMantenimientoActivo
         Me.dgActivos = New Infoware.Consola.Base.DataGridViewAutoDiscover()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CtlBuscaActivos1 = New ActivosFijos.Modulo.CtlBuscaActivos()
+        Me.CtlBuscaActivos1 = New ActivosFijos.ModuloInventario.CtlBuscaActivos()
         Me.pnlmantenimiento = New System.Windows.Forms.Panel()
-        Me.CtlActivo1 = New ActivosFijos.Modulo.CtlActivo()
+        Me.CtlActivo1 = New ActivosFijos.ModuloInventario.CtlActivo()
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -329,7 +329,7 @@ Partial Class FrmMantenimientoActivo
   Friend WithEvents pnlmantenimiento As System.Windows.Forms.Panel
   Friend WithEvents pnlbusqueda As System.Windows.Forms.Panel
   Friend WithEvents dgActivos As DataGridViewAutoDiscover
-  Friend WithEvents CtlBuscaActivos1 As ActivosFijos.Modulo.CtlBuscaActivos
+  Friend WithEvents CtlBuscaActivos1 As ActivosFijos.ModuloInventario.CtlBuscaActivos
   Friend WithEvents bscaracteristica As System.Windows.Forms.BindingSource
   Friend WithEvents bscustodio As System.Windows.Forms.BindingSource
   Friend WithEvents bsubicacion As System.Windows.Forms.BindingSource
@@ -340,7 +340,7 @@ Partial Class FrmMantenimientoActivo
   Friend WithEvents bsinventarios As System.Windows.Forms.BindingSource
   Friend WithEvents bsdepreciaciones As System.Windows.Forms.BindingSource
   Friend WithEvents pnldatosbusqueda As System.Windows.Forms.Panel
-  Friend WithEvents CtlActivo1 As ActivosFijos.Modulo.CtlActivo
+  Friend WithEvents CtlActivo1 As ActivosFijos.ModuloInventario.CtlActivo
   Friend WithEvents ToolStrip2 As System.Windows.Forms.ToolStrip
   Friend WithEvents ToolStripLabel1 As System.Windows.Forms.ToolStripLabel
   Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn

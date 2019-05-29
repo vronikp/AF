@@ -27,7 +27,7 @@ Partial Class CtlEmpleado
     Me.components = New System.ComponentModel.Container()
     Me.TabControl1 = New System.Windows.Forms.TabControl()
     Me.TabPage1 = New System.Windows.Forms.TabPage()
-    Me.CtlEntidadNatural1 = New ActivosFijos.Modulo.CtlEntidadNatural()
+    Me.CtlEntidadNatural1 = New ActivosFijos.ModuloInventario.CtlEntidadNatural()
     Me.TabPage2 = New System.Windows.Forms.TabPage()
     Me.Label11 = New System.Windows.Forms.Label()
     Me.Label13 = New System.Windows.Forms.Label()
@@ -47,13 +47,13 @@ Partial Class CtlEmpleado
     Me.txtnumcta = New System.Windows.Forms.TextBox()
     Me.chkexclfam = New System.Windows.Forms.CheckBox()
     Me.Label20 = New System.Windows.Forms.Label()
-    Me.cboNacionalidad = New ActivosFijos.Modulo.ComboBoxParametroDet()
-    Me.cboSectorDomicilio = New ActivosFijos.Modulo.ComboBoxParametroDet()
-    Me.CtlUbicacion1 = New ActivosFijos.Modulo.CtlUbicacion()
-    Me.ComboBoxTipoEmpleado = New ActivosFijos.Modulo.ComboBoxParametroDet()
-    Me.ComboBoxTipoCtaBancaria = New ActivosFijos.Modulo.ComboBoxParametroDet()
-    Me.ComboBoxBanco = New ActivosFijos.Modulo.ComboBoxParametroDet()
-    Me.ComboBoxFormaPagoRol = New ActivosFijos.Modulo.ComboBoxParametroDet()
+    Me.cboNacionalidad = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
+    Me.cboSectorDomicilio = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
+    Me.CtlUbicacion1 = New ActivosFijos.ModuloInventario.CtlUbicacion()
+    Me.ComboBoxTipoEmpleado = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
+    Me.ComboBoxTipoCtaBancaria = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
+    Me.ComboBoxBanco = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
+    Me.ComboBoxFormaPagoRol = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
     Me.TabPage3 = New System.Windows.Forms.TabPage()
     Me.chkdiscapsicologica = New System.Windows.Forms.CheckBox()
     Me.chkdiscaintelectual = New System.Windows.Forms.CheckBox()
@@ -68,9 +68,9 @@ Partial Class CtlEmpleado
     Me.Label17 = New System.Windows.Forms.Label()
     Me.txtavisoemer = New System.Windows.Forms.TextBox()
     Me.Label15 = New System.Windows.Forms.Label()
-    Me.ComboBoxSeguroCorporativo = New ActivosFijos.Modulo.ComboBoxParametroDet()
-    Me.ComboBoxDiscapacidad = New ActivosFijos.Modulo.ComboBoxParametroDet()
-    Me.ComboBoxTipoSangre = New ActivosFijos.Modulo.ComboBoxParametroDet()
+    Me.ComboBoxSeguroCorporativo = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
+    Me.ComboBoxDiscapacidad = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
+    Me.ComboBoxTipoSangre = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
     Me.TabPage4 = New System.Windows.Forms.TabPage()
     Me.chckTitulo = New System.Windows.Forms.CheckBox()
     Me.txtEspecializacion = New System.Windows.Forms.TextBox()
@@ -2526,7 +2526,7 @@ Partial Class CtlEmpleado
   Friend WithEvents DataGridViewTextBoxColumn213 As System.Windows.Forms.DataGridViewTextBoxColumn
   Friend WithEvents DataGridViewTextBoxColumn214 As System.Windows.Forms.DataGridViewTextBoxColumn
   Friend WithEvents Label11 As System.Windows.Forms.Label
-  Friend WithEvents cboNacionalidad As ActivosFijos.Modulo.ComboBoxParametroDet
+  Friend WithEvents cboNacionalidad As ActivosFijos.ModuloInventario.ComboBoxParametroDet
   Friend WithEvents chkVisible As System.Windows.Forms.CheckBox
 
 End Class

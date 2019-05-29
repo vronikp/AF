@@ -3,7 +3,7 @@ Imports Infoware.Reglas
 Imports Infoware.Reglas.General
 Imports Infoware.Consola.Base
 Imports ActivosFijos.Reglas
-Imports ActivosFijos.Modulo.clsReporteTransaccionActivo
+Imports ActivosFijos.ModuloInventario.clsReporteTransaccionActivo
 Imports CrystalDecisions.CrystalReports.Engine
 
 Public Class FrmReporteTransaccionActivo

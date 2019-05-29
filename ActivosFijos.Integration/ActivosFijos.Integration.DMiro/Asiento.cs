@@ -183,6 +183,8 @@ namespace ActivosFijos.Integration.DMiro
         {
             Result = null;
             bool TodoOk = true;
+            bool detalleOk = true;
+            int i = 0;
 
             var remoteAdd = new System.ServiceModel.EndpointAddress(ParametroWS.Pardet_DatoStr1);
             wsTopazMiddleware = new TopazMiddleWareWSClient(new System.ServiceModel.BasicHttpBinding(), remoteAdd);
@@ -225,10 +227,8 @@ namespace ActivosFijos.Integration.DMiro
                     request.request = Util.Util.GetXMLFromObject(requestDetalle);
 
                     response = wsTopazMiddleware.execute(request);
-
                     detalleResponse = response.executeResult.Deserialize<DetalleResponse.TopazMiddleWareResponse>();
-
-
+                     
                     if (detalleResponse.Sw_DmInsertaDetalles.Sw_DmInsertaDetalle.Pn_error != "0")
                     {
                         Result = Result + string.Format("Error creando detalle linea {0} de asiento {1}. {2}. ", linea, asiento.ToString(), detalleResponse.Sw_DmInsertaDetalles.Sw_DmInsertaDetalle.Pv_error);
@@ -253,6 +253,11 @@ namespace ActivosFijos.Integration.DMiro
                     if (anulaResponse.Sw_DmCierreAsientos.Sw_DmCierreAsiento.Pn_error != "0")
                     {
                         Result = Result + string.Format("Error anulando asiento {0}. {1}. ", asiento.ToString(), anulaResponse.Sw_DmCierreAsientos.Sw_DmCierreAsiento.Pv_error);
+                    }
+                    else
+                    {
+                        Result = Result + "Asiento anulado. ";
+
                     }
                     return false;
                 }
@@ -288,6 +293,10 @@ namespace ActivosFijos.Integration.DMiro
                         if (anulaResponse.Sw_DmCierreAsientos.Sw_DmCierreAsiento.Pn_error != "0")
                         {
                             Result = Result + string.Format("Error anulando asiento {0}. {1}. ", asiento.ToString(), anulaResponse.Sw_DmCierreAsientos.Sw_DmCierreAsiento.Pv_error);
+                        }
+                        else {
+                            Result = Result + "Asiento anulado. ";
+
                         }
                         return false;
                     }

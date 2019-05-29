@@ -66,6 +66,7 @@ namespace ActivosFijos
         private void LimpiarCampos()
         {
             txtCodigo.Text = "";
+            txtCodAux.Text = "";
             cboTipo.SelectedIndex = -1;
             cboClase.SelectedIndex = -1;
             pnladic.Controls.Clear();
@@ -381,6 +382,8 @@ namespace ActivosFijos
                         }
                         else
                         {
+                            LimpiarCampos();
+
                             pnlBusqueda.Enabled = false;
                             btnGuardar.Enabled = true;
                             

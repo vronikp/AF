@@ -21,11 +21,11 @@ Partial Class FrmMantenimientoActivoValoracion
   Private Sub InitializeComponent()
     Me.components = New System.ComponentModel.Container()
     Me.Panel1 = New System.Windows.Forms.Panel()
-    Me.CtlBuscaPerito1 = New ActivosFijos.Modulo.CtlBuscaPerito()
+    Me.CtlBuscaPerito1 = New ActivosFijos.ModuloInventario.CtlBuscaPerito()
     Me.lblactivo = New System.Windows.Forms.Label()
-    Me.cbotipodepreciacion = New ActivosFijos.Modulo.ComboBoxParametroDet()
+    Me.cbotipodepreciacion = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
     Me.Label3 = New System.Windows.Forms.Label()
-    Me.cboFrecuenciaDepreciacion = New ActivosFijos.Modulo.ComboBoxParametroDet()
+    Me.cboFrecuenciaDepreciacion = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
     Me.Label27 = New System.Windows.Forms.Label()
     Me.txtperiodosdepreciables = New Infoware.Controles.Base.TextBoxCalculator()
     Me.Label26 = New System.Windows.Forms.Label()
@@ -75,7 +75,7 @@ Partial Class FrmMantenimientoActivoValoracion
     Me.CtlBuscaPerito1.PeritoText = "Perito"
     Me.CtlBuscaPerito1.Size = New System.Drawing.Size(324, 22)
     Me.CtlBuscaPerito1.TabIndex = 15
-    Me.CtlBuscaPerito1.Ubicacion = ActivosFijos.Modulo.CtlBuscaPerito.EnumUbicacion.Normal
+    Me.CtlBuscaPerito1.Ubicacion = ActivosFijos.ModuloInventario.CtlBuscaPerito.EnumUbicacion.Normal
     '
     'lblactivo
     '
@@ -286,7 +286,7 @@ Partial Class FrmMantenimientoActivoValoracion
   Friend WithEvents dtfecvaloracion As System.Windows.Forms.DateTimePicker
   Friend WithEvents Label13 As System.Windows.Forms.Label
   Friend WithEvents lblactivo As System.Windows.Forms.Label
-  Friend WithEvents cboFrecuenciaDepreciacion As ActivosFijos.Modulo.ComboBoxParametroDet
+  Friend WithEvents cboFrecuenciaDepreciacion As ActivosFijos.ModuloInventario.ComboBoxParametroDet
   Friend WithEvents Label27 As System.Windows.Forms.Label
   Friend WithEvents txtperiodosdepreciables As Infoware.Controles.Base.TextBoxCalculator
   Friend WithEvents Label26 As System.Windows.Forms.Label
@@ -296,8 +296,8 @@ Partial Class FrmMantenimientoActivoValoracion
   Friend WithEvents Label23 As System.Windows.Forms.Label
   Friend WithEvents txtcostoactivo As Infoware.Controles.Base.TextBoxCalculator
   Friend WithEvents Label24 As System.Windows.Forms.Label
-  Friend WithEvents CtlBuscaPerito1 As ActivosFijos.Modulo.CtlBuscaPerito
-  Friend WithEvents cbotipodepreciacion As ActivosFijos.Modulo.ComboBoxParametroDet
+  Friend WithEvents CtlBuscaPerito1 As ActivosFijos.ModuloInventario.CtlBuscaPerito
+  Friend WithEvents cbotipodepreciacion As ActivosFijos.ModuloInventario.ComboBoxParametroDet
   Friend WithEvents Label3 As System.Windows.Forms.Label
 
 End Class

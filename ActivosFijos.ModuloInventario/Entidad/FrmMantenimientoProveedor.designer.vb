@@ -22,7 +22,7 @@ Partial Class FrmMantenimientoProveedor
     Me.TabControl1 = New System.Windows.Forms.TabControl()
     Me.TabPage1 = New System.Windows.Forms.TabPage()
     Me.TabPage2 = New System.Windows.Forms.TabPage()
-    Me.CtlPersona1 = New ActivosFijos.Modulo.CtlPersona()
+    Me.CtlPersona1 = New ActivosFijos.ModuloInventario.CtlPersona()
     Me.chkVisible = New System.Windows.Forms.CheckBox()
     CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
     Me.TabControl1.SuspendLayout()

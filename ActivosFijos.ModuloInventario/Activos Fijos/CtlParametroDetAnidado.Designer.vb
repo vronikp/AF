@@ -25,7 +25,7 @@ Partial Class CtlParametroDetAnidado
     Me.components = New System.ComponentModel.Container()
     Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
     Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-    Me.TreeviewParametroDet1 = New ActivosFijos.Modulo.TreeviewParametroDet()
+    Me.TreeviewParametroDet1 = New ActivosFijos.ModuloInventario.TreeviewParametroDet()
     Me.SuspendLayout()
     '
     'FlowLayoutPanel1
@@ -62,7 +62,7 @@ Partial Class CtlParametroDetAnidado
 
   End Sub
   Friend WithEvents FlowLayoutPanel1 As System.Windows.Forms.FlowLayoutPanel
-  Friend WithEvents TreeviewParametroDet1 As ActivosFijos.Modulo.TreeviewParametroDet
+  Friend WithEvents TreeviewParametroDet1 As ActivosFijos.ModuloInventario.TreeviewParametroDet
   Friend WithEvents Timer1 As System.Windows.Forms.Timer
 
 End Class

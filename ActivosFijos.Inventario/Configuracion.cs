@@ -40,6 +40,11 @@ namespace ActivosFijos
                 
                 switch (config)
                 {
+                    case "":
+                        puedeVerNoInv = true;
+                        puedeModificar = true;
+                        puedeIngresarNuevo = true;
+                        break;
                     case "FrAn1115":
                         puedeVerNoInv = true; 
                         puedeModificar = true;

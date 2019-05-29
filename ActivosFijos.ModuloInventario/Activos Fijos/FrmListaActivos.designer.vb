@@ -22,7 +22,7 @@ Partial Class FrmListaActivos
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmListaActivos))
         Me.btnmostrar = New System.Windows.Forms.Button()
         Me.ToolTipImage1 = New Infoware.Controles.Base.ToolTipImage()
-        Me.CtlBuscaActivos1 = New ActivosFijos.Modulo.CtlBuscaActivos()
+        Me.CtlBuscaActivos1 = New ActivosFijos.ModuloInventario.CtlBuscaActivos()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.btnseleccionartodo = New System.Windows.Forms.ToolStripButton()
@@ -142,7 +142,7 @@ Partial Class FrmListaActivos
     End Sub
   Friend WithEvents btnmostrar As System.Windows.Forms.Button
   Friend WithEvents ToolTipImage1 As Infoware.Controles.Base.ToolTipImage
-  Friend WithEvents CtlBuscaActivos1 As ActivosFijos.Modulo.CtlBuscaActivos
+  Friend WithEvents CtlBuscaActivos1 As ActivosFijos.ModuloInventario.CtlBuscaActivos
   Friend WithEvents ToolStrip2 As System.Windows.Forms.ToolStrip
   Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
   Friend WithEvents btnseleccionartodo As System.Windows.Forms.ToolStripButton

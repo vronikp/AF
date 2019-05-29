@@ -50,22 +50,30 @@ Partial Class CtlBuscaActivos
     Me.chkfecha = New System.Windows.Forms.CheckBox()
     Me.chksoloactivos = New System.Windows.Forms.CheckBox()
     Me.pnlEstadoDep = New System.Windows.Forms.Panel()
+    Me.cboEstadoDep = New ActivosFijos.Modulo.ComboBoxParametroDet()
     Me.chkEstdoDep = New System.Windows.Forms.CheckBox()
     Me.pnlestadoinv = New System.Windows.Forms.Panel()
+    Me.cboestadoinv = New ActivosFijos.Modulo.ComboBoxParametroDet()
     Me.chkestadoinv = New System.Windows.Forms.CheckBox()
     Me.pnlubicacion = New System.Windows.Forms.Panel()
+    Me.CtlUbicacionActivo1 = New ActivosFijos.Modulo.CtlParametroDetAnidado()
     Me.chkubicacion = New System.Windows.Forms.CheckBox()
     Me.pnlcustodio = New System.Windows.Forms.Panel()
+    Me.CtlBuscaEmpleado1 = New ActivosFijos.Modulo.CtlBuscaEmpleado()
     Me.chkcustodio = New System.Windows.Forms.CheckBox()
     Me.pnlproveedor = New System.Windows.Forms.Panel()
     Me.pnlfactura = New System.Windows.Forms.Panel()
+    Me.CtlBuscaFactura1 = New ActivosFijos.Modulo.CtlBuscaFactura()
     Me.chkfactura = New System.Windows.Forms.CheckBox()
+    Me.CtlBuscaProveedor1 = New ActivosFijos.Modulo.CtlBuscaProveedor()
     Me.chkproveedor = New System.Windows.Forms.CheckBox()
     Me.txtmodelo = New Infoware.Controles.Base.TextBoxStd()
     Me.Label4 = New System.Windows.Forms.Label()
     Me.pnlmarca = New System.Windows.Forms.Panel()
+    Me.cboMarca = New ActivosFijos.Modulo.ComboBoxParametroDet()
     Me.chkmarca = New System.Windows.Forms.CheckBox()
     Me.pnlgrupo = New System.Windows.Forms.Panel()
+    Me.CtlGrupoTipoClase = New ActivosFijos.Modulo.CtlParametroDetAnidado()
     Me.chkgrupo = New System.Windows.Forms.CheckBox()
     Me.txtdescripcion = New Infoware.Controles.Base.TextBoxStd()
     Me.Label3 = New System.Windows.Forms.Label()
@@ -74,14 +82,6 @@ Partial Class CtlBuscaActivos
     Me.txtcodigoaux = New Infoware.Controles.Base.TextBoxStd()
     Me.Label5 = New System.Windows.Forms.Label()
     Me.txtcodigobarra = New Infoware.Controles.Base.TextBoxStd()
-    Me.cboEstadoDep = New ActivosFijos.Modulo.ComboBoxParametroDet()
-    Me.cboestadoinv = New ActivosFijos.Modulo.ComboBoxParametroDet()
-    Me.CtlUbicacionActivo1 = New ActivosFijos.Modulo.CtlParametroDetAnidado()
-    Me.CtlBuscaEmpleado1 = New ActivosFijos.Modulo.CtlBuscaEmpleado()
-    Me.CtlBuscaFactura1 = New ActivosFijos.Modulo.CtlBuscaFactura()
-    Me.CtlBuscaProveedor1 = New ActivosFijos.Modulo.CtlBuscaProveedor()
-    Me.cboMarca = New ActivosFijos.Modulo.ComboBoxParametroDet()
-    Me.CtlGrupoTipoClase = New ActivosFijos.Modulo.CtlParametroDetAnidado()
     Me.HeaderStrip2.SuspendLayout()
     Me.Panel1.SuspendLayout()
     Me.pnlcierre.SuspendLayout()
@@ -342,6 +342,26 @@ Partial Class CtlBuscaActivos
     Me.pnlEstadoDep.TabIndex = 28
     Me.pnlEstadoDep.Visible = False
     '
+    'cboEstadoDep
+    '
+    Me.cboEstadoDep.AbriralEntrar = False
+    Me.cboEstadoDep.Dock = System.Windows.Forms.DockStyle.Top
+    Me.cboEstadoDep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+    Me.cboEstadoDep.FormattingEnabled = True
+    Me.cboEstadoDep.Location = New System.Drawing.Point(15, 0)
+    Me.cboEstadoDep.Margin = New System.Windows.Forms.Padding(2)
+    Me.cboEstadoDep.MostrarRutaCompleta = False
+    Me.cboEstadoDep.Name = "cboEstadoDep"
+    Me.cboEstadoDep.OperadorDatos = Nothing
+    Me.cboEstadoDep.Parametro = ActivosFijos.Reglas.Enumerados.EnumParametros.TipoEntidad
+    Me.cboEstadoDep.ParametroDet = Nothing
+    Me.cboEstadoDep.PuedeActualizar = True
+    Me.cboEstadoDep.PuedeEliminar = True
+    Me.cboEstadoDep.PuedeModificar = True
+    Me.cboEstadoDep.PuedeNuevo = True
+    Me.cboEstadoDep.Size = New System.Drawing.Size(230, 21)
+    Me.cboEstadoDep.TabIndex = 0
+    '
     'chkEstdoDep
     '
     Me.chkEstdoDep.Dock = System.Windows.Forms.DockStyle.Top
@@ -361,6 +381,26 @@ Partial Class CtlBuscaActivos
     Me.pnlestadoinv.Size = New System.Drawing.Size(245, 21)
     Me.pnlestadoinv.TabIndex = 23
     Me.pnlestadoinv.Visible = False
+    '
+    'cboestadoinv
+    '
+    Me.cboestadoinv.AbriralEntrar = False
+    Me.cboestadoinv.Dock = System.Windows.Forms.DockStyle.Top
+    Me.cboestadoinv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+    Me.cboestadoinv.FormattingEnabled = True
+    Me.cboestadoinv.Location = New System.Drawing.Point(15, 0)
+    Me.cboestadoinv.Margin = New System.Windows.Forms.Padding(2)
+    Me.cboestadoinv.MostrarRutaCompleta = False
+    Me.cboestadoinv.Name = "cboestadoinv"
+    Me.cboestadoinv.OperadorDatos = Nothing
+    Me.cboestadoinv.Parametro = ActivosFijos.Reglas.Enumerados.EnumParametros.TipoEntidad
+    Me.cboestadoinv.ParametroDet = Nothing
+    Me.cboestadoinv.PuedeActualizar = True
+    Me.cboestadoinv.PuedeEliminar = True
+    Me.cboestadoinv.PuedeModificar = True
+    Me.cboestadoinv.PuedeNuevo = True
+    Me.cboestadoinv.Size = New System.Drawing.Size(230, 21)
+    Me.cboestadoinv.TabIndex = 0
     '
     'chkestadoinv
     '
@@ -382,6 +422,18 @@ Partial Class CtlBuscaActivos
     Me.pnlubicacion.TabIndex = 19
     Me.pnlubicacion.Visible = False
     '
+    'CtlUbicacionActivo1
+    '
+    Me.CtlUbicacionActivo1.Dock = System.Windows.Forms.DockStyle.Fill
+    Me.CtlUbicacionActivo1.Location = New System.Drawing.Point(15, 0)
+    Me.CtlUbicacionActivo1.Name = "CtlUbicacionActivo1"
+    Me.CtlUbicacionActivo1.ParametroDet = Nothing
+    Me.CtlUbicacionActivo1.ParametroEnum = ActivosFijos.Reglas.Enumerados.EnumParametros.UbicacionActivo
+    Me.CtlUbicacionActivo1.PardetRaiz = Nothing
+    Me.CtlUbicacionActivo1.Size = New System.Drawing.Size(230, 136)
+    Me.CtlUbicacionActivo1.SoloVisibles = False
+    Me.CtlUbicacionActivo1.TabIndex = 0
+    '
     'chkubicacion
     '
     Me.chkubicacion.Dock = System.Windows.Forms.DockStyle.Top
@@ -401,6 +453,20 @@ Partial Class CtlBuscaActivos
     Me.pnlcustodio.Size = New System.Drawing.Size(245, 45)
     Me.pnlcustodio.TabIndex = 17
     Me.pnlcustodio.Visible = False
+    '
+    'CtlBuscaEmpleado1
+    '
+    Me.CtlBuscaEmpleado1.Dock = System.Windows.Forms.DockStyle.Top
+    Me.CtlBuscaEmpleado1.Empleado = Nothing
+    Me.CtlBuscaEmpleado1.EmpleadoText = "Custodio"
+    Me.CtlBuscaEmpleado1.ItemText = "Custodio"
+    Me.CtlBuscaEmpleado1.Location = New System.Drawing.Point(15, 0)
+    Me.CtlBuscaEmpleado1.Name = "CtlBuscaEmpleado1"
+    Me.CtlBuscaEmpleado1.Size = New System.Drawing.Size(230, 43)
+    Me.CtlBuscaEmpleado1.SoloActivos = False
+    Me.CtlBuscaEmpleado1.TabIndex = 0
+    Me.CtlBuscaEmpleado1.TipoEmpleado = Nothing
+    Me.CtlBuscaEmpleado1.Ubicacion = ActivosFijos.Modulo.CtlBuscaEmpleado.EnumUbicacion.Abajo
     '
     'chkcustodio
     '
@@ -435,6 +501,19 @@ Partial Class CtlBuscaActivos
     Me.pnlfactura.TabIndex = 2
     Me.pnlfactura.Visible = False
     '
+    'CtlBuscaFactura1
+    '
+    Me.CtlBuscaFactura1.Dock = System.Windows.Forms.DockStyle.Top
+    Me.CtlBuscaFactura1.FacturaActivo = Nothing
+    Me.CtlBuscaFactura1.FacturaText = "Factura"
+    Me.CtlBuscaFactura1.ItemText = "Factura"
+    Me.CtlBuscaFactura1.Location = New System.Drawing.Point(15, 0)
+    Me.CtlBuscaFactura1.Name = "CtlBuscaFactura1"
+    Me.CtlBuscaFactura1.Proveedor = Nothing
+    Me.CtlBuscaFactura1.Size = New System.Drawing.Size(215, 45)
+    Me.CtlBuscaFactura1.TabIndex = 0
+    Me.CtlBuscaFactura1.Ubicacion = ActivosFijos.Modulo.CtlBuscaFactura.EnumUbicacion.Abajo
+    '
     'chkfactura
     '
     Me.chkfactura.Dock = System.Windows.Forms.DockStyle.Top
@@ -443,6 +522,19 @@ Partial Class CtlBuscaActivos
     Me.chkfactura.Size = New System.Drawing.Size(230, 17)
     Me.chkfactura.TabIndex = 1
     Me.chkfactura.Text = "Solo esta factura:"
+    '
+    'CtlBuscaProveedor1
+    '
+    Me.CtlBuscaProveedor1.Dock = System.Windows.Forms.DockStyle.Top
+    Me.CtlBuscaProveedor1.ItemText = "Proveedor"
+    Me.CtlBuscaProveedor1.Location = New System.Drawing.Point(15, 0)
+    Me.CtlBuscaProveedor1.Name = "CtlBuscaProveedor1"
+    Me.CtlBuscaProveedor1.Proveedor = Nothing
+    Me.CtlBuscaProveedor1.ProveedorText = "Proveedor"
+    Me.CtlBuscaProveedor1.Size = New System.Drawing.Size(230, 45)
+    Me.CtlBuscaProveedor1.SoloActivos = False
+    Me.CtlBuscaProveedor1.TabIndex = 0
+    Me.CtlBuscaProveedor1.Ubicacion = ActivosFijos.Modulo.CtlBuscaProveedor.EnumUbicacion.Abajo
     '
     'chkproveedor
     '
@@ -487,6 +579,26 @@ Partial Class CtlBuscaActivos
     Me.pnlmarca.TabIndex = 11
     Me.pnlmarca.Visible = False
     '
+    'cboMarca
+    '
+    Me.cboMarca.AbriralEntrar = False
+    Me.cboMarca.Dock = System.Windows.Forms.DockStyle.Top
+    Me.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+    Me.cboMarca.FormattingEnabled = True
+    Me.cboMarca.Location = New System.Drawing.Point(15, 0)
+    Me.cboMarca.Margin = New System.Windows.Forms.Padding(2)
+    Me.cboMarca.MostrarRutaCompleta = False
+    Me.cboMarca.Name = "cboMarca"
+    Me.cboMarca.OperadorDatos = Nothing
+    Me.cboMarca.Parametro = ActivosFijos.Reglas.Enumerados.EnumParametros.TipoEntidad
+    Me.cboMarca.ParametroDet = Nothing
+    Me.cboMarca.PuedeActualizar = True
+    Me.cboMarca.PuedeEliminar = True
+    Me.cboMarca.PuedeModificar = True
+    Me.cboMarca.PuedeNuevo = True
+    Me.cboMarca.Size = New System.Drawing.Size(230, 21)
+    Me.cboMarca.TabIndex = 0
+    '
     'chkmarca
     '
     Me.chkmarca.Dock = System.Windows.Forms.DockStyle.Top
@@ -506,6 +618,18 @@ Partial Class CtlBuscaActivos
     Me.pnlgrupo.Size = New System.Drawing.Size(245, 136)
     Me.pnlgrupo.TabIndex = 9
     Me.pnlgrupo.Visible = False
+    '
+    'CtlGrupoTipoClase
+    '
+    Me.CtlGrupoTipoClase.Dock = System.Windows.Forms.DockStyle.Fill
+    Me.CtlGrupoTipoClase.Location = New System.Drawing.Point(15, 0)
+    Me.CtlGrupoTipoClase.Name = "CtlGrupoTipoClase"
+    Me.CtlGrupoTipoClase.ParametroDet = Nothing
+    Me.CtlGrupoTipoClase.ParametroEnum = ActivosFijos.Reglas.Enumerados.EnumParametros.UbicacionActivo
+    Me.CtlGrupoTipoClase.PardetRaiz = Nothing
+    Me.CtlGrupoTipoClase.Size = New System.Drawing.Size(230, 136)
+    Me.CtlGrupoTipoClase.SoloVisibles = False
+    Me.CtlGrupoTipoClase.TabIndex = 1
     '
     'chkgrupo
     '
@@ -597,130 +721,6 @@ Partial Class CtlBuscaActivos
     Me.txtcodigobarra.PromptText = ""
     Me.txtcodigobarra.Size = New System.Drawing.Size(245, 20)
     Me.txtcodigobarra.TabIndex = 1
-    '
-    'cboEstadoDep
-    '
-    Me.cboEstadoDep.AbriralEntrar = False
-    Me.cboEstadoDep.Dock = System.Windows.Forms.DockStyle.Top
-    Me.cboEstadoDep.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-    Me.cboEstadoDep.FormattingEnabled = True
-    Me.cboEstadoDep.Location = New System.Drawing.Point(15, 0)
-    Me.cboEstadoDep.Margin = New System.Windows.Forms.Padding(2)
-    Me.cboEstadoDep.MostrarRutaCompleta = False
-    Me.cboEstadoDep.Name = "cboEstadoDep"
-    Me.cboEstadoDep.OperadorDatos = Nothing
-    Me.cboEstadoDep.Parametro = ActivosFijos.Reglas.Enumerados.EnumParametros.TipoEntidad
-    Me.cboEstadoDep.ParametroDet = Nothing
-    Me.cboEstadoDep.PuedeActualizar = True
-    Me.cboEstadoDep.PuedeEliminar = True
-    Me.cboEstadoDep.PuedeModificar = True
-    Me.cboEstadoDep.PuedeNuevo = True
-    Me.cboEstadoDep.Size = New System.Drawing.Size(230, 21)
-    Me.cboEstadoDep.TabIndex = 0
-    '
-    'cboestadoinv
-    '
-    Me.cboestadoinv.AbriralEntrar = False
-    Me.cboestadoinv.Dock = System.Windows.Forms.DockStyle.Top
-    Me.cboestadoinv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-    Me.cboestadoinv.FormattingEnabled = True
-    Me.cboestadoinv.Location = New System.Drawing.Point(15, 0)
-    Me.cboestadoinv.Margin = New System.Windows.Forms.Padding(2)
-    Me.cboestadoinv.MostrarRutaCompleta = False
-    Me.cboestadoinv.Name = "cboestadoinv"
-    Me.cboestadoinv.OperadorDatos = Nothing
-    Me.cboestadoinv.Parametro = ActivosFijos.Reglas.Enumerados.EnumParametros.TipoEntidad
-    Me.cboestadoinv.ParametroDet = Nothing
-    Me.cboestadoinv.PuedeActualizar = True
-    Me.cboestadoinv.PuedeEliminar = True
-    Me.cboestadoinv.PuedeModificar = True
-    Me.cboestadoinv.PuedeNuevo = True
-    Me.cboestadoinv.Size = New System.Drawing.Size(230, 21)
-    Me.cboestadoinv.TabIndex = 0
-    '
-    'CtlUbicacionActivo1
-    '
-    Me.CtlUbicacionActivo1.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.CtlUbicacionActivo1.Location = New System.Drawing.Point(15, 0)
-    Me.CtlUbicacionActivo1.Name = "CtlUbicacionActivo1"
-    Me.CtlUbicacionActivo1.ParametroDet = Nothing
-    Me.CtlUbicacionActivo1.ParametroEnum = ActivosFijos.Reglas.Enumerados.EnumParametros.UbicacionActivo
-    Me.CtlUbicacionActivo1.PardetRaiz = Nothing
-    Me.CtlUbicacionActivo1.Size = New System.Drawing.Size(230, 136)
-    Me.CtlUbicacionActivo1.SoloVisibles = False
-    Me.CtlUbicacionActivo1.TabIndex = 0
-    '
-    'CtlBuscaEmpleado1
-    '
-    Me.CtlBuscaEmpleado1.Dock = System.Windows.Forms.DockStyle.Top
-    Me.CtlBuscaEmpleado1.Empleado = Nothing
-    Me.CtlBuscaEmpleado1.EmpleadoText = "Custodio"
-    Me.CtlBuscaEmpleado1.ItemText = "Custodio"
-    Me.CtlBuscaEmpleado1.Location = New System.Drawing.Point(15, 0)
-    Me.CtlBuscaEmpleado1.Name = "CtlBuscaEmpleado1"
-    Me.CtlBuscaEmpleado1.Size = New System.Drawing.Size(230, 43)
-    Me.CtlBuscaEmpleado1.SoloActivos = False
-    Me.CtlBuscaEmpleado1.TabIndex = 0
-    Me.CtlBuscaEmpleado1.TipoEmpleado = Nothing
-    Me.CtlBuscaEmpleado1.Ubicacion = ActivosFijos.Modulo.CtlBuscaEmpleado.EnumUbicacion.Abajo
-    '
-    'CtlBuscaFactura1
-    '
-    Me.CtlBuscaFactura1.Dock = System.Windows.Forms.DockStyle.Top
-    Me.CtlBuscaFactura1.FacturaActivo = Nothing
-    Me.CtlBuscaFactura1.FacturaText = "Factura"
-    Me.CtlBuscaFactura1.ItemText = "Factura"
-    Me.CtlBuscaFactura1.Location = New System.Drawing.Point(15, 0)
-    Me.CtlBuscaFactura1.Name = "CtlBuscaFactura1"
-    Me.CtlBuscaFactura1.Proveedor = Nothing
-    Me.CtlBuscaFactura1.Size = New System.Drawing.Size(215, 45)
-    Me.CtlBuscaFactura1.TabIndex = 0
-    Me.CtlBuscaFactura1.Ubicacion = ActivosFijos.Modulo.CtlBuscaFactura.EnumUbicacion.Abajo
-    '
-    'CtlBuscaProveedor1
-    '
-    Me.CtlBuscaProveedor1.Dock = System.Windows.Forms.DockStyle.Top
-    Me.CtlBuscaProveedor1.ItemText = "Proveedor"
-    Me.CtlBuscaProveedor1.Location = New System.Drawing.Point(15, 0)
-    Me.CtlBuscaProveedor1.Name = "CtlBuscaProveedor1"
-    Me.CtlBuscaProveedor1.Proveedor = Nothing
-    Me.CtlBuscaProveedor1.ProveedorText = "Proveedor"
-    Me.CtlBuscaProveedor1.Size = New System.Drawing.Size(230, 45)
-    Me.CtlBuscaProveedor1.SoloActivos = False
-    Me.CtlBuscaProveedor1.TabIndex = 0
-    Me.CtlBuscaProveedor1.Ubicacion = ActivosFijos.Modulo.CtlBuscaProveedor.EnumUbicacion.Abajo
-    '
-    'cboMarca
-    '
-    Me.cboMarca.AbriralEntrar = False
-    Me.cboMarca.Dock = System.Windows.Forms.DockStyle.Top
-    Me.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-    Me.cboMarca.FormattingEnabled = True
-    Me.cboMarca.Location = New System.Drawing.Point(15, 0)
-    Me.cboMarca.Margin = New System.Windows.Forms.Padding(2)
-    Me.cboMarca.MostrarRutaCompleta = False
-    Me.cboMarca.Name = "cboMarca"
-    Me.cboMarca.OperadorDatos = Nothing
-    Me.cboMarca.Parametro = ActivosFijos.Reglas.Enumerados.EnumParametros.TipoEntidad
-    Me.cboMarca.ParametroDet = Nothing
-    Me.cboMarca.PuedeActualizar = True
-    Me.cboMarca.PuedeEliminar = True
-    Me.cboMarca.PuedeModificar = True
-    Me.cboMarca.PuedeNuevo = True
-    Me.cboMarca.Size = New System.Drawing.Size(230, 21)
-    Me.cboMarca.TabIndex = 0
-    '
-    'CtlGrupoTipoClase
-    '
-    Me.CtlGrupoTipoClase.Dock = System.Windows.Forms.DockStyle.Fill
-    Me.CtlGrupoTipoClase.Location = New System.Drawing.Point(15, 0)
-    Me.CtlGrupoTipoClase.Name = "CtlGrupoTipoClase"
-    Me.CtlGrupoTipoClase.ParametroDet = Nothing
-    Me.CtlGrupoTipoClase.ParametroEnum = ActivosFijos.Reglas.Enumerados.EnumParametros.UbicacionActivo
-    Me.CtlGrupoTipoClase.PardetRaiz = Nothing
-    Me.CtlGrupoTipoClase.Size = New System.Drawing.Size(230, 136)
-    Me.CtlGrupoTipoClase.SoloVisibles = False
-    Me.CtlGrupoTipoClase.TabIndex = 1
     '
     'CtlBuscaActivos
     '

@@ -34,19 +34,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ActivosFijos.Reglas">
-      <HintPath>..\..\ActivosFijos.Modulo\bin\Release\ActivosFijos.Reglas.dll</HintPath>
+      <HintPath>..\..\ActivosFijos.Reglas\bin\Debug\ActivosFijos.Reglas.dll</HintPath>
     </Reference>
     <Reference Include="ArtisanCode.SimpleAesEncryption, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Simple.AES.2.0.2.0\lib\net40\ArtisanCode.SimpleAesEncryption.dll</HintPath>
     </Reference>
+    <Reference Include="Infoware.Controles.Base">
+      <HintPath>..\..\ActivosFijos.Reglas\bin\Debug\Infoware.Controles.Base.dll</HintPath>
+    </Reference>
     <Reference Include="Infoware.Datos">
-      <HintPath>..\..\ActivosFijos.Modulo\bin\Release\Infoware.Datos.dll</HintPath>
+      <HintPath>..\..\ActivosFijos.Reglas\bin\Debug\Infoware.Datos.dll</HintPath>
     </Reference>
     <Reference Include="Infoware.Reglas">
-      <HintPath>..\..\ActivosFijos.Modulo\bin\Release\Infoware.Reglas.dll</HintPath>
+      <HintPath>..\..\ActivosFijos.Reglas\bin\Debug\Infoware.Reglas.dll</HintPath>
     </Reference>
     <Reference Include="Infoware.Reglas.General">
-      <HintPath>..\..\ActivosFijos.Modulo\bin\Release\Infoware.Reglas.General.dll</HintPath>
+      <HintPath>..\..\ActivosFijos.Reglas\bin\Debug\Infoware.Reglas.General.dll</HintPath>
+    </Reference>
+    <Reference Include="Infoware.Reportes">
+      <HintPath>..\..\ActivosFijos.Reglas\bin\Debug\Infoware.Reportes.dll</HintPath>
     </Reference>
     <Reference Include="RijndaelCryptography, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\RijndaelCryptography.1.0.0\lib\RijndaelCryptography.dll</HintPath>

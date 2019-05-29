@@ -20,12 +20,12 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("dsActaConstatacionF3"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("dsActaConstatacionF5"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class dsActaConstatacionF3
+Partial Public Class dsActaConstatacionF5
     Inherits Global.System.Data.DataSet
     
-    Private tablevw_ActaConstatacionF3 As vw_ActaConstatacionF3DataTable
+    Private tablevw_ActaConstatacionF4 As vw_ActaConstatacionF4DataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +56,8 @@ Partial Public Class dsActaConstatacionF3
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("vw_ActaConstatacionF3")) Is Nothing) Then
-                MyBase.Tables.Add(New vw_ActaConstatacionF3DataTable(ds.Tables("vw_ActaConstatacionF3")))
+            If (Not (ds.Tables("vw_ActaConstatacionF4")) Is Nothing) Then
+                MyBase.Tables.Add(New vw_ActaConstatacionF4DataTable(ds.Tables("vw_ActaConstatacionF4")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +80,9 @@ Partial Public Class dsActaConstatacionF3
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property vw_ActaConstatacionF3() As vw_ActaConstatacionF3DataTable
+    Public ReadOnly Property vw_ActaConstatacionF4() As vw_ActaConstatacionF4DataTable
         Get
-            Return Me.tablevw_ActaConstatacionF3
+            Return Me.tablevw_ActaConstatacionF4
         End Get
     End Property
     
@@ -128,7 +128,7 @@ Partial Public Class dsActaConstatacionF3
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As dsActaConstatacionF3 = CType(MyBase.Clone,dsActaConstatacionF3)
+        Dim cln As dsActaConstatacionF5 = CType(MyBase.Clone,dsActaConstatacionF5)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -153,8 +153,8 @@ Partial Public Class dsActaConstatacionF3
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("vw_ActaConstatacionF3")) Is Nothing) Then
-                MyBase.Tables.Add(New vw_ActaConstatacionF3DataTable(ds.Tables("vw_ActaConstatacionF3")))
+            If (Not (ds.Tables("vw_ActaConstatacionF4")) Is Nothing) Then
+                MyBase.Tables.Add(New vw_ActaConstatacionF4DataTable(ds.Tables("vw_ActaConstatacionF4")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +188,10 @@ Partial Public Class dsActaConstatacionF3
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tablevw_ActaConstatacionF3 = CType(MyBase.Tables("vw_ActaConstatacionF3"),vw_ActaConstatacionF3DataTable)
+        Me.tablevw_ActaConstatacionF4 = CType(MyBase.Tables("vw_ActaConstatacionF4"),vw_ActaConstatacionF4DataTable)
         If (initTable = true) Then
-            If (Not (Me.tablevw_ActaConstatacionF3) Is Nothing) Then
-                Me.tablevw_ActaConstatacionF3.InitVars
+            If (Not (Me.tablevw_ActaConstatacionF4) Is Nothing) Then
+                Me.tablevw_ActaConstatacionF4.InitVars
             End If
         End If
     End Sub
@@ -199,18 +199,18 @@ Partial Public Class dsActaConstatacionF3
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "dsActaConstatacionF3"
+        Me.DataSetName = "dsActaConstatacionF5"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/dsActaConstatacionF3.xsd"
+        Me.Namespace = "http://tempuri.org/dsActaConstatacionF5.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tablevw_ActaConstatacionF3 = New vw_ActaConstatacionF3DataTable()
-        MyBase.Tables.Add(Me.tablevw_ActaConstatacionF3)
+        Me.tablevw_ActaConstatacionF4 = New vw_ActaConstatacionF4DataTable()
+        MyBase.Tables.Add(Me.tablevw_ActaConstatacionF4)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Private Function ShouldSerializevw_ActaConstatacionF3() As Boolean
+    Private Function ShouldSerializevw_ActaConstatacionF4() As Boolean
         Return false
     End Function
     
@@ -225,7 +225,7 @@ Partial Public Class dsActaConstatacionF3
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As dsActaConstatacionF3 = New dsActaConstatacionF3()
+        Dim ds As dsActaConstatacionF5 = New dsActaConstatacionF5()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -273,19 +273,25 @@ Partial Public Class dsActaConstatacionF3
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Delegate Sub vw_ActaConstatacionF3RowChangeEventHandler(ByVal sender As Object, ByVal e As vw_ActaConstatacionF3RowChangeEvent)
+    Public Delegate Sub vw_ActaConstatacionF4RowChangeEventHandler(ByVal sender As Object, ByVal e As vw_ActaConstatacionF4RowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class vw_ActaConstatacionF3DataTable
-        Inherits Global.System.Data.TypedTableBase(Of vw_ActaConstatacionF3Row)
+    Partial Public Class vw_ActaConstatacionF4DataTable
+        Inherits Global.System.Data.TypedTableBase(Of vw_ActaConstatacionF4Row)
         
-        Private columnCustodioActual As Global.System.Data.DataColumn
+        Private columnNombre As Global.System.Data.DataColumn
         
-        Private columnIdCustodioActual As Global.System.Data.DataColumn
+        Private columnCodigoEmpleado As Global.System.Data.DataColumn
+        
+        Private columnCI As Global.System.Data.DataColumn
+        
+        Private columnDepartamento As Global.System.Data.DataColumn
+        
+        Private columnCargo As Global.System.Data.DataColumn
         
         Private columnEstadoInv As Global.System.Data.DataColumn
         
@@ -337,17 +343,13 @@ Partial Public Class dsActaConstatacionF3
         
         Private columnUsuari_FechaHoraRegistro As Global.System.Data.DataColumn
         
-        Private columnActivo_Observacion As Global.System.Data.DataColumn
-        
-        Private columnActivo_CodigoAux As Global.System.Data.DataColumn
-        
-        Private columnActivo_CodigoBarraCruce As Global.System.Data.DataColumn
+        Private columnUso As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "vw_ActaConstatacionF3"
+            Me.TableName = "vw_ActaConstatacionF4"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -380,17 +382,41 @@ Partial Public Class dsActaConstatacionF3
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property CustodioActualColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property NombreColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnCustodioActual
+                Return Me.columnNombre
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property IdCustodioActualColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property CodigoEmpleadoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnIdCustodioActual
+                Return Me.columnCodigoEmpleado
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property CIColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCI
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property DepartamentoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDepartamento
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property CargoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCargo
             End Get
         End Property
         
@@ -596,25 +622,9 @@ Partial Public Class dsActaConstatacionF3
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Activo_ObservacionColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property UsoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnActivo_Observacion
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Activo_CodigoAuxColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnActivo_CodigoAux
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Activo_CodigoBarraCruceColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnActivo_CodigoBarraCruce
+                Return Me.columnUso
             End Get
         End Property
         
@@ -629,35 +639,38 @@ Partial Public Class dsActaConstatacionF3
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As vw_ActaConstatacionF3Row
+        Public Default ReadOnly Property Item(ByVal index As Integer) As vw_ActaConstatacionF4Row
             Get
-                Return CType(Me.Rows(index),vw_ActaConstatacionF3Row)
+                Return CType(Me.Rows(index),vw_ActaConstatacionF4Row)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event vw_ActaConstatacionF3RowChanging As vw_ActaConstatacionF3RowChangeEventHandler
+        Public Event vw_ActaConstatacionF4RowChanging As vw_ActaConstatacionF4RowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event vw_ActaConstatacionF3RowChanged As vw_ActaConstatacionF3RowChangeEventHandler
+        Public Event vw_ActaConstatacionF4RowChanged As vw_ActaConstatacionF4RowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event vw_ActaConstatacionF3RowDeleting As vw_ActaConstatacionF3RowChangeEventHandler
+        Public Event vw_ActaConstatacionF4RowDeleting As vw_ActaConstatacionF4RowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Event vw_ActaConstatacionF3RowDeleted As vw_ActaConstatacionF3RowChangeEventHandler
+        Public Event vw_ActaConstatacionF4RowDeleted As vw_ActaConstatacionF4RowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Sub Addvw_ActaConstatacionF3Row(ByVal row As vw_ActaConstatacionF3Row)
+        Public Overloads Sub Addvw_ActaConstatacionF4Row(ByVal row As vw_ActaConstatacionF4Row)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function Addvw_ActaConstatacionF3Row( _
-                    ByVal CustodioActual As String,  _
-                    ByVal IdCustodioActual As String,  _
+        Public Overloads Function Addvw_ActaConstatacionF4Row( _
+                    ByVal Nombre As String,  _
+                    ByVal CodigoEmpleado As String,  _
+                    ByVal CI As String,  _
+                    ByVal Departamento As String,  _
+                    ByVal Cargo As String,  _
                     ByVal EstadoInv As String,  _
                     ByVal UbicacionActual As String,  _
                     ByVal CodigoBarras As String,  _
@@ -683,20 +696,18 @@ Partial Public Class dsActaConstatacionF3
                     ByVal UbicacionInv As String,  _
                     ByVal Usuari_CodigoPDA As String,  _
                     ByVal Usuari_FechaHoraRegistro As Date,  _
-                    ByVal Activo_Observacion As String,  _
-                    ByVal Activo_CodigoAux As String,  _
-                    ByVal Activo_CodigoBarraCruce As String) As vw_ActaConstatacionF3Row
-            Dim rowvw_ActaConstatacionF3Row As vw_ActaConstatacionF3Row = CType(Me.NewRow,vw_ActaConstatacionF3Row)
-            Dim columnValuesArray() As Object = New Object() {CustodioActual, IdCustodioActual, EstadoInv, UbicacionActual, CodigoBarras, GrupoTipoClase, Descripcion, Marca, Modelo, Serie, Activo_Codigo, Activo_FechaBaja, Parame_Ubicacion, Pardet_Ubicacion, Parame_PeriodoInventario, Pardet_PeriodoInventario, Pardet_EstadoInventario, Emplea_Custodio, InvDet_esCambioCustodio, FechaCambio, Clase, Tipo, Estado, PeriodoInv, UbicacionInv, Usuari_CodigoPDA, Usuari_FechaHoraRegistro, Activo_Observacion, Activo_CodigoAux, Activo_CodigoBarraCruce}
-            rowvw_ActaConstatacionF3Row.ItemArray = columnValuesArray
-            Me.Rows.Add(rowvw_ActaConstatacionF3Row)
-            Return rowvw_ActaConstatacionF3Row
+                    ByVal Uso As String) As vw_ActaConstatacionF4Row
+            Dim rowvw_ActaConstatacionF4Row As vw_ActaConstatacionF4Row = CType(Me.NewRow,vw_ActaConstatacionF4Row)
+            Dim columnValuesArray() As Object = New Object() {Nombre, CodigoEmpleado, CI, Departamento, Cargo, EstadoInv, UbicacionActual, CodigoBarras, GrupoTipoClase, Descripcion, Marca, Modelo, Serie, Activo_Codigo, Activo_FechaBaja, Parame_Ubicacion, Pardet_Ubicacion, Parame_PeriodoInventario, Pardet_PeriodoInventario, Pardet_EstadoInventario, Emplea_Custodio, InvDet_esCambioCustodio, FechaCambio, Clase, Tipo, Estado, PeriodoInv, UbicacionInv, Usuari_CodigoPDA, Usuari_FechaHoraRegistro, Uso}
+            rowvw_ActaConstatacionF4Row.ItemArray = columnValuesArray
+            Me.Rows.Add(rowvw_ActaConstatacionF4Row)
+            Return rowvw_ActaConstatacionF4Row
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As vw_ActaConstatacionF3DataTable = CType(MyBase.Clone,vw_ActaConstatacionF3DataTable)
+            Dim cln As vw_ActaConstatacionF4DataTable = CType(MyBase.Clone,vw_ActaConstatacionF4DataTable)
             cln.InitVars
             Return cln
         End Function
@@ -704,14 +715,17 @@ Partial Public Class dsActaConstatacionF3
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New vw_ActaConstatacionF3DataTable()
+            Return New vw_ActaConstatacionF4DataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnCustodioActual = MyBase.Columns("CustodioActual")
-            Me.columnIdCustodioActual = MyBase.Columns("IdCustodioActual")
+            Me.columnNombre = MyBase.Columns("Nombre")
+            Me.columnCodigoEmpleado = MyBase.Columns("CodigoEmpleado")
+            Me.columnCI = MyBase.Columns("CI")
+            Me.columnDepartamento = MyBase.Columns("Departamento")
+            Me.columnCargo = MyBase.Columns("Cargo")
             Me.columnEstadoInv = MyBase.Columns("EstadoInv")
             Me.columnUbicacionActual = MyBase.Columns("UbicacionActual")
             Me.columnCodigoBarras = MyBase.Columns("CodigoBarras")
@@ -737,18 +751,22 @@ Partial Public Class dsActaConstatacionF3
             Me.columnUbicacionInv = MyBase.Columns("UbicacionInv")
             Me.columnUsuari_CodigoPDA = MyBase.Columns("Usuari_CodigoPDA")
             Me.columnUsuari_FechaHoraRegistro = MyBase.Columns("Usuari_FechaHoraRegistro")
-            Me.columnActivo_Observacion = MyBase.Columns("Activo_Observacion")
-            Me.columnActivo_CodigoAux = MyBase.Columns("Activo_CodigoAux")
-            Me.columnActivo_CodigoBarraCruce = MyBase.Columns("Activo_CodigoBarraCruce")
+            Me.columnUso = MyBase.Columns("Uso")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnCustodioActual = New Global.System.Data.DataColumn("CustodioActual", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCustodioActual)
-            Me.columnIdCustodioActual = New Global.System.Data.DataColumn("IdCustodioActual", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnIdCustodioActual)
+            Me.columnNombre = New Global.System.Data.DataColumn("Nombre", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNombre)
+            Me.columnCodigoEmpleado = New Global.System.Data.DataColumn("CodigoEmpleado", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCodigoEmpleado)
+            Me.columnCI = New Global.System.Data.DataColumn("CI", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCI)
+            Me.columnDepartamento = New Global.System.Data.DataColumn("Departamento", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDepartamento)
+            Me.columnCargo = New Global.System.Data.DataColumn("Cargo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCargo)
             Me.columnEstadoInv = New Global.System.Data.DataColumn("EstadoInv", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnEstadoInv)
             Me.columnUbicacionActual = New Global.System.Data.DataColumn("UbicacionActual", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -799,14 +817,17 @@ Partial Public Class dsActaConstatacionF3
             MyBase.Columns.Add(Me.columnUsuari_CodigoPDA)
             Me.columnUsuari_FechaHoraRegistro = New Global.System.Data.DataColumn("Usuari_FechaHoraRegistro", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnUsuari_FechaHoraRegistro)
-            Me.columnActivo_Observacion = New Global.System.Data.DataColumn("Activo_Observacion", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnActivo_Observacion)
-            Me.columnActivo_CodigoAux = New Global.System.Data.DataColumn("Activo_CodigoAux", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnActivo_CodigoAux)
-            Me.columnActivo_CodigoBarraCruce = New Global.System.Data.DataColumn("Activo_CodigoBarraCruce", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnActivo_CodigoBarraCruce)
-            Me.columnCustodioActual.MaxLength = 201
-            Me.columnIdCustodioActual.MaxLength = 50
+            Me.columnUso = New Global.System.Data.DataColumn("Uso", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUso)
+            Me.columnNombre.AllowDBNull = false
+            Me.columnNombre.MaxLength = 50
+            Me.columnCodigoEmpleado.MaxLength = 50
+            Me.columnCI.AllowDBNull = false
+            Me.columnCI.MaxLength = 100
+            Me.columnDepartamento.AllowDBNull = false
+            Me.columnDepartamento.MaxLength = 50
+            Me.columnCargo.AllowDBNull = false
+            Me.columnCargo.MaxLength = 50
             Me.columnEstadoInv.ReadOnly = true
             Me.columnEstadoInv.MaxLength = 42
             Me.columnUbicacionActual.ReadOnly = true
@@ -815,8 +836,8 @@ Partial Public Class dsActaConstatacionF3
             Me.columnCodigoBarras.MaxLength = 50
             Me.columnGrupoTipoClase.ReadOnly = true
             Me.columnGrupoTipoClase.MaxLength = 300
-            Me.columnDescripcion.AllowDBNull = false
-            Me.columnDescripcion.MaxLength = 150
+            Me.columnDescripcion.ReadOnly = true
+            Me.columnDescripcion.MaxLength = 2147483647
             Me.columnMarca.AllowDBNull = false
             Me.columnMarca.MaxLength = 150
             Me.columnModelo.AllowDBNull = false
@@ -831,6 +852,7 @@ Partial Public Class dsActaConstatacionF3
             Me.columnPardet_EstadoInventario.AllowDBNull = false
             Me.columnEmplea_Custodio.AllowDBNull = false
             Me.columnInvDet_esCambioCustodio.AllowDBNull = false
+            Me.columnFechaCambio.AllowDBNull = false
             Me.columnClase.AllowDBNull = false
             Me.columnClase.MaxLength = 150
             Me.columnTipo.AllowDBNull = false
@@ -842,37 +864,34 @@ Partial Public Class dsActaConstatacionF3
             Me.columnUbicacionInv.ReadOnly = true
             Me.columnUbicacionInv.MaxLength = 300
             Me.columnUsuari_CodigoPDA.MaxLength = 18
-            Me.columnActivo_Observacion.AllowDBNull = false
-            Me.columnActivo_Observacion.MaxLength = 350
-            Me.columnActivo_CodigoAux.AllowDBNull = false
-            Me.columnActivo_CodigoAux.MaxLength = 50
-            Me.columnActivo_CodigoBarraCruce.MaxLength = 50
+            Me.columnUso.ReadOnly = true
+            Me.columnUso.MaxLength = 350
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function Newvw_ActaConstatacionF3Row() As vw_ActaConstatacionF3Row
-            Return CType(Me.NewRow,vw_ActaConstatacionF3Row)
+        Public Function Newvw_ActaConstatacionF4Row() As vw_ActaConstatacionF4Row
+            Return CType(Me.NewRow,vw_ActaConstatacionF4Row)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New vw_ActaConstatacionF3Row(builder)
+            Return New vw_ActaConstatacionF4Row(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(vw_ActaConstatacionF3Row)
+            Return GetType(vw_ActaConstatacionF4Row)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.vw_ActaConstatacionF3RowChangedEvent) Is Nothing) Then
-                RaiseEvent vw_ActaConstatacionF3RowChanged(Me, New vw_ActaConstatacionF3RowChangeEvent(CType(e.Row,vw_ActaConstatacionF3Row), e.Action))
+            If (Not (Me.vw_ActaConstatacionF4RowChangedEvent) Is Nothing) Then
+                RaiseEvent vw_ActaConstatacionF4RowChanged(Me, New vw_ActaConstatacionF4RowChangeEvent(CType(e.Row,vw_ActaConstatacionF4Row), e.Action))
             End If
         End Sub
         
@@ -880,8 +899,8 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.vw_ActaConstatacionF3RowChangingEvent) Is Nothing) Then
-                RaiseEvent vw_ActaConstatacionF3RowChanging(Me, New vw_ActaConstatacionF3RowChangeEvent(CType(e.Row,vw_ActaConstatacionF3Row), e.Action))
+            If (Not (Me.vw_ActaConstatacionF4RowChangingEvent) Is Nothing) Then
+                RaiseEvent vw_ActaConstatacionF4RowChanging(Me, New vw_ActaConstatacionF4RowChangeEvent(CType(e.Row,vw_ActaConstatacionF4Row), e.Action))
             End If
         End Sub
         
@@ -889,8 +908,8 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.vw_ActaConstatacionF3RowDeletedEvent) Is Nothing) Then
-                RaiseEvent vw_ActaConstatacionF3RowDeleted(Me, New vw_ActaConstatacionF3RowChangeEvent(CType(e.Row,vw_ActaConstatacionF3Row), e.Action))
+            If (Not (Me.vw_ActaConstatacionF4RowDeletedEvent) Is Nothing) Then
+                RaiseEvent vw_ActaConstatacionF4RowDeleted(Me, New vw_ActaConstatacionF4RowChangeEvent(CType(e.Row,vw_ActaConstatacionF4Row), e.Action))
             End If
         End Sub
         
@@ -898,14 +917,14 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.vw_ActaConstatacionF3RowDeletingEvent) Is Nothing) Then
-                RaiseEvent vw_ActaConstatacionF3RowDeleting(Me, New vw_ActaConstatacionF3RowChangeEvent(CType(e.Row,vw_ActaConstatacionF3Row), e.Action))
+            If (Not (Me.vw_ActaConstatacionF4RowDeletingEvent) Is Nothing) Then
+                RaiseEvent vw_ActaConstatacionF4RowDeleting(Me, New vw_ActaConstatacionF4RowChangeEvent(CType(e.Row,vw_ActaConstatacionF4Row), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub Removevw_ActaConstatacionF3Row(ByVal row As vw_ActaConstatacionF3Row)
+        Public Sub Removevw_ActaConstatacionF4Row(ByVal row As vw_ActaConstatacionF4Row)
             Me.Rows.Remove(row)
         End Sub
         
@@ -914,7 +933,7 @@ Partial Public Class dsActaConstatacionF3
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As dsActaConstatacionF3 = New dsActaConstatacionF3()
+            Dim ds As dsActaConstatacionF5 = New dsActaConstatacionF5()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -932,7 +951,7 @@ Partial Public Class dsActaConstatacionF3
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "vw_ActaConstatacionF3DataTable"
+            attribute2.FixedValue = "vw_ActaConstatacionF4DataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -979,47 +998,75 @@ Partial Public Class dsActaConstatacionF3
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class vw_ActaConstatacionF3Row
+    Partial Public Class vw_ActaConstatacionF4Row
         Inherits Global.System.Data.DataRow
         
-        Private tablevw_ActaConstatacionF3 As vw_ActaConstatacionF3DataTable
+        Private tablevw_ActaConstatacionF4 As vw_ActaConstatacionF4DataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tablevw_ActaConstatacionF3 = CType(Me.Table,vw_ActaConstatacionF3DataTable)
+            Me.tablevw_ActaConstatacionF4 = CType(Me.Table,vw_ActaConstatacionF4DataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property CustodioActual() As String
+        Public Property Nombre() As String
             Get
-                Try 
-                    Return CType(Me(Me.tablevw_ActaConstatacionF3.CustodioActualColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'CustodioActual' in table 'vw_ActaConstatacionF3' is DBNull."& _ 
-                            "", e)
-                End Try
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.NombreColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.CustodioActualColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.NombreColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property IdCustodioActual() As String
+        Public Property CodigoEmpleado() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablevw_ActaConstatacionF3.IdCustodioActualColumn),String)
+                    Return CType(Me(Me.tablevw_ActaConstatacionF4.CodigoEmpleadoColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'IdCustodioActual' in table 'vw_ActaConstatacionF3' is DBNul"& _ 
-                            "l.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CodigoEmpleado' in table 'vw_ActaConstatacionF4' is DBNull."& _ 
+                            "", e)
                 End Try
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.IdCustodioActualColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.CodigoEmpleadoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property CI() As String
+            Get
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.CIColumn),String)
+            End Get
+            Set
+                Me(Me.tablevw_ActaConstatacionF4.CIColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Departamento() As String
+            Get
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.DepartamentoColumn),String)
+            End Get
+            Set
+                Me(Me.tablevw_ActaConstatacionF4.DepartamentoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Cargo() As String
+            Get
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.CargoColumn),String)
+            End Get
+            Set
+                Me(Me.tablevw_ActaConstatacionF4.CargoColumn) = value
             End Set
         End Property
         
@@ -1028,13 +1075,13 @@ Partial Public Class dsActaConstatacionF3
         Public Property EstadoInv() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablevw_ActaConstatacionF3.EstadoInvColumn),String)
+                    Return CType(Me(Me.tablevw_ActaConstatacionF4.EstadoInvColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'EstadoInv' in table 'vw_ActaConstatacionF3' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'EstadoInv' in table 'vw_ActaConstatacionF4' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.EstadoInvColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.EstadoInvColumn) = value
             End Set
         End Property
         
@@ -1043,14 +1090,14 @@ Partial Public Class dsActaConstatacionF3
         Public Property UbicacionActual() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablevw_ActaConstatacionF3.UbicacionActualColumn),String)
+                    Return CType(Me(Me.tablevw_ActaConstatacionF4.UbicacionActualColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'UbicacionActual' in table 'vw_ActaConstatacionF3' is DBNull"& _ 
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'UbicacionActual' in table 'vw_ActaConstatacionF4' is DBNull"& _ 
                             ".", e)
                 End Try
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.UbicacionActualColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.UbicacionActualColumn) = value
             End Set
         End Property
         
@@ -1058,10 +1105,10 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property CodigoBarras() As String
             Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.CodigoBarrasColumn),String)
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.CodigoBarrasColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.CodigoBarrasColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.CodigoBarrasColumn) = value
             End Set
         End Property
         
@@ -1070,14 +1117,14 @@ Partial Public Class dsActaConstatacionF3
         Public Property GrupoTipoClase() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablevw_ActaConstatacionF3.GrupoTipoClaseColumn),String)
+                    Return CType(Me(Me.tablevw_ActaConstatacionF4.GrupoTipoClaseColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'GrupoTipoClase' in table 'vw_ActaConstatacionF3' is DBNull."& _ 
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'GrupoTipoClase' in table 'vw_ActaConstatacionF4' is DBNull."& _ 
                             "", e)
                 End Try
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.GrupoTipoClaseColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.GrupoTipoClaseColumn) = value
             End Set
         End Property
         
@@ -1085,10 +1132,14 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Descripcion() As String
             Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.DescripcionColumn),String)
+                Try 
+                    Return CType(Me(Me.tablevw_ActaConstatacionF4.DescripcionColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Descripcion' in table 'vw_ActaConstatacionF4' is DBNull.", e)
+                End Try
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.DescripcionColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.DescripcionColumn) = value
             End Set
         End Property
         
@@ -1096,10 +1147,10 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Marca() As String
             Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.MarcaColumn),String)
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.MarcaColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.MarcaColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.MarcaColumn) = value
             End Set
         End Property
         
@@ -1107,10 +1158,10 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Modelo() As String
             Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.ModeloColumn),String)
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.ModeloColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.ModeloColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.ModeloColumn) = value
             End Set
         End Property
         
@@ -1118,10 +1169,10 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Serie() As String
             Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.SerieColumn),String)
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.SerieColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.SerieColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.SerieColumn) = value
             End Set
         End Property
         
@@ -1129,10 +1180,10 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Activo_Codigo() As Integer
             Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.Activo_CodigoColumn),Integer)
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.Activo_CodigoColumn),Integer)
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.Activo_CodigoColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.Activo_CodigoColumn) = value
             End Set
         End Property
         
@@ -1141,14 +1192,14 @@ Partial Public Class dsActaConstatacionF3
         Public Property Activo_FechaBaja() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tablevw_ActaConstatacionF3.Activo_FechaBajaColumn),Date)
+                    Return CType(Me(Me.tablevw_ActaConstatacionF4.Activo_FechaBajaColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Activo_FechaBaja' in table 'vw_ActaConstatacionF3' is DBNul"& _ 
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Activo_FechaBaja' in table 'vw_ActaConstatacionF4' is DBNul"& _ 
                             "l.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.Activo_FechaBajaColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.Activo_FechaBajaColumn) = value
             End Set
         End Property
         
@@ -1156,10 +1207,10 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Parame_Ubicacion() As Integer
             Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.Parame_UbicacionColumn),Integer)
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.Parame_UbicacionColumn),Integer)
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.Parame_UbicacionColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.Parame_UbicacionColumn) = value
             End Set
         End Property
         
@@ -1167,10 +1218,10 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Pardet_Ubicacion() As Integer
             Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.Pardet_UbicacionColumn),Integer)
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.Pardet_UbicacionColumn),Integer)
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.Pardet_UbicacionColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.Pardet_UbicacionColumn) = value
             End Set
         End Property
         
@@ -1178,10 +1229,10 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Parame_PeriodoInventario() As Integer
             Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.Parame_PeriodoInventarioColumn),Integer)
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.Parame_PeriodoInventarioColumn),Integer)
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.Parame_PeriodoInventarioColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.Parame_PeriodoInventarioColumn) = value
             End Set
         End Property
         
@@ -1189,10 +1240,10 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Pardet_PeriodoInventario() As Integer
             Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.Pardet_PeriodoInventarioColumn),Integer)
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.Pardet_PeriodoInventarioColumn),Integer)
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.Pardet_PeriodoInventarioColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.Pardet_PeriodoInventarioColumn) = value
             End Set
         End Property
         
@@ -1200,10 +1251,10 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Pardet_EstadoInventario() As Integer
             Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.Pardet_EstadoInventarioColumn),Integer)
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.Pardet_EstadoInventarioColumn),Integer)
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.Pardet_EstadoInventarioColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.Pardet_EstadoInventarioColumn) = value
             End Set
         End Property
         
@@ -1211,10 +1262,10 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Emplea_Custodio() As Integer
             Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.Emplea_CustodioColumn),Integer)
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.Emplea_CustodioColumn),Integer)
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.Emplea_CustodioColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.Emplea_CustodioColumn) = value
             End Set
         End Property
         
@@ -1222,10 +1273,10 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property InvDet_esCambioCustodio() As Boolean
             Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.InvDet_esCambioCustodioColumn),Boolean)
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.InvDet_esCambioCustodioColumn),Boolean)
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.InvDet_esCambioCustodioColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.InvDet_esCambioCustodioColumn) = value
             End Set
         End Property
         
@@ -1233,14 +1284,10 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property FechaCambio() As Date
             Get
-                Try 
-                    Return CType(Me(Me.tablevw_ActaConstatacionF3.FechaCambioColumn),Date)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'FechaCambio' in table 'vw_ActaConstatacionF3' is DBNull.", e)
-                End Try
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.FechaCambioColumn),Date)
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.FechaCambioColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.FechaCambioColumn) = value
             End Set
         End Property
         
@@ -1248,10 +1295,10 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Clase() As String
             Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.ClaseColumn),String)
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.ClaseColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.ClaseColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.ClaseColumn) = value
             End Set
         End Property
         
@@ -1259,10 +1306,10 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Tipo() As String
             Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.TipoColumn),String)
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.TipoColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.TipoColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.TipoColumn) = value
             End Set
         End Property
         
@@ -1270,10 +1317,10 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property Estado() As String
             Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.EstadoColumn),String)
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.EstadoColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.EstadoColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.EstadoColumn) = value
             End Set
         End Property
         
@@ -1281,10 +1328,10 @@ Partial Public Class dsActaConstatacionF3
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property PeriodoInv() As String
             Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.PeriodoInvColumn),String)
+                Return CType(Me(Me.tablevw_ActaConstatacionF4.PeriodoInvColumn),String)
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.PeriodoInvColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.PeriodoInvColumn) = value
             End Set
         End Property
         
@@ -1293,13 +1340,13 @@ Partial Public Class dsActaConstatacionF3
         Public Property UbicacionInv() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablevw_ActaConstatacionF3.UbicacionInvColumn),String)
+                    Return CType(Me(Me.tablevw_ActaConstatacionF4.UbicacionInvColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'UbicacionInv' in table 'vw_ActaConstatacionF3' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'UbicacionInv' in table 'vw_ActaConstatacionF4' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.UbicacionInvColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.UbicacionInvColumn) = value
             End Set
         End Property
         
@@ -1308,14 +1355,14 @@ Partial Public Class dsActaConstatacionF3
         Public Property Usuari_CodigoPDA() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablevw_ActaConstatacionF3.Usuari_CodigoPDAColumn),String)
+                    Return CType(Me(Me.tablevw_ActaConstatacionF4.Usuari_CodigoPDAColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Usuari_CodigoPDA' in table 'vw_ActaConstatacionF3' is DBNul"& _ 
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Usuari_CodigoPDA' in table 'vw_ActaConstatacionF4' is DBNul"& _ 
                             "l.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.Usuari_CodigoPDAColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.Usuari_CodigoPDAColumn) = value
             End Set
         End Property
         
@@ -1324,185 +1371,150 @@ Partial Public Class dsActaConstatacionF3
         Public Property Usuari_FechaHoraRegistro() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tablevw_ActaConstatacionF3.Usuari_FechaHoraRegistroColumn),Date)
+                    Return CType(Me(Me.tablevw_ActaConstatacionF4.Usuari_FechaHoraRegistroColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Usuari_FechaHoraRegistro' in table 'vw_ActaConstatacionF3' "& _ 
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Usuari_FechaHoraRegistro' in table 'vw_ActaConstatacionF4' "& _ 
                             "is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.Usuari_FechaHoraRegistroColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.Usuari_FechaHoraRegistroColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Activo_Observacion() As String
-            Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.Activo_ObservacionColumn),String)
-            End Get
-            Set
-                Me(Me.tablevw_ActaConstatacionF3.Activo_ObservacionColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Activo_CodigoAux() As String
-            Get
-                Return CType(Me(Me.tablevw_ActaConstatacionF3.Activo_CodigoAuxColumn),String)
-            End Get
-            Set
-                Me(Me.tablevw_ActaConstatacionF3.Activo_CodigoAuxColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Property Activo_CodigoBarraCruce() As String
+        Public Property Uso() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablevw_ActaConstatacionF3.Activo_CodigoBarraCruceColumn),String)
+                    Return CType(Me(Me.tablevw_ActaConstatacionF4.UsoColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Activo_CodigoBarraCruce' in table 'vw_ActaConstatacionF3' i"& _ 
-                            "s DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Uso' in table 'vw_ActaConstatacionF4' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablevw_ActaConstatacionF3.Activo_CodigoBarraCruceColumn) = value
+                Me(Me.tablevw_ActaConstatacionF4.UsoColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsCustodioActualNull() As Boolean
-            Return Me.IsNull(Me.tablevw_ActaConstatacionF3.CustodioActualColumn)
+        Public Function IsCodigoEmpleadoNull() As Boolean
+            Return Me.IsNull(Me.tablevw_ActaConstatacionF4.CodigoEmpleadoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetCustodioActualNull()
-            Me(Me.tablevw_ActaConstatacionF3.CustodioActualColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsIdCustodioActualNull() As Boolean
-            Return Me.IsNull(Me.tablevw_ActaConstatacionF3.IdCustodioActualColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetIdCustodioActualNull()
-            Me(Me.tablevw_ActaConstatacionF3.IdCustodioActualColumn) = Global.System.Convert.DBNull
+        Public Sub SetCodigoEmpleadoNull()
+            Me(Me.tablevw_ActaConstatacionF4.CodigoEmpleadoColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsEstadoInvNull() As Boolean
-            Return Me.IsNull(Me.tablevw_ActaConstatacionF3.EstadoInvColumn)
+            Return Me.IsNull(Me.tablevw_ActaConstatacionF4.EstadoInvColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetEstadoInvNull()
-            Me(Me.tablevw_ActaConstatacionF3.EstadoInvColumn) = Global.System.Convert.DBNull
+            Me(Me.tablevw_ActaConstatacionF4.EstadoInvColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsUbicacionActualNull() As Boolean
-            Return Me.IsNull(Me.tablevw_ActaConstatacionF3.UbicacionActualColumn)
+            Return Me.IsNull(Me.tablevw_ActaConstatacionF4.UbicacionActualColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetUbicacionActualNull()
-            Me(Me.tablevw_ActaConstatacionF3.UbicacionActualColumn) = Global.System.Convert.DBNull
+            Me(Me.tablevw_ActaConstatacionF4.UbicacionActualColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsGrupoTipoClaseNull() As Boolean
-            Return Me.IsNull(Me.tablevw_ActaConstatacionF3.GrupoTipoClaseColumn)
+            Return Me.IsNull(Me.tablevw_ActaConstatacionF4.GrupoTipoClaseColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetGrupoTipoClaseNull()
-            Me(Me.tablevw_ActaConstatacionF3.GrupoTipoClaseColumn) = Global.System.Convert.DBNull
+            Me(Me.tablevw_ActaConstatacionF4.GrupoTipoClaseColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsDescripcionNull() As Boolean
+            Return Me.IsNull(Me.tablevw_ActaConstatacionF4.DescripcionColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetDescripcionNull()
+            Me(Me.tablevw_ActaConstatacionF4.DescripcionColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsActivo_FechaBajaNull() As Boolean
-            Return Me.IsNull(Me.tablevw_ActaConstatacionF3.Activo_FechaBajaColumn)
+            Return Me.IsNull(Me.tablevw_ActaConstatacionF4.Activo_FechaBajaColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetActivo_FechaBajaNull()
-            Me(Me.tablevw_ActaConstatacionF3.Activo_FechaBajaColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsFechaCambioNull() As Boolean
-            Return Me.IsNull(Me.tablevw_ActaConstatacionF3.FechaCambioColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetFechaCambioNull()
-            Me(Me.tablevw_ActaConstatacionF3.FechaCambioColumn) = Global.System.Convert.DBNull
+            Me(Me.tablevw_ActaConstatacionF4.Activo_FechaBajaColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsUbicacionInvNull() As Boolean
-            Return Me.IsNull(Me.tablevw_ActaConstatacionF3.UbicacionInvColumn)
+            Return Me.IsNull(Me.tablevw_ActaConstatacionF4.UbicacionInvColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetUbicacionInvNull()
-            Me(Me.tablevw_ActaConstatacionF3.UbicacionInvColumn) = Global.System.Convert.DBNull
+            Me(Me.tablevw_ActaConstatacionF4.UbicacionInvColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsUsuari_CodigoPDANull() As Boolean
-            Return Me.IsNull(Me.tablevw_ActaConstatacionF3.Usuari_CodigoPDAColumn)
+            Return Me.IsNull(Me.tablevw_ActaConstatacionF4.Usuari_CodigoPDAColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetUsuari_CodigoPDANull()
-            Me(Me.tablevw_ActaConstatacionF3.Usuari_CodigoPDAColumn) = Global.System.Convert.DBNull
+            Me(Me.tablevw_ActaConstatacionF4.Usuari_CodigoPDAColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsUsuari_FechaHoraRegistroNull() As Boolean
-            Return Me.IsNull(Me.tablevw_ActaConstatacionF3.Usuari_FechaHoraRegistroColumn)
+            Return Me.IsNull(Me.tablevw_ActaConstatacionF4.Usuari_FechaHoraRegistroColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetUsuari_FechaHoraRegistroNull()
-            Me(Me.tablevw_ActaConstatacionF3.Usuari_FechaHoraRegistroColumn) = Global.System.Convert.DBNull
+            Me(Me.tablevw_ActaConstatacionF4.Usuari_FechaHoraRegistroColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Function IsActivo_CodigoBarraCruceNull() As Boolean
-            Return Me.IsNull(Me.tablevw_ActaConstatacionF3.Activo_CodigoBarraCruceColumn)
+        Public Function IsUsoNull() As Boolean
+            Return Me.IsNull(Me.tablevw_ActaConstatacionF4.UsoColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub SetActivo_CodigoBarraCruceNull()
-            Me(Me.tablevw_ActaConstatacionF3.Activo_CodigoBarraCruceColumn) = Global.System.Convert.DBNull
+        Public Sub SetUsoNull()
+            Me(Me.tablevw_ActaConstatacionF4.UsoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1510,16 +1522,16 @@ Partial Public Class dsActaConstatacionF3
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-    Public Class vw_ActaConstatacionF3RowChangeEvent
+    Public Class vw_ActaConstatacionF4RowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As vw_ActaConstatacionF3Row
+        Private eventRow As vw_ActaConstatacionF4Row
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Sub New(ByVal row As vw_ActaConstatacionF3Row, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As vw_ActaConstatacionF4Row, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -1527,7 +1539,7 @@ Partial Public Class dsActaConstatacionF3
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public ReadOnly Property Row() As vw_ActaConstatacionF3Row
+        Public ReadOnly Property Row() As vw_ActaConstatacionF4Row
             Get
                 Return Me.eventRow
             End Get
@@ -1543,7 +1555,7 @@ Partial Public Class dsActaConstatacionF3
     End Class
 End Class
 
-Namespace dsActaConstatacionF3TableAdapters
+Namespace dsActaConstatacionF5TableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -1554,7 +1566,7 @@ Namespace dsActaConstatacionF3TableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class vw_ActaConstatacionF3TableAdapter
+    Partial Public Class vw_ActaConstatacionF4TableAdapter
         Inherits Global.System.ComponentModel.Component
         
         Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
@@ -1671,9 +1683,12 @@ Namespace dsActaConstatacionF3TableAdapters
             Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "vw_ActaConstatacionF3"
-            tableMapping.ColumnMappings.Add("CustodioActual", "CustodioActual")
-            tableMapping.ColumnMappings.Add("IdCustodioActual", "IdCustodioActual")
+            tableMapping.DataSetTable = "vw_ActaConstatacionF4"
+            tableMapping.ColumnMappings.Add("Nombre", "Nombre")
+            tableMapping.ColumnMappings.Add("CodigoEmpleado", "CodigoEmpleado")
+            tableMapping.ColumnMappings.Add("CI", "CI")
+            tableMapping.ColumnMappings.Add("Departamento", "Departamento")
+            tableMapping.ColumnMappings.Add("Cargo", "Cargo")
             tableMapping.ColumnMappings.Add("EstadoInv", "EstadoInv")
             tableMapping.ColumnMappings.Add("UbicacionActual", "UbicacionActual")
             tableMapping.ColumnMappings.Add("CodigoBarras", "CodigoBarras")
@@ -1699,9 +1714,7 @@ Namespace dsActaConstatacionF3TableAdapters
             tableMapping.ColumnMappings.Add("UbicacionInv", "UbicacionInv")
             tableMapping.ColumnMappings.Add("Usuari_CodigoPDA", "Usuari_CodigoPDA")
             tableMapping.ColumnMappings.Add("Usuari_FechaHoraRegistro", "Usuari_FechaHoraRegistro")
-            tableMapping.ColumnMappings.Add("Activo_Observacion", "Activo_Observacion")
-            tableMapping.ColumnMappings.Add("Activo_CodigoAux", "Activo_CodigoAux")
-            tableMapping.ColumnMappings.Add("Activo_CodigoBarraCruce", "Activo_CodigoBarraCruce")
+            tableMapping.ColumnMappings.Add("Uso", "Uso")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -1709,7 +1722,7 @@ Namespace dsActaConstatacionF3TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-      Me._connection.ConnectionString = Global.ActivosFijos.ModuloInventario.My.MySettings.Default.activosfijosConnectionString
+      Me._connection.ConnectionString = Global.ActivosFijos.Modulo.My.MySettings.Default.activosfijosConnectionString
     End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1718,13 +1731,12 @@ Namespace dsActaConstatacionF3TableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT CustodioActual, IdCustodioActual, EstadoInv, UbicacionActual, CodigoBarras"& _ 
-                ", GrupoTipoClase, Descripcion, Marca, Modelo, Serie, Activo_Codigo, Activo_Fecha"& _ 
-                "Baja, Parame_Ubicacion, Pardet_Ubicacion, Parame_PeriodoInventario, Pardet_Perio"& _ 
-                "doInventario, Pardet_EstadoInventario, Emplea_Custodio, InvDet_esCambioCustodio,"& _ 
-                " FechaCambio, Clase, Tipo, Estado, PeriodoInv, UbicacionInv, Usuari_CodigoPDA, U"& _ 
-                "suari_FechaHoraRegistro, Activo_Observacion, Activo_CodigoAux, Activo_CodigoBarr"& _ 
-                "aCruce FROM dbo.vw_ActaConstatacionF3"
+            Me._commandCollection(0).CommandText = "SELECT Nombre, CodigoEmpleado, CI, Departamento, Cargo, EstadoInv, UbicacionActua"& _ 
+                "l, CodigoBarras, GrupoTipoClase, Descripcion, Marca, Modelo, Serie, Activo_Codig"& _ 
+                "o, Activo_FechaBaja, Parame_Ubicacion, Pardet_Ubicacion, Parame_PeriodoInventari"& _ 
+                "o, Pardet_PeriodoInventario, Pardet_EstadoInventario, Emplea_Custodio, InvDet_es"& _ 
+                "CambioCustodio, FechaCambio, Clase, Tipo, Estado, PeriodoInv, UbicacionInv, Usua"& _ 
+                "ri_CodigoPDA, Usuari_FechaHoraRegistro, Uso FROM dbo.vw_ActaConstatacionF4"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -1732,7 +1744,7 @@ Namespace dsActaConstatacionF3TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As dsActaConstatacionF3.vw_ActaConstatacionF3DataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As dsActaConstatacionF5.vw_ActaConstatacionF4DataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -1745,9 +1757,9 @@ Namespace dsActaConstatacionF3TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As dsActaConstatacionF3.vw_ActaConstatacionF3DataTable
+        Public Overloads Overridable Function GetData() As dsActaConstatacionF5.vw_ActaConstatacionF4DataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As dsActaConstatacionF3.vw_ActaConstatacionF3DataTable = New dsActaConstatacionF3.vw_ActaConstatacionF3DataTable()
+            Dim dataTable As dsActaConstatacionF5.vw_ActaConstatacionF4DataTable = New dsActaConstatacionF5.vw_ActaConstatacionF4DataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -1822,7 +1834,7 @@ Namespace dsActaConstatacionF3TableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As dsActaConstatacionF3, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As dsActaConstatacionF5, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             Return result
         End Function
@@ -1832,7 +1844,7 @@ Namespace dsActaConstatacionF3TableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As dsActaConstatacionF3, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As dsActaConstatacionF5, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             Return result
         End Function
@@ -1842,7 +1854,7 @@ Namespace dsActaConstatacionF3TableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As dsActaConstatacionF3, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As dsActaConstatacionF5, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             Return result
         End Function
@@ -1878,7 +1890,7 @@ Namespace dsActaConstatacionF3TableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As dsActaConstatacionF3) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As dsActaConstatacionF5) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If

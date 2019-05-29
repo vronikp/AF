@@ -63,12 +63,22 @@ Public Class FrmListaInventarios
       Exit Sub
     End If
     Dim f As New FrmMantenimientoInventario(Sistema, Restriccion)
-    f.Inventarios = ListBindingSource
-    f.ShowDialog()
+    Dim fi As New FrmInventariarActivo(Sistema, Enumerados.EnumOpciones.InventarioActivo)
+    mInventario = ListBindingSource.Current
+    If mInventario.EsNuevo Then
+      f.Inventarios = ListBindingSource
+      f.ShowDialog()
+    Else
+      fi.Inventario = mInventario
+      fi.WindowState = FormWindowState.Maximized
+      fi.ShowDialog()
+    End If
+
     If ListBindingSource.Count <= 1 Then
       RefrescarLista()
     End If
     f.Dispose()
+    fi.Dispose()
   End Sub
 
   Private Sub FrmListaInventarios_Buscar(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles Me.Buscar

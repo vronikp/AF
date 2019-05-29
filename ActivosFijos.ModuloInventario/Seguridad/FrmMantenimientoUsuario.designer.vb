@@ -25,9 +25,9 @@ Partial Class FrmMantenimientoUsuario
     Me.components = New System.ComponentModel.Container()
     Me.Panel1 = New System.Windows.Forms.Panel()
     Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-    Me.CtlRestricciones1 = New ActivosFijos.Modulo.CtlRestricciones()
+    Me.CtlRestricciones1 = New ActivosFijos.ModuloInventario.CtlRestricciones()
     Me.Panel3 = New System.Windows.Forms.Panel()
-    Me.ComboBoxUsuario1 = New ActivosFijos.Modulo.ComboBoxUsuario()
+    Me.ComboBoxUsuario1 = New ActivosFijos.ModuloInventario.ComboBoxUsuario()
     Me.chkcopiarrestricciones = New Infoware.Controles.Base.CheckBoxStd()
     Me.GroupBox1 = New System.Windows.Forms.GroupBox()
     Me.chkmaniconf = New Infoware.Controles.Base.CheckBoxStd()
@@ -37,8 +37,8 @@ Partial Class FrmMantenimientoUsuario
     Me.Panel2 = New System.Windows.Forms.Panel()
     Me.chkubicacion = New System.Windows.Forms.CheckBox()
     Me.chkempleado = New System.Windows.Forms.CheckBox()
-    Me.CtlUbicacionActivo1 = New ActivosFijos.Modulo.CtlParametroDetAnidado()
-    Me.CtlBuscaEmpleado1 = New ActivosFijos.Modulo.CtlBuscaEmpleado()
+    Me.CtlUbicacionActivo1 = New ActivosFijos.ModuloInventario.CtlParametroDetAnidado()
+    Me.CtlBuscaEmpleado1 = New ActivosFijos.ModuloInventario.CtlBuscaEmpleado()
     Me.chkcambiocustodio = New System.Windows.Forms.CheckBox()
     Me.chkactivo = New System.Windows.Forms.CheckBox()
     Me.chkcambcontrpr = New System.Windows.Forms.CheckBox()
@@ -275,7 +275,7 @@ Partial Class FrmMantenimientoUsuario
     Me.CtlBuscaEmpleado1.SoloActivos = False
     Me.CtlBuscaEmpleado1.TabIndex = 8
     Me.CtlBuscaEmpleado1.TipoEmpleado = Nothing
-    Me.CtlBuscaEmpleado1.Ubicacion = ActivosFijos.Modulo.CtlBuscaEmpleado.EnumUbicacion.Normal
+    Me.CtlBuscaEmpleado1.Ubicacion = ActivosFijos.ModuloInventario.CtlBuscaEmpleado.EnumUbicacion.Normal
     '
     'chkcambiocustodio
     '
@@ -480,7 +480,7 @@ Partial Class FrmMantenimientoUsuario
   Friend WithEvents chkcopiarrestricciones As Infoware.Controles.Base.CheckBoxStd
   Friend WithEvents ComboBoxUsuario1 As ComboBoxUsuario
   Friend WithEvents chkactivo As System.Windows.Forms.CheckBox
-  Friend WithEvents CtlUbicacionActivo1 As ActivosFijos.Modulo.CtlParametroDetAnidado
+  Friend WithEvents CtlUbicacionActivo1 As ActivosFijos.ModuloInventario.CtlParametroDetAnidado
   Friend WithEvents chkubicacion As System.Windows.Forms.CheckBox
   Friend WithEvents chkempleado As System.Windows.Forms.CheckBox
   Friend WithEvents chkcambiocustodio As System.Windows.Forms.CheckBox

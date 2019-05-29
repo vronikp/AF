@@ -238,32 +238,13 @@ Public Class Loader
         If Not _SoloFavoritas Or (_SoloFavoritas AndAlso _restriccion.Restri_Favorito) Then
           If _restriccion.Restri_Lectura Then
             Select Case CType(_restriccion.Pardet_Opciones, Enumerados.EnumOpciones)
-              Case Enumerados.EnumOpciones.ListadoActivos
-                _opciones.Add(New Opcion(_restriccion, AddressOf CargarActivos))
               Case Enumerados.EnumOpciones.CargarActivosLote
                 _opciones.Add(New Opcion(_restriccion, AddressOf CargarActivosLote))
-              Case Enumerados.EnumOpciones.ListadoPolizas
-                _opciones.Add(New Opcion(_restriccion, AddressOf CargarPolizas))
-              Case Enumerados.EnumOpciones.ListadoTransaccionActivos
-                _opciones.Add(New Opcion(_restriccion, AddressOf CargarTransacciones))
               Case Enumerados.EnumOpciones.ListadoPendientesCustodio
-                _opciones.Add(New Opcion(_restriccion, AddressOf CargarPendientesAprobacion))
               Case Enumerados.EnumOpciones.ReporteActaEntregaCustodio
                 _opciones.Add(New Opcion(_restriccion, AddressOf CargarReporteActaEntregaCustodio))
-              Case Enumerados.EnumOpciones.Depreciacion
-                _opciones.Add(New Opcion(_restriccion, AddressOf CargarDepreciacion))
-              Case Enumerados.EnumOpciones.ReporteResumenDepreciacion
-                _opciones.Add(New Opcion(_restriccion, AddressOf CargarReporteResumenDepreciacion))
-              Case Enumerados.EnumOpciones.GenerarAsientos
-                _opciones.Add(New Opcion(_restriccion, AddressOf CargarGenerarAsientos))
-              Case Enumerados.EnumOpciones.ListaBajas
-                _opciones.Add(New Opcion(_restriccion, AddressOf CargarListaBajaActivo))
-              Case Enumerados.EnumOpciones.DarBajaActivo
-                _opciones.Add(New Opcion(_restriccion, AddressOf CargarBajaActivo))
               Case Enumerados.EnumOpciones.InventarioActivo
                 _opciones.Add(New Opcion(_restriccion, AddressOf CargarInventarioActivo))
-              Case Enumerados.EnumOpciones.ResumenDepreciacionPorTipo
-                _opciones.Add(New Opcion(_restriccion, AddressOf CargarResumenDepreciacionPorTipo))
                 '  Case Enumerados.EnumOpciones.Seleccion
                 '    _opciones.Add(New Opcion(_restriccion, AddressOf CargarSeleccion))
                 '  Case Enumerados.EnumOpciones.TestxArea
@@ -299,30 +280,9 @@ Public Class Loader
     Return _opciones
   End Function
 
-  Function CargarActivos(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-    Dim f As New FrmMantenimientoActivo(_Sistema, _Restriccion)
-    f.Activo = New Activo(_Sistema.OperadorDatos, True)
-    Return f
-  End Function
-
   Function CargarActivosLote(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
     ''If 
     Dim f As New FrmCargaActivosLote(_Sistema, _Restriccion)
-    Return f
-  End Function
-
-  Function CargarPolizas(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-    Dim f As New FrmListaPolizas(_Sistema, _Restriccion, False)
-    Return f
-  End Function
-
-  Function CargarTransacciones(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-    Dim f As New FrmListaTransaccionActivos(_Sistema, _Restriccion, False)
-    Return f
-  End Function
-
-  Function CargarPendientesAprobacion(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-    Dim f As New FrmListaActivoCustodioAprobar(_Sistema, _Restriccion, False)
     Return f
   End Function
 
@@ -331,51 +291,8 @@ Public Class Loader
     Return f
   End Function
 
-  Function CargarDepreciacion(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-    CargarTipoLicencia(_Sistema)
-    If esProfesional Or esInterprof Then
-      Dim f As New FrmDepreciacion(_Sistema, _Restriccion)
-      Return f
-    Else
-      MsgBox("Esta opción no está disponible en su versión del sistema", MsgBoxStyle.Information, "Información")
-      Return Nothing
-    End If
-  End Function
 
-  Function CargarGenerarAsientos(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-    CargarTipoLicencia(_Sistema)
-    If esProfesional Or esInterprof Then
-      Dim f As New FrmGenerarAsientos(_Sistema, _Restriccion)
-      Return f
-    Else
-      MsgBox("Esta opción no está disponible en su versión del sistema", MsgBoxStyle.Information, "Información")
-      Return Nothing
-    End If
-  End Function
-
-
-  Function CargarReporteResumenDepreciacion(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-    CargarTipoLicencia(_Sistema)
-    If esProfesional Or esInterprof Then
-      Dim f As New FrmReporteResumenDepreciacion(_Sistema, _Restriccion)
-      Return f
-    Else
-      MsgBox("Esta opción no está disponible en su versión del sistema", MsgBoxStyle.Information, "Información")
-      Return Nothing
-    End If
-  End Function
-
-  Function CargarListaBajaActivo(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-        Dim f As New FrmListaBajasActivo(_Sistema, _Restriccion, False)
-        Return f
-    End Function
-
-    Function CargarBajaActivo(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-        Dim f As New FrmListaTransaccionBajas(_Sistema, _Restriccion, False)
-        Return f
-    End Function
-
-    Function CargarInventarioActivo(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
+  Function CargarInventarioActivo(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
         If esEstandar Or esProfesional Or esInterprof Then
             Dim f As New FrmListaInventarios(_Sistema, _Restriccion, False)
             Return f
@@ -385,19 +302,10 @@ Public Class Loader
         End If
     End Function
 
-    Function CargarResumenDepreciacionPorTipo(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, ByVal _Opcion As Opcion) As Infoware.Docking.IDockContent
-        If esProfesional Or esInterprof Then
-            Dim f As New FrmResumenDepreciacionPorTipo(_Sistema, _Restriccion)
-            Return f
-        Else
-            MsgBox("Esta opción no está disponible en su versión del sistema", MsgBoxStyle.Information, "Información")
-            Return Nothing
-        End If
-    End Function
 #End Region
 
 #Region "Seguridad"
-    Function CargarModuloSeguridad(ByVal _Sistema As Sistema) As List(Of GrupoOpcion)
+  Function CargarModuloSeguridad(ByVal _Sistema As Sistema) As List(Of GrupoOpcion)
         Dim _grupos As New List(Of GrupoOpcion)
         If _Sistema.Usuario.Restricciones.porModulo(Enumerados.EnumModulos.Seguridad) Then
             _grupos.Add(New GrupoOpcion(New ParametroDet(_Sistema.OperadorDatos, 4, Enumerados.EnumModulos.Seguridad), CargarOpcionesSeguridad(_Sistema, False), CargarOpcionesSeguridad(_Sistema, True), CargarOpcionesSeguridadRep(_Sistema)))

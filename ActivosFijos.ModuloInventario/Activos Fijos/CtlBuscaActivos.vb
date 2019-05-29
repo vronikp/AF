@@ -1,7 +1,7 @@
 ﻿Imports Infoware.Datos
 Imports ActivosFijos.Reglas
 Imports Infoware.Consola.Base
-Imports ActivosFijos.Modulo.clsReporteActivo
+Imports ActivosFijos.ModuloInventario.clsReporteActivo
 
 Public Class CtlBuscaActivos
   Public ReadOnly Property Sistema() As Sistema

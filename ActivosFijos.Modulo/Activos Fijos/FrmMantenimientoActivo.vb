@@ -285,25 +285,32 @@ Public Class FrmMantenimientoActivo
 
     End Try
 
-    If My.Settings.tipoprogramacodigobarra = 0 Then
+    If My.Settings.tipoprogramacodigobarra = 0 And rutaEjecutableImpresion IsNot Nothing Then
       'ZebraDesigner2
+
       Shell(rutaEjecutableImpresion & " " & nombreArchivoEtiquetas, AppWinStyle.NormalFocus)
       Threading.Thread.Sleep(3000)
       AppActivate("ZebraDesigner")
       SendKeys.SendWait("^(P)")
+      SendKeys.SendWait(_Activo.Activo_CodigoAux)
+      Threading.Thread.Sleep(1000)
+      SendKeys.SendWait("{TAB}")
       SendKeys.SendWait(_Activo.Activo_CodigoBarra)
+      Threading.Thread.Sleep(1000)
+      SendKeys.SendWait("{TAB}")
+      SendKeys.SendWait(_Activo.Activo_Descripcion)
+      Threading.Thread.Sleep(1000)
       SendKeys.SendWait("{ENTER}")
       Threading.Thread.Sleep(3000)
+
       SendKeys.SendWait("%(f)x")
-    Else
+    ElseIf My.Settings.tipoprogramacodigobarra = 1 Then
       'CreateaLabel
-      Dim sCadena As String = "LABELNAME = """ & nombreArchivoEtiquetas & """" & vbCrLf & _
-             "PRINTER = """ & nombreImpresoraEtiquetas & """" & vbCrLf & _
-             "CODIGO = """ & Trim(_Activo.Activo_CodigoBarra) & """" & vbCrLf & _
-             "DESCRIPCION = """ & Trim(_Activo.Descripcion) & """" & vbCrLf & _
+      Dim sCadena As String = "LABELNAME = """ & nombreArchivoEtiquetas & """" & vbCrLf &
+             "PRINTER = """ & nombreImpresoraEtiquetas & """" & vbCrLf &
+             "CODIGO = """ & Trim(_Activo.Activo_CodigoBarra) & """" & vbCrLf &
+             "DESCRIPCION = """ & Trim(_Activo.Descripcion) & """" & vbCrLf &
              "LABELQUANTITY = ""1""" & vbCrLf
-
-
       Dim _file As String = My.Computer.FileSystem.CombinePath(_Carpeta, "PRN-" + Format(Now, "YYYYMMDD") + "-" + Format(Now, "HHMMSS") + "-" + Trim(Sistema.Usuario.Usuari_Codigo) + ".CMD")
       My.Computer.FileSystem.WriteAllText(_file, sCadena, False)
       My.Computer.FileSystem.WriteAllText(_file, "QUITAPP", True)
@@ -313,8 +320,9 @@ Public Class FrmMantenimientoActivo
       'Shell """" & rutaEjecutableImpresion & """/CMD """ & sFileName & """", vbHide
       Shell(rutaEjecutableImpresion & " /CMD " & _file, AppWinStyle.Hide)
       'C:\CAL3V306\lv.exe /CMD c:\ActivosFijos\Etiquetas\Archivo.cmd
+    Else
+      MessageBox.Show("Configurar la impresora")
     End If
-
   End Sub
 
   Private Sub ConfigurarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConfigurarToolStripMenuItem.Click

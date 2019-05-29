@@ -49,7 +49,7 @@ Partial Class FrmMantenimientoParametroDet
     Me.txtdescripcion = New Infoware.Controles.Base.TextBoxStd()
     Me.Label2 = New System.Windows.Forms.Label()
     Me.pnlpadre = New System.Windows.Forms.Panel()
-    Me.ComboBoxParametroDet1 = New ActivosFijos.Modulo.ComboBoxParametroDet()
+    Me.ComboBoxParametroDet1 = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
     Me.lbl_parametro = New System.Windows.Forms.Label()
     Me.pnldatobit = New System.Windows.Forms.Panel()
     Me.txtdatobit1 = New System.Windows.Forms.CheckBox()
@@ -502,7 +502,7 @@ Partial Class FrmMantenimientoParametroDet
   Friend WithEvents txt_datoleyenda As Infoware.Controles.Base.TextBoxStd
   Friend WithEvents lbl_datoleyenda As System.Windows.Forms.Label
   Friend WithEvents pnlpadre As System.Windows.Forms.Panel
-  Friend WithEvents ComboBoxParametroDet1 As ActivosFijos.Modulo.ComboBoxParametroDet
+  Friend WithEvents ComboBoxParametroDet1 As ActivosFijos.ModuloInventario.ComboBoxParametroDet
   Friend WithEvents lbl_parametro As System.Windows.Forms.Label
   Friend WithEvents pnldescripcion As System.Windows.Forms.Panel
   Friend WithEvents txtdescripcion As Infoware.Controles.Base.TextBoxStd

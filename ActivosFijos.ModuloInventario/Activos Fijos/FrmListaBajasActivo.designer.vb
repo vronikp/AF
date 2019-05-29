@@ -32,11 +32,11 @@ Partial Class FrmListaBajasActivo
     Me.Label2 = New System.Windows.Forms.Label()
     Me.dtfechasta = New System.Windows.Forms.DateTimePicker()
     Me.pnlubicacion = New System.Windows.Forms.Panel()
-    Me.CtlUbicacionActivo1 = New ActivosFijos.Modulo.CtlParametroDetAnidado()
+    Me.CtlUbicacionActivo1 = New ActivosFijos.ModuloInventario.CtlParametroDetAnidado()
     Me.chkubicacion = New System.Windows.Forms.CheckBox()
     Me.chktipobaja = New System.Windows.Forms.CheckBox()
     Me.pnlTipoBaja = New System.Windows.Forms.Panel()
-    Me.CtlTipoBaja = New ActivosFijos.Modulo.CtlParametroDetAnidado()
+    Me.CtlTipoBaja = New ActivosFijos.ModuloInventario.CtlParametroDetAnidado()
     Me.Panel2 = New System.Windows.Forms.Panel()
     Me.btnLlenar = New System.Windows.Forms.Button()
     Me.pnlcuerpo.SuspendLayout()
@@ -285,13 +285,13 @@ Partial Class FrmListaBajasActivo
     Friend WithEvents dtfecdesde As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents pnlubicacion As System.Windows.Forms.Panel
-    Friend WithEvents CtlUbicacionActivo1 As ActivosFijos.Modulo.CtlParametroDetAnidado
+    Friend WithEvents CtlUbicacionActivo1 As ActivosFijos.ModuloInventario.CtlParametroDetAnidado
     Friend WithEvents chkubicacion As System.Windows.Forms.CheckBox
     Friend WithEvents chktipobaja As System.Windows.Forms.CheckBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents btnLlenar As System.Windows.Forms.Button
     Friend WithEvents pnlTipoBaja As System.Windows.Forms.Panel
-    Friend WithEvents CtlTipoBaja As ActivosFijos.Modulo.CtlParametroDetAnidado
+    Friend WithEvents CtlTipoBaja As ActivosFijos.ModuloInventario.CtlParametroDetAnidado
     Friend WithEvents btnReversarBaja As System.Windows.Forms.ToolStripButton
 
 End Class

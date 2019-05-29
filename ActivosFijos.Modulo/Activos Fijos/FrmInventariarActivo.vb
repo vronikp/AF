@@ -125,103 +125,104 @@ Public Class FrmInventariarActivo
     Me.pnlactivo.Visible = False
   End Sub
 
-    Private Sub btninventariar_Click(sender As System.Object, e As System.EventArgs) Handles btninventariar.Click
-        Dim invdet As InventarioDet = Nothing
+  Private Sub btninventariar_Click(sender As System.Object, e As System.EventArgs) Handles btninventariar.Click
+    Dim invdet As InventarioDet = Nothing
 
-        If Activo Is Nothing Then
-            Exit Sub
-        End If
+    If Activo Is Nothing Then
+      Exit Sub
+    End If
 
-        'If Sistema.Usuario Is Not Nothing Then
-        'MessageBox.Show(Sistema.UsuarioString)
-        'End If
+    'If Sistema.Usuario Is Not Nothing Then
+    'MessageBox.Show(Sistema.UsuarioString)
+    'End If
 
-        If Activo.EsNuevo Then
-            Try
-                Me.CtlActivo1.Mapear_datos()
-                If Me.CtlActivo1.Guardar Then
-                    invdet = New InventarioDet(Sistema.OperadorDatos, True)
-                    invdet.Inventario = mInventario
-                    invdet.Activocustodio = Me.CtlActivo1.Activo.ActivoCustodioActual
-                    invdet.Activoubicacion = Me.CtlActivo1.Activo.ActivoUbicacionActual
-                    invdet.InvDet_Activo = True
-                    invdet.PardetEstadoInventario = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EstadoInventarioActivo, Enumerados.enumEstadoInventarioActivo.EncontradoNuevo)
-                    Me.CtlActivo1.Activo.Recargar()
-                    'Me.CtlActivo1.llenar_datos()
-                Else
-                    MsgBox(Sistema.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
-                    Exit Sub
-                End If
-            Catch ex As Exception
-                MsgBox(ex.Message, MsgBoxStyle.Critical, "Error")
-                Exit Sub
-            End Try
+    If Activo.EsNuevo Then
+      Try
+        Me.CtlActivo1.Mapear_datos()
+        If Me.CtlActivo1.Guardar Then
+          invdet = New InventarioDet(Sistema.OperadorDatos, True)
+          invdet.Inventario = mInventario
+          invdet.Activocustodio = Me.CtlActivo1.Activo.ActivoCustodioActual
+          invdet.Activoubicacion = Me.CtlActivo1.Activo.ActivoUbicacionActual
+          invdet.InvDet_Activo = True
+          invdet.PardetEstadoInventario = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EstadoInventarioActivo, Enumerados.enumEstadoInventarioActivo.EncontradoNuevo)
+          Me.CtlActivo1.Activo.Recargar()
+          'Me.CtlActivo1.llenar_datos()
         Else
-            Try
-                Me.CtlActivo1.Guardar()
-                invdet = New InventarioDet(Sistema.OperadorDatos, mInventario.Parame_Ubicacion, mInventario.Pardet_Ubicacion, mInventario.Parame_PeriodoInventario, mInventario.Pardet_PeriodoInventario, Activo.Activo_Codigo)
-                If Not invdet.Pardet_EstadoInventario = Enumerados.enumEstadoInventarioActivo.NoInventariado Then
-                    MsgBox("El activo ya fue inventariado", MsgBoxStyle.Critical, "Error")
-                    Exit Sub
-                End If
-                'invdet.Usuari_CodigoPDA = Sistema.UsuarioString
-                invdet.PardetEstadoInventario = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EstadoInventarioActivo, Enumerados.enumEstadoInventarioActivo.Inventariado)
-            Catch ex As Exception
-                invdet = New InventarioDet(Sistema.OperadorDatos, True)
-                invdet.Inventario = mInventario
-                invdet.Activocustodio = Activo.ActivoCustodioActual
-                invdet.Activoubicacion = Activo.ActivoUbicacionActual
-                invdet.InvDet_Activo = True
-                invdet.PardetEstadoInventario = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EstadoInventarioActivo, Enumerados.enumEstadoInventarioActivo.EncontradoExistente)
-            End Try
+          MsgBox(Sistema.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
+          Exit Sub
         End If
-
-        If invdet Is Nothing Then
-            Exit Sub
+      Catch ex As Exception
+        MsgBox(ex.Message, MsgBoxStyle.Critical, "Error")
+        Exit Sub
+      End Try
+    Else
+      Try
+        invdet = New InventarioDet(Sistema.OperadorDatos, mInventario.Parame_Ubicacion, mInventario.Pardet_Ubicacion, mInventario.Parame_PeriodoInventario, mInventario.Pardet_PeriodoInventario, Activo.Activo_Codigo)
+        If Not invdet.Pardet_EstadoInventario = Enumerados.enumEstadoInventarioActivo.NoInventariado Then
+          MsgBox("El activo ya fue inventariado", MsgBoxStyle.Critical, "Error")
+          Exit Sub
         End If
-
-        'preguntar si se clona
-        If MsgBox("¿Desea limpiar los campos?", MsgBoxStyle.YesNo) = MsgBoxResult.No Then
-            mesClon = True
-            mActivoClon = Me.CtlActivo1.Activo.Clone
-            For Each car As ActivoCaracteristica In mActivoClon.Caracteristicas
-                car.Activo_Codigo = 0
-                car.EsNuevo = True
-            Next
-            Me.CtlActivo1.txtcodigobarra.Text = ""
-            Me.CtlActivo1.txtcodigoauxiliar.Text = ""
-            Me.CtlActivo1.txtserie.Text = ""
-        Else
-            mesClon = False
-            Me.CtlActivo1.llenar_datos()
-        End If
-
-
+        Me.CtlActivo1.Mapear_datos()
+        Me.CtlActivo1.Guardar()
         invdet.Usuari_CodigoPDA = Sistema.UsuarioString
+        invdet.PardetEstadoInventario = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EstadoInventarioActivo, Enumerados.enumEstadoInventarioActivo.Inventariado)
+      Catch ex As Exception
+        invdet = New InventarioDet(Sistema.OperadorDatos, True)
+        invdet.Inventario = mInventario
+        invdet.Activocustodio = Activo.ActivoCustodioActual
+        invdet.Activoubicacion = Activo.ActivoUbicacionActual
+        invdet.InvDet_Activo = True
+        invdet.PardetEstadoInventario = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EstadoInventarioActivo, Enumerados.enumEstadoInventarioActivo.EncontradoExistente)
+      End Try
+    End If
 
-        If invdet.Guardar(Me.CtlBuscaCustodio.Empleado.Entida_Codigo, Me.CtlUbicacionActivo1.ParametroDet.Parame_Codigo, Me.CtlUbicacionActivo1.ParametroDet.Pardet_Secuencia) Then
-            'Me.Close()
-            MsgBox("Inventario correctamente registrado", MsgBoxStyle.Information, "Información")
-            Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Adicion,
-                                      "(" + Activo.Activo_CodigoBarra + ") Se inventarió " + Activo.Descripcion + " con estado de inventario " +
-                                     invdet.PardetEstadoInventario.Descripcion + " en el periodo " + invdet.Inventario.PardetPeriodoInventario.Descripcion +
-                                     " ubicacion " + invdet.Inventario.PardetUbicacion.DescripcionLarga)
-        Else
-            MsgBox(invdet.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
-            Exit Sub
-        End If
+    If invdet Is Nothing Then
+      Exit Sub
+    End If
 
-        If mesClon Then
-            Dim activos As New ActivoList
-            activos.Add(mActivoClon)
-            Me.BindingSource1.DataSource = activos
-            Me.DataGridView1.AutoDiscover()
-            Me.pnlactivo.Visible = True
-        Else
-            Me.pnlactivo.Visible = False
-            Me.pnlCabecera.Visible = True
-        End If
-    End Sub
+    'preguntar si se clona
+    If MsgBox("¿Desea limpiar los campos?", MsgBoxStyle.YesNo) = MsgBoxResult.No Then
+      mesClon = True
+      mActivoClon = Me.CtlActivo1.Activo.Clone
+      For Each car As ActivoCaracteristica In mActivoClon.Caracteristicas
+        car.Activo_Codigo = 0
+        car.EsNuevo = True
+      Next
+      Me.CtlActivo1.txtcodigobarra.Text = ""
+      Me.CtlActivo1.txtcodigoauxiliar.Text = ""
+      Me.CtlActivo1.txtserie.Text = ""
+    Else
+      mesClon = False
+      Me.CtlActivo1.llenar_datos()
+    End If
+
+
+    invdet.Usuari_CodigoPDA = Sistema.UsuarioString
+
+    If invdet.Guardar(Me.CtlBuscaCustodio.Empleado.Entida_Codigo, Me.CtlUbicacionActivo1.ParametroDet.Parame_Codigo, Me.CtlUbicacionActivo1.ParametroDet.Pardet_Secuencia) Then
+      'Me.Close()
+      MsgBox("Inventario correctamente registrado", MsgBoxStyle.Information, "Información")
+      Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Adicion,
+                                "(" + Activo.Activo_CodigoBarra + ") Se inventarió " + Activo.Descripcion + " con estado de inventario " +
+                               invdet.PardetEstadoInventario.Descripcion + " en el periodo " + invdet.Inventario.PardetPeriodoInventario.Descripcion +
+                               " ubicacion " + invdet.Inventario.PardetUbicacion.DescripcionLarga)
+    Else
+      MsgBox(invdet.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
+      Exit Sub
+    End If
+
+    If mesClon Then
+      Dim activos As New ActivoList
+      activos.Add(mActivoClon)
+      Me.BindingSource1.DataSource = activos
+      Me.DataGridView1.AutoDiscover()
+      Me.pnlactivo.Visible = True
+    Else
+      Me.pnlactivo.Visible = False
+      Me.pnlCabecera.Visible = True
+    End If
+  End Sub
 
   Private Sub btnnuevo_Click(sender As System.Object, e As System.EventArgs) Handles btnnuevo.Click
     If Me.CtlUbicacionActivo1.ParametroDet Is Nothing OrElse Not Me.CtlUbicacionActivo1.ParametroDet.Parame_Codigo = Enumerados.EnumParametros.UbicacionActivo Then

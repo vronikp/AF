@@ -36,11 +36,11 @@ Partial Class FrmMantenimientoActivoComponente
     Me.Label1 = New System.Windows.Forms.Label()
     Me.txtmodelo = New Infoware.Controles.Base.TextBoxStd()
     Me.Label7 = New System.Windows.Forms.Label()
-    Me.cbomarca = New ActivosFijos.Modulo.ComboBoxParametroDet()
+    Me.cbomarca = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
     Me.Label8 = New System.Windows.Forms.Label()
     Me.txtdescripcion = New Infoware.Controles.Base.TextBoxStd()
     Me.Label2 = New System.Windows.Forms.Label()
-    Me.CtlBuscaProveedor1 = New ActivosFijos.Modulo.CtlBuscaProveedor()
+    Me.CtlBuscaProveedor1 = New ActivosFijos.ModuloInventario.CtlBuscaProveedor()
     Me.dtfecingreso = New System.Windows.Forms.DateTimePicker()
     Me.Label6 = New System.Windows.Forms.Label()
     CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -300,7 +300,7 @@ Partial Class FrmMantenimientoActivoComponente
     Me.CtlBuscaProveedor1.ProveedorText = "Proveedor"
     Me.CtlBuscaProveedor1.Size = New System.Drawing.Size(478, 22)
     Me.CtlBuscaProveedor1.TabIndex = 8
-    Me.CtlBuscaProveedor1.Ubicacion = ActivosFijos.Modulo.CtlBuscaProveedor.EnumUbicacion.Normal
+    Me.CtlBuscaProveedor1.Ubicacion = ActivosFijos.ModuloInventario.CtlBuscaProveedor.EnumUbicacion.Normal
     '
     'dtfecingreso
     '
@@ -341,12 +341,12 @@ Partial Class FrmMantenimientoActivoComponente
 
   End Sub
   Friend WithEvents Panel1 As System.Windows.Forms.Panel
-  Friend WithEvents CtlBuscaProveedor1 As ActivosFijos.Modulo.CtlBuscaProveedor
+  Friend WithEvents CtlBuscaProveedor1 As ActivosFijos.ModuloInventario.CtlBuscaProveedor
   Friend WithEvents dtfecfactura As System.Windows.Forms.DateTimePicker
   Friend WithEvents Label13 As System.Windows.Forms.Label
   Friend WithEvents txtdescripcion As Infoware.Controles.Base.TextBoxStd
   Friend WithEvents Label2 As System.Windows.Forms.Label
-  Friend WithEvents cbomarca As ActivosFijos.Modulo.ComboBoxParametroDet
+  Friend WithEvents cbomarca As ActivosFijos.ModuloInventario.ComboBoxParametroDet
   Friend WithEvents Label8 As System.Windows.Forms.Label
   Friend WithEvents pnlerogacion As System.Windows.Forms.Panel
   Friend WithEvents chkerogacion As System.Windows.Forms.CheckBox

@@ -33,8 +33,11 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ActivosFijos.Integration.DMiro">
+      <HintPath>..\ActivosFijos.Integration\ActivosFijos.Integration.DMiro\bin\Debug\ActivosFijos.Integration.DMiro.dll</HintPath>
+    </Reference>
     <Reference Include="ActivosFijos.Reglas">
-      <HintPath>..\ActivosFijos.Modulo\bin\Release\ActivosFijos.Reglas.dll</HintPath>
+      <HintPath>..\ActivosFijos.Reglas\bin\Debug\ActivosFijos.Reglas.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,12 +50,6 @@
   <ItemGroup>
     <Compile Include="Asiento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ActivosFijos.Integration\ActivosFijos.Integration.DMiro\ActivosFijos.Integration.DMiro.csproj">
-      <Project>{ac64d746-7521-4261-93fa-2654d32c05a6}</Project>
-      <Name>ActivosFijos.Integration.DMiro</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />

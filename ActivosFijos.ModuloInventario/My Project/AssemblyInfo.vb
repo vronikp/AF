@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("ActivosFijos.Modulo")> 
+<Assembly: AssemblyTitle("ActivosFijos.ModuloInventario")>
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("Microsoft")> 
-<Assembly: AssemblyProduct("ActivosFijos.Modulo")> 
-<Assembly: AssemblyCopyright("Copyright © Microsoft 2011")> 
+<Assembly: AssemblyCompany("Microsoft")>
+<Assembly: AssemblyProduct("ActivosFijos.ModuloInventario")>
+<Assembly: AssemblyCopyright("Copyright © Microsoft 2018")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>

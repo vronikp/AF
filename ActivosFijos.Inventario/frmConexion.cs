@@ -47,7 +47,10 @@ namespace ActivosFijos
             config.SetValue(txtConfiguracion.Text);
             xRootConfig.Add(config);
 
-            docConfig.Save(fileConfig);
+            if (txtConfiguracion.Text != "")
+            {
+                docConfig.Save(fileConfig);
+            }
 
             this.Close();
         }

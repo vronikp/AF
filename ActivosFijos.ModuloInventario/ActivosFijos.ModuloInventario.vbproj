@@ -9,8 +9,8 @@
     <ProjectGuid>{D36EF79F-4E54-4A96-9D92-750296402DA2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <StartupObject>Sub Main</StartupObject>
-    <RootNamespace>ActivosFijos.Modulo</RootNamespace>
-    <AssemblyName>ActivosFijos.Modulo</AssemblyName>
+    <RootNamespace>ActivosFijos.ModuloInventario</RootNamespace>
+    <AssemblyName>ActivosFijos.ModuloInventario</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsFormsWithCustomSubMain</MyType>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -40,7 +40,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>ActivosFijos.Modulo.xml</DocumentationFile>
+    <DocumentationFile>ActivosFijos.ModuloInventario.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -51,7 +51,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>ActivosFijos.Modulo.xml</DocumentationFile>
+    <DocumentationFile>ActivosFijos.ModuloInventario.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -157,16 +157,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activos Fijos\clsReporteBaja.vb" />
-    <Compile Include="Activos Fijos\FrmGenerarAsientos.Designer.vb">
-      <DependentUpon>FrmGenerarAsientos.vb</DependentUpon>
+    <Compile Include="Activos Fijos\CtlActivo.Designer.vb">
+      <DependentUpon>CtlActivo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Activos Fijos\FrmGenerarAsientos.vb">
-      <SubType>Form</SubType>
+    <Compile Include="Activos Fijos\CtlActivo.vb">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Activos Fijos\FrmListaTransaccionesBajas.designer.vb">
-      <DependentUpon>FrmListaTransaccionesBajas.vb</DependentUpon>
+    <Compile Include="Activos Fijos\FrmMantenimientoBajaActivo.Designer.vb">
+      <DependentUpon>FrmMantenimientoBajaActivo.vb</DependentUpon>
     </Compile>
-    <Compile Include="Activos Fijos\FrmListaTransaccionesBajas.vb">
+    <Compile Include="Activos Fijos\FrmMantenimientoBajaActivo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Activos Fijos\FrmMantenimientoDesinventariar.Designer.vb">
@@ -178,18 +178,6 @@
     <Compile Include="Activos Fijos\CtlInventario.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Activos Fijos\FrmListaBajasActivo.designer.vb">
-      <DependentUpon>FrmListaBajasActivo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmListaBajasActivo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Activos Fijos\CtlActivo.Designer.vb">
-      <DependentUpon>CtlActivo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\CtlActivo.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Activos Fijos\CtlParametroDetAnidado.Designer.vb">
       <DependentUpon>CtlParametroDetAnidado.vb</DependentUpon>
     </Compile>
@@ -200,12 +188,6 @@
       <DependentUpon>FrmInventariarActivo.vb</DependentUpon>
     </Compile>
     <Compile Include="Activos Fijos\FrmInventariarActivo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmMantenimientoActivo.designer.vb">
-      <DependentUpon>FrmMantenimientoActivo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmMantenimientoActivo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Activos Fijos\FrmMantenimientoInventario.designer.vb">
@@ -226,46 +208,10 @@
     <Compile Include="Activos Fijos\FrmMantenimientoActivoValoracion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Activos Fijos\FrmDepreciacion.Designer.vb">
-      <DependentUpon>FrmDepreciacion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmDepreciacion.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Activos Fijos\FrmCargaActivosLote.Designer.vb">
       <DependentUpon>FrmCargaActivosLote.vb</DependentUpon>
     </Compile>
     <Compile Include="Activos Fijos\FrmCargaActivosLote.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmListaActivoCustodioAprobar.designer.vb">
-      <DependentUpon>FrmListaActivoCustodioAprobar.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmListaActivoCustodioAprobar.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmMantenimientoBajaActivo.Designer.vb">
-      <DependentUpon>FrmMantenimientoBajaActivo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmMantenimientoBajaActivo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmMantenimientoTransaccionBaja.designer.vb">
-      <DependentUpon>FrmMantenimientoTransaccionBaja.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmMantenimientoTransaccionBaja.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmMantenimientoTransaccionActivo.designer.vb">
-      <DependentUpon>FrmMantenimientoTransaccionActivo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmMantenimientoTransaccionActivo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmListaTransacciones.designer.vb">
-      <DependentUpon>FrmListaTransacciones.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmListaTransacciones.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Activos Fijos\FrmMantenimientoActivoComponente.designer.vb">
@@ -273,12 +219,6 @@
     </Compile>
     <Compile Include="Activos Fijos\FrmMantenimientoActivoComponente.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Activos Fijos\CtlBuscaActivos.Designer.vb">
-      <DependentUpon>CtlBuscaActivos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\CtlBuscaActivos.vb">
-      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Activos Fijos\Reportes\clsReporteActaRecepcion.vb" />
     <Compile Include="Activos Fijos\Reportes\clsReporteTransaccionActivo.vb" />
@@ -405,24 +345,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsSriActaRecepcion.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Activos Fijos\Reportes\FrmReporteTransaccionBaja.Designer.vb">
-      <DependentUpon>FrmReporteTransaccionBaja.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\Reportes\FrmReporteTransaccionBaja.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Activos Fijos\Reportes\FrmResumenDepreciacionPorTipo.Designer.vb">
-      <DependentUpon>FrmResumenDepreciacionPorTipo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\Reportes\FrmResumenDepreciacionPorTipo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Activos Fijos\Reportes\crpResumenDepreciacionPorTipo.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>crpResumenDepreciacionPorTipo.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Activos Fijos\Reportes\crpsSRIcambioCustodio.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -433,12 +355,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crpSRIcambioCustodioConst.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Activos Fijos\Reportes\crpReporteResumenDepreciacion.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>crpReporteResumenDepreciacion.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Activos Fijos\Reportes\dsFichaActivoSRI.Designer.vb">
@@ -455,12 +371,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsResumenDepreciacionPorTipo.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\Reportes\FrmReporteResumenDepreciacion.Designer.vb">
-      <DependentUpon>FrmReporteResumenDepreciacion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\Reportes\FrmReporteResumenDepreciacion.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Activos Fijos\Reportes\dsReporteResumenDepreciacion.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -489,42 +399,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsReporteTransaccion.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Activos Fijos\Reportes\FrmReporteListaActivosDepreciacion.Designer.vb">
-      <DependentUpon>FrmReporteListaActivosDepreciacion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\Reportes\FrmReporteListaActivosDepreciacion.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Activos Fijos\Reportes\crpListaActivosDepreciacionporCustodio.vb">
-      <DependentUpon>crpListaActivosDepreciacionporCustodio.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Activos Fijos\Reportes\crpListaActivosDepreciacionporGrupoTipoClase.vb">
-      <DependentUpon>crpListaActivosDepreciacionporGrupoTipoClase.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Activos Fijos\Reportes\crpListaActivosDepreciacionporUbicacion.vb">
-      <DependentUpon>crpListaActivosDepreciacionporUbicacion.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Activos Fijos\Reportes\crpListaActivosporUbicacion.vb">
-      <DependentUpon>crpListaActivosporUbicacion.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Activos Fijos\Reportes\crpListaActivosporCustodio.vb">
-      <DependentUpon>crpListaActivosporCustodio.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Activos Fijos\Reportes\dsReporteActivos.Designer.vb">
       <DependentUpon>dsReporteActivos.xsd</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -539,18 +413,6 @@
       <DependentUpon>dsReporteDepreciacion.xsd</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Include="Activos Fijos\Reportes\FrmReporteDepreciacion.Designer.vb">
-      <DependentUpon>FrmReporteDepreciacion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\Reportes\FrmReporteDepreciacion.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Activos Fijos\Reportes\crpDepreciacion.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>crpDepreciacion.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Activos Fijos\Reportes\crpActaRecepcionCustodio.vb">
       <AutoGen>True</AutoGen>
@@ -570,44 +432,14 @@
       <DependentUpon>crpFichaActivo.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Activos Fijos\Reportes\crpListaActivosporGrupoTipoClase.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>crpListaActivosporGrupoTipoClase.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Activos Fijos\Reportes\FrmReporteFichaActivo.Designer.vb">
       <DependentUpon>FrmReporteFichaActivo.vb</DependentUpon>
     </Compile>
     <Compile Include="Activos Fijos\Reportes\FrmReporteFichaActivo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Activos Fijos\Reportes\FrmReporteListaActivos.Designer.vb">
-      <DependentUpon>FrmReporteListaActivos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\Reportes\FrmReporteListaActivos.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Activos Fijos\TreeviewParametroDet.vb">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmListaPolizas.designer.vb">
-      <DependentUpon>FrmListaPolizas.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmListaPolizas.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmMantenimientoPoliza.designer.vb">
-      <DependentUpon>FrmMantenimientoPoliza.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmMantenimientoPoliza.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmListaActivos.designer.vb">
-      <DependentUpon>FrmListaActivos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Activos Fijos\FrmListaActivos.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Activos Fijos\CtlBuscaFactura.Designer.vb">
       <DependentUpon>CtlBuscaFactura.vb</DependentUpon>
@@ -847,30 +679,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Activos Fijos\FrmGenerarAsientos.resx">
-      <DependentUpon>FrmGenerarAsientos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\FrmListaTransaccionesBajas.resx">
-      <DependentUpon>FrmListaTransaccionesBajas.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\FrmMantenimientoDesinventariar.resx">
-      <DependentUpon>FrmMantenimientoDesinventariar.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\FrmListaBajasActivo.resx">
-      <DependentUpon>FrmListaBajasActivo.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\CtlActivo.resx">
       <DependentUpon>CtlActivo.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activos Fijos\FrmMantenimientoBajaActivo.resx">
+      <DependentUpon>FrmMantenimientoBajaActivo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activos Fijos\FrmMantenimientoDesinventariar.resx">
+      <DependentUpon>FrmMantenimientoDesinventariar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\CtlParametroDetAnidado.resx">
       <DependentUpon>CtlParametroDetAnidado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\FrmInventariarActivo.resx">
       <DependentUpon>FrmInventariarActivo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\FrmMantenimientoActivo.resx">
-      <DependentUpon>FrmMantenimientoActivo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\FrmMantenimientoInventario.resx">
       <DependentUpon>FrmMantenimientoInventario.vb</DependentUpon>
@@ -881,42 +704,11 @@
     <EmbeddedResource Include="Activos Fijos\FrmMantenimientoActivoValoracion.resx">
       <DependentUpon>FrmMantenimientoActivoValoracion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\FrmDepreciacion.resx">
-      <DependentUpon>FrmDepreciacion.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\FrmCargaActivosLote.resx">
       <DependentUpon>FrmCargaActivosLote.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\FrmListaActivoCustodioAprobar.resx">
-      <DependentUpon>FrmListaActivoCustodioAprobar.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\FrmMantenimientoBajaActivo.resx">
-      <DependentUpon>FrmMantenimientoBajaActivo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\FrmMantenimientoTransaccionBaja.resx">
-      <DependentUpon>FrmMantenimientoTransaccionBaja.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\FrmMantenimientoTransaccionActivo.resx">
-      <DependentUpon>FrmMantenimientoTransaccionActivo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\FrmListaTransacciones.resx">
-      <DependentUpon>FrmListaTransacciones.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\FrmMantenimientoActivoComponente.resx">
       <DependentUpon>FrmMantenimientoActivoComponente.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\CtlBuscaActivos.resx">
-      <DependentUpon>CtlBuscaActivos.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\FrmListaPolizas.resx">
-      <DependentUpon>FrmListaPolizas.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\FrmMantenimientoPoliza.resx">
-      <DependentUpon>FrmMantenimientoPoliza.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\FrmListaActivos.resx">
-      <DependentUpon>FrmListaActivos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\CtlBuscaFactura.resx">
       <DependentUpon>CtlBuscaFactura.vb</DependentUpon>
@@ -970,16 +762,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crpSriActaRecepcion.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\Reportes\FrmReporteTransaccionBaja.resx">
-      <DependentUpon>FrmReporteTransaccionBaja.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\Reportes\FrmResumenDepreciacionPorTipo.resx">
-      <DependentUpon>FrmResumenDepreciacionPorTipo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\Reportes\crpResumenDepreciacionPorTipo.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crpResumenDepreciacionPorTipo.vb</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\Reportes\crpsSRIcambioCustodio.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crpsSRIcambioCustodio.vb</LastGenOutput>
@@ -988,13 +770,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crpSRIcambioCustodioConst.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\Reportes\crpReporteResumenDepreciacion.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crpReporteResumenDepreciacion.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\Reportes\FrmReporteResumenDepreciacion.resx">
-      <DependentUpon>FrmReporteResumenDepreciacion.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\Reportes\FrmReporteTransaccionActivo.resx">
       <DependentUpon>FrmReporteTransaccionActivo.vb</DependentUpon>
     </EmbeddedResource>
@@ -1002,39 +777,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crpTransaccionActivo.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\Reportes\FrmReporteListaActivosDepreciacion.resx">
-      <DependentUpon>FrmReporteListaActivosDepreciacion.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\Reportes\crpListaActivosDepreciacionporCustodio.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crpListaActivosDepreciacionporCustodio.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\Reportes\crpListaActivosDepreciacionporGrupoTipoClase.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crpListaActivosDepreciacionporGrupoTipoClase.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\Reportes\crpListaActivosDepreciacionporUbicacion.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crpListaActivosDepreciacionporUbicacion.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\Reportes\crpListaActivosporUbicacion.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crpListaActivosporUbicacion.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\Reportes\crpListaActivosporCustodio.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crpListaActivosporCustodio.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\Reportes\FrmReporteDepreciacion.resx">
-      <DependentUpon>FrmReporteDepreciacion.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\Reportes\crpActaRecepcionCustodio.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crpActaRecepcionCustodio.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\Reportes\crpDepreciacion.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crpDepreciacion.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\Reportes\FrmReporteActaEntregaCustodio.resx">
       <DependentUpon>FrmReporteActaEntregaCustodio.vb</DependentUpon>
@@ -1043,15 +788,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crpFichaActivo.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\Reportes\crpListaActivosporGrupoTipoClase.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crpListaActivosporGrupoTipoClase.vb</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\Reportes\FrmReporteFichaActivo.resx">
       <DependentUpon>FrmReporteFichaActivo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Activos Fijos\Reportes\FrmReporteListaActivos.resx">
-      <DependentUpon>FrmReporteListaActivos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\Reportes\Report1.rdlc" />
     <EmbeddedResource Include="Entidad\CtlBuscaEmpleado.resx">

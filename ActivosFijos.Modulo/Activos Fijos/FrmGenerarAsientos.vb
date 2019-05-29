@@ -222,6 +222,7 @@ Public Class FrmGenerarAsientos
         If Asiento.GenerarDetalle(mParametroDepreciacion.Pardet_DatoStr3, dsd, result, mParametroServicioWeb) Then
           Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Confidencial,
                                     "Se generó el asiento " + numAsiento + " de la " + cboTipoAsiento.ValueMember.ToString + " " + mCodigoPeriodo)
+          MsgBox("Generado asiento con éxito.", MsgBoxStyle.Information)
         Else
           Auditoria.Registrar_Auditoria(Restriccion, Auditoria.enumTipoAccion.Confidencial,
                                     "Error al generar el detalle del asiento " + numAsiento + " de la " + cboTipoAsiento.ValueMember.ToString + " " + mCodigoPeriodo + " " + result)

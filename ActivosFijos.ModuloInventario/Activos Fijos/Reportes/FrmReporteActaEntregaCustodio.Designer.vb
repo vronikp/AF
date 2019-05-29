@@ -28,23 +28,23 @@ Partial Class FrmReporteActaEntregaCustodio
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.pnlsoloinventariados = New System.Windows.Forms.Panel()
-        Me.cboFormato = New ActivosFijos.Modulo.ComboBoxParametroDet()
+        Me.cboFormato = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnCambioCustodioSRI = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.btnActaConstatacion = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.chkSoloInventariados = New System.Windows.Forms.CheckBox()
-        Me.cboInventario = New ActivosFijos.Modulo.ComboBoxParametroDet()
+        Me.cboInventario = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.cboPeriodoInventario = New ActivosFijos.Modulo.ComboBoxParametroDet()
+        Me.cboPeriodoInventario = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.rdoActaEntrega = New System.Windows.Forms.RadioButton()
         Me.pnlActaEntrega = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.cbociudad = New ActivosFijos.Modulo.ComboBoxParametroDet()
+        Me.cbociudad = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
         Me.rdoConstatacion = New System.Windows.Forms.RadioButton()
-        Me.CtlBuscaCustodio = New ActivosFijos.Modulo.CtlBuscaEmpleado()
+        Me.CtlBuscaCustodio = New ActivosFijos.ModuloInventario.CtlBuscaEmpleado()
         CType(Me.ListBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlcuerpo.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -344,7 +344,7 @@ Partial Class FrmReporteActaEntregaCustodio
         Me.CtlBuscaCustodio.SoloActivos = False
         Me.CtlBuscaCustodio.TabIndex = 1
         Me.CtlBuscaCustodio.TipoEmpleado = Nothing
-        Me.CtlBuscaCustodio.Ubicacion = ActivosFijos.Modulo.CtlBuscaEmpleado.EnumUbicacion.Abajo
+        Me.CtlBuscaCustodio.Ubicacion = ActivosFijos.ModuloInventario.CtlBuscaEmpleado.EnumUbicacion.Abajo
         '
         'FrmReporteActaEntregaCustodio
         '
@@ -366,26 +366,26 @@ Partial Class FrmReporteActaEntregaCustodio
         Me.PerformLayout()
 
     End Sub
-  Friend WithEvents CtlBuscaCustodio As ActivosFijos.Modulo.CtlBuscaEmpleado
+  Friend WithEvents CtlBuscaCustodio As ActivosFijos.ModuloInventario.CtlBuscaEmpleado
   Friend WithEvents btnmostrar As System.Windows.Forms.Button
-  Friend WithEvents cbociudad As ActivosFijos.Modulo.ComboBoxParametroDet
+  Friend WithEvents cbociudad As ActivosFijos.ModuloInventario.ComboBoxParametroDet
   Friend WithEvents Label18 As System.Windows.Forms.Label
   Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
   Friend WithEvents Label1 As System.Windows.Forms.Label
   Friend WithEvents pnlsoloinventariados As System.Windows.Forms.Panel
-  Friend WithEvents cboPeriodoInventario As ActivosFijos.Modulo.ComboBoxParametroDet
+  Friend WithEvents cboPeriodoInventario As ActivosFijos.ModuloInventario.ComboBoxParametroDet
   Friend WithEvents Label2 As System.Windows.Forms.Label
   Friend WithEvents btnActaConstatacion As System.Windows.Forms.Button
   Friend WithEvents btnCambioCustodioSRI As System.Windows.Forms.Button
   Friend WithEvents chkSoloInventariados As System.Windows.Forms.CheckBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-  Friend WithEvents cboInventario As ActivosFijos.Modulo.ComboBoxParametroDet
+  Friend WithEvents cboInventario As ActivosFijos.ModuloInventario.ComboBoxParametroDet
   Friend WithEvents Panel5 As System.Windows.Forms.Panel
   Friend WithEvents Panel4 As System.Windows.Forms.Panel
   Friend WithEvents rdoConstatacion As System.Windows.Forms.RadioButton
   Friend WithEvents pnlActaEntrega As System.Windows.Forms.Panel
   Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents rdoActaEntrega As System.Windows.Forms.RadioButton
-    Friend WithEvents cboFormato As ActivosFijos.Modulo.ComboBoxParametroDet
+    Friend WithEvents cboFormato As ActivosFijos.ModuloInventario.ComboBoxParametroDet
     Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class

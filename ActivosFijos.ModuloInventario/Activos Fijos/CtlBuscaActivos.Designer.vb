@@ -74,14 +74,14 @@ Partial Class CtlBuscaActivos
     Me.txtcodigoaux = New Infoware.Controles.Base.TextBoxStd()
     Me.Label5 = New System.Windows.Forms.Label()
     Me.txtcodigobarra = New Infoware.Controles.Base.TextBoxStd()
-    Me.cboEstadoDep = New ActivosFijos.Modulo.ComboBoxParametroDet()
-    Me.cboestadoinv = New ActivosFijos.Modulo.ComboBoxParametroDet()
-    Me.CtlUbicacionActivo1 = New ActivosFijos.Modulo.CtlParametroDetAnidado()
-    Me.CtlBuscaEmpleado1 = New ActivosFijos.Modulo.CtlBuscaEmpleado()
-    Me.CtlBuscaFactura1 = New ActivosFijos.Modulo.CtlBuscaFactura()
-    Me.CtlBuscaProveedor1 = New ActivosFijos.Modulo.CtlBuscaProveedor()
-    Me.cboMarca = New ActivosFijos.Modulo.ComboBoxParametroDet()
-    Me.CtlGrupoTipoClase = New ActivosFijos.Modulo.CtlParametroDetAnidado()
+    Me.cboEstadoDep = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
+    Me.cboestadoinv = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
+    Me.CtlUbicacionActivo1 = New ActivosFijos.ModuloInventario.CtlParametroDetAnidado()
+    Me.CtlBuscaEmpleado1 = New ActivosFijos.ModuloInventario.CtlBuscaEmpleado()
+    Me.CtlBuscaFactura1 = New ActivosFijos.ModuloInventario.CtlBuscaFactura()
+    Me.CtlBuscaProveedor1 = New ActivosFijos.ModuloInventario.CtlBuscaProveedor()
+    Me.cboMarca = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
+    Me.CtlGrupoTipoClase = New ActivosFijos.ModuloInventario.CtlParametroDetAnidado()
     Me.HeaderStrip2.SuspendLayout()
     Me.Panel1.SuspendLayout()
     Me.pnlcierre.SuspendLayout()
@@ -662,7 +662,7 @@ Partial Class CtlBuscaActivos
     Me.CtlBuscaEmpleado1.SoloActivos = False
     Me.CtlBuscaEmpleado1.TabIndex = 0
     Me.CtlBuscaEmpleado1.TipoEmpleado = Nothing
-    Me.CtlBuscaEmpleado1.Ubicacion = ActivosFijos.Modulo.CtlBuscaEmpleado.EnumUbicacion.Abajo
+    Me.CtlBuscaEmpleado1.Ubicacion = ActivosFijos.ModuloInventario.CtlBuscaEmpleado.EnumUbicacion.Abajo
     '
     'CtlBuscaFactura1
     '
@@ -675,7 +675,7 @@ Partial Class CtlBuscaActivos
     Me.CtlBuscaFactura1.Proveedor = Nothing
     Me.CtlBuscaFactura1.Size = New System.Drawing.Size(215, 45)
     Me.CtlBuscaFactura1.TabIndex = 0
-    Me.CtlBuscaFactura1.Ubicacion = ActivosFijos.Modulo.CtlBuscaFactura.EnumUbicacion.Abajo
+    Me.CtlBuscaFactura1.Ubicacion = ActivosFijos.ModuloInventario.CtlBuscaFactura.EnumUbicacion.Abajo
     '
     'CtlBuscaProveedor1
     '
@@ -688,7 +688,7 @@ Partial Class CtlBuscaActivos
     Me.CtlBuscaProveedor1.Size = New System.Drawing.Size(230, 45)
     Me.CtlBuscaProveedor1.SoloActivos = False
     Me.CtlBuscaProveedor1.TabIndex = 0
-    Me.CtlBuscaProveedor1.Ubicacion = ActivosFijos.Modulo.CtlBuscaProveedor.EnumUbicacion.Abajo
+    Me.CtlBuscaProveedor1.Ubicacion = ActivosFijos.ModuloInventario.CtlBuscaProveedor.EnumUbicacion.Abajo
     '
     'cboMarca
     '
@@ -766,27 +766,27 @@ Partial Class CtlBuscaActivos
     Friend WithEvents txtmodelo As Infoware.Controles.Base.TextBoxStd
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents pnlmarca As System.Windows.Forms.Panel
-    Friend WithEvents cboMarca As ActivosFijos.Modulo.ComboBoxParametroDet
+    Friend WithEvents cboMarca As ActivosFijos.ModuloInventario.ComboBoxParametroDet
     Friend WithEvents chkmarca As System.Windows.Forms.CheckBox
     Friend WithEvents pnlcierre As System.Windows.Forms.Panel
     Friend WithEvents pnlproveedor As System.Windows.Forms.Panel
     Friend WithEvents pnlfactura As System.Windows.Forms.Panel
-    Friend WithEvents CtlBuscaFactura1 As ActivosFijos.Modulo.CtlBuscaFactura
+    Friend WithEvents CtlBuscaFactura1 As ActivosFijos.ModuloInventario.CtlBuscaFactura
     Friend WithEvents chkfactura As System.Windows.Forms.CheckBox
-    Friend WithEvents CtlBuscaProveedor1 As ActivosFijos.Modulo.CtlBuscaProveedor
+    Friend WithEvents CtlBuscaProveedor1 As ActivosFijos.ModuloInventario.CtlBuscaProveedor
     Friend WithEvents chkproveedor As System.Windows.Forms.CheckBox
     Friend WithEvents pnlcustodio As System.Windows.Forms.Panel
-    Friend WithEvents CtlBuscaEmpleado1 As ActivosFijos.Modulo.CtlBuscaEmpleado
+    Friend WithEvents CtlBuscaEmpleado1 As ActivosFijos.ModuloInventario.CtlBuscaEmpleado
     Friend WithEvents chkcustodio As System.Windows.Forms.CheckBox
     Friend WithEvents pnlubicacion As System.Windows.Forms.Panel
-    Friend WithEvents CtlUbicacionActivo1 As ActivosFijos.Modulo.CtlParametroDetAnidado
+    Friend WithEvents CtlUbicacionActivo1 As ActivosFijos.ModuloInventario.CtlParametroDetAnidado
     Friend WithEvents chkubicacion As System.Windows.Forms.CheckBox
     Friend WithEvents chksoloactivos As System.Windows.Forms.CheckBox
     Friend WithEvents txtcodigoaux As Infoware.Controles.Base.TextBoxStd
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents CtlGrupoTipoClase As ActivosFijos.Modulo.CtlParametroDetAnidado
+    Friend WithEvents CtlGrupoTipoClase As ActivosFijos.ModuloInventario.CtlParametroDetAnidado
     Friend WithEvents pnlestadoinv As System.Windows.Forms.Panel
-    Friend WithEvents cboestadoinv As ActivosFijos.Modulo.ComboBoxParametroDet
+    Friend WithEvents cboestadoinv As ActivosFijos.ModuloInventario.ComboBoxParametroDet
     Friend WithEvents chkestadoinv As System.Windows.Forms.CheckBox
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
     Friend WithEvents btnbuscaractivos As System.Windows.Forms.ToolStripButton

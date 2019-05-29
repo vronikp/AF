@@ -1251,8 +1251,8 @@ Namespace dsActaBajaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.ActivosFijos.Modulo.My.MySettings.Default.AF_DMIROConnectionString
-        End Sub
+      Me._connection.ConnectionString = Global.ActivosFijos.ModuloInventario.My.MySettings.Default.activosfijosConnectionString
+    End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _

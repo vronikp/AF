@@ -21,7 +21,7 @@ Partial Class FrmMantenimientoFacturaActivo
   Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.CtlAdjunto1 = New ActivosFijos.Modulo.CtlAdjunto()
+        Me.CtlAdjunto1 = New ActivosFijos.ModuloInventario.CtlAdjunto()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtvalortotal = New Infoware.Controles.Base.TextBoxCalculator()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -31,7 +31,7 @@ Partial Class FrmMantenimientoFacturaActivo
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dtfecfactura = New System.Windows.Forms.DateTimePicker()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.CtlBuscaProveedor1 = New ActivosFijos.Modulo.CtlBuscaProveedor()
+        Me.CtlBuscaProveedor1 = New ActivosFijos.ModuloInventario.CtlBuscaProveedor()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -164,7 +164,7 @@ Partial Class FrmMantenimientoFacturaActivo
         Me.CtlBuscaProveedor1.Size = New System.Drawing.Size(478, 22)
         Me.CtlBuscaProveedor1.SoloActivos = False
         Me.CtlBuscaProveedor1.TabIndex = 0
-        Me.CtlBuscaProveedor1.Ubicacion = ActivosFijos.Modulo.CtlBuscaProveedor.EnumUbicacion.Normal
+        Me.CtlBuscaProveedor1.Ubicacion = ActivosFijos.ModuloInventario.CtlBuscaProveedor.EnumUbicacion.Normal
         '
         'FrmMantenimientoFacturaActivo
         '
@@ -185,7 +185,7 @@ Partial Class FrmMantenimientoFacturaActivo
 
     End Sub
   Friend WithEvents Panel1 As System.Windows.Forms.Panel
-  Friend WithEvents CtlBuscaProveedor1 As ActivosFijos.Modulo.CtlBuscaProveedor
+  Friend WithEvents CtlBuscaProveedor1 As ActivosFijos.ModuloInventario.CtlBuscaProveedor
   Friend WithEvents dtfecfactura As System.Windows.Forms.DateTimePicker
   Friend WithEvents Label13 As System.Windows.Forms.Label
   Friend WithEvents txtnumerofactura As Infoware.Controles.Base.TextBoxStd
@@ -194,7 +194,7 @@ Partial Class FrmMantenimientoFacturaActivo
   Friend WithEvents Label1 As System.Windows.Forms.Label
   Friend WithEvents txtReferencia As Infoware.Controles.Base.TextBoxStd
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents CtlAdjunto1 As ActivosFijos.Modulo.CtlAdjunto
+    Friend WithEvents CtlAdjunto1 As ActivosFijos.ModuloInventario.CtlAdjunto
     Friend WithEvents Label4 As System.Windows.Forms.Label
 
 End Class

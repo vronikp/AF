@@ -47,9 +47,9 @@ Partial Class FrmCargaActivosLote
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.pnlinventario = New System.Windows.Forms.Panel()
-        Me.cboInventario = New ActivosFijos.Modulo.ComboBoxParametroDet()
+        Me.cboInventario = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.cboPeriodoInventario = New ActivosFijos.Modulo.ComboBoxParametroDet()
+        Me.cboPeriodoInventario = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -545,9 +545,9 @@ Partial Class FrmCargaActivosLote
   Friend WithEvents Label3 As System.Windows.Forms.Label
   Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
   Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
-  Friend WithEvents cboInventario As ActivosFijos.Modulo.ComboBoxParametroDet
+  Friend WithEvents cboInventario As ActivosFijos.ModuloInventario.ComboBoxParametroDet
   Friend WithEvents Label4 As System.Windows.Forms.Label
-  Friend WithEvents cboPeriodoInventario As ActivosFijos.Modulo.ComboBoxParametroDet
+  Friend WithEvents cboPeriodoInventario As ActivosFijos.ModuloInventario.ComboBoxParametroDet
   Friend WithEvents Label5 As System.Windows.Forms.Label
   Friend WithEvents pnlinventario As System.Windows.Forms.Panel
   Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn

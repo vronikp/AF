@@ -31,7 +31,7 @@ Partial Class FrmMantenimientoBajaActivo
     Me.bsdets = New System.Windows.Forms.BindingSource(Me.components)
     Me.dtfecbaja = New System.Windows.Forms.DateTimePicker()
     Me.Label13 = New System.Windows.Forms.Label()
-    Me.cbotipobaja = New ActivosFijos.Modulo.ComboBoxParametroDet()
+    Me.cbotipobaja = New ActivosFijos.ModuloInventario.ComboBoxParametroDet()
     Me.Label8 = New System.Windows.Forms.Label()
     Me.pnlcuerpo.SuspendLayout()
     CType(Me.dgdets, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,6 +165,6 @@ Partial Class FrmMantenimientoBajaActivo
   Friend WithEvents bsdets As System.Windows.Forms.BindingSource
   Friend WithEvents dtfecbaja As System.Windows.Forms.DateTimePicker
   Friend WithEvents Label13 As System.Windows.Forms.Label
-  Friend WithEvents cbotipobaja As ActivosFijos.Modulo.ComboBoxParametroDet
+  Friend WithEvents cbotipobaja As ActivosFijos.ModuloInventario.ComboBoxParametroDet
   Friend WithEvents Label8 As System.Windows.Forms.Label
 End Class

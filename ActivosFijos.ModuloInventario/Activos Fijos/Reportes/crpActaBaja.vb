@@ -45,7 +45,7 @@ Public Class crpActaBaja
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "ActivosFijos.Modulo.crpActaBaja.rpt"
+            Return "ActivosFijos.ModuloInventario.crpActaBaja.rpt"
         End Get
         Set
             'Do nothing

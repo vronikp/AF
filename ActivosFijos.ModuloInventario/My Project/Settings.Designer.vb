@@ -116,91 +116,10 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=VICOSANZ-LAPTOP;Initial Catalog=activosfijos;Integrated Security=True"& _ 
-            "")>  _
-        Public ReadOnly Property activosfijosConnectionString1() As String
-            Get
-                Return CType(Me("activosfijosConnectionString1"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=INTERPROF8;Initial Catalog=AF_SRI2;User ID=sa")>  _
-        Public ReadOnly Property AF_SRI2ConnectionString() As String
-            Get
-                Return CType(Me("AF_SRI2ConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=ActivosFijos;Integrated Security=True")>  _
         Public ReadOnly Property ActivosFijosConnectionString2() As String
             Get
                 Return CType(Me("ActivosFijosConnectionString2"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=INTERPROF8;Initial Catalog=AF_SRI_Inventario2012;User ID=sa")>  _
-        Public ReadOnly Property AF_SRI_Inventario2012ConnectionString() As String
-            Get
-                Return CType(Me("AF_SRI_Inventario2012ConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=INTERPROF8;Initial Catalog=AF_SRI_InvIniciado;User ID=sa")>  _
-        Public ReadOnly Property AF_SRI_InvIniciadoConnectionString() As String
-            Get
-                Return CType(Me("AF_SRI_InvIniciadoConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=INTERPROF8;Initial Catalog=AF_SRI_InvGye;User ID=sa")>  _
-        Public ReadOnly Property AF_SRI_InvGyeConnectionString() As String
-            Get
-                Return CType(Me("AF_SRI_InvGyeConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=SriG1Final;User ID=sa")>  _
-        Public ReadOnly Property SriG1FinalConnectionString() As String
-            Get
-                Return CType(Me("SriG1FinalConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=SSG1;Integrated Security=True")>  _
-        Public ReadOnly Property SSG1ConnectionString() As String
-            Get
-                Return CType(Me("SSG1ConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=DMIRO;User ID=sa;Password=sa123")>  _
-        Public ReadOnly Property DMIROConnectionString() As String
-            Get
-                Return CType(Me("DMIROConnectionString"),String)
             End Get
         End Property
         
@@ -253,32 +172,11 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=INTERPROF15\SQL2008R2;Initial Catalog=GADDuran;User ID=sa;Password=sa"& _ 
-            "123")>  _
-        Public ReadOnly Property GADDuranConnectionString() As String
-            Get
-                Return CType(Me("GADDuranConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(local)\SQL2008R2;Initial Catalog=AF_DMIRO;User ID=sa;Password=sa123")>  _
-        Public ReadOnly Property AF_DMIROConnectionString() As String
-            Get
-                Return CType(Me("AF_DMIROConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=(local)\SQL2008R2;Initial Catalog=AFDepNueva;Integrated Security=True"& _ 
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=VICOSANZ-LAPTOP;Initial Catalog=activosfijos;Integrated Security=True"& _ 
             "")>  _
-        Public ReadOnly Property AFDepNuevaConnectionString() As String
+        Public ReadOnly Property activosfijosConnectionString1() As String
             Get
-                Return CType(Me("AFDepNuevaConnectionString"),String)
+                Return CType(Me("activosfijosConnectionString1"),String)
             End Get
         End Property
     End Class
@@ -292,9 +190,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.ActivosFijos.Modulo.My.MySettings
+        Friend ReadOnly Property Settings() As Global.ActivosFijos.ModuloInventario.My.MySettings
             Get
-                Return Global.ActivosFijos.Modulo.My.MySettings.Default
+                Return Global.ActivosFijos.ModuloInventario.My.MySettings.Default
             End Get
         End Property
     End Module

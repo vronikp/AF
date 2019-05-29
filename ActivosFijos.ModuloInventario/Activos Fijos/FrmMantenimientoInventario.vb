@@ -13,66 +13,59 @@ Public Class FrmMantenimientoInventario
   End Property
 
 #Region "Parametros"
-    Public Property Inventarios() As BindingSource
-        Get
-            Return MyBase.BindingSource1
-        End Get
-        Set(ByVal value As BindingSource)
-            MyBase.BindingSource1 = value
-            llenar_datos()
-        End Set
-    End Property
+  Public Property Inventarios() As BindingSource
+    Get
+      Return MyBase.BindingSource1
+    End Get
+    Set(ByVal value As BindingSource)
+      MyBase.BindingSource1 = value
+      llenar_datos()
+    End Set
+  End Property
 
-    Private mInventario As Inventario = Nothing
-    Public Property Inventario() As Inventario
-        Get
-            Return mInventario
-        End Get
-        Set(ByVal value As Inventario)
-            mInventario = value
-            If MyBase.BindingSource1.DataSource Is Nothing Then
-                Dim _Inventarios As New InventarioList
-                _Inventarios.Add(mInventario)
-                MyBase.BindingSource1.DataSource = GetType(Inventario)
-                MyBase.BindingSource1.DataSource = _Inventarios
-            End If
-        End Set
-    End Property
+  Private mInventario As Inventario = Nothing
+  Public Property Inventario() As Inventario
+    Get
+      Return mInventario
+    End Get
+    Set(ByVal value As Inventario)
+      mInventario = value
+      If MyBase.BindingSource1.DataSource Is Nothing Then
+        Dim _Inventarios As New InventarioList
+        _Inventarios.Add(mInventario)
+        MyBase.BindingSource1.DataSource = GetType(Inventario)
+        MyBase.BindingSource1.DataSource = _Inventarios
+      End If
+    End Set
+  End Property
 
-    Sub llenar_datos()
-        If Sistema.OperadorDatos Is Nothing Then
-            Exit Sub
-        End If
+  Sub llenar_datos()
+    If Sistema.OperadorDatos Is Nothing Then
+      Exit Sub
+    End If
 
-        mInventario = Inventarios.Current
-        If mInventario Is Nothing Then
-            Exit Sub
-        End If
+    mInventario = Inventarios.Current
+    If mInventario Is Nothing Then
+      Exit Sub
+    End If
 
-        Me.CtlUbicacionActivo1.ParametroDet = mInventario.PardetUbicacion
-        Me.cboperiodo.ParametroDet = mInventario.PardetPeriodoInventario
-        Me.txtdescripcion.Text = mInventario.Invent_Descripcion
-        Me.dtfecha.Value = mInventario.Invent_Fecha
-        Me.cboEstadoInventario.ParametroDet = mInventario.PardetEstadoInventario
-        If mInventario.EsNuevo Then
-            Me.cboEstadoInventario.ParametroDet = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EstadoInventario, Enumerados.enumEstadoInventario.Noterminado)
-        End If
-        Me.cboEstadoInventario.Enabled = Not mInventario.EsNuevo
-        Me.chkSolicitarConfirmacion.Checked = mInventario.Invent_SolicitarConfirmacion
+    Me.CtlUbicacionActivo1.ParametroDet = mInventario.PardetUbicacion
+    Me.cboperiodo.ParametroDet = mInventario.PardetPeriodoInventario
+    Me.txtdescripcion.Text = mInventario.Invent_Descripcion
+    Me.dtfecha.Value = mInventario.Invent_Fecha
+    Me.cboEstadoInventario.ParametroDet = mInventario.PardetEstadoInventario
+    If mInventario.EsNuevo Then
+      Me.cboEstadoInventario.ParametroDet = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EstadoInventario, Enumerados.enumEstadoInventario.Noterminado)
+    End If
+    Me.cboEstadoInventario.Enabled = Not mInventario.EsNuevo
+    Me.chkSolicitarConfirmacion.Checked = mInventario.Invent_SolicitarConfirmacion
 
-        Me.bsdets.DataSource = mInventario.InventarioDets
-        Me.dgdets.AutoDiscover()
+    Me.CtlUbicacionActivo1.Enabled = mInventario.EsNuevo
 
-        Me.CtlUbicacionActivo1.Enabled = mInventario.EsNuevo
+    'Es version interprof
+    Dim PardetEmpresaActivo = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EmpresaActivo, 1)
 
-        'Es version interprof
-        Dim PardetEmpresaActivo = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EmpresaActivo, 1)
-        If PardetEmpresaActivo.Pardet_DatoStr1 = "N9IM2I" And PardetEmpresaActivo.Pardet_DatoStr2 = "F8PP6N" And
-            PardetEmpresaActivo.Pardet_DatoStr3 = "N6AI0T" And PardetEmpresaActivo.Pardet_DatoInt1 = 10814 And
-            PardetEmpresaActivo.Pardet_DatoBit1 = False Then
-            btninventariar.Visible = True
-        End If
-    End Sub
+  End Sub
 #End Region
 
 #Region "Cerrar y Cancelar"
@@ -102,47 +95,47 @@ Public Class FrmMantenimientoInventario
 
 #Region "Guardar y Eliminar"
 
-    Private Sub FrmMantenimientoInventario_Guardar(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles Me.Guardar
-        e.Cancel = Not Guardar_datos()
-    End Sub
+  Private Sub FrmMantenimientoInventario_Guardar(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles Me.Guardar
+    e.Cancel = Not Guardar_datos()
+  End Sub
 
-    Private Sub Mapear_Datos()
-        mInventario.PardetUbicacion = Me.CtlUbicacionActivo1.ParametroDet
-        mInventario.PardetPeriodoInventario = Me.cboperiodo.ParametroDet
-        mInventario.Invent_Descripcion = Me.txtdescripcion.Text
-        mInventario.Invent_Fecha = Me.dtfecha.Value
-        mInventario.PardetEstadoInventario = Me.cboEstadoInventario.ParametroDet
-        mInventario.Invent_SolicitarConfirmacion = Me.chkSolicitarConfirmacion.Checked
+  Private Sub Mapear_Datos()
+    mInventario.PardetUbicacion = Me.CtlUbicacionActivo1.ParametroDet
+    mInventario.PardetPeriodoInventario = Me.cboperiodo.ParametroDet
+    mInventario.Invent_Descripcion = Me.txtdescripcion.Text
+    mInventario.Invent_Fecha = Me.dtfecha.Value
+    mInventario.PardetEstadoInventario = Me.cboEstadoInventario.ParametroDet
+    mInventario.Invent_SolicitarConfirmacion = Me.chkSolicitarConfirmacion.Checked
 
-        If mInventario.EsNuevo Then
-            buscar()
-        End If
-    End Sub
+    If mInventario.EsNuevo Then
+      buscar()
+    End If
+  End Sub
 
-    Private Function Guardar_datos() As Boolean
-        Mapear_Datos()
-        Dim _esnuevo As Boolean = mInventario.EsNuevo
-        If mInventario.Guardar() Then
-            Auditoria.Registrar_Auditoria(Restriccion, IIf(_esnuevo, Enumerados.enumTipoAccion.Adicion, Enumerados.enumTipoAccion.Modificacion), mInventario.Descripcion + " " +
-                                          mInventario.PardetPeriodoInventario.Descripcion + " " + mInventario.PardetUbicacion.DescripcionLarga + " " + mInventario.PardetEstadoInventario.Descripcion)
+  Private Function Guardar_datos() As Boolean
+    Mapear_Datos()
+    Dim _esnuevo As Boolean = mInventario.EsNuevo
+    If mInventario.Guardar() Then
+      Auditoria.Registrar_Auditoria(Restriccion, IIf(_esnuevo, Enumerados.enumTipoAccion.Adicion, Enumerados.enumTipoAccion.Modificacion), mInventario.Descripcion + " " +
+                                    mInventario.PardetPeriodoInventario.Descripcion + " " + mInventario.PardetUbicacion.DescripcionLarga + " " + mInventario.PardetEstadoInventario.Descripcion)
 
-            Return True
-        Else
-            'Inventarios.CancelEdit()
-            MsgBox("No se puede guardar Inventario" & Environment.NewLine & Sistema.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
-            Return False
-        End If
-    End Function
+      Return True
+    Else
+      'Inventarios.CancelEdit()
+      MsgBox("No se puede guardar Inventario" & Environment.NewLine & Sistema.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
+      Return False
+    End If
+  End Function
 
-    Private Sub FrmMantenimientoInventario_Eliminar(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Eliminar
-        If mInventario.Eliminar() AndAlso Inventarios.Current IsNot Nothing Then
-            Inventarios.RemoveCurrent()
-            Me.Close()
-        Else
-            'Inventarios.CancelEdit()
-            MsgBox("No se puede eliminar Inventario" & Environment.NewLine & Sistema.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
-        End If
-    End Sub
+  Private Sub FrmMantenimientoInventario_Eliminar(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Eliminar
+    If mInventario.Eliminar() AndAlso Inventarios.Current IsNot Nothing Then
+      Inventarios.RemoveCurrent()
+      Me.Close()
+    Else
+      'Inventarios.CancelEdit()
+      MsgBox("No se puede eliminar Inventario" & Environment.NewLine & Sistema.OperadorDatos.MsgError, MsgBoxStyle.Critical, "Error")
+    End If
+  End Sub
 #End Region
 
 #Region "Mover"
@@ -182,7 +175,7 @@ Public Class FrmMantenimientoInventario
 
     Me.CtlUbicacionActivo1.SoloVisibles = True
     Me.CtlUbicacionActivo1.PardetRaiz = Usuario.PardetUbicacion
-    Me.CtlUbicacionActivo1.llenar_datos()
+    Me.CtlUbicacionActivo1.llenar_Datos()
 
     Me.cboperiodo.OperadorDatos = Sistema.OperadorDatos
     Me.cboperiodo.Parametro = Enumerados.EnumParametros.PeriodoInventario
@@ -198,66 +191,23 @@ Public Class FrmMantenimientoInventario
     Me.BindingSource1 = Nothing
   End Sub
 
-  Private Sub CtlUbicacionActivo1_Click(sender As Object, e As System.EventArgs) Handles CtlUbicacionActivo1.Click
-    
-  End Sub
-
-  Private Sub btnmostrar_Click(sender As System.Object, e As System.EventArgs) Handles btnmostrar.Click
-    buscar()
-  End Sub
-
   Sub buscar()
     If Me.cboperiodo.ParametroDet Is Nothing OrElse Me.CtlUbicacionActivo1.ParametroDet Is Nothing Then
       Exit Sub
     End If
     mInventario.InventarioDets = Nothing
+  End Sub
 
-    If mInventario.EsNuevo Then
-      Dim mdets As New InventarioDetList
-      For Each _activo As Activo In ActivoList.ObtenerLista(Sistema.OperadorDatos, "", "", "", "", Nothing, Nothing, "", Nothing, Nothing, Nothing, Me.CtlUbicacionActivo1.ParametroDet, Nothing, Nothing, True, -1, Nothing, Nothing, Nothing)
-        Dim _actubis As ActivoUbicacionList = ActivoUbicacionList.ObtenerActivos(_activo)
-        Dim _actcus As ActivoCustodioList = ActivoCustodioList.ObtenerActivos(_activo)
-        If Not (_actubis Is Nothing OrElse _actubis.Count = 0) AndAlso Not (_actcus Is Nothing OrElse _actcus.Count = 0) Then
-          Dim minvdet As New InventarioDet(Sistema.OperadorDatos, True)
-          minvdet.Inventario = mInventario
-          minvdet.Activoubicacion = _actubis(0)
-          minvdet.Activocustodio = _actcus(0)
-          minvdet.PardetEstadoInventario = New WWTSParametroDet(Sistema.OperadorDatos, Enumerados.EnumParametros.EstadoInventarioActivo, Enumerados.enumEstadoInventarioActivo.NoInventariado)
-          mdets.Add(minvdet)
-        End If
-      Next
-      mInventario.InventarioDets = mdets
-    End If
-    Me.bsdets.DataSource = mInventario.InventarioDets
-    Me.dgdets.AutoDiscover()
+  Private Sub cboEstadoInventario_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cboEstadoInventario.SelectedIndexChanged
 
   End Sub
 
-  Private Sub btninventariar_Click(sender As System.Object, e As System.EventArgs) Handles btninventariar.Click
-    If mInventario Is Nothing Then
-      Exit Sub
-    End If
-    If mInventario.EsNuevo Then
-      If MsgBox("Debe guardar el inventario para comenzar a inventariar, ¿Desea guardar el inventario ahora?", MsgBoxStyle.YesNo, "Información") = MsgBoxResult.No OrElse Not Guardar_datos() Then
-        Exit Sub
-      End If
-    End If
-    Dim f As New FrmInventariarActivo(Sistema, Enumerados.EnumOpciones.InventarioActivo)
-    f.Inventario = mInventario
-    f.ShowDialog()
-    buscar()
-  End Sub
-
-    Private Sub cboEstadoInventario_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cboEstadoInventario.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub btnDesinventariar_Click(sender As System.Object, e As System.EventArgs) Handles btnDesinventariar.Click
-        Dim f As New FrmListaActivos(Me.Sistema, Me.Restriccion, False, Enumerados.EnumOpciones.ListadoActivos)
-        f.MostrarDesinventariar = True
-        f.Inventario = mInventario
-        f.MultiSelect = True
-        f.ShowDialog()
-        Me.llenar_datos()
-    End Sub
+  'Private Sub btnDesinventariar_Click(sender As System.Object, e As System.EventArgs) Handles btnDesinventariar.Click
+  'Dim f As New FrmListaActivos(Me.Sistema, Me.Restriccion, False, Enumerados.EnumOpciones.ListadoActivos)
+  '     f.MostrarDesinventariar = True
+  '    f.Inventario = mInventario
+  '   f.MultiSelect = True
+  '  f.ShowDialog()
+  'Me.llenar_datos()
+  'End Sub
 End Class

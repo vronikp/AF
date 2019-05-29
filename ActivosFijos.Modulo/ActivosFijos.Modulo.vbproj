@@ -17,7 +17,7 @@
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\veron\Dropbox\Instaladores\IFA\IFA 2.5.0\</PublishUrl>
+    <PublishUrl>C:\Users\veron\Dropbox\Instaladores\IFA\IFA 2.5.3\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -27,7 +27,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>2.5.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -77,9 +77,12 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ActivosFijos.Integration.Core">
+      <HintPath>..\ActivosFijos.Integration.Core\bin\Debug\ActivosFijos.Integration.Core.dll</HintPath>
+    </Reference>
     <Reference Include="ArtisanCode.SimpleAesEncryption, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Simple.AES.2.0.2.0\lib\net40\ArtisanCode.SimpleAesEncryption.dll</HintPath>
     </Reference>
@@ -310,6 +313,12 @@
       <DependentUpon>crpActaRecepcionFormato4.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Activos Fijos\Reportes\crpActaRecepcionFormato5.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crpActaRecepcionFormato5.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Activos Fijos\Reportes\crpActaRecepcionFormatoD.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -344,6 +353,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsActaBaja.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Activos Fijos\Reportes\dsActaConstatacionF5.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsActaConstatacionF5.xsd</DependentUpon>
     </Compile>
     <Compile Include="Activos Fijos\Reportes\dsActaConstatacionGADD.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -956,6 +970,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crpActaRecepcionFormato41.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Activos Fijos\Reportes\crpActaRecepcionFormato5.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpActaRecepcionFormato5.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Activos Fijos\Reportes\crpActaRecepcionFormatoD.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crpActaRecepcionFormatoD.vb</LastGenOutput>
@@ -1207,6 +1225,17 @@
     <None Include="Activos Fijos\Reportes\dsActaConstatacionF3.xss">
       <DependentUpon>dsActaConstatacionF3.xsd</DependentUpon>
     </None>
+    <None Include="Activos Fijos\Reportes\dsActaConstatacionF5.xsc">
+      <DependentUpon>dsActaConstatacionF5.xsd</DependentUpon>
+    </None>
+    <None Include="Activos Fijos\Reportes\dsActaConstatacionF5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsActaConstatacionF5.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Activos Fijos\Reportes\dsActaConstatacionF5.xss">
+      <DependentUpon>dsActaConstatacionF5.xsd</DependentUpon>
+    </None>
     <None Include="Activos Fijos\Reportes\dsActaConstatacionGADD.xsc">
       <DependentUpon>dsActaConstatacionGADD.xsd</DependentUpon>
     </None>
@@ -1409,10 +1438,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ActivosFijos.Integration.Core\ActivosFijos.Integration.Core.csproj">
-      <Project>{4dc473ad-133b-44cd-b419-e1913f3305a0}</Project>
-      <Name>ActivosFijos.Integration.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ActivosFijos.Reglas\ActivosFijos.Reglas.vbproj">
       <Project>{36279C53-6E4D-4AB0-9687-64075A391C0D}</Project>
       <Name>ActivosFijos.Reglas</Name>

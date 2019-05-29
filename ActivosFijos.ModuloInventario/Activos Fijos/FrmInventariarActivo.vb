@@ -43,28 +43,6 @@ Public Class FrmInventariarActivo
     End If
   End Sub
 
-  Private Sub lnkCambiarCustodioUbicacion_LinkClicked(sender As System.Object, e As System.Windows.Forms.LinkLabelLinkClickedEventArgs)
-    If Activo Is Nothing Then
-      Exit Sub
-    End If
-
-    Dim mactivos As New ActivoList
-    mactivos.Add(Activo)
-
-    Dim mtransaccion As New TransaccionActivo(Sistema.OperadorDatos, True)
-    mtransaccion.Activos = mactivos
-
-    Dim f As New FrmMantenimientoTransaccionActivo(Sistema, Enumerados.EnumOpciones.ListadoTransaccionActivos)
-    f.TransaccionActivo = mtransaccion
-    f.Custodio = Activo.CustodioActual
-    f.Ubicacion = Activo.UbicacionActual
-    f.ShowDialog()
-
-    Activo.Recargar()
-    llenar_datos()
-  End Sub
-
-
 #Region "New"
   Public Sub New(ByVal _Sistema As Sistema, ByVal _Restriccion As Restriccion, Optional ByVal _OpcionNuevo As Enumerados.EnumOpciones = Enumerados.EnumOpciones.InventarioActivo)
     MyBase.New(_Sistema, _Restriccion, _OpcionNuevo)

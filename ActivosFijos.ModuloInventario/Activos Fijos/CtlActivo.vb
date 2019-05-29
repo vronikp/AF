@@ -44,7 +44,7 @@ Public Class CtlActivo
     If PardetEmpresaActivo.Pardet_DatoStr1 = "F8MM7B" And PardetEmpresaActivo.Pardet_DatoStr2 = "N9ME4A" And
         PardetEmpresaActivo.Pardet_DatoStr3 = "F6MG3S" And PardetEmpresaActivo.Pardet_DatoInt1 = 151102 And
         PardetEmpresaActivo.Pardet_DatoBit1 = True Then
-      Me.TabControl1.TabPages.Remove(Me.TabPage2)
+      Me.TabControl1.TabPages.Remove(Me.TpInventarios)
     End If
 
     If Not mActivo.EsNuevo AndAlso mActivo.Facturaactivo IsNot Nothing Then
@@ -574,4 +574,13 @@ Public Class CtlActivo
   Private Sub cboestadodepreciacion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboestadodepreciacion.SelectedIndexChanged
     Me.actualizarValoracionInicial()
   End Sub
+
+  Private Sub TpUbicacion_Enter(sender As System.Object, e As System.EventArgs) Handles TpUbicacion.Enter
+    If mActivo.EsNuevo Then
+      TpPrincipal.Show()
+    Else
+      MsgBox("Mostrar historial")
+    End If
+  End Sub
+
 End Class

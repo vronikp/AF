@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DMIROConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DMIROConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ActivosFijos.Modulo.My.MySettings.GlobalReference.Default.DMIROConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="DMIROConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="DMIROConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ActivosFijos.ModuloInventario.My.MySettings.GlobalReference.Default.DMIROConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables />
         <Sources />
@@ -14,7 +14,7 @@
   <xs:element name="dsReporteTransaccionActivoCustodio" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteTransaccionActivoCustodio" msprop:Generator_UserDSName="dsReporteTransaccionActivoCustodio">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="vw_TransaccionActivoCustodio" msprop:Generator_TableClassName="vw_TransaccionActivoCustodioDataTable" msprop:Generator_TableVarName="tablevw_TransaccionActivoCustodio" msprop:Generator_TablePropName="vw_TransaccionActivoCustodio" msprop:Generator_RowDeletingName="vw_TransaccionActivoCustodioRowDeleting" msprop:Generator_RowChangingName="vw_TransaccionActivoCustodioRowChanging" msprop:Generator_RowEvHandlerName="vw_TransaccionActivoCustodioRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_TransaccionActivoCustodioRowDeleted" msprop:Generator_UserTableName="vw_TransaccionActivoCustodio" msprop:Generator_RowChangedName="vw_TransaccionActivoCustodioRowChanged" msprop:Generator_RowEvArgName="vw_TransaccionActivoCustodioRowChangeEvent" msprop:Generator_RowClassName="vw_TransaccionActivoCustodioRow">
+        <xs:element name="vw_TransaccionActivoCustodio" msprop:Generator_TableClassName="vw_TransaccionActivoCustodioDataTable" msprop:Generator_TableVarName="tablevw_TransaccionActivoCustodio" msprop:Generator_RowChangedName="vw_TransaccionActivoCustodioRowChanged" msprop:Generator_TablePropName="vw_TransaccionActivoCustodio" msprop:Generator_RowDeletingName="vw_TransaccionActivoCustodioRowDeleting" msprop:Generator_RowChangingName="vw_TransaccionActivoCustodioRowChanging" msprop:Generator_RowEvHandlerName="vw_TransaccionActivoCustodioRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_TransaccionActivoCustodioRowDeleted" msprop:Generator_RowClassName="vw_TransaccionActivoCustodioRow" msprop:Generator_UserTableName="vw_TransaccionActivoCustodio" msprop:Generator_RowEvArgName="vw_TransaccionActivoCustodioRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Transa_Codigo" msprop:Generator_ColumnVarNameInTable="columnTransa_Codigo" msprop:Generator_ColumnPropNameInRow="Transa_Codigo" msprop:Generator_ColumnPropNameInTable="Transa_CodigoColumn" msprop:Generator_UserColumnName="Transa_Codigo" type="xs:int" />

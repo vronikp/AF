@@ -26,7 +26,7 @@ Partial Class FrmAuditoria
         Me.dtfecdesde = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.chksolousuario = New Infoware.Controles.Base.CheckBoxStd()
-        Me.ComboBoxUsuario1 = New ActivosFijos.Modulo.ComboBoxUsuario()
+        Me.ComboBoxUsuario1 = New ActivosFijos.ModuloInventario.ComboBoxUsuario()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtcodigo = New Infoware.Controles.Base.TextBoxStd()
         Me.btnBuscar = New System.Windows.Forms.Button()

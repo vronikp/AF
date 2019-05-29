@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="activosfijosConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="activosfijosConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ActivosFijos.Modulo.My.MySettings.GlobalReference.Default.activosfijosConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="activosfijosConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="activosfijosConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ActivosFijos.ModuloInventario.My.MySettings.GlobalReference.Default.activosfijosConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables />
         <Sources />
@@ -14,7 +14,7 @@
   <xs:element name="dsReporteDepreciacion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsReporteDepreciacion" msprop:Generator_UserDSName="dsReporteDepreciacion">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="vw_ReporteDepreciacion" msprop:Generator_TableClassName="vw_ReporteDepreciacionDataTable" msprop:Generator_TableVarName="tablevw_ReporteDepreciacion" msprop:Generator_TablePropName="vw_ReporteDepreciacion" msprop:Generator_RowDeletingName="vw_ReporteDepreciacionRowDeleting" msprop:Generator_UserTableName="vw_ReporteDepreciacion" msprop:Generator_RowChangingName="vw_ReporteDepreciacionRowChanging" msprop:Generator_RowEvHandlerName="vw_ReporteDepreciacionRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_ReporteDepreciacionRowDeleted" msprop:Generator_RowEvArgName="vw_ReporteDepreciacionRowChangeEvent" msprop:Generator_RowChangedName="vw_ReporteDepreciacionRowChanged" msprop:Generator_RowClassName="vw_ReporteDepreciacionRow">
+        <xs:element name="vw_ReporteDepreciacion" msprop:Generator_TableClassName="vw_ReporteDepreciacionDataTable" msprop:Generator_TableVarName="tablevw_ReporteDepreciacion" msprop:Generator_RowChangedName="vw_ReporteDepreciacionRowChanged" msprop:Generator_TablePropName="vw_ReporteDepreciacion" msprop:Generator_RowDeletingName="vw_ReporteDepreciacionRowDeleting" msprop:Generator_RowChangingName="vw_ReporteDepreciacionRowChanging" msprop:Generator_RowEvHandlerName="vw_ReporteDepreciacionRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_ReporteDepreciacionRowDeleted" msprop:Generator_RowClassName="vw_ReporteDepreciacionRow" msprop:Generator_UserTableName="vw_ReporteDepreciacion" msprop:Generator_RowEvArgName="vw_ReporteDepreciacionRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="FrecuenciaDepreciacion" msprop:Generator_ColumnVarNameInTable="columnFrecuenciaDepreciacion" msprop:Generator_ColumnPropNameInRow="FrecuenciaDepreciacion" msprop:Generator_ColumnPropNameInTable="FrecuenciaDepreciacionColumn" msprop:Generator_UserColumnName="FrecuenciaDepreciacion">

@@ -45,7 +45,7 @@ Public Class crpAuditoria
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "ActivosFijos.Modulo.crpAuditoria.rpt"
+            Return "ActivosFijos.ModuloInventario.crpAuditoria.rpt"
         End Get
         Set
             'Do nothing
